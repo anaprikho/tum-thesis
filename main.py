@@ -61,11 +61,15 @@ def get_usernames_by_keyword(page, keywords, output_csv, post_limit=None):
     save_to_csv(output_csv, usernames_data, ["username", "keyword", "post_count"])
 
 # Collect user's profile information
-def get_user_profile(page, input_csv, output_csv):
+def get_user_profile(page, input_csv, output_csv, unique_communities_csv):
     """
-    Navigates to each user's profile (based on the usernames provided in the input CSV file) and gathers their data.
-    Returns a CSV file containing user data.
+    Navigate to each user's profile (based on the usernames provided in the input CSV file) and gather their data.
+    Maintains a global set of communities. 
+    Returns a CSV files containing user data and set of communities.
     """
+    # Global set of unique communities across *all* users
+    all_communities = set()
+    
     # Read usernames from input file
     with open(input_csv, mode="r", encoding="utf-8") as file:
         reader = csv.DictReader(file)
@@ -165,6 +169,9 @@ def get_user_profile(page, input_csv, output_csv):
             for tab in ["posts", "replies"]:
                 tab_communities = collect_communities_from_tab(tab)
                 communities.update(tab_communities)  # merge sets
+            
+            # Update the global community set
+            all_communities.update(communities)
 
             # Store collected info
             profiles_data.append({
@@ -178,9 +185,17 @@ def get_user_profile(page, input_csv, output_csv):
             print(f"Error collecting user's profile data for {username}: {e}")
             continue
 
-    # store data
+    # Store data from user's profiles
     print(f"profile data: {profiles_data}")
-    save_to_csv(output_csv, profiles_data, ["username", "tags", "demographics", "bio", "communities", "community_urls"])
+    save_to_csv(output_csv, profiles_data, ["username", "tags", "demographics", "bio", "communities"])
+    
+    # Store a list of unique community names and their urls
+    # Convert set of tuples to list of dict
+    communities_list = []
+    for (name, url) in sorted(all_communities):
+        communities_list.append({"community_name": name, "community_url": url})
+    save_to_csv(unique_communities_csv, communities_list, ["community_name", "community_url"])
+    print(f"Write {len(all_communities)} unique communities to {unique_communities_csv}.")
 
 # Helper: Login
 def login(page):
@@ -244,7 +259,7 @@ def pagination(page, next_button_selector):
         #     print("No more pages to navigate.")
         #     break
 
-# Helper: Save
+# Helper: Save to CSV
 def save_to_csv(filename, data, headers):
     with open(filename, mode="w", newline="", encoding="utf-8") as file:
         writer = csv.DictWriter(file, fieldnames=headers)
@@ -269,14 +284,15 @@ with sync_playwright() as p:
         get_usernames_by_keyword(page, keywords, usernames_csv, post_limit=70)
 
         ## Step 2: Collect User Profiles
-        # Define the input and output CSV files
         input_csv = "usernames_data.csv" 
         output_csv = "user_profiles.csv"
-        # Collect user profiles
-        get_user_profile(page, input_csv, output_csv)
+        unique_communities_csv = "unique_communities.csv"  ## Step 3: Create Unique Community List
+        get_user_profile(page, input_csv, output_csv, unique_communities_csv)
 
         ## Step 3: Create Unique Community List
         # unique_communities = []
+        # unique_communities_csv = "unique_communities.csv"
+        # create_unique_community_list(output_csv, unique_communities_csv)
 
     finally:
         browser.close()
