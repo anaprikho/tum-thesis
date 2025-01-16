@@ -8,12 +8,21 @@ from dotenv import load_dotenv
 # page.wait_for_selector(".some-element", timeout=3000)
 # page.wait_for_timeout(2000)
 # time.sleep(2)
+GLOBAL_KEYWORDS = ["depression", "anxiety"]  # define keywords for global search on HU to collect usernames
+POST_LIMIT=70  # Optional: limit number of posts when collecting usernames by a keyword
+USER_PROFILE_LIMIT = 3  # Optinal: limit number of user's profile to collect info from
+
+# Define file names
+USERNAME_CSV = "usernames_data.csv"  # file containing cols "username", "keyword", "post_count"
+INPUT_CSV = "usernames_data.csv"  # file containing usernames for which to scrape user profiles
+OUTPUT_CSV = "user_profiles.csv"  # file where to store user'profile info; cols "username", "tags", "demographics", "bio", "commmunities"
+UNIQUE_COMMUNITIES_CSV = "unique_communities_csv"  # file containg set of communities; cols "community_name", "community_url"
 
 # Perform global search by a keyword and gather usernames
 def get_usernames_by_keyword(page, keywords, output_csv, post_limit=None):
     """
-    Perform global search by a list of keywords, collect usernames from posts, 
-    and save the results into a CSV file. The limit of posts is set to None by default.
+    Perform global search on HealthUnlocked for aech keyword from the list, collect usernames from posts, 
+    and save the results into a CSV file. The limit of posts to search throough is set to 'None' by default.
     """
     usernames_data = []
 
@@ -29,6 +38,7 @@ def get_usernames_by_keyword(page, keywords, output_csv, post_limit=None):
         user_post_count= {}
 
         while True:
+            # Find all post elements which are the serach results
             post_elements = page.locator("a[data-sentry-element='Link'][href^='/user/']").all()
 
             for post in post_elements:
@@ -63,9 +73,9 @@ def get_usernames_by_keyword(page, keywords, output_csv, post_limit=None):
 # Collect user's profile information
 def get_user_profile(page, input_csv, output_csv, unique_communities_csv):
     """
-    Navigate to each user's profile (based on the usernames provided in the input CSV file) and gather their data.
-    Maintains a global set of communities. 
-    Returns a CSV files containing user data and set of communities.
+    For each username in 'input_csv' file, navigate to the user's profile and gather their personal data 
+    (tags, demographics, bio, communities). Also maintains a global set of all communities doscovered. 
+    Create 2 CSV files containing user data and ther set of communities.
     """
     # Global set of unique communities across *all* users
     all_communities = set()
@@ -86,7 +96,7 @@ def get_user_profile(page, input_csv, output_csv, unique_communities_csv):
     bio_locator = "div[data-sentry-component='ProfileBio']"
     tabs_locators = {  
         "posts": "a[href$='/posts']",  # 'Posts' tab
-        "replies": "a[href$='/replies']"
+        "replies": "a[href$='/replies']"  # 'Replies' tab
     }
 
     # Helper function: collect communities from a given tab ("Posts" or "Replies")
@@ -124,7 +134,7 @@ def get_user_profile(page, input_csv, output_csv, unique_communities_csv):
 
     # Navigate to user profile page by constructing URL
     profiles_data = []
-    for username in usernames[:3]:
+    for username in usernames[:USER_PROFILE_LIMIT]:
         print(f"Processing profile for username: {username}")
 
         # Navigate to the user's profile page
@@ -163,9 +173,8 @@ def get_user_profile(page, input_csv, output_csv, unique_communities_csv):
                 bio = "N/A" # if no bio
             print(f"username: {username} has bio: {bio}")
 
-            # Collect communities a user has been active in (posted and replied)
+            # Collect community names and href from tabs 'Posts'and 'Replies' (where a user has showed any activity)
             communities = set()
-            # Collect community names and href from tabs 'Posts'and 'Replies'
             for tab in ["posts", "replies"]:
                 tab_communities = collect_communities_from_tab(tab)
                 communities.update(tab_communities)  # merge sets
@@ -186,7 +195,6 @@ def get_user_profile(page, input_csv, output_csv, unique_communities_csv):
             continue
 
     # Store data from user's profiles
-    print(f"profile data: {profiles_data}")
     save_to_csv(output_csv, profiles_data, ["username", "tags", "demographics", "bio", "communities"])
     
     # Store a list of unique community names and their urls
@@ -199,6 +207,9 @@ def get_user_profile(page, input_csv, output_csv, unique_communities_csv):
 
 # Helper: Login
 def login(page):
+    """
+    Accept cookies and log in a user using credentials from environment variables (EMAIL, PASSWORD).
+    """
     # Load environment variables
     load_dotenv()
     EMAIL = os.getenv("EMAIL")
@@ -225,6 +236,10 @@ def login(page):
 
 # Helper: Pagination
 def pagination(page, next_button_selector):
+    """
+    Check and clikc the 'Next page' button if it exists. 
+    Return True if pagination occurred, False otherwise.
+    """
     next_button = page.locator(next_button_selector)
 
     if next_button.count() > 0 and next_button.is_visible():
@@ -236,31 +251,12 @@ def pagination(page, next_button_selector):
     else:
         print("No more pages to navigate.")
         return False
-    
-    # Pagination
-        # next_button = page.locator("text=Next page")
-        # if next_button.count() > 0 and next_button.is_visible():
-        #     print("Pagination: Moving to the next page...")
-        #     page.wait_for_selector("text=Next page", timeout=2000)
-        #     next_button.click()
-        #     # page.wait_for_timeout(2000)
-        #     # try:
-        #     #     current_url = page.url
-        #     #     next_button.click(timeout=10000)
-        #     #     page.wait_for_load_state("domcontentloaded")
-        #     #     # Verify page change
-        #     #     if page.url == current_url:
-        #     #         print("Next page did not load. Exiting pagination.")
-        #     #         break
-        #     # except TimeoutError:
-        #     #     print("Pagination failed. Exiting pagination loop.")
-        #     #     break
-        # else:
-        #     print("No more pages to navigate.")
-        #     break
 
 # Helper: Save to CSV
 def save_to_csv(filename, data, headers):
+    """
+    Writes data (a list of dictionaries) to a file using the given columns.
+    """
     with open(filename, mode="w", newline="", encoding="utf-8") as file:
         writer = csv.DictWriter(file, fieldnames=headers)
         writer.writeheader()
@@ -274,25 +270,13 @@ with sync_playwright() as p:
 
     try:
         login(page)
-
         ### Part 1: General Patterns
 
         ## Step 1: Collect Usernames from Posts using a Keyword
-        keywords = ["depression", "anxiety"]
-        usernames_csv = "usernames_data.csv"
-        # Define a post limit to search through (default=None)
-        get_usernames_by_keyword(page, keywords, usernames_csv, post_limit=70)
+        get_usernames_by_keyword(page, GLOBAL_KEYWORDS, USERNAME_CSV, POST_LIMIT)
 
-        ## Step 2: Collect User Profiles
-        input_csv = "usernames_data.csv" 
-        output_csv = "user_profiles.csv"
-        unique_communities_csv = "unique_communities.csv"  ## Step 3: Create Unique Community List
-        get_user_profile(page, input_csv, output_csv, unique_communities_csv)
-
-        ## Step 3: Create Unique Community List
-        # unique_communities = []
-        # unique_communities_csv = "unique_communities.csv"
-        # create_unique_community_list(output_csv, unique_communities_csv)
+        ## Step 2: Collect User Profiles and Create Unique Community List
+        get_user_profile(page, INPUT_CSV, OUTPUT_CSV, UNIQUE_COMMUNITIES_CSV)
 
     finally:
         browser.close()
