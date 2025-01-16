@@ -1,6 +1,7 @@
 import os
 import time
 import csv
+import re
 from playwright.sync_api import sync_playwright
 from dotenv import load_dotenv
 
@@ -13,16 +14,17 @@ POST_LIMIT=70  # Optional: limit number of posts when collecting usernames by a 
 USER_PROFILE_LIMIT = 3  # Optinal: limit number of user's profile to collect info from
 
 # Define file names
-USERNAME_CSV = "usernames_data.csv"  # file containing cols "username", "keyword", "post_count"
-INPUT_CSV = "usernames_data.csv"  # file containing usernames for which to scrape user profiles
-OUTPUT_CSV = "user_profiles.csv"  # file where to store user'profile info; cols "username", "tags", "demographics", "bio", "commmunities"
-UNIQUE_COMMUNITIES_CSV = "unique_communities_csv"  # file containg set of communities; cols "community_name", "community_url"
+USERNAMES_KEYWORD_OUTPUT_CSV = "usernames_keyword_data.csv"  # file with usernames by a keyword; cols "username", "keyword", "post_count"
+USERNAMES_KEYWORD_INPUT_CSV = "usernames_keyword_data.csv"  # file containing usernames for which to scrape user profiles
+PROFILES_DATA_OUTPUT_CSV = "profiles_data.csv"  # file with user'profile info; cols "username", "tags", "demographics", "bio", "commmunities"
+UNIQUE_COMMUNITIES_CSV = "unique_communities.csv"  # file containg set of communities; cols "community_name", "community_url"
+USERNAMES_COMMUNITY_OUTPUT_CSV = "usernames_comm_data"  # file with usernames by a community; cols "community_name", "community_url", "username"
 
 # Perform global search by a keyword and gather usernames
 def get_usernames_by_keyword(page, keywords, output_csv, post_limit=None):
     """
     Perform global search on HealthUnlocked for aech keyword from the list, collect usernames from posts, 
-    and save the results into a CSV file. The limit of posts to search throough is set to 'None' by default.
+    and save the results into a CSV file. The limit of posts to search through is set to 'None' by default.
     """
     usernames_data = []
 
@@ -94,7 +96,7 @@ def get_user_profile(page, input_csv, output_csv, unique_communities_csv):
         "ethnicity": "div[data-testid='profile__about_ethnicity']",
     }
     bio_locator = "div[data-sentry-component='ProfileBio']"
-    tabs_locators = {  
+    tab_locators = {  
         "posts": "a[href$='/posts']",  # 'Posts' tab
         "replies": "a[href$='/replies']"  # 'Replies' tab
     }
@@ -106,7 +108,7 @@ def get_user_profile(page, input_csv, output_csv, unique_communities_csv):
         Extract community names and href from user's posts/replies.
         Return a set of (community_name, community_url).
         """
-        tab_locator = tabs_locators[tab_name]
+        tab_locator = tab_locators[tab_name]
         tab_communities = set()
         page.click(tab_locator)
         page.wait_for_timeout(2000)
@@ -205,6 +207,88 @@ def get_user_profile(page, input_csv, output_csv, unique_communities_csv):
     save_to_csv(unique_communities_csv, communities_list, ["community_name", "community_url"])
     print(f"Write {len(all_communities)} unique communities to {unique_communities_csv}.")
 
+# Collect usernames from a community page
+def get_usernames_by_community(page, input_csv, output_csv, post_limit=None):
+    """
+    For each community in the unique community list, navigate to the respective community page, 
+    go to 'Most Contributors' tab and collect the usernames. Also, save the number of memebers ans posts of the community.
+    The output CSV file has cols: "community_name", "community_url", "members_count", "posts_count", "username".
+    """
+    # Read the unique community list
+    communities_name_url = []
+    with open(input_csv, mode="r", encoding="utf-8") as file:  # stored as ("Anxiety and Depression Support", /anxiety-depression-support)
+        reader = csv.DictReader(file)
+        for row in reader:
+            communities_name_url.append({  # convert to list of dict
+                "community_name": row["community_name"],  #  "Anxiety and Depression Support"
+                "community_url": row["community_url"]     #  "/anxiety-depression-support"
+            })
+
+    usernames_comm_data = []
+    # Iterate over each community
+    for community in communities_name_url:
+        comm_name = community["community_name"]
+        comm_url = community["community_url"]
+        print(f"Collecting usernames from {comm_name} at {comm_url}...")    
+
+        # Navigate to a communitiy's page ('Members' tab)
+        comm_url_full = f"https://healthunlocked.com{comm_url}/members"
+        page.goto(comm_url_full)
+        page.wait_for_timeout(2000)
+        page.click("text=Most contributions")
+
+        # Get the metadata of a community: "Anxiety and Depression Support94,251 members•88,014 posts"
+        metadata = page.locator("div[data-sentry-component='Details']").text_content().strip()
+
+        # Regex to extract the numbers of members and posts separately
+        # \d{1,3}: matches 1–3 digits
+        # (?:,\d{3})*: matches groups of ,### (e.g., ,251) for thousands separators
+        match = re.search(r"(\d{1,3}(?:,\d{3})*) members•(\d{1,3}(?:,\d{3})*) posts", metadata) 
+        if match:
+            members_count = match.group(1)  # members number
+            posts_count = match.group(2) 
+        print(f"Members: {members_count}, Posts: {posts_count}")
+
+        # Click 'Most contributions' button
+        # page.click("text=Most contributions")
+        # page.wait_for_selector(".community-member-card__username", timeout=10000)
+        page.wait_for_timeout(2000)
+
+        # Collect usernames
+        usernames = []
+        while True:
+            # Locate username links on the current page
+            post_elements = page.locator(".community-member-card__username").all()
+            
+            for element in post_elements:
+                username = element.inner_text()  # extract username
+                if username and username not in usernames:
+                    usernames.append(username)
+
+                    # Check if limit on distinct usernames is reached
+                    if post_limit and len(usernames) >= post_limit:
+                        break  # for-loop
+
+            # Check if limit on distinct usernames is reached
+            if post_limit and len(usernames) >= post_limit:
+                break  # while-loop
+
+            # Pagination
+            next_button_selector = "text=Next page"
+            if not pagination(page, next_button_selector): # as returns False
+                break
+
+        for username in usernames:
+            usernames_comm_data.append({
+                "username": username,
+                "community_name": comm_name,
+                "community_url": comm_url,
+                "members_count": members_count,
+                "posts_count": posts_count
+            })
+
+    save_to_csv(output_csv, usernames_comm_data, ["community_name", "community_url", "members_count", "posts_count", "username"])
+
 # Helper: Login
 def login(page):
     """
@@ -265,18 +349,25 @@ def save_to_csv(filename, data, headers):
 
 # Main
 with sync_playwright() as p:
-    browser = p.firefox.launch(headless=True)  # True - for headless mode
+    browser = p.firefox.launch(headless=False)  # True - for headless mode
     page = browser.new_page()
 
     try:
         login(page)
-        ### Part 1: General Patterns
+        ### 1) General Patterns
 
-        ## Step 1: Collect Usernames from Posts using a Keyword
-        get_usernames_by_keyword(page, GLOBAL_KEYWORDS, USERNAME_CSV, POST_LIMIT)
+        ## --- Collect Usernames from Posts using a Keyword
+        # get_usernames_by_keyword(page, GLOBAL_KEYWORDS, USERNAMES_KEYWORD_OUTPUT_CSV, POST_LIMIT)
 
-        ## Step 2: Collect User Profiles and Create Unique Community List
-        get_user_profile(page, INPUT_CSV, OUTPUT_CSV, UNIQUE_COMMUNITIES_CSV)
+        ## --- Collect User Profiles and Create Unique Community List
+        # get_user_profile(page, USERNAMES_KEYWORD_INPUT_CSV, PROFILES_DATA_OUTPUT_CSV, UNIQUE_COMMUNITIES_CSV)
+
+        ### 2) Community-specific Patterns
+
+        ## --- Collect Usernames from Communities of the Unique Community List
+        get_usernames_by_community(page, UNIQUE_COMMUNITIES_CSV, USERNAMES_COMMUNITY_OUTPUT_CSV, post_limit=10)
+
+
 
     finally:
         browser.close()
