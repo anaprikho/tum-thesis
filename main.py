@@ -10,8 +10,9 @@ from dotenv import load_dotenv
 # page.wait_for_timeout(2000)
 # time.sleep(2)
 GLOBAL_KEYWORDS = ["depression", "anxiety"]  # define keywords for global search on HU to collect usernames
-POST_LIMIT=70  # Optional: limit number of posts when collecting usernames by a keyword
-USER_PROFILE_LIMIT = 3  # Optinal: limit number of user's profile to collect info from
+POST_LIMIT_KEYWORD=70  # Optional: limit number of posts when collecting usernames by a keyword
+USER_PROFILE_LIMIT = 6  # Optinal: limit number of user's profile to collect info from
+POST_LIMIT_USER=100
 
 ### Define file names
 DATA_OUTPUT_DIR = "data_output"  # directory for data output
@@ -77,7 +78,7 @@ def get_usernames_by_keyword(page, keywords, output_csv, post_limit=None):
     save_to_csv(output_csv, usernames_data, ["username", "keyword", "post_count"])
 
 # Collect user's profile information
-def get_user_profile_and_comm(page, input_csv, output_csv, unique_communities_csv):
+def get_user_profile_and_comm(page, input_csv, output_csv, unique_communities_csv, post_limit):
     """
     For each username in 'input_csv' file, navigate to the user's profile and gather their personal data 
     (tags, demographics, bio, communities). Also maintains a global set of all communities doscovered. 
@@ -97,7 +98,7 @@ def get_user_profile_and_comm(page, input_csv, output_csv, unique_communities_cs
         
         if profile_data:
             # Collect community names and href from tabs 'Posts'and 'Replies' (where a user has showed any activity)
-            communities = collect_communities_of_user(page, username)
+            communities = collect_communities_of_user(page, username, post_limit)
             profile_data["communities"] = list(communities) 
             profiles_data.append(profile_data)
             
@@ -116,7 +117,7 @@ def get_user_profile_and_comm(page, input_csv, output_csv, unique_communities_cs
     print(f"Write {len(all_communities)} unique communities to {unique_communities_csv}.")
 
 # Helper: collect communities' names and URLs    from 'Posts' and 'Replies' tabs on a user's profile
-def collect_communities_of_user(page, username):
+def collect_communities_of_user(page, username, post_limit):
     """
     Navigate to 'Posts' and 'Replies' tabs on a user's profile. 
     Extract community names and href from user's posts/replies.
@@ -128,40 +129,78 @@ def collect_communities_of_user(page, username):
         f"https://healthunlocked.com/user/{username}/replies"
     ]
     
-    communities = set()
+    communities = set()    
     for tab_url in tabs_urls:
         print(f"Navigating to: {tab_url}")
         page.goto(tab_url)
         page.wait_for_timeout(2000)
+ 
+        posts_scraped = 0  # track the number of posts already visited; reset counter for each tab
+        start_index = 0   # track starting index for each batch of posts loaded
 
-        # Get all post items
-        post_items = page.locator("div[data-sentry-element='PostItem']")
-        print(f"Found {post_items.count()} items on {tab_url} of user {username}.")
+        while posts_scraped <= post_limit:
 
-        # Loop over each post item, find the community's name and link
-        for i in range(post_items.count()):
-            post_item = post_items.nth(i)  # only look inside the current post item, not the entire page
-            # Within this PostItem, find the "MetaTextWrapper" containing community name and href
-            meta_wrapper = post_item.locator("div[data-sentry-element='MetaTextWrapper']")
-            all_links = meta_wrapper.locator("a[href^='/']")  # find all <a> tags
+            # Get currently showed post items
+            post_items = page.locator("div[data-sentry-element='PostItem']")
+            post_count_current = post_items.count()
 
-            # Case 1: 'Posts' tab (has 2 links: user and community)
-            # Get the SECOND <a> tag in MetaTextWrapper, as the FIRST is the userlink
-            community_link = None
-            if all_links.count() >= 2:
-                community_link = all_links.nth(1)
-            # Case 2: 'Replies' tab (has only community's link)
+            print(f"Found {post_count_current} items on {tab_url} of user {username}.")
+
+            # Loop over newly showed posts, find the community's name and link
+            for i in range(start_index, post_count_current):
+
+                # Check if limit is reached (only with loaded posts)
+                if posts_scraped > post_limit:
+                    print(f"Reached the post limit to scrape from 'Posts' or 'Replies' tab. Limit is: {post_limit}.")
+                    # return communities  # exit when limit is reached
+                    break  # stop scraping posts for this tab
+                    
+                post_item = post_items.nth(i)  # only look inside the current post item, not all loaded posts
+
+                # -------------- Extract community's name and link --------------
+                community_link = None
+
+                # Case 1: 'Posts' tab (has 2 links: user and community)
+                # Within this PostItem, find the "MetaTextWrapper" containing community name and href
+                # Get the SECOND <a> tag in MetaTextWrapper, as the FIRST is the userlink
+                all_links = post_item.locator("div[data-sentry-element='MetaTextWrapper']").locator("a[href^='/']")  # find all <a> tags
+                if all_links.count() >= 2:
+                    community_link = all_links.nth(1)
+                # Case 2: 'Replies' tab (has only community's link)
+                else:
+                    community_link = post_item.locator("a[data-testid='profile-reply']")
+
+                # Extract community's name and URL (if found a link)    
+                if community_link and community_link.count() > 0:
+                    community_url = community_link.get_attribute("href")
+                    community_name = community_link.text_content().strip()
+
+                    communities.add((community_name, community_url))
+                    posts_scraped += 1
+                    print(f"Total posts scraped so far: {posts_scraped}.")
+                else:
+                    print("No community's link found; skipping this post...")
+                # ------------------------------------------------------------------
+
+            # Update start index for next bacth of posts
+            start_index = post_count_current
+            
+            # Check if limit is reached for current tab (before loading more posts)
+            if posts_scraped >=  post_limit:
+                print(f"Reached the post limit {post_limit}.")
+                # return communities  # exit when limit is reached
+                break
+            
+            # Click 'Show more posts' button to load more posts
+            show_more_button = page.locator("button:has-text('Show more posts')")
+            if show_more_button.count() > 0 and show_more_button.is_visible():
+                print("Clicking 'Show more posts' button...")
+                show_more_button.wait_for(state="visible", timeout=3000)
+                show_more_button.click()
+                page.wait_for_timeout(2000)
             else:
-                community_link = post_item.locator("a[data-testid='profile-reply']")
-
-            # Extract community's name and URL (if found a link)    
-            if community_link and community_link.count() > 0:
-                community_url = community_link.get_attribute("href")
-                community_name = community_link.text_content().strip()
-                communities.add((community_name, community_url))
-            else:
-                print("No community's link found; skipping this post...")
-
+                print("No more posts to load.")
+                break  # exit when no more posts exist
     return communities
 
 # Collect user's profile information of a community's members
@@ -191,11 +230,11 @@ def get_user_profile_from_community(page, input_csv, output_csv):
         # Scrape member's profile information
         profile_data = scrape_profile_data(page, username)
         if profile_data:
-            profile_data["community"] = community_name  # add a community name
+            profile_data["community_origin"] = community_name  # add a community name from which the user was found
             profiles_data.append(profile_data)
 
     # Save profiles data of community's members
-    save_to_csv(output_csv, profiles_data, ["username", "tags", "demographics", "bio", "community"])
+    save_to_csv(output_csv, profiles_data, ["username", "tags", "demographics", "bio", "community_origin"])
 
 # Collect usernames from a community page
 def get_usernames_by_community(page, input_csv, output_csv, post_limit=None):
@@ -319,8 +358,11 @@ def scrape_profile_data(page, username):
         print(f"username: {username} has demographics: {demographics}")
 
         # Collect bio
+        # bio_locator = "div[data-testid='profile__about_bio']"
         if page.locator(bio_locator).count() > 0: # Check if bio section exists
             bio = page.locator(bio_locator).text_content().strip()
+            # Remove "Read more" and "Read less" if there is
+            bio = bio.replace("Read more", "").replace("Read less", "").strip()
         else:
             bio = "N/A" # if no bio
         print(f"username: {username} has bio: {bio}")
@@ -407,7 +449,7 @@ with sync_playwright() as p:
         # get_usernames_by_keyword(page, GLOBAL_KEYWORDS, USERNAMES_BY_KEYWORD, POST_LIMIT)
 
         ## --- Collect User Profiles and Create Unique Community List
-        get_user_profile_and_comm(page, USERNAMES_BY_KEYWORD, PROFILES_DATA, UNIQUE_COMM)
+        get_user_profile_and_comm(page, USERNAMES_BY_KEYWORD, PROFILES_DATA, UNIQUE_COMM, POST_LIMIT_USER)
 
         ### 2) Community-specific Patterns
 
