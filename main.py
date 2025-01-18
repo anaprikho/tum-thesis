@@ -9,21 +9,26 @@ from dotenv import load_dotenv
 # page.wait_for_selector(".some-element", timeout=3000)
 # page.wait_for_timeout(2000)
 # time.sleep(2)
+
 GLOBAL_KEYWORDS = ["depression", "anxiety"]  # define keywords for global search on HU to collect usernames
-POST_LIMIT_KEYWORD=70  # Optional: limit number of posts when collecting usernames by a keyword
+POST_LIMIT_KEYWORD = 70  # Optional: limit number of posts when collecting usernames by a keyword
 USER_PROFILE_LIMIT = 6  # Optinal: limit number of user's profile to collect info from
-POST_LIMIT_USER=100
+POST_LIMIT_USER = 100  # number of posts to go through to collect communities' names and links when on user profile
+POST_LIMIT_MEMBERS = 10  # Optional: number of most active users of a community to collect ('Members'->'Most contribution')
 
 ### Define file names
 DATA_OUTPUT_DIR = "data_output"  # directory for data output
 os.makedirs(DATA_OUTPUT_DIR, exist_ok=True)  # ensure the data output directory exists
+
 # General patterns of co-occurrence:
 USERNAMES_BY_KEYWORD =  os.path.join(DATA_OUTPUT_DIR, "usernames_keyword_data.csv")  # file with usernames by a keyword; cols "username", "keyword", "post_count"
 PROFILES_DATA =  os.path.join(DATA_OUTPUT_DIR, "profiles_data.csv")  # file with user'profile info; cols "username", "tags", "demographics", "bio", "commmunities"
-UNIQUE_COMM =  os.path.join(DATA_OUTPUT_DIR, "unique_communities.csv")  # file containg set of communities; cols "community_name", "community_url"
+UNIQUE_COMM_LIST =  os.path.join(DATA_OUTPUT_DIR, "unique_communities.csv")  # file containg set of communities; cols "community_name", "community_url"
+
 # Community-specific patterns of co-occurrence:
 USERNAMES_BY_COMM =  os.path.join(DATA_OUTPUT_DIR, "usernames_comm_data.csv")  # file with usernames by a community; cols "community_name", "community_url", "username"
 PROFILES_BY_COMM_DATA =  os.path.join(DATA_OUTPUT_DIR, "profiles_by_comm_data.csv")  # file with profile info of communities' members; ; cols "username", "tags", "demographics", "bio", "commmunity"
+COMM_LIST_METADATA = os.path.join(DATA_OUTPUT_DIR, "comm_metadata.csv")  # unique community list extended by metadata
 
 # Perform global search by a keyword and gather usernames
 def get_usernames_by_keyword(page, keywords, output_csv, post_limit=None):
@@ -237,11 +242,13 @@ def get_user_profile_from_community(page, input_csv, output_csv):
     save_to_csv(output_csv, profiles_data, ["username", "tags", "demographics", "bio", "community_origin"])
 
 # Collect usernames from a community page
-def get_usernames_by_community(page, input_csv, output_csv, post_limit=None):
+def get_usernames_by_community(page, input_csv, output_csv, metadata_output_csv, post_limit=None):
     """
     For each community in the unique community list, navigate to the respective community page, 
     go to 'Most Contributors' tab and collect the usernames. Also, save the number of memebers ans posts of the community.
-    The output CSV file has cols: "community_name", "community_url", "members_count", "posts_count", "username".
+    Creates two CSV files:
+    1) Usernames by community (cols: "community_name", "community_url", "members_count", "posts_count", "username").
+    2) Unique community list extended by metadata (community_name, community_url, members_count, posts_count).
     """
     # Read the unique community list
     communities_name_url = []
@@ -254,6 +261,7 @@ def get_usernames_by_community(page, input_csv, output_csv, post_limit=None):
             })
 
     usernames_comm_data = []
+    metadata_data = []  # store metadata for each community
     # Iterate over each community
     for community in communities_name_url:
         comm_name = community["community_name"]
@@ -277,6 +285,14 @@ def get_usernames_by_community(page, input_csv, output_csv, post_limit=None):
             members_count = int(match.group(1).replace(",", ""))
             posts_count = int(match.group(2).replace(",", "")) 
         print(f"Members: {members_count}, Posts: {posts_count}")
+
+        # Add metadata to metadata_data
+        metadata_data.append({
+            "community_name": comm_name,
+            "community_url": comm_url,
+            "members_count": members_count,
+            "posts_count": posts_count
+        })
 
         # Collect usernames
         usernames = []
@@ -312,6 +328,8 @@ def get_usernames_by_community(page, input_csv, output_csv, post_limit=None):
             })
 
     save_to_csv(output_csv, usernames_comm_data, ["community_name", "community_url", "members_count", "posts_count", "username"])
+
+    save_to_csv(metadata_output_csv, metadata_data, ["community_name", "community_url", "members_count", "posts_count"])
 
 # Helper: Scrape User Profile Data
 def scrape_profile_data(page, username):
@@ -446,15 +464,15 @@ with sync_playwright() as p:
         ### 1) General Patterns
 
         ## --- Collect Usernames from Posts using a Keyword
-        # get_usernames_by_keyword(page, GLOBAL_KEYWORDS, USERNAMES_BY_KEYWORD, POST_LIMIT)
+        # get_usernames_by_keyword(page, GLOBAL_KEYWORDS, USERNAMES_BY_KEYWORD, POST_LIMIT_KEYWORD)
 
         ## --- Collect User Profiles and Create Unique Community List
-        get_user_profile_and_comm(page, USERNAMES_BY_KEYWORD, PROFILES_DATA, UNIQUE_COMM, POST_LIMIT_USER)
+        # get_user_profile_and_comm(page, USERNAMES_BY_KEYWORD, PROFILES_DATA, UNIQUE_COMM_LIST, POST_LIMIT_USER)
 
         ### 2) Community-specific Patterns
 
         ## --- Collect Usernames from Communities of the Unique Community List
-        # get_usernames_by_community(page, UNIQUE_COMM, USERNAMES_BY_COMM, post_limit=10)
+        get_usernames_by_community(page, UNIQUE_COMM_LIST, USERNAMES_BY_COMM, COMM_LIST_METADATA, POST_LIMIT_MEMBERS)
 
         ## --- Collect User Profiles of Community Members
         # get_user_profile_from_community(page, USERNAMES_BY_COMM, PROFILES_BY_COMM_DATA)
