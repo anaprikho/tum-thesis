@@ -115,14 +115,14 @@ def get_user_profile_and_comm(page, input_csv, output_csv, unique_communities_cs
     save_to_csv(unique_communities_csv, communities_list, ["community_name", "community_url"])
     print(f"Write {len(all_communities)} unique communities to {unique_communities_csv}.")
 
-# Helper: collect communities' names from 'Posts' and 'Replies' tabs on a user's profile
+# Helper: collect communities' names and URLs    from 'Posts' and 'Replies' tabs on a user's profile
 def collect_communities_of_user(page, username):
     """
     Navigate to 'Posts' and 'Replies' tabs on a user's profile. 
     Extract community names and href from user's posts/replies.
     Return a set of (community_name, community_url), where a user has posted or replied.
     """
-    # Define URLs for "Posts" and "Replies" tabs
+    # Define URLs for 'Posts' and 'Replies' tabs
     tabs_urls = [
         f"https://healthunlocked.com/user/{username}/posts",
         f"https://healthunlocked.com/user/{username}/replies"
@@ -136,22 +136,31 @@ def collect_communities_of_user(page, username):
 
         # Get all post items
         post_items = page.locator("div[data-sentry-element='PostItem']")
+        print(f"Found {post_items.count()} items on {tab_url} of user {username}.")
+
         # Loop over each post item, find the community's name and link
         for i in range(post_items.count()):
             post_item = post_items.nth(i)  # only look inside the current post item, not the entire page
             # Within this PostItem, find the "MetaTextWrapper" containing community name and href
             meta_wrapper = post_item.locator("div[data-sentry-element='MetaTextWrapper']")
-            
+            all_links = meta_wrapper.locator("a[href^='/']")  # find all <a> tags
+
+            # Case 1: 'Posts' tab (has 2 links: user and community)
             # Get the SECOND <a> tag in MetaTextWrapper, as the FIRST is the userlink
-            all_links = meta_wrapper.locator("a[href^='/']")
+            community_link = None
             if all_links.count() >= 2:
-                community_link = all_links.nth(1)  # the 2nd link
-                community_name = community_link.text_content().strip()
+                community_link = all_links.nth(1)
+            # Case 2: 'Replies' tab (has only community's link)
+            else:
+                community_link = post_item.locator("a[data-testid='profile-reply']")
+
+            # Extract community's name and URL (if found a link)    
+            if community_link and community_link.count() > 0:
                 community_url = community_link.get_attribute("href")
+                community_name = community_link.text_content().strip()
                 communities.add((community_name, community_url))
             else:
-                # There's no second link
-                print("No community's link found; skipping this post...")  # why is executaed?
+                print("No community's link found; skipping this post...")
 
     return communities
 
@@ -212,11 +221,11 @@ def get_usernames_by_community(page, input_csv, output_csv, post_limit=None):
         comm_url = community["community_url"]
         print(f"Collecting usernames from {comm_name} at {comm_url}...")    
 
-        # Navigate to a communitiy's page ('Members' tab)
-        comm_url_full = f"https://healthunlocked.com{comm_url}/members"
-        page.goto(comm_url_full)
-        page.wait_for_timeout(2000)
-        # page.click("text=Most contributions")
+        # Navigate to communitiy's most active users ('Most contribution' on 'Members' tab)
+        active_members_url = f"https://healthunlocked.com{comm_url}/members?filter=active&page=1"
+        print(f"Navigating to: {active_members_url}")
+        page.goto(active_members_url)
+        page.wait_for_timeout(2000) 
 
         # Get the metadata of a community: "Anxiety and Depression Support94,251 members•88,014 posts"
         metadata = page.locator("div[data-sentry-component='Details']").text_content().strip()
@@ -226,14 +235,9 @@ def get_usernames_by_community(page, input_csv, output_csv, post_limit=None):
         # (?:,\d{3})*: matches groups of ,### (e.g., ,251) for thousands separators
         match = re.search(r"(\d{1,3}(?:,\d{3})*) members•(\d{1,3}(?:,\d{3})*) posts", metadata) 
         if match:
-            members_count = match.group(1)  # members number
-            posts_count = match.group(2) 
+            members_count = int(match.group(1).replace(",", ""))
+            posts_count = int(match.group(2).replace(",", "")) 
         print(f"Members: {members_count}, Posts: {posts_count}")
-
-        # Click 'Most contributions' button
-        page.click("text=Most contributions")
-        # page.wait_for_selector(".community-member-card__username", timeout=10000)
-        page.wait_for_timeout(4000)
 
         # Collect usernames
         usernames = []
@@ -242,7 +246,7 @@ def get_usernames_by_community(page, input_csv, output_csv, post_limit=None):
             post_elements = page.locator(".community-member-card__username").all()
             
             for element in post_elements:
-                username = element.inner_text()  # extract username
+                username = element.inner_text().strip().split()[0]  # extract username, ignore role/badge if there is
                 if username and username not in usernames:
                     usernames.append(username)
 
@@ -415,17 +419,3 @@ with sync_playwright() as p:
 
     finally:
         browser.close()
-
-### TODO:
-
-# take a look at: Restless Legs Syndrome,/rlsuk,"22,601","16,711","Kaarina
-# Administrator"  -> get rid of Administator
-
-# Sleep Matters,/sleep-matters,"3,777",907,"BonnieSue  -> same issue
-# Dream Team"
-
-# instead 'Membres' tab -> use URL /members
-
-# convert metadata to int
-
-# line 206:  print("No community's link found; skipping this post...")  # why is executaed?
