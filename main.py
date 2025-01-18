@@ -14,13 +14,15 @@ POST_LIMIT=70  # Optional: limit number of posts when collecting usernames by a 
 USER_PROFILE_LIMIT = 3  # Optinal: limit number of user's profile to collect info from
 
 ### Define file names
+DATA_OUTPUT_DIR = "data_output"  # directory for data output
+os.makedirs(DATA_OUTPUT_DIR, exist_ok=True)  # ensure the data output directory exists
 # General patterns of co-occurrence:
-USERNAMES_BY_KEYWORD = "usernames_keyword_data.csv"  # file with usernames by a keyword; cols "username", "keyword", "post_count"
-PROFILES_DATA = "profiles_data.csv"  # file with user'profile info; cols "username", "tags", "demographics", "bio", "commmunities"
-UNIQUE_COMM = "unique_communities.csv"  # file containg set of communities; cols "community_name", "community_url"
+USERNAMES_BY_KEYWORD =  os.path.join(DATA_OUTPUT_DIR, "usernames_keyword_data.csv")  # file with usernames by a keyword; cols "username", "keyword", "post_count"
+PROFILES_DATA =  os.path.join(DATA_OUTPUT_DIR, "profiles_data.csv")  # file with user'profile info; cols "username", "tags", "demographics", "bio", "commmunities"
+UNIQUE_COMM =  os.path.join(DATA_OUTPUT_DIR, "unique_communities.csv")  # file containg set of communities; cols "community_name", "community_url"
 # Community-specific patterns of co-occurrence:
-USERNAMES_BY_COMM = "usernames_comm_data.csv"  # file with usernames by a community; cols "community_name", "community_url", "username"
-PROFILES_BY_COMM_DATA = "profiles_by_comm_data.csv"
+USERNAMES_BY_COMM =  os.path.join(DATA_OUTPUT_DIR, "usernames_comm_data.csv")  # file with usernames by a community; cols "community_name", "community_url", "username"
+PROFILES_BY_COMM_DATA =  os.path.join(DATA_OUTPUT_DIR, "profiles_by_comm_data.csv")  # file with profile info of communities' members; ; cols "username", "tags", "demographics", "bio", "commmunity"
 
 # Perform global search by a keyword and gather usernames
 def get_usernames_by_keyword(page, keywords, output_csv, post_limit=None):
@@ -75,69 +77,27 @@ def get_usernames_by_keyword(page, keywords, output_csv, post_limit=None):
     save_to_csv(output_csv, usernames_data, ["username", "keyword", "post_count"])
 
 # Collect user's profile information
-def get_user_profile(page, input_csv, output_csv, unique_communities_csv):
+def get_user_profile_and_comm(page, input_csv, output_csv, unique_communities_csv):
     """
     For each username in 'input_csv' file, navigate to the user's profile and gather their personal data 
     (tags, demographics, bio, communities). Also maintains a global set of all communities doscovered. 
     Create 2 CSV files containing user data and ther set of communities.
     """
-    # Global set of unique communities across all users
-    all_communities = set()
-    
     # Read usernames from input file
     with open(input_csv, mode="r", encoding="utf-8") as file:
         reader = csv.DictReader(file)
         usernames = [row["username"] for row in reader]
 
-    # Helper function: collect communities from a given tab ("Posts" or "Replies")
-    def collect_communities_from_tab(tab_name):
-        """
-        Navigate to according tab (e.g. "Posts" or "Replies"). 
-        Extract community names and href from user's posts/replies.
-        Return a set of (community_name, community_url).
-        """
-        tab_locators = {  # replace with urls: /posts , /replies
-            "posts": "a[href$='/posts']",     # 'Posts' tab
-            "replies": "a[href$='/replies']"  # 'Replies' tab
-        }
-        tab_locator = tab_locators[tab_name]
-        tab_communities = set()
-        page.click(tab_locator)
-        page.wait_for_timeout(2000)
-
-        # Get all post items
-        post_items = page.locator("div[data-sentry-element='PostItem']")
-        # Loop over each post item, find the community link
-        for i in range(post_items.count()):
-            post_item = post_items.nth(i)  # only look inside the current post item, not the entire page
-            # Within this PostItem, find the "MetaTextWrapper" containing community name and href
-            meta_wrapper = post_item.locator("div[data-sentry-element='MetaTextWrapper']")
-            
-            # Get the SECOND <a> tag in MetaTextWrapper, as the FIRST is the userlink
-            all_links = meta_wrapper.locator("a[href^='/']")
-            if all_links.count() >= 2:
-                community_link = all_links.nth(1)  # the 2nd link
-                community_name = community_link.text_content().strip()
-                community_url = community_link.get_attribute("href")
-                communities.add((community_name, community_url))
-            else:
-                # There's no second link
-                print("No second link found; skipping this post...")  # why is executaed?
-
-        return tab_communities
-
     # Navigate to user profile page by constructing URL
     profiles_data = []
+    all_communities = set()  # global set of unique communities across all users
     for username in usernames[:USER_PROFILE_LIMIT]:
         print(f"Processing profile for username: {username}")
         profile_data = scrape_profile_data(page, username)
         
         if profile_data:
             # Collect community names and href from tabs 'Posts'and 'Replies' (where a user has showed any activity)
-            communities = set()
-            for tab in ["posts", "replies"]:
-                tab_communities = collect_communities_from_tab(tab)
-                communities.update(tab_communities)  # merge sets
+            communities = collect_communities_of_user(page, username)
             profile_data["communities"] = list(communities) 
             profiles_data.append(profile_data)
             
@@ -154,6 +114,46 @@ def get_user_profile(page, input_csv, output_csv, unique_communities_csv):
         communities_list.append({"community_name": name, "community_url": url})
     save_to_csv(unique_communities_csv, communities_list, ["community_name", "community_url"])
     print(f"Write {len(all_communities)} unique communities to {unique_communities_csv}.")
+
+# Helper: collect communities' names from 'Posts' and 'Replies' tabs on a user's profile
+def collect_communities_of_user(page, username):
+    """
+    Navigate to 'Posts' and 'Replies' tabs on a user's profile. 
+    Extract community names and href from user's posts/replies.
+    Return a set of (community_name, community_url), where a user has posted or replied.
+    """
+    # Define URLs for "Posts" and "Replies" tabs
+    tabs_urls = [
+        f"https://healthunlocked.com/user/{username}/posts",
+        f"https://healthunlocked.com/user/{username}/replies"
+    ]
+    
+    communities = set()
+    for tab_url in tabs_urls:
+        print(f"Navigating to: {tab_url}")
+        page.goto(tab_url)
+        page.wait_for_timeout(2000)
+
+        # Get all post items
+        post_items = page.locator("div[data-sentry-element='PostItem']")
+        # Loop over each post item, find the community's name and link
+        for i in range(post_items.count()):
+            post_item = post_items.nth(i)  # only look inside the current post item, not the entire page
+            # Within this PostItem, find the "MetaTextWrapper" containing community name and href
+            meta_wrapper = post_item.locator("div[data-sentry-element='MetaTextWrapper']")
+            
+            # Get the SECOND <a> tag in MetaTextWrapper, as the FIRST is the userlink
+            all_links = meta_wrapper.locator("a[href^='/']")
+            if all_links.count() >= 2:
+                community_link = all_links.nth(1)  # the 2nd link
+                community_name = community_link.text_content().strip()
+                community_url = community_link.get_attribute("href")
+                communities.add((community_name, community_url))
+            else:
+                # There's no second link
+                print("No community's link found; skipping this post...")  # why is executaed?
+
+    return communities
 
 # Collect user's profile information of a community's members
 def get_user_profile_from_community(page, input_csv, output_csv):
@@ -400,24 +400,23 @@ with sync_playwright() as p:
         ### 1) General Patterns
 
         ## --- Collect Usernames from Posts using a Keyword
-        get_usernames_by_keyword(page, GLOBAL_KEYWORDS, USERNAMES_BY_KEYWORD, POST_LIMIT)
+        # get_usernames_by_keyword(page, GLOBAL_KEYWORDS, USERNAMES_BY_KEYWORD, POST_LIMIT)
 
         ## --- Collect User Profiles and Create Unique Community List
-        get_user_profile(page, USERNAMES_BY_KEYWORD, PROFILES_DATA, UNIQUE_COMM)
+        get_user_profile_and_comm(page, USERNAMES_BY_KEYWORD, PROFILES_DATA, UNIQUE_COMM)
 
         ### 2) Community-specific Patterns
 
         ## --- Collect Usernames from Communities of the Unique Community List
-        get_usernames_by_community(page, UNIQUE_COMM, USERNAMES_BY_COMM, post_limit=10)
+        # get_usernames_by_community(page, UNIQUE_COMM, USERNAMES_BY_COMM, post_limit=10)
 
         ## --- Collect User Profiles of Community Members
-        get_user_profile_from_community(page, USERNAMES_BY_COMM, PROFILES_BY_COMM_DATA)
+        # get_user_profile_from_community(page, USERNAMES_BY_COMM, PROFILES_BY_COMM_DATA)
 
     finally:
         browser.close()
 
 ### TODO:
-# replace tabs (posts, replies) when collecting profiles with URLs
 
 # take a look at: Restless Legs Syndrome,/rlsuk,"22,601","16,711","Kaarina
 # Administrator"  -> get rid of Administator
@@ -428,3 +427,5 @@ with sync_playwright() as p:
 # instead 'Membres' tab -> use URL /members
 
 # convert metadata to int
+
+# line 206:  print("No community's link found; skipping this post...")  # why is executaed?
