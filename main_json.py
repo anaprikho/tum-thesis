@@ -27,9 +27,9 @@ PROFILES_DATA =  os.path.join(DATA_OUTPUT_DIR, "profiles_data.json")  # file wit
 UNIQUE_COMM_LIST =  os.path.join(DATA_OUTPUT_DIR, "unique_comm_list.json")  # file containg set of communities; cols "community_name", "community_url"
 
 # Community-specific patterns of co-occurrence:
-USERNAMES_BY_COMM =  os.path.join(DATA_OUTPUT_DIR, "usernames_comm_data.csv")  # file with usernames by a community; cols "community_name", "community_url", "username"
-PROFILES_BY_COMM_DATA =  os.path.join(DATA_OUTPUT_DIR, "profiles_by_comm_data.csv")  # file with profile info of communities' members; ; cols "username", "tags", "demographics", "bio", "commmunity"
-COMM_LIST_METADATA = os.path.join(DATA_OUTPUT_DIR, "comm_metadata.csv")  # unique community list extended by metadata
+USERNAMES_BY_COMM =  os.path.join(DATA_OUTPUT_DIR, "usernames_by_comm_data.json")  # file with usernames by a community; cols "community_name", "community_url", "username"
+PROFILES_BY_COMM_DATA =  os.path.join(DATA_OUTPUT_DIR, "profiles_by_comm_data.json")  # file with profile info of communities' members; ; cols "username", "tags", "demographics", "bio", "commmunity"
+COMM_LIST_METADATA = os.path.join(DATA_OUTPUT_DIR, "unique_comm_list_metadata.json")  # unique community list extended by metadata
 
 # Perform global search by a keyword and gather usernames
 def get_usernames_by_keyword(page, keywords, output_json, post_limit=None):
@@ -96,8 +96,8 @@ def get_user_profile_and_comm(page, input_json, output_json, unique_communities_
     Create 2 JSON files containing user data and the set of communities.
     """
     # Read usernames from input file
-    usernames_data = read_json(input_json)
-    usernames = list(usernames_data.keys())
+    usernames_data = read_json(input_json)  # if JSON structure is a list of dict [ {}, {} ]
+    usernames = list(usernames_data.keys()) # if JSON structure is a dict { "key1": {}, "key2": {} }
 
     # Navigate to user profile page by constructing URL
     profiles_data = {}
@@ -246,58 +246,30 @@ def get_user_profile_from_community(page, input_csv, output_csv):
     # Save profiles data of community's members
     save_to_csv(output_csv, profiles_data, ["username", "tags", "demographics", "bio", "community_origin"])
 
-# Collect usernames from a community page
-def get_usernames_by_community(page, input_csv, output_csv, metadata_output_csv, post_limit=None):
+# Collect usernames and metadata from a community page
+def get_usernames_by_community(page, input_json, output_json, metadata_output_json, post_limit=None):
     """
     For each community in the unique community list, navigate to the respective community page, 
     go to 'Most Contributors' tab and collect the usernames. Also, save the number of memebers ans posts of the community.
-    Creates two CSV files:
+    Creates two JSON files:
     1) Usernames by community (cols: "community_name", "community_url", "members_count", "posts_count", "username").
     2) Unique community list extended by metadata (community_name, community_url, members_count, posts_count).
     """
     # Read the unique community list
-    communities_name_url = []
-    with open(input_csv, mode="r", encoding="utf-8") as file:  # stored as ("Anxiety and Depression Support", /anxiety-depression-support)
-        reader = csv.DictReader(file)
-        for row in reader:
-            communities_name_url.append({  # convert to list of dict
-                "community_name": row["community_name"],  #  "Anxiety and Depression Support"
-                "community_url": row["community_url"]     #  "/anxiety-depression-support"
-            })
+    communities_name_url = read_json(input_json)
 
-    usernames_comm_data = []
-    metadata_data = []  # store metadata for each community
+    usernames_comm_data = {}
+    metadata_data = {}  # store metadata for each community
+
     # Iterate over each community
     for community in communities_name_url:
         comm_name = community["community_name"]
         comm_url = community["community_url"]
         print(f"Collecting usernames from {comm_name} at {comm_url}...")    
 
-        # Navigate to communitiy's most active users ('Most contribution' on 'Members' tab)
-        active_members_url = f"https://healthunlocked.com{comm_url}/members?filter=active&page=1"
-        print(f"Navigating to: {active_members_url}")
-        page.goto(active_members_url)
-        page.wait_for_timeout(2000) 
-
-        # Get the metadata of a community: "Anxiety and Depression Support94,251 members•88,014 posts"
-        metadata = page.locator("div[data-sentry-component='Details']").text_content().strip()
-
-        # Regex to extract the numbers of members and posts separately
-        # \d{1,3}: matches 1–3 digits
-        # (?:,\d{3})*: matches groups of ,### (e.g., ,251) for thousands separators
-        match = re.search(r"(\d{1,3}(?:,\d{3})*) members•(\d{1,3}(?:,\d{3})*) posts", metadata) 
-        if match:
-            members_count = int(match.group(1).replace(",", ""))
-            posts_count = int(match.group(2).replace(",", "")) 
-        print(f"Members: {members_count}, Posts: {posts_count}")
-
-        # Add metadata to metadata_data
-        metadata_data.append({
-            "community_name": comm_name,
-            "community_url": comm_url,
-            "members_count": members_count,
-            "posts_count": posts_count
-        })
+        # Collect metadata (number of posts and memebers)
+        metadata = get_comm_metadata(page, comm_name, comm_url)
+        metadata_data[comm_name] = metadata
 
         # Collect usernames
         usernames = []
@@ -323,18 +295,55 @@ def get_usernames_by_community(page, input_csv, output_csv, metadata_output_csv,
             if not pagination(page, next_button_selector): # as returns False
                 break
 
-        for username in usernames:
-            usernames_comm_data.append({
-                "username": username,
-                "community_name": comm_name,
-                "community_url": comm_url,
-                "members_count": members_count,
-                "posts_count": posts_count
-            })
+        usernames_comm_data[comm_name] = {
+            "community_name": comm_name,
+            "community_url": comm_url,
+            "members_count": metadata["members_count"],
+            "posts_count": metadata["posts_count"],
+            "active_members": usernames
+        }        
+    # Save to JSON
+    write_to_json(output_json, usernames_comm_data)
+    write_to_json(metadata_output_json, metadata_data)
 
-    save_to_csv(output_csv, usernames_comm_data, ["community_name", "community_url", "members_count", "posts_count", "username"])
+# Collect metadata (number of posts and memebrs) of a community
+def get_comm_metadata(page, comm_name, comm_url):
+    """
+    Extract metadata (number of members and posts) from a community's page.
+    """
+    # Navigate to communitiy's most active users ('Most contribution' on 'Members' tab)
+    active_members_url = f"https://healthunlocked.com{comm_url}/members?filter=active&page=1"
+    print(f"Navigating to: {active_members_url}")
+    page.goto(active_members_url)
+    page.wait_for_timeout(2000) 
 
-    save_to_csv(metadata_output_csv, metadata_data, ["community_name", "community_url", "members_count", "posts_count"])
+    # Get metadata details: "Anxiety and Depression Support94,251 members•88,014 posts"
+    metadata = page.locator("div[data-sentry-component='Details']").text_content().strip()
+
+    # Regex to extract the numbers of members and posts separately
+    # \d{1,3}: matches 1–3 digits
+    # (?:,\d{3})*: matches groups of ,### (e.g., ,251) for thousands separators
+    match = re.search(r"(\d{1,3}(?:,\d{3})*) members•(\d{1,3}(?:,\d{3})*) posts", metadata)
+
+    if match:
+        members_count = int(match.group(1).replace(",", ""))
+        posts_count = int(match.group(2).replace(",", "")) 
+        print(f"Members: {members_count}, Posts: {posts_count}")
+
+        return {
+            "community_name": comm_name,
+            "community_url": comm_url,
+            "members_count": members_count,
+            "posts_count": posts_count
+        }
+    else:
+        print(f"Metadata extraction failed for {comm_name}.")
+        return {
+            "community_name": comm_name,
+            "community_url": comm_url,
+            "members_count": 0,
+            "posts_count": 0,
+        }
 
 # Helper: Scrape User Profile Data
 def scrape_profile_data(page, username):
@@ -490,12 +499,12 @@ with sync_playwright() as p:
         # get_usernames_by_keyword(page, GLOBAL_KEYWORDS, USERNAMES_BY_KEYWORD, POST_LIMIT_KEYWORD)
 
         ## --- Collect User Profiles and Create Unique Community List
-        get_user_profile_and_comm(page, USERNAMES_BY_KEYWORD, PROFILES_DATA, UNIQUE_COMM_LIST, POST_LIMIT_USER)
+        # get_user_profile_and_comm(page, USERNAMES_BY_KEYWORD, PROFILES_DATA, UNIQUE_COMM_LIST, POST_LIMIT_USER)
 
         ### 2) Community-specific Patterns
 
         ## --- Collect Usernames from Communities of the Unique Community List
-        # get_usernames_by_community(page, UNIQUE_COMM_LIST, USERNAMES_BY_COMM, COMM_LIST_METADATA, POST_LIMIT_MEMBERS)
+        get_usernames_by_community(page, UNIQUE_COMM_LIST, USERNAMES_BY_COMM, COMM_LIST_METADATA, POST_LIMIT_MEMBERS)
 
         ## --- Collect User Profiles of Community Members
         # get_user_profile_from_community(page, USERNAMES_BY_COMM, PROFILES_BY_COMM_DATA)
