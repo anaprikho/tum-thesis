@@ -89,7 +89,7 @@ def get_usernames_by_keyword(page, keywords, output_json, post_limit=None):
     write_to_json(output_json, usernames_data)
 
 # Collect user's profile information
-def get_user_profile_and_comm(page, input_json, output_json, unique_communities_json, post_limit):
+def get_user_profiles(page, input_json, output_json, unique_communities_json, post_limit):
     """
     For each username in the input file, navigate to the user's profile and gather their personal data 
     (tags, demographics, bio, communities). Also maintain a global set of all communities disscovered. 
@@ -213,41 +213,43 @@ def collect_communities_of_user(page, username, post_limit):
                 break  # exit when no more posts exist
     return communities
 
-# Collect user's profile information of a community's members
-def get_user_profile_from_community(page, input_csv, output_csv):
+# Collect profile information of community's members
+def get_member_profiles(page, input_json, output_json):
     """
-    Process usernames from a CSV file with a community's memebers with the most contribution
-    and collect their profile information.
+    Process usernames from a JSON file with the most active community's members
+    and collect their profile information. Save into a JSON file.
     
     """
-    profiles_data = []
-    members = []
-    # Read usernames and community names from input CSV
-    with open(input_csv, mode="r", encoding="utf-8") as file:
-        reader = csv.DictReader(file)
-        for row in reader:
-            members.append({  # convert to list of dict
-                "username": row["username"],  
-                "community_name": row["community_name"] 
-            })
+    profiles_by_community = {}
     
-    # Process each username
-    for member in members:
-        username = member["username"]
-        community_name = member["community_name"]
-        print(f"Processing profile for username: {username} in community: {community_name}")
+    # Read usernames and community details from JSON
+    communities = read_json(input_json)
 
-        # Scrape member's profile information
-        profile_data = scrape_profile_data(page, username)
-        if profile_data:
-            profile_data["community_origin"] = community_name  # add a community name from which the user was found
-            profiles_data.append(profile_data)
+    # Iterate through communities and their members
+    for community_name, community_data in communities.items():
+        print(f"Processing community: {community_name}")
+        members = community_data.get("active_members", [])
+        profiles_by_community[community_name] = {
+            "community_name": community_name,
+            "community_url": community_data["community_url"],
+            "members_count": community_data["members_count"],
+            "posts_count": community_data["posts_count"],
+            "member_profiles": [] 
+        }
+        
+        for member in members:
+            # Scrape member's profile information
+            profile_data = scrape_profile_data(page, member)
 
-    # Save profiles data of community's members
-    save_to_csv(output_csv, profiles_data, ["username", "tags", "demographics", "bio", "community_origin"])
+            if profile_data:
+                profile_data["username"] = member
+                # profile_data["community_origin"] = community_name  # add a community name from which the user was found
+                profiles_by_community[community_name]["member_profiles"].append(profile_data)
+        
+    write_to_json(output_json, profiles_by_community)
 
 # Collect usernames and metadata from a community page
-def get_usernames_by_community(page, input_json, output_json, metadata_output_json, post_limit=None):
+def get_members_of_community(page, input_json, output_json, metadata_output_json, post_limit=None):
     """
     For each community in the unique community list, navigate to the respective community page, 
     go to 'Most Contributors' tab and collect the usernames. Also, save the number of memebers ans posts of the community.
@@ -457,17 +459,6 @@ def pagination(page, next_button_selector):
         print("No more pages to navigate.")
         return False
 
-# # Helper: Save to CSV
-# def save_to_csv(filename, data, headers):
-#     """
-#     Writes data (a list of dictionaries) to a file using the given columns.
-#     """
-#     with open(filename, mode="w", newline="", encoding="utf-8") as file:
-#         writer = csv.DictWriter(file, fieldnames=headers)
-#         writer.writeheader()
-#         writer.writerows(data)
-#         print(f"Saved to file {filename}")
-
 # Helper: Read from JSON
 def read_json(file_path):
     """
@@ -499,15 +490,15 @@ with sync_playwright() as p:
         # get_usernames_by_keyword(page, GLOBAL_KEYWORDS, USERNAMES_BY_KEYWORD, POST_LIMIT_KEYWORD)
 
         ## --- Collect User Profiles and Create Unique Community List
-        # get_user_profile_and_comm(page, USERNAMES_BY_KEYWORD, PROFILES_DATA, UNIQUE_COMM_LIST, POST_LIMIT_USER)
+        # get_user_profiles(page, USERNAMES_BY_KEYWORD, PROFILES_DATA, UNIQUE_COMM_LIST, POST_LIMIT_USER)
 
         ### 2) Community-specific Patterns
 
         ## --- Collect Usernames from Communities of the Unique Community List
-        get_usernames_by_community(page, UNIQUE_COMM_LIST, USERNAMES_BY_COMM, COMM_LIST_METADATA, POST_LIMIT_MEMBERS)
+        # get_members_of_community(page, UNIQUE_COMM_LIST, USERNAMES_BY_COMM, COMM_LIST_METADATA, POST_LIMIT_MEMBERS)
 
         ## --- Collect User Profiles of Community Members
-        # get_user_profile_from_community(page, USERNAMES_BY_COMM, PROFILES_BY_COMM_DATA)
+        get_member_profiles(page, USERNAMES_BY_COMM, PROFILES_BY_COMM_DATA)
 
     finally:
         browser.close()
