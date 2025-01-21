@@ -2,6 +2,8 @@ import json
 import os
 from dotenv import load_dotenv
 
+from config import SELECTORS
+
 # Login
 def login(page):
     """
@@ -21,12 +23,12 @@ def login(page):
     page.wait_for_timeout(2000)
 
     # Enter login credentials
-    page.fill("#email", EMAIL)
-    page.fill("#password", PASSWORD)
+    page.fill(SELECTORS["login_email"], EMAIL)
+    page.fill(SELECTORS["login_password"], PASSWORD)
 
     # Ensure the login button is visible and enabled, then click it
-    page.wait_for_selector("button[data-testid='log-in-button']", timeout=5000)  
-    page.click("button[data-testid='log-in-button']")  
+    page.wait_for_selector(SELECTORS["login_button"]), timeout=5000)  
+    page.click(SELECTORS["login_button"])  
     page.wait_for_timeout(2000)  # Wait for login to complete
 
     print("Login successful.")

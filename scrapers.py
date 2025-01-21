@@ -1,15 +1,12 @@
 import time
 import re
 from helpers import write_to_json, read_json, pagination
+from config import SELECTORS
 
-SELECTORS = {
-    "search_input": "input[placeholder='Search HealthUnlocked']",
-    "login_email": "#email",
-    "login_password": "#password",
-    "login_button": "button[data-testid='log-in-button']",
-    "next_page_button": "text=Next page",
-    "show_more_posts_button": "button:has-text('Show more posts')",
-}
+### Options for pausing while scraping:
+# page.wait_for_selector(".some-element", timeout=3000)
+# page.wait_for_timeout(2000)
+# time.sleep(2)
 
 # Perform global search by a keyword and gather usernames
 def get_usernames_by_keyword(page, keywords, output_json, post_limit=None):
@@ -22,16 +19,17 @@ def get_usernames_by_keyword(page, keywords, output_json, post_limit=None):
     for keyword in keywords:
         # Global search on HU using a keyword
         page.goto("https://healthunlocked.com/")
-        page.fill("input[placeholder='Search HealthUnlocked']", keyword)
+        page.fill(SELECTORS["search_input"], keyword)
         page.keyboard.press("Enter")
-        time.sleep(2)
+        page.wait_for_timeout(2000)
+        # time.sleep(2)
         print(f"-------- Keyword: {keyword} --------")
 
         user_post_count= {}  # track post count per user
 
         while True:
             # Find all post elements which are the serach results
-            post_elements = page.locator("a[data-sentry-element='Link'][href^='/user/']").all()
+            post_elements = page.locator(SELECTORS["post_items_search_results"]).all()
 
             for post in post_elements:
                 username = post.text_content().strip()
@@ -172,7 +170,7 @@ def get_members_of_community(page, input_json, output_json, metadata_output_json
         usernames = []
         while True:
             # Locate username links on the current page
-            post_elements = page.locator(".community-member-card__username").all()
+            post_elements = page.locator(SELECTORS["community_card_username"]).all()
             
             for element in post_elements:
                 username = element.inner_text().strip().split()[0]  # extract username, ignore role/badge if there is
@@ -188,8 +186,7 @@ def get_members_of_community(page, input_json, output_json, metadata_output_json
                 break  # while-loop
 
             # Pagination
-            next_button_selector = "text=Next page"
-            if not pagination(page, next_button_selector): # as returns False
+            if not pagination(page, SELECTORS["next_page_button"]): # as returns False
                 break
 
         usernames_comm_data[comm_name] = {
@@ -215,7 +212,7 @@ def get_comm_metadata(page, comm_name, comm_url):
     page.wait_for_timeout(2000) 
 
     # Get metadata details: "Anxiety and Depression Support94,251 members•88,014 posts"
-    metadata = page.locator("div[data-sentry-component='Details']").text_content().strip()
+    metadata = page.locator(SELECTORS["community_metadata"]).text_content().strip()
 
     # Regex to extract the numbers of members and posts separately
     # \d{1,3}: matches 1–3 digits
@@ -248,7 +245,7 @@ def scrape_profile_data(page, username):
     Scrape profile data (tags, demographics, bio, communities) for a given username.
     """
     # Define locator of data elements
-    tags_locator = "ul.sc-4bc2cf0e-0.emzbAL li a"
+    # tags_locator = "ul.sc-4bc2cf0e-0.emzbAL li a"
     demographics_locators = {
         "age": "div[data-testid='profile__about_age']",
         "gender": "div[data-testid='profile__about_gender']",
@@ -266,7 +263,7 @@ def scrape_profile_data(page, username):
     try:
         # Collect tags
         tags = []
-        tag_elements = page.locator(tags_locator)
+        tag_elements = page.locator(SELECTORS["profile_tags"])
         if tag_elements.count() >0:
             for tag in tag_elements.all():
                 tag_text = tag.text_content().strip()
@@ -287,9 +284,8 @@ def scrape_profile_data(page, username):
         print(f"username: {username} has demographics: {demographics}")
 
         # Collect bio
-        # bio_locator = "div[data-testid='profile__about_bio']"
-        if page.locator(bio_locator).count() > 0: # Check if bio section exists
-            bio = page.locator(bio_locator).text_content().strip()
+        if page.locator(SELECTORS["profile_bio"]).count() > 0: # Check if bio section exists
+            bio = page.locator(SELECTORS["profile_bio"]).text_content().strip()
             # Remove "Read more" and "Read less" if there is
             bio = bio.replace("Read more", "").replace("Read less", "").strip()
         else:
@@ -332,7 +328,7 @@ def collect_communities_of_user(page, username, post_limit):
         while posts_scraped <= post_limit:
 
             # Get currently showed post items
-            post_items = page.locator("div[data-sentry-element='PostItem']")
+            post_items = page.locator(SELECTORS["post_items"])
             post_count_current = post_items.count()
 
             print(f"Found {post_count_current} items on {tab_url} of user {username}.")
@@ -354,12 +350,12 @@ def collect_communities_of_user(page, username, post_limit):
                 # Case 1: 'Posts' tab (has 2 links: user and community)
                 # Within this PostItem, find the "MetaTextWrapper" containing community name and href
                 # Get the SECOND <a> tag in MetaTextWrapper, as the FIRST is the userlink
-                all_links = post_item.locator("div[data-sentry-element='MetaTextWrapper']").locator("a[href^='/']")  # find all <a> tags
+                all_links = post_item.locator(SELECTORS["meta_text_wrapper"]).locator("a[href^='/']")  # find all <a> tags
                 if all_links.count() >= 2:
                     community_link = all_links.nth(1)
                 # Case 2: 'Replies' tab (has only community's link)
                 else:
-                    community_link = post_item.locator("a[data-testid='profile-reply']")
+                    community_link = post_item.locator(SELECTORS["replies_tab"])
 
                 # Extract community's name and URL (if found a link)    
                 if community_link and community_link.count() > 0:
@@ -383,7 +379,7 @@ def collect_communities_of_user(page, username, post_limit):
                 break
             
             # Click 'Show more posts' button to load more posts
-            show_more_button = page.locator("button:has-text('Show more posts')")
+            show_more_button = page.locator(SELECTORS["show_more_posts_button"])
             if show_more_button.count() > 0 and show_more_button.is_visible():
                 print("Clicking 'Show more posts' button...")
                 show_more_button.wait_for(state="visible", timeout=3000)

@@ -1,4 +1,7 @@
 .env
+__pycache__
 data_output
+
 data_output_csv
+
 todo.tex
