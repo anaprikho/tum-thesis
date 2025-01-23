@@ -6,7 +6,7 @@ os.makedirs(DATA_OUTPUT_DIR, exist_ok=True)  # ensure the data output directory 
 GLOBAL_KEYWORDS = ["depression", "anxiety"]  # define keywords for global search on HU to collect usernames
 POST_LIMIT_KEYWORD = 70  # Optional: limit number of posts when collecting usernames by a keyword
 USER_PROFILE_LIMIT = 6  # Optinal: limit number of user's profile to collect info from (now: hard coded)
-POST_LIMIT_USER = 100  # number of posts to go through to collect communities' names and links when on user profile
+POST_LIMIT_USER = 50  # number of posts to go through to collect communities' names and links when on user profile
 POST_LIMIT_MEMBERS = 10  # Optional: number of most active users of a community to collect ('Members'->'Most contribution')
 
 # General patterns of co-occurrence:

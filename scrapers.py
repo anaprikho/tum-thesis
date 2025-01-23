@@ -83,7 +83,8 @@ def get_user_profiles(page, input_json, output_json, unique_communities_json, po
     profiles_data = {}
     all_communities = set()  # global set of unique communities across all users
 
-    for username in usernames[:6]: # USER_PROFILE_LIMIT
+    # ------- DELETE LATER: in config.py USER_PROFILE_LIMIT ------------
+    for username in usernames[:6]:
         print(f"Processing profile for username: {username}")
         profile_data = scrape_profile_data(page, username)
         
@@ -119,31 +120,25 @@ def get_member_profiles(page, input_json, output_json):
     communities = read_json(input_json)
 
     # Iterate through communities and their members
-    for community_name, community_data in communities.items():  # why items?
+    for community_name, community_data in communities.items():  # iterate over key-value pairs of a dict
         print(f"Processing community: {community_name}")
 
-        members = community_data.get("active_members", [])
+        members = community_data.get("active_members", [])  # the field 'active_members' may be missing -> use .get() with default value []
 
         profiles_by_community[community_name] = {
-            "community_name": community_name,
             "community_url": community_data["community_url"],
             "members_count": community_data["members_count"],
             "posts_count": community_data["posts_count"],
             "member_profiles": {}
         }
         
-        for member in members:
+        # --------- Delete the limit later!-------------
+        for member in members[:1]:
             # Scrape member's profile information
             profile_data = scrape_profile_data(page, member)
 
             if profile_data:
-                # profile_data["username"] = member
-                profiles_by_community[community_name]["member_profiles"][member] = {
-                    "tags": profile_data.get("tags"),
-                    "demographics": profile_data.get("demographics"),
-                    "bio": profile_data.get("bio")
-                }
-                # .append(profile_data)  # unser comm_name add all other info
+                profiles_by_community[community_name]["member_profiles"][member] = profile_data
         
     write_to_json(output_json, profiles_by_community)
 
@@ -170,7 +165,11 @@ def get_members_of_community(page, input_json, output_json, metadata_output_json
 
         # Collect metadata (number of posts and memebers)
         metadata = get_comm_metadata(page, comm_name, comm_url)
-        metadata_data[comm_name] = metadata
+        metadata_data[comm_name] = {
+            "community_url": comm_url,
+            "members_count": metadata["members_count"],
+            "posts_count": metadata["posts_count"]
+        }
 
         # Collect usernames
         usernames = []
@@ -196,7 +195,6 @@ def get_members_of_community(page, input_json, output_json, metadata_output_json
                 break
 
         usernames_comm_data[comm_name] = {
-            "community_name": comm_name,
             "community_url": comm_url,
             "members_count": metadata["members_count"],
             "posts_count": metadata["posts_count"],
@@ -231,19 +229,11 @@ def get_comm_metadata(page, comm_name, comm_url):
         print(f"Members: {members_count}, Posts: {posts_count}")
 
         return {
-            "community_name": comm_name,
-            "community_url": comm_url,
             "members_count": members_count,
             "posts_count": posts_count
         }
     else:
         print(f"Metadata extraction failed for {comm_name}.")
-        return {
-            "community_name": comm_name,
-            "community_url": comm_url,
-            "members_count": 0,
-            "posts_count": 0,
-        }
 
 # Helper: Scrape User Profile Data
 def scrape_profile_data(page, username):
@@ -306,7 +296,6 @@ def scrape_profile_data(page, username):
 
         # Return collected info
         return{
-            "username": username,
             "tags": tags,
             "demographics": demographics,
             "bio": bio
