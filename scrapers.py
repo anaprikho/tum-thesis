@@ -245,14 +245,12 @@ def scrape_profile_data(page, username):
     Scrape profile data (tags, demographics, bio, communities) for a given username.
     """
     # Define locator of data elements
-    # tags_locator = "ul.sc-4bc2cf0e-0.emzbAL li a"
     demographics_locators = {
-        "age": "div[data-testid='profile__about_age']",
-        "gender": "div[data-testid='profile__about_gender']",
-        "country": "div[data-testid='profile__about_country']",
-        "ethnicity": "div[data-testid='profile__about_ethnicity']",
+        "age": SELECTORS["profile_demographics_age"],
+        "gender": SELECTORS["profile_demographics_gender"],
+        "country": SELECTORS["profile_demographics_country"],
+        "ethnicity": SELECTORS["profile_demographics_ethnicity"]
     }
-    bio_locator = "div[data-sentry-component='ProfileBio']"
 
     # Navigate to the user's profile page
     profile_url = f"https://healthunlocked.com/user/{username}"
@@ -276,11 +274,11 @@ def scrape_profile_data(page, username):
         # Collect demographics (age, gender, country, ethnicity)
         demographics = {}
         for key, locator in demographics_locators.items():
-            # Check if a fiels exists and extract its content
+            # Check if a field exists and extract its content
             if page.locator(locator).count() > 0:
                 demographics[key] = page.locator(locator).text_content().strip()
             else:
-                demographics[key] = "N/A"  # if field is missing
+                demographics[key] = "N/A"  # if a field is missing
         print(f"username: {username} has demographics: {demographics}")
 
         # Collect bio

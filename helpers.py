@@ -27,7 +27,7 @@ def login(page):
     page.fill(SELECTORS["login_password"], PASSWORD)
 
     # Ensure the login button is visible and enabled, then click it
-    page.wait_for_selector(SELECTORS["login_button"]), timeout=5000)  
+    page.wait_for_selector((SELECTORS["login_button"]), timeout=5000)
     page.click(SELECTORS["login_button"])  
     page.wait_for_timeout(2000)  # Wait for login to complete
 
