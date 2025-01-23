@@ -1,4 +1,5 @@
 import time
+from datetime import datetime
 import re
 from helpers import write_to_json, read_json, pagination
 from config import SELECTORS
@@ -128,7 +129,7 @@ def get_member_profiles(page, input_json, output_json):
             "community_url": community_data["community_url"],
             "members_count": community_data["members_count"],
             "posts_count": community_data["posts_count"],
-            "member_profiles": [] 
+            "member_profiles": {}
         }
         
         for member in members:
@@ -136,8 +137,13 @@ def get_member_profiles(page, input_json, output_json):
             profile_data = scrape_profile_data(page, member)
 
             if profile_data:
-                profile_data["username"] = member
-                profiles_by_community[community_name]["member_profiles"].append(profile_data)  # unser comm_name add all other info
+                # profile_data["username"] = member
+                profiles_by_community[community_name]["member_profiles"][member] = {
+                    "tags": profile_data.get("tags"),
+                    "demographics": profile_data.get("demographics"),
+                    "bio": profile_data.get("bio")
+                }
+                # .append(profile_data)  # unser comm_name add all other info
         
     write_to_json(output_json, profiles_by_community)
 
@@ -246,6 +252,7 @@ def scrape_profile_data(page, username):
     """
     # Define locator of data elements
     demographics_locators = {
+        "joined": SELECTORS["profile_demographics_joined"],
         "age": SELECTORS["profile_demographics_age"],
         "gender": SELECTORS["profile_demographics_gender"],
         "country": SELECTORS["profile_demographics_country"],
@@ -276,7 +283,14 @@ def scrape_profile_data(page, username):
         for key, locator in demographics_locators.items():
             # Check if a field exists and extract its content
             if page.locator(locator).count() > 0:
-                demographics[key] = page.locator(locator).text_content().strip()
+                value = page.locator(locator).text_content().strip()
+                
+                # Convert 'joined' field to date format
+                if key == 'joined':
+                    demographics[key] = datetime.strptime(value, "%B %d, %Y").strftime("%Y-%m-%d")  # YYYY-MM-DD
+                else:
+                    demographics[key] = value
+
             else:
                 demographics[key] = "N/A"  # if a field is missing
         print(f"username: {username} has demographics: {demographics}")

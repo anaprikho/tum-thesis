@@ -44,6 +44,7 @@ SELECTORS = {
     "post_items": "div[data-sentry-element='PostItem']",
 
     # demographic info
+    "profile_demographics_joined": "div[data-testid='profile__about_joined']",
     "profile_demographics_age": "div[data-testid='profile__about_age']",
     "profile_demographics_gender": "div[data-testid='profile__about_gender']",
     "profile_demographics_country": "div[data-testid='profile__about_country']",
