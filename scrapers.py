@@ -80,13 +80,13 @@ def scrape_user_profiles(page, input_json, output_json, unique_communities_json,
     usernames_data = read_json(input_json)  # if JSON structure is a list of dict [ {}, {} ]
     usernames = list(usernames_data.keys()) # if JSON structure is a dict { "key1": {}, "key2": {} }
 
-    # Navigate to user profile page by constructing URL
     profiles_data = {}
     all_communities = set()  # global set of unique communities across all users
 
     # ------- DELETE LATER: in config.py USER_PROFILE_LIMIT ------------
     for username in usernames[:6]:
         print(f"Processing profile for username: {username}")
+        # Collect user's profile info (tags, demographics, bio, communities)
         profile_data = scrape_profile_data(page, username)
         
         if profile_data:
@@ -104,7 +104,7 @@ def scrape_user_profiles(page, input_json, output_json, unique_communities_json,
     # Store a list of unique community names and their urls
     # Convert set of tuples to list of dict
     communities_list = []
-    for (name, url) in sorted(all_communities):
+    for (name, url) in sorted(all_communities):  # sorted - generate in consistent way
         communities_list.append({"community_name": name, "community_url": url})
     write_to_json(unique_communities_json, communities_list)
 
@@ -165,7 +165,7 @@ def scrape_community_members(page, input_json, output_json, metadata_output_json
         print(f"Collecting usernames from {comm_name} at {comm_url}...")    
 
         # Collect metadata (number of posts and memebers)
-        metadata = scrape_community_metadata(page, comm_name, comm_url)
+        metadata = extract_community_metadata(page, comm_name, comm_url)
         metadata_data[comm_name] = {
             "community_url": comm_url,
             "members_count": metadata["members_count"],
@@ -205,8 +205,8 @@ def scrape_community_members(page, input_json, output_json, metadata_output_json
     write_to_json(output_json, usernames_comm_data)
     write_to_json(metadata_output_json, metadata_data)
 
-# Collect metadata (number of posts and memebrs) of a community
-def scrape_community_metadata(page, comm_name, comm_url):
+# Helper: Collect metadata (number of posts and memebrs) of a community
+def extract_community_metadata(page, comm_name, comm_url):
     """
     Extract metadata (number of members and posts) from a community's page.
     """
@@ -304,7 +304,7 @@ def scrape_profile_data(page, username):
     except Exception as e:
         print(f"Error collecting user's profile data for {username}: {e}")
         return None
-    
+
 # Helper: collect communities' names and URLs    from 'Posts' and 'Replies' tabs on a user's profile
 def collect_communities_of_user(page, username, post_limit):
     """
@@ -318,76 +318,105 @@ def collect_communities_of_user(page, username, post_limit):
         f"https://healthunlocked.com/user/{username}/replies"
     ]
     
-    communities = set()    
+    all_communities = set()    
     for tab_url in tabs_urls:
         print(f"Navigating to: {tab_url}")
-        page.goto(tab_url)
-        page.wait_for_timeout(2000)
- 
-        posts_scraped = 0  # track the number of posts already visited; reset counter for each tab
-        start_index = 0   # track starting index for each batch of posts loaded
 
-        while posts_scraped <= post_limit:
+        communities = process_tab(page, tab_url, post_limit)
+        all_communities.update(communities)
+    return all_communities
 
-            # Get currently showed post items
-            post_items = page.locator(SELECTORS["post_items"])
-            post_count_current = post_items.count()
+# Helper: Process a single tab ('Posts' / 'Replies) individualy.
+def process_tab(page, tab_url, post_limit):
+    '''
+    Process a 'Posts'/'Reply' tabl on a user's profile to collect community names und urls.
+    Return a set (community_name, community_url).
+    '''
+    communities = set()
+    page.goto(tab_url)
+    page.wait_for_timeout(2000)
 
-            print(f"Found {post_count_current} items on {tab_url} of user {username}.")
+    posts_scraped = 0  # track the number of posts already visited; reset counter for each tab
+    start_index = 0   # track starting index for each batch of posts loaded
 
-            # Loop over newly showed posts, find the community's name and link
-            for i in range(start_index, post_count_current):
+    while posts_scraped <= post_limit:
 
-                # Check if limit is reached (only with loaded posts)
-                if posts_scraped > post_limit:
-                    print(f"Reached the post limit to scrape from 'Posts' or 'Replies' tab. Limit is: {post_limit}.")
-                    # return communities  # exit when limit is reached
-                    break  # stop scraping posts for this tab
-                    
-                post_item = post_items.nth(i)  # only look inside the current post item, not all loaded posts
+        # Get currently showed post items (30 post_items max)
+        post_items = page.locator(SELECTORS["post_items"])
+        post_count_current = post_items.count()
 
-                # -------------- Extract community's name and link --------------
-                community_link = None
+        print(f"Found {post_count_current} items on {tab_url}")
 
-                # Case 1: 'Posts' tab (has 2 links: user and community)
-                # Within this PostItem, find the "MetaTextWrapper" containing community name and href
-                # Get the SECOND <a> tag in MetaTextWrapper, as the FIRST is the userlink
-                all_links = post_item.locator(SELECTORS["meta_text_wrapper"]).locator("a[href^='/']")  # find all <a> tags
-                if all_links.count() >= 2:
-                    community_link = all_links.nth(1)
-                # Case 2: 'Replies' tab (has only community's link)
-                else:
-                    community_link = post_item.locator(SELECTORS["replies_tab"])
+        # Loop over newly showed posts, find the community's name and link
+        for i in range(start_index, post_count_current):
 
-                # Extract community's name and URL (if found a link)    
-                if community_link and community_link.count() > 0:
-                    community_url = community_link.get_attribute("href")
-                    community_name = community_link.text_content().strip()
-
-                    communities.add((community_name, community_url))
-                    posts_scraped += 1
-                    print(f"Total posts scraped so far: {posts_scraped}.")
-                else:
-                    print("No community's link found; skipping this post...")
-                # ------------------------------------------------------------------
-
-            # Update start index for next bacth of posts
-            start_index = post_count_current
-            
-            # Check if limit is reached for current tab (before loading more posts)
-            if posts_scraped >=  post_limit:
-                print(f"Reached the post limit {post_limit}.")
+            # Check if limit is reached (only with loaded posts)
+            if posts_scraped > post_limit:
+                print(f"Reached the post limit to scrape from 'Posts' or 'Replies' tab. Limit is: {post_limit}.")
                 # return communities  # exit when limit is reached
-                break
-            
-            # Click 'Show more posts' button to load more posts
-            show_more_button = page.locator(SELECTORS["show_more_posts_button"])
-            if show_more_button.count() > 0 and show_more_button.is_visible():
-                print("Clicking 'Show more posts' button...")
-                show_more_button.wait_for(state="visible", timeout=3000)
-                show_more_button.click()
-                page.wait_for_timeout(2000)
+                break  # stop scraping posts for this tab
+                
+            post_item = post_items.nth(i)  # only look inside the current post item, not all loaded posts
+            # Extract community's name and link
+            community_name_url = extract_community_name_url(post_item)
+
+            if community_name_url:
+                communities.add(community_name_url)
+                posts_scraped += 1
+                print(f"Total posts scraped so far: {posts_scraped}.")
             else:
-                print("No more posts to load.")
-                break  # exit when no more posts exist
+                print("No community's link found; skipping this post...")
+
+        # Update start index for next bacth of posts
+        start_index = post_count_current
+
+        # Click 'Show more posts' and check if limit is reached
+        if not pagination(page, SELECTORS["show_more_posts_button"]) or posts_scraped >= post_limit:
+            print(f"Reached the post limit {post_limit} OR no more post items to show.")
+            break
+
+        # # Check if limit is reached for current tab (before loading more posts)
+        # if posts_scraped >=  post_limit:
+        #     print(f"Reached the post limit {post_limit}.")
+        #     # return communities  # exit when limit is reached
+        #     break
+        
+        # # Click 'Show more posts' button to load more posts
+        # show_more_button = page.locator(SELECTORS["show_more_posts_button"])
+        # if show_more_button.count() > 0 and show_more_button.is_visible():
+        #     print("Clicking 'Show more posts' button...")
+        #     show_more_button.wait_for(state="visible", timeout=3000)
+        #     show_more_button.click()
+        #     page.wait_for_timeout(2000)
+        # else:
+        #     print("No more posts to load.")
+        #     break  # exit when no more posts exist
     return communities
+
+# Helper: Extract a community's name and link from a user's post item.
+def extract_community_name_url(post_item):
+    """
+    Extract community's name and link from a user's post/reply (post item).
+    Returns a tuple (community_name, community_url) or None if not found.
+    """
+    community_link = None
+
+    ## Case 1: 'Posts' tab (has 2 links: user and community)
+    # Within this PostItem, find the "MetaTextWrapper" containing community name and href
+    # Get the SECOND <a> tag in MetaTextWrapper, as the FIRST is the userlink
+    all_links = post_item.locator(SELECTORS["meta_text_wrapper"]).locator("a[href^='/']")  # find all <a> tags
+    if all_links.count() >= 2:
+        community_link = all_links.nth(1)
+
+    ## Case 2: 'Replies' tab (has only community's link)
+    else:
+        community_link = post_item.locator(SELECTORS["replies_tab"])
+
+    # Extract community's name and URL (if found a link)    
+    if community_link and community_link.count() > 0:
+        community_url = community_link.get_attribute("href")
+        community_name = community_link.text_content().strip()
+
+        return (community_name, community_url)
+    else:
+        return None

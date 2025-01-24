@@ -36,19 +36,20 @@ def login(page):
 # Pagination
 def pagination(page, next_button_selector):
     """
-    Check and clikc the 'Next page' button if it exists. 
+    Check and clikc the 'Next page' or 'Show more posts' button if it exists. 
     Return True if pagination occurred, False otherwise.
     """
     next_button = page.locator(next_button_selector)
 
     if next_button.count() > 0 and next_button.is_visible():
-        print("Pagination: Moving to the next page...")
+        print("Pagination: Clicking 'Next' or 'Show more posts' button...")
         page.wait_for_selector(next_button_selector, timeout=3000)  # Wait for button to appear
+        next_button.wait_for(state="visible", timeout=3000)
         next_button.click()
-        page.wait_for_timeout(2000) # Wait for the next page to load
+        page.wait_for_timeout(2000) # Wait for the next page or more post items to load
         return True
     else:
-        print("No more pages to navigate.")
+        print("No more pages (or posts) to navigate.")
         return False
 
 # Read from JSON
