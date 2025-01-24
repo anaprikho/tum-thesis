@@ -1,6 +1,7 @@
 import time
 from datetime import datetime
 import re
+
 from helpers import write_to_json, read_json, pagination
 from config import SELECTORS
 
@@ -10,7 +11,7 @@ from config import SELECTORS
 # time.sleep(2)
 
 # Perform global search by a keyword and gather usernames
-def get_usernames_by_keyword(page, keywords, output_json, post_limit=None):
+def scrape_usernames_by_keyword(page, keywords, output_json, post_limit=None):
     """
     Perform global search on HealthUnlocked for aech keyword from the list, collect usernames from posts, 
     and save the results into a JSON file. The limit of posts to search through is set to 'None' by default.
@@ -69,7 +70,7 @@ def get_usernames_by_keyword(page, keywords, output_json, post_limit=None):
     write_to_json(output_json, usernames_data)
 
 # Collect user's profile information
-def get_user_profiles(page, input_json, output_json, unique_communities_json, post_limit):
+def scrape_user_profiles(page, input_json, output_json, unique_communities_json, post_limit):
     """
     For each username in the input file, navigate to the user's profile and gather their personal data 
     (tags, demographics, bio, communities). Also maintain a global set of all communities disscovered. 
@@ -108,7 +109,7 @@ def get_user_profiles(page, input_json, output_json, unique_communities_json, po
     write_to_json(unique_communities_json, communities_list)
 
 # Collect profile information of community's members
-def get_member_profiles(page, input_json, output_json):
+def scrape_member_profiles(page, input_json, output_json):
     """
     Process usernames from a JSON file with the most active community's members
     and collect their profile information. Save into a JSON file.
@@ -143,7 +144,7 @@ def get_member_profiles(page, input_json, output_json):
     write_to_json(output_json, profiles_by_community)
 
 # Collect usernames and metadata from a community page
-def get_members_of_community(page, input_json, output_json, metadata_output_json, post_limit=None):
+def scrape_community_members(page, input_json, output_json, metadata_output_json, post_limit=None):
     """
     For each community in the unique community list, navigate to the respective community page, 
     go to 'Most Contributors' tab and collect the usernames. Also, save the number of memebers ans posts of the community.
@@ -164,7 +165,7 @@ def get_members_of_community(page, input_json, output_json, metadata_output_json
         print(f"Collecting usernames from {comm_name} at {comm_url}...")    
 
         # Collect metadata (number of posts and memebers)
-        metadata = get_comm_metadata(page, comm_name, comm_url)
+        metadata = scrape_community_metadata(page, comm_name, comm_url)
         metadata_data[comm_name] = {
             "community_url": comm_url,
             "members_count": metadata["members_count"],
@@ -205,7 +206,7 @@ def get_members_of_community(page, input_json, output_json, metadata_output_json
     write_to_json(metadata_output_json, metadata_data)
 
 # Collect metadata (number of posts and memebrs) of a community
-def get_comm_metadata(page, comm_name, comm_url):
+def scrape_community_metadata(page, comm_name, comm_url):
     """
     Extract metadata (number of members and posts) from a community's page.
     """
