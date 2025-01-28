@@ -76,12 +76,17 @@ def scrape_user_profiles(page, input_json, output_json, unique_communities_json,
     (tags, demographics, bio, communities). Also maintain a global set of all communities disscovered. 
     Create 2 JSON files containing user data and the set of communities.
     """
+    # Load communities' unqiue list (if already exist) - global set of unique communities across all users
+    try:
+        all_communities = read_json(unique_communities_json)
+    except FileNotFoundError:
+        all_communities = {}
+
     # Read usernames from input file
     usernames_data = read_json(input_json)  # if JSON structure is a list of dict [ {}, {} ]
     usernames = list(usernames_data.keys()) # if JSON structure is a dict { "key1": {}, "key2": {} }
 
     profiles_data = {}
-    all_communities = set()  # global set of unique communities across all users
 
     # ------- DELETE LATER: in config.py USER_PROFILE_LIMIT ------------
     for username in usernames[:6]:
@@ -96,17 +101,15 @@ def scrape_user_profiles(page, input_json, output_json, unique_communities_json,
             profiles_data[username] = profile_data  # add profile info under username key
             
             # Update the global community set
-            all_communities.update(communities)
+            for comm_name, comm_url in communities:
+                if comm_url not in all_communities:  # new community is encountered
+                    all_communities[comm_url] = {"comm_name": comm_name}
 
     # Store data from user's profiles
     write_to_json(output_json, profiles_data)
 
-    # Store a list of unique community names and their urls
-    # Convert set of tuples to list of dict
-    communities_list = []
-    for (name, url) in sorted(all_communities):  # sorted - generate in consistent way
-        communities_list.append({"community_name": name, "community_url": url})
-    write_to_json(unique_communities_json, communities_list)
+    # Store/update a list of unique community names and their urls
+    write_to_json(unique_communities_json, all_communities)
 
 # Collect profile information of community's members
 def scrape_member_profiles(page, input_json, output_json):
