@@ -144,7 +144,7 @@ def scrape_member_profiles(page, input_json, output_json):
     write_to_json(output_json, profiles_by_community)
 
 # Collect usernames and metadata from a community page
-def scrape_community_members(page, input_json, output_json, metadata_output_json, post_limit=None):
+def scrape_community_members(page, input_json, output_json, metadata_output_json, pagination_limit=None):
     """
     For each community in the unique community list, navigate to the respective community page, 
     go to 'Most Contributors' tab and collect the usernames. Also, save the number of memebers ans posts of the community.
@@ -174,6 +174,7 @@ def scrape_community_members(page, input_json, output_json, metadata_output_json
 
         # Collect usernames
         usernames = []
+        pages_scraped = 0  # counter of pages visited
         while True:
             # Locate username links on the current page
             post_elements = page.locator(SELECTORS["community_card_username"]).all()
@@ -183,15 +184,12 @@ def scrape_community_members(page, input_json, output_json, metadata_output_json
                 if username and username not in usernames:
                     usernames.append(username)
 
-                    # Check if limit on distinct usernames is reached
-                    if post_limit and len(usernames) >= post_limit:
-                        break  # for-loop
+            # Check if page limit is reached
+            pages_scraped += 1
+            if pagination_limit is not None and pages_scraped >= pagination_limit:
+                break # while-loop
 
-            # Check if limit on distinct usernames is reached
-            if post_limit and len(usernames) >= post_limit:
-                break  # while-loop
-
-            # Pagination
+            # Pagination: check if 'Next page' btn is available
             if not pagination(page, SELECTORS["next_page_button"]): # as returns False
                 break
 

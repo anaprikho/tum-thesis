@@ -5,7 +5,7 @@ GLOBAL_KEYWORDS = ["depression", "anxiety"]  # define keywords for global search
 POST_LIMIT_KEYWORD = 70  # Optional: limit number of posts when collecting usernames by a keyword
 USER_PROFILE_LIMIT = 6  # Optinal: limit number of user's profile to collect info from (now: hard coded)
 POST_LIMIT_USER = 50  # number of posts to go through to collect communities' names and links when on user profile
-POST_LIMIT_MEMBERS = 10  # Optional: number of most active users of a community to collect ('Members'->'Most contribution')
+PAGINATION_LIMIT = 2  # Optional: number of pages to consider when collecting the most active users of a community ('Members'->'Most contribution')
 
 ## Paths and filenames
 DATA_OUTPUT_DIR = "data_output"  # directory for data output
@@ -41,7 +41,7 @@ SELECTORS = {
     "community_metadata": "div[data-sentry-component='Details']",  # number of 'members' and 'posts'
 
     # user's profile
-    "profile_tags": "ul.sc-4bc2cf0e-0.emzbAL li a",
+    "profile_tags": "ul[data-sentry-component='HealthTags'] li a",
     "profile_bio": "div[data-sentry-component='ProfileBio']",
     "post_items": "div[data-sentry-element='PostItem']",
 

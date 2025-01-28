@@ -4,7 +4,7 @@ from helpers import login, read_json, write_to_json
 from scrapers import scrape_usernames_by_keyword, scrape_user_profiles, scrape_community_members, scrape_member_profiles
 from config import (GLOBAL_KEYWORDS, USERNAMES_BY_KEYWORD, POST_LIMIT_KEYWORD, 
                     PROFILES_DATA, UNIQUE_COMM_LIST, POST_LIMIT_USER, 
-                    USER_PROFILE_LIMIT, USERNAMES_BY_COMM, COMM_LIST_METADATA, POST_LIMIT_MEMBERS, 
+                    USER_PROFILE_LIMIT, USERNAMES_BY_COMM, COMM_LIST_METADATA, PAGINATION_LIMIT, 
                     PROFILES_BY_COMM_DATA)
 
 def scrape_general_patterns(page):
@@ -16,7 +16,7 @@ def scrape_general_patterns(page):
 
 def scrape_community_patterns(page):
     # Collect Usernames from Communities of the Unique Community List
-    scrape_community_members(page, UNIQUE_COMM_LIST, USERNAMES_BY_COMM, COMM_LIST_METADATA, POST_LIMIT_MEMBERS)
+    scrape_community_members(page, UNIQUE_COMM_LIST, USERNAMES_BY_COMM, COMM_LIST_METADATA, PAGINATION_LIMIT)
 
     # Collect User Profiles of Community Members
     scrape_member_profiles(page, USERNAMES_BY_COMM, PROFILES_BY_COMM_DATA)
@@ -30,9 +30,13 @@ if __name__ == "__main__":
             login(page)
 
             #  1) General Patterns
-            scrape_general_patterns(page)
+            # scrape_usernames_by_keyword(page, GLOBAL_KEYWORDS, USERNAMES_BY_KEYWORD, POST_LIMIT_KEYWORD)
+            # scrape_user_profiles(page, USERNAMES_BY_KEYWORD, PROFILES_DATA, UNIQUE_COMM_LIST, POST_LIMIT_USER)
+            # scrape_general_patterns(page)
 
             # 2) Community-specific Patterns
+            scrape_community_members(page, UNIQUE_COMM_LIST, USERNAMES_BY_COMM, COMM_LIST_METADATA, PAGINATION_LIMIT)
+            # scrape_member_profiles(page, USERNAMES_BY_COMM, PROFILES_BY_COMM_DATA)
             # scrape_community_patterns(page)
         finally:
             browser.close()
