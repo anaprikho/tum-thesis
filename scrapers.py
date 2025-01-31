@@ -147,33 +147,34 @@ def scrape_member_profiles(page, input_json, output_json):
     write_to_json(output_json, profiles_by_community)
 
 # Collect usernames and metadata from a community page
-def scrape_community_members(page, input_json, output_json, metadata_output_json, pagination_limit=None):
+def scrape_community_members(page, unqiue_communities_json, output_json, pagination_limit=None):
     """
     For each community in the unique community list, navigate to the respective community page, 
-    go to 'Most Contributors' tab and collect the usernames. Also, save the number of memebers ans posts of the community.
-    Creates two JSON files:
-    1) Usernames by community (cols: "community_name", "community_url", "members_count", "posts_count", "username").
-    2) Unique community list extended by metadata (community_name, community_url, members_count, posts_count).
+    go to 'Most Contributors' tab and collect the usernames. 
+    Only scrape a community if its metadata (the number of members and posts) has not been collected yet.
+    Update the unique community list with metadata.
     """
-    # Read the unique community list
-    communities_name_url = read_json(input_json)
+    # Read the unique community list (community_url as a key)
+    unique_communities = read_json(unqiue_communities_json)
 
     usernames_comm_data = {}
-    metadata_data = {}  # store metadata for each community
+    # metadata_data = {}  # store metadata for each community
 
     # Iterate over each community
-    for community in communities_name_url:
-        comm_name = community["community_name"]
-        comm_url = community["community_url"]
-        print(f"Collecting usernames from {comm_name} at {comm_url}...")    
+    for comm_url, comm_data in unique_communities.items():
+        comm_name = comm_data["comm_name"]
+
+        # Skip communities that already have metadata (i.e. has been scraped already)
+        if "posts_count" in comm_data and "members_count" in comm_data:
+            print(f"Skipping {comm_name} ({comm_url}), already scraped.")
+            continue
+
+        print(f"Collecting usernames from {comm_name} at {comm_url}...")  
 
         # Collect metadata (number of posts and memebers)
         metadata = extract_community_metadata(page, comm_name, comm_url)
-        metadata_data[comm_name] = {
-            "community_url": comm_url,
-            "members_count": metadata["members_count"],
-            "posts_count": metadata["posts_count"]
-        }
+        if metadata:
+            unique_communities[comm_url].update(metadata)
 
         # Collect usernames
         usernames = []
@@ -193,18 +194,13 @@ def scrape_community_members(page, input_json, output_json, metadata_output_json
                 break # while-loop
 
             # Pagination: check if 'Next page' btn is available
-            if not pagination(page, SELECTORS["next_page_button"]): # as returns False
+            if not pagination(page, SELECTORS["next_page_button"]): # as returns False, when no more pages exist
                 break
 
-        usernames_comm_data[comm_name] = {
-            "community_url": comm_url,
-            "members_count": metadata["members_count"],
-            "posts_count": metadata["posts_count"],
-            "active_members": usernames
-        }        
+        usernames_comm_data[comm_url] = {"active_members": usernames}        
     # Save to JSON
     write_to_json(output_json, usernames_comm_data)
-    write_to_json(metadata_output_json, metadata_data)
+    write_to_json(unqiue_communities_json, unique_communities)
 
 # Helper: Collect metadata (number of posts and memebrs) of a community
 def extract_community_metadata(page, comm_name, comm_url):
