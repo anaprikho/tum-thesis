@@ -112,7 +112,7 @@ def scrape_user_profiles(page, input_json, output_json, unique_communities_json,
     write_to_json(unique_communities_json, all_communities)
 
 # Collect profile information of community's members
-def scrape_member_profiles(page, input_json, output_json):
+def scrape_member_profiles(page, members_by_comm_json, profiles_by_comm_json):
     """
     Process usernames from a JSON file with the most active community's members
     and collect their profile information. Save into a JSON file.
@@ -121,30 +121,23 @@ def scrape_member_profiles(page, input_json, output_json):
     profiles_by_community = {}
     
     # Read usernames and community details from JSON
-    communities = read_json(input_json)
+    communities = read_json(members_by_comm_json)
 
     # Iterate through communities and their members
-    for community_name, community_data in communities.items():  # iterate over key-value pairs of a dict
-        print(f"Processing community: {community_name}")
+    for comm_url, members in communities.items():  # iterate over key-value pairs of a dict
+        print(f"Processing community: {comm_url}")
 
-        members = community_data.get("active_members", [])  # the field 'active_members' may be missing -> use .get() with default value []
-
-        profiles_by_community[community_name] = {
-            "community_url": community_data["community_url"],
-            "members_count": community_data["members_count"],
-            "posts_count": community_data["posts_count"],
-            "member_profiles": {}
-        }
+        profiles_by_community[comm_url] = {}
         
         # --------- Delete the limit later!-------------
-        for member in members[:1]:
+        for member in members[:2]:
             # Scrape member's profile information
             profile_data = scrape_profile_data(page, member)
 
             if profile_data:
-                profiles_by_community[community_name]["member_profiles"][member] = profile_data
+                profiles_by_community[comm_url][member] = profile_data
         
-    write_to_json(output_json, profiles_by_community)
+    write_to_json(profiles_by_comm_json, profiles_by_community)
 
 # Collect usernames and metadata from a community page
 def scrape_community_members(page, unqiue_communities_json, members_by_comm_json, pagination_limit=None):
