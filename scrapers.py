@@ -147,7 +147,7 @@ def scrape_member_profiles(page, input_json, output_json):
     write_to_json(output_json, profiles_by_community)
 
 # Collect usernames and metadata from a community page
-def scrape_community_members(page, unqiue_communities_json, output_json, pagination_limit=None):
+def scrape_community_members(page, unqiue_communities_json, members_by_comm_json, pagination_limit=None):
     """
     For each community in the unique community list, navigate to the respective community page, 
     go to 'Most Contributors' tab and collect the usernames. 
@@ -157,8 +157,11 @@ def scrape_community_members(page, unqiue_communities_json, output_json, paginat
     # Read the unique community list (community_url as a key)
     unique_communities = read_json(unqiue_communities_json)
 
-    usernames_comm_data = {}
-    # metadata_data = {}  # store metadata for each community
+    # Read existing members data (if available) or create an empty dictionary
+    try:
+        members_by_comm = read_json(members_by_comm_json)
+    except FileNotFoundError:
+        members_by_comm = {}
 
     # Iterate over each community
     for comm_url, comm_data in unique_communities.items():
@@ -197,9 +200,11 @@ def scrape_community_members(page, unqiue_communities_json, output_json, paginat
             if not pagination(page, SELECTORS["next_page_button"]): # as returns False, when no more pages exist
                 break
 
-        usernames_comm_data[comm_url] = {"active_members": usernames}        
+        # usernames_comm_data[comm_url] = {"active_members": usernames}
+        members_by_comm[comm_url] = usernames
+
     # Save to JSON
-    write_to_json(output_json, usernames_comm_data)
+    write_to_json(members_by_comm_json, members_by_comm)
     write_to_json(unqiue_communities_json, unique_communities)
 
 # Helper: Collect metadata (number of posts and memebrs) of a community
