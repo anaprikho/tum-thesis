@@ -11,7 +11,7 @@ from config import SELECTORS
 # time.sleep(2)
 
 # Perform global search by a keyword and gather usernames
-def scrape_usernames_by_keyword(page, keywords, output_json, post_limit=None):
+def scrape_usernames_by_keyword(page, keywords, output_json, usernames_limit):
     """
     Perform global search on HealthUnlocked for aech keyword from the list, collect usernames from posts, 
     and save the results into a JSON file. The limit of posts to search through is set to 'None' by default.
@@ -42,28 +42,26 @@ def scrape_usernames_by_keyword(page, keywords, output_json, post_limit=None):
                         user_post_count[username] = 1
                 
                 # Stop collection if the limit is reached (on current page)
-                if post_limit and len(user_post_count) >= post_limit:
+                if len(user_post_count) >= usernames_limit:
+                    print(f"Reached limit of {usernames_limit} distinct usernames -> stopping search for keyword - {keyword}.")
                     break
                 
-            # Stop collection if the limit is reached (entire page processing)  # unite with pagination condition
-            if post_limit and len(user_post_count) >= post_limit:
-                print(f"Reached limit of {post_limit} usernames -> stop pagination.")
-                break
-
-            # Pagination
-            next_button_selector = "text=Next page"
-            if not pagination(page, next_button_selector): # as returns False
+            # Stop collection if the limit is reached (entire page processing) OR no 'Next Page'
+            if len(user_post_count) >= usernames_limit or not pagination(page, "text=Next page"):
+                print(f"Reached limit of {usernames_limit} distinct usernames OR no more pages -> stop pagination.")
                 break
         
          # Append collected data for this keyword
         for username, count in user_post_count.items():
             if username not in usernames_data:
                 usernames_data[username] = {}  # create a sub-dictionary for the username
-                usernames_data[username][keyword] = count
-        # ----------- TO DELETE LATER-----
-        usernames_data["Kykui3"]["anxiety"] = 10
-        usernames_data["Ambatu"]["anxiety"] = 19
-        usernames_data["ziggypiggy"]["anxiety"] = 13
+            usernames_data[username][keyword] = count  # update the counter
+
+        # ----------- DELETE LATER: UPDATE FIRST 3 ENTRIES ONLY -----------
+        for i, key in enumerate(usernames_data):
+            if i == 3:  # stop after updating 3 entries
+                break
+            usernames_data[key]["test_keyword"] = (i + 1) * 10  # assign test values (10, 20, 30)
         # ---------------------------------
     
     # Save all collected usernames to a JSON file
@@ -172,7 +170,7 @@ def scrape_community_members(page, unqiue_communities_json, members_by_comm_json
         if metadata:
             unique_communities[comm_url].update(metadata)
 
-        # Collect usernames
+        # Collect usernames of most active users
         usernames = []
         pages_scraped = 0  # counter of pages visited
         while True:
