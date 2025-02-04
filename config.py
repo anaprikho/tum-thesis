@@ -2,9 +2,9 @@ import os
 
 # Keywords for global search and limits
 GLOBAL_KEYWORDS = ["depression", "anxiety"]  # define keywords for global search on HU to collect usernames
-USERNAMES_LIMIT_KEYWORD = 7  # Optional: limit number of posts when collecting usernames by a keyword
+USERNAMES_BY_KEYWORD_LIMIT = 7  # Optional: limit number of posts when collecting usernames by a keyword
 USER_PROFILE_LIMIT = 6  # Optinal: limit number of user's profile to collect info from (now: hard coded)
-POST_LIMIT_USER = 50  # number of posts to go through to collect communities' names and links when on user profile
+POSTS_BY_USER_LIMIT = 50  # number of posts to go through to collect communities' names and links when on user profile
 PAGINATION_LIMIT = 2  # Optional: number of pages to consider when collecting the most active users of a community ('Members'->'Most contribution'). Decided to set at 10.
 
 ## Paths and filenames

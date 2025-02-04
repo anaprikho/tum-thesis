@@ -71,7 +71,7 @@ def scrape_usernames_by_keyword(page, keywords, output_json, usernames_limit):
 def scrape_user_profiles(page, input_json, output_json, unique_communities_json, post_limit):
     """
     For each username in the input file, navigate to the user's profile and gather their personal data 
-    (tags, demographics, bio, communities). Also maintain a global set of all communities disscovered. 
+    (tags, demographics, bio, communities). Also maintain a global set of all communities ever discovered. 
     Create 2 JSON files containing user data and the set of communities.
     """
     # Load communities' unqiue list (if already exist) - global set of unique communities across all users
@@ -99,9 +99,9 @@ def scrape_user_profiles(page, input_json, output_json, unique_communities_json,
             profiles_data[username] = profile_data  # add profile info under username key
             
             # Update the global community set
-            for comm_name, comm_url in communities:
+            for comm_url in communities:
                 if comm_url not in all_communities:  # new community is encountered
-                    all_communities[comm_url] = {"comm_name": comm_name}
+                    all_communities[comm_url] = {}
 
     # Store data from user's profiles
     write_to_json(output_json, profiles_data)
@@ -302,8 +302,8 @@ def scrape_profile_data(page, username):
 def collect_communities_of_user(page, username, post_limit):
     """
     Navigate to 'Posts' and 'Replies' tabs on a user's profile. 
-    Extract community names and href from user's posts/replies.
-    Return a set of (community_name, community_url), where a user has posted or replied.
+    Extract community href from user's posts/replies.
+    Return a set of communities' URLs, where a user has posted or replied.
     """
     # Define URLs for 'Posts' and 'Replies' tabs
     tabs_urls = [
@@ -322,8 +322,8 @@ def collect_communities_of_user(page, username, post_limit):
 # Helper: Process a single tab ('Posts' / 'Replies) individualy.
 def process_tab(page, tab_url, post_limit):
     '''
-    Process a 'Posts'/'Reply' tabl on a user's profile to collect community names und urls.
-    Return a set (community_name, community_url).
+    Process a 'Posts'/'Reply' tabl on a user's profile to collect community URLs.
+    Return a set of communities' URLs.
     '''
     communities = set()
     page.goto(tab_url)
@@ -351,10 +351,10 @@ def process_tab(page, tab_url, post_limit):
                 
             post_item = post_items.nth(i)  # only look inside the current post item, not all loaded posts
             # Extract community's name and link
-            community_name_url = extract_community_name_url(post_item)
+            community_url = extract_community_url(post_item)
 
-            if community_name_url:
-                communities.add(community_name_url)
+            if community_url:
+                communities.add(community_url)
                 posts_scraped += 1
                 print(f"Total posts scraped so far: {posts_scraped}.")
             else:
@@ -387,10 +387,10 @@ def process_tab(page, tab_url, post_limit):
     return communities
 
 # Helper: Extract a community's name and link from a user's post item.
-def extract_community_name_url(post_item):
+def extract_community_url(post_item):
     """
-    Extract community's name and link from a user's post/reply (post item).
-    Returns a tuple (community_name, community_url) or None if not found.
+    Extract community's URL from a user's post/reply (post item).
+    Returns a community_url or None if not found.
     """
     community_link = None
 
@@ -405,11 +405,8 @@ def extract_community_name_url(post_item):
     else:
         community_link = post_item.locator(SELECTORS["replies_tab"])
 
-    # Extract community's name and URL (if found a link)    
+    # Extract community's URL (if found a link)    
     if community_link and community_link.count() > 0:
-        community_url = community_link.get_attribute("href")
-        community_name = community_link.text_content().strip()
-
-        return (community_name, community_url)
+        return community_link.get_attribute("href")
     else:
         return None
