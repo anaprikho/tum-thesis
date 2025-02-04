@@ -1,7 +1,8 @@
 import os
+import pandas as pd
 
 # Keywords for global search and limits
-GLOBAL_KEYWORDS = ["depression", "anxiety"]  # define keywords for global search on HU to collect usernames
+# GLOBAL_KEYWORDS = ["depression", "anxiety"]  # define keywords for global search on HU to collect usernames
 USERNAMES_BY_KEYWORD_LIMIT = 7  # Optional: limit number of posts when collecting usernames by a keyword
 USER_PROFILE_LIMIT = 6  # Optinal: limit number of user's profile to collect info from (now: hard coded)
 POSTS_BY_USER_LIMIT = 50  # number of posts to go through to collect communities' names and links when on user profile
@@ -12,6 +13,24 @@ DATA_OUTPUT_DIR = "data_output"  # directory for data output
 os.makedirs(DATA_OUTPUT_DIR, exist_ok=True)  # ensure the data output directory exists
 
 # General patterns of co-occurrence:
+# ---- KEYWORDS --------
+DATA_INPUT_DIR = "data_keywords"
+KEYWORDS_FILE = os.path.join(DATA_INPUT_DIR, "keywords.csv")
+
+# Load keywords from CSV
+def load_keywords_from_csv(file_path):
+    try:
+        df = pd.read_csv(file_path)
+        keywords_by_category = df.groupby("category")["keyword"].apply(list).to_dict()  #  convert to dict (category -> keyword_list)
+        return keywords_by_category  #  return { "Mental Health": ["depression", "anxiety"]}
+    except Exception as e:
+        print(f"Error loading keywords from CSV: {e}")
+        return {}
+
+# Dictionary with keywords grouped by category
+GLOBAL_KEYWORDS = load_keywords_from_csv(KEYWORDS_FILE)
+# -------------------------------
+
 USERNAMES_BY_KEYWORD =  os.path.join(DATA_OUTPUT_DIR, "usernames_by_keyword.json")  # file with usernames by a keyword; cols "username", "keyword", "post_count"
 PROFILES_DATA =  os.path.join(DATA_OUTPUT_DIR, "profiles_data.json")  # file with user'profile info; cols "username", "tags", "demographics", "bio", "commmunities"
 UNIQUE_COMM_LIST =  os.path.join(DATA_OUTPUT_DIR, "all_communities.json")  # file containg set of communities; cols "community_name", "community_url"

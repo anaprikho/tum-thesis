@@ -13,56 +13,58 @@ from config import SELECTORS
 # Perform global search by a keyword and gather usernames
 def scrape_usernames_by_keyword(page, keywords, output_json, usernames_limit):
     """
-    Perform global search on HealthUnlocked for aech keyword from the list, collect usernames from posts, 
-    and save the results into a JSON file. The limit of posts to search through is set to 'None' by default.
+    Perform global search on HealthUnlocked for each keyword from the list, collect usernames from posts, 
+    and save the results into a JSON file.
+    Each keyword is assigned to a category for structed search. Handle variations
+    e.g. "smoke" - "smoking" using NLTK or spaCy libraries.
     """
     usernames_data = {}
 
-    for keyword in keywords:
-        # Global search on HU using a keyword
-        page.goto("https://healthunlocked.com/")
-        page.fill(SELECTORS["search_input"], keyword)
-        page.keyboard.press("Enter")
-        page.wait_for_timeout(2000)
-        # time.sleep(2)
-        print(f"-------- Keyword: {keyword} --------")
+    for category, keyword_list in keywords.items():  # iterate by category in dict { "Mental Health": ["depression", "anxiety"]}
+        for keyword in keyword_list:
+            print(f"Searching for keyword: {keyword} (Category: {category})")
+            
 
-        user_post_count= {}  # track post count per user
+            # Global search on HU using a keyword
+            page.goto("https://healthunlocked.com/")
+            page.fill(SELECTORS["search_input"], keyword)
+            page.keyboard.press("Enter")
+            page.wait_for_timeout(2000)
+            # time.sleep(2)
+            print(f"-------- Keyword: {keyword} --------")
 
-        while True:
-            # Find all post elements which are the serach results
-            post_elements = page.locator(SELECTORS["post_items_search_results"]).all()
+            user_post_count= {}  # track post count per user
 
-            for post in post_elements:
-                username = post.text_content().strip()
-                if username:
-                    if username in user_post_count:
-                        user_post_count[username] += 1
-                    else:
-                        user_post_count[username] = 1
-                
-                # Stop collection if the limit is reached (on current page)
-                if len(user_post_count) >= usernames_limit:
-                    print(f"Reached limit of {usernames_limit} distinct usernames -> stopping search for keyword - {keyword}.")
+            while True:
+                # Find all post elements which are the serach results
+                post_elements = page.locator(SELECTORS["post_items_search_results"]).all()
+
+                for post in post_elements:
+                    username = post.text_content().strip()
+                    if username:
+                        # if username in user_post_count:
+                        #     user_post_count[username] += 1
+                        # else:
+                        #     user_post_count[username] = 1
+                        user_post_count[username] = user_post_count.get(username, 0) + 1
+                    
+                # Stop collection if the limit is reached (entire page processing) OR no 'Next Page'
+                if len(user_post_count) >= usernames_limit or not pagination(page, "text=Next page"):
+                    print(f"Reached limit of {usernames_limit} distinct usernames OR no more pages -> stop pagination.")
                     break
-                
-            # Stop collection if the limit is reached (entire page processing) OR no 'Next Page'
-            if len(user_post_count) >= usernames_limit or not pagination(page, "text=Next page"):
-                print(f"Reached limit of {usernames_limit} distinct usernames OR no more pages -> stop pagination.")
-                break
-        
-         # Append collected data for this keyword
-        for username, count in user_post_count.items():
-            if username not in usernames_data:
-                usernames_data[username] = {}  # create a sub-dictionary for the username
-            usernames_data[username][keyword] = count  # update the counter
+            
+            # Append collected data for this keyword
+            for username, count in user_post_count.items():
+                if username not in usernames_data:
+                    usernames_data[username] = {}  # create a sub-dictionary for the username
+                usernames_data[username][keyword] = count  # update the counter
 
-        # ----------- DELETE LATER: UPDATE FIRST 3 ENTRIES ONLY -----------
-        for i, key in enumerate(usernames_data):
-            if i == 3:  # stop after updating 3 entries
-                break
-            usernames_data[key]["test_keyword"] = (i + 1) * 10  # assign test values (10, 20, 30)
-        # ---------------------------------
+            # ----------- DELETE LATER: UPDATE FIRST 3 ENTRIES ONLY -----------
+            # for i, key in enumerate(usernames_data):
+            #     if i == 3:  # stop after updating 3 entries
+            #         break
+            #     usernames_data[key]["test_keyword"] = (i + 1) * 10  # assign test values (10, 20, 30)
+            # ---------------------------------
     
     # Save all collected usernames to a JSON file
     write_to_json(output_json, usernames_data)
