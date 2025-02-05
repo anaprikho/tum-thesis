@@ -11,19 +11,30 @@ from config import SELECTORS
 # time.sleep(2)
 
 # Perform global search by a keyword and gather usernames
-def scrape_usernames_by_keyword(page, keywords, output_json, usernames_limit):
+def scrape_usernames_by_keyword(page, keywords, categories, output_json, usernames_limit):
     """
-    Perform global search on HealthUnlocked for each keyword from the list, collect usernames from posts, 
-    and save the results into a JSON file.
-    Each keyword is assigned to a category for structed search. Handle variations
-    e.g. "smoke" - "smoking" using NLTK or spaCy libraries.
+    Perform global search on HealthUnlocked for each keyword from the provided categories.
+    Collect usernames from posts and save the results into a JSON file.
+    Each keyword is assigned to a category for structed search i.e. { "Mental Health": ["depression", "anxiety"]}.
+    Handle variations in keywords (e.g. "smoke" - "smoking") using NLTK or spaCy libraries.
     """
+    # Identify which passed categoeries are valid
+    valid_categories = []
+    for category in categories:
+        if category in keywords:  # check if category exists as a key in 'keywords' dict
+            valid_categories.append(category)
+    if not valid_categories:
+        print(f"Error: None of the provided categories {categories} exist in the keywords CSV file.")
+        return  # exit    
+    print(f"Perform search for validated categories: {valid_categories}")
+
     usernames_data = {}
 
-    for category, keyword_list in keywords.items():  # iterate by category in dict { "Mental Health": ["depression", "anxiety"]}
+    for category in valid_categories:  # iterate by (valid) categories in dict { "Mental Health": ["depression", "anxiety"]}
+        keyword_list = keywords[category]
+        print(f"Process category: {category} with keywords: {keyword_list}")
         for keyword in keyword_list:
-            print(f"Searching for keyword: {keyword} (Category: {category})")
-            
+            print(f"Searching for keyword: {keyword} (Category: {category})")            
 
             # Global search on HU using a keyword
             page.goto("https://healthunlocked.com/")
@@ -56,10 +67,10 @@ def scrape_usernames_by_keyword(page, keywords, output_json, usernames_limit):
                 usernames_data[username][keyword] = count  # update the counter
 
             # ----------- DELETE LATER: UPDATE FIRST 3 ENTRIES ONLY -----------
-            # for i, key in enumerate(usernames_data):
-            #     if i == 3:  # stop after updating 3 entries
-            #         break
-            #     usernames_data[key]["test_keyword"] = (i + 1) * 10  # assign test values (10, 20, 30)
+            for i, username in enumerate(usernames_data):
+                if i == 3:  # stop after updating 3 entries
+                    break
+                usernames_data[username]["test_keyword"] = (i + 1) * 10  # assign test values (10, 20, 30)
             # ---------------------------------
     
     # Save all collected usernames to a JSON file
@@ -365,7 +376,7 @@ def process_tab(page, tab_url, post_limit):
         if not pagination(page, SELECTORS["show_more_posts_button"]) or posts_scraped >= post_limit:
             print(f"Reached the post limit {post_limit} OR no more post items to show.")
             break
-        
+
     return communities
 
 # Helper: Extract a community's name and link from a user's post item.

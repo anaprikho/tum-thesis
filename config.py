@@ -2,7 +2,7 @@ import os
 import pandas as pd
 
 # ==========================
-# Directories Paths and filenames
+# Directories
 # ==========================
 DATA_INPUT_DIR = "data_keywords"  # directory for the file with keywords
 DATA_OUTPUT_DIR = "data_output"  # directory for output data
@@ -11,10 +11,12 @@ os.makedirs(DATA_OUTPUT_DIR, exist_ok=True)  # ensure output directory exists
 # ==========================
 # Limits for scraping
 # ==========================
-USERNAMES_BY_KEYWORD_LIMIT = 7  # Optional: limit number of posts when collecting usernames by a keyword
+USERNAMES_BY_KEYWORD_LIMIT = 7  # (set to -> 100) number of unqiue usernames when collecting usernames by a keyword
+# Delete
 USER_PROFILE_LIMIT = 6  # Optinal: limit number of user's profile to collect info from (now: hard coded)
+#
 POSTS_BY_USER_LIMIT = 50  # number of posts to go through to collect communities' names and links when on user profile
-PAGINATION_LIMIT = 2  # Optional: number of pages to consider when collecting the most active users of a community ('Members'->'Most contribution'). Decided to set at 10.
+PAGINATION_LIMIT = 2  # (set to -> 10) number of pages to consider when collecting the most active users of a community ('Members'->'Most contribution'). Decided to set at 10.
 
 # ==========================
 # Paths and filenames
@@ -49,7 +51,7 @@ def load_keywords_from_csv(file_path):
 
 # Dictionary with keywords grouped by category
 GLOBAL_KEYWORDS = load_keywords_from_csv(KEYWORDS_FILE)
-# -------------------------------
+CATEGORIES_OF_KEYWORDS = ["Mental Health", 'Smoking', 'Abc'] 
 
 # ==========================
 # CSS selectors for scraping
@@ -64,9 +66,11 @@ SELECTORS = {
     "search_input": "input[placeholder='Search HealthUnlocked']",
     "post_items_search_results": "a[data-sentry-element='Link'][href^='/user/']",
 
+    # pagination
     "next_page_button": "text=Next page", # pagination
     "show_more_posts_button": "button:has-text('Show more posts')",  # show more
 
+    # various selectors
     "community_card_username": ".community-member-card__username",  # user's posts on a community's page
     "meta_text_wrapper": "div[data-sentry-element='MetaTextWrapper']",  # community's name and link
     "replies_tab": "a[data-testid='profile-reply']",  # 'Replies' tab on a user's profile
@@ -77,7 +81,7 @@ SELECTORS = {
     "profile_bio": "div[data-sentry-component='ProfileBio']",
     "post_items": "div[data-sentry-element='PostItem']",
 
-    # demographic info
+    # user's demographic info
     "profile_demographics_joined": "div[data-testid='profile__about_joined']",
     "profile_demographics_age": "div[data-testid='profile__about_age']",
     "profile_demographics_gender": "div[data-testid='profile__about_gender']",
