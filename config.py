@@ -26,13 +26,12 @@ KEYWORDS_FILE = os.path.join(DATA_INPUT_DIR, "keywords.csv")
 
 # General patterns of co-occurrence:
 USERNAMES_BY_KEYWORD =  os.path.join(DATA_OUTPUT_DIR, "usernames_by_keyword.json")  # file with usernames by a keyword; cols "username", "keyword", "post_count"
-PROFILES_DATA =  os.path.join(DATA_OUTPUT_DIR, "profiles_data.json")  # file with user'profile info; cols "username", "tags", "demographics", "bio", "commmunities"
+GENERAL_PROFILES_DATA =  os.path.join(DATA_OUTPUT_DIR, "general_profiles_data.json")  # file with user'profile info; cols "username", "tags", "demographics", "bio", "commmunities"
 UNIQUE_COMM_LIST =  os.path.join(DATA_OUTPUT_DIR, "all_communities.json")  # file containg set of communities; cols "community_name", "community_url"
 
 # Community-specific patterns of co-occurrence:
 MEMBERS_BY_COMM =  os.path.join(DATA_OUTPUT_DIR, "members_by_comm.json")  # file with usernames by a community; cols "community_name", "community_url", "username"
 PROFILES_BY_COMM_DATA =  os.path.join(DATA_OUTPUT_DIR, "profiles_by_comm_data.json")  # file with profile info of communities' members; ; cols "username", "tags", "demographics", "bio", "commmunity"
-COMM_LIST_METADATA = os.path.join(DATA_OUTPUT_DIR, "unique_comm_list_metadata.json")  # unique community list extended by metadata
 
 # ==========================
 # Load keywords from CSV
