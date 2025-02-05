@@ -42,10 +42,6 @@ def scrape_usernames_by_keyword(page, keywords, output_json, usernames_limit):
                 for post in post_elements:
                     username = post.text_content().strip()
                     if username:
-                        # if username in user_post_count:
-                        #     user_post_count[username] += 1
-                        # else:
-                        #     user_post_count[username] = 1
                         user_post_count[username] = user_post_count.get(username, 0) + 1
                     
                 # Stop collection if the limit is reached (entire page processing) OR no 'Next Page'
@@ -369,23 +365,7 @@ def process_tab(page, tab_url, post_limit):
         if not pagination(page, SELECTORS["show_more_posts_button"]) or posts_scraped >= post_limit:
             print(f"Reached the post limit {post_limit} OR no more post items to show.")
             break
-
-        # # Check if limit is reached for current tab (before loading more posts)
-        # if posts_scraped >=  post_limit:
-        #     print(f"Reached the post limit {post_limit}.")
-        #     # return communities  # exit when limit is reached
-        #     break
         
-        # # Click 'Show more posts' button to load more posts
-        # show_more_button = page.locator(SELECTORS["show_more_posts_button"])
-        # if show_more_button.count() > 0 and show_more_button.is_visible():
-        #     print("Clicking 'Show more posts' button...")
-        #     show_more_button.wait_for(state="visible", timeout=3000)
-        #     show_more_button.click()
-        #     page.wait_for_timeout(2000)
-        # else:
-        #     print("No more posts to load.")
-        #     break  # exit when no more posts exist
     return communities
 
 # Helper: Extract a community's name and link from a user's post item.
