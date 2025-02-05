@@ -1,27 +1,25 @@
-import time
 from datetime import datetime
 import re
 
 from helpers import write_to_json, read_json, pagination
 from config import SELECTORS
-
-### Options for pausing while scraping:
-# page.wait_for_selector(".some-element", timeout=3000)
-# page.wait_for_timeout(2000)
-# time.sleep(2)
+from keywords_handler import load_and_process_keywords_from_csv
 
 # Perform global search by a keyword and gather usernames
-def scrape_usernames_by_keyword(page, keywords, categories, output_json, usernames_limit):
+def scrape_usernames_by_keyword(page, keywords_csv, categories, output_json, usernames_limit):
     """
     Perform global search on HealthUnlocked for each keyword from the provided categories.
     Collect usernames from posts and save the results into a JSON file.
     Each keyword is assigned to a category for structed search i.e. { "Mental Health": ["depression", "anxiety"]}.
-    Handle variations in keywords (e.g. "smoke" - "smoking") using NLTK or spaCy libraries.
+    Handle variations in keywords (e.g. "smoke" - "smoking") using NLTK.
     """
-    # Identify which passed categoeries are valid
+    # Load and extend the original list of keywords by their lemmas
+    keywords = load_and_process_keywords_from_csv(keywords_csv)  # extended list of keywords by their lemmas (e.g. smoking -> smoke)
+    
+    # Identify which passed categories are valid
     valid_categories = []
     for category in categories:
-        if category in keywords:  # check if category exists as a key in 'keywords' dict
+        if category in keywords:  # check if category exists as a key in original 'keywords' dict
             valid_categories.append(category)
     if not valid_categories:
         print(f"Error: None of the provided categories {categories} exist in the keywords CSV file.")

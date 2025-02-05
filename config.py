@@ -1,5 +1,4 @@
 import os
-import pandas as pd
 
 # ==========================
 # Directories
@@ -23,6 +22,7 @@ PAGINATION_LIMIT = 2  # (set to -> 10) number of pages to consider when collecti
 # ==========================
 # Keywords for global search on HU to collect usernames
 KEYWORDS_FILE = os.path.join(DATA_INPUT_DIR, "keywords.csv")
+CATEGORIES_OF_KEYWORDS = ["Mental Health", 'Smoking', 'Abc']  # define categories of interest for your scraping
 
 # General patterns of co-occurrence:
 USERNAMES_BY_KEYWORD =  os.path.join(DATA_OUTPUT_DIR, "usernames_by_keyword.json")  # file with usernames by a keyword; cols "username", "keyword", "post_count"
@@ -32,25 +32,6 @@ UNIQUE_COMM_LIST =  os.path.join(DATA_OUTPUT_DIR, "all_communities.json")  # fil
 # Community-specific patterns of co-occurrence:
 MEMBERS_BY_COMM =  os.path.join(DATA_OUTPUT_DIR, "members_by_comm.json")  # file with usernames by a community; cols "community_name", "community_url", "username"
 PROFILES_BY_COMM_DATA =  os.path.join(DATA_OUTPUT_DIR, "profiles_by_comm_data.json")  # file with profile info of communities' members; ; cols "username", "tags", "demographics", "bio", "commmunity"
-
-# ==========================
-# Load keywords from CSV
-# ==========================
-def load_keywords_from_csv(file_path):
-    '''
-    Load keywords from CSV file, group them by category, and convert to a dictionary.
-    '''
-    try:
-        df = pd.read_csv(file_path)
-        keywords_by_category = df.groupby("category")["keyword"].apply(list).to_dict()  #  convert to dict (category -> keyword_list)
-        return keywords_by_category  #  return { "Mental Health": ["depression", "anxiety"]}
-    except Exception as e:
-        print(f"Error loading keywords from CSV: {e}")
-        return {}
-
-# Dictionary with keywords grouped by category
-GLOBAL_KEYWORDS = load_keywords_from_csv(KEYWORDS_FILE)
-CATEGORIES_OF_KEYWORDS = ["Mental Health", 'Smoking', 'Abc'] 
 
 # ==========================
 # CSS selectors for scraping
