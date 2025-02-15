@@ -21,8 +21,9 @@ PAGINATION_LIMIT = 2  # (set to -> 10) number of pages to consider when collecti
 # Paths and filenames
 # ==========================
 # Keywords for global search on HU to collect usernames
-KEYWORDS_FILE = os.path.join(DATA_INPUT_DIR, "keywords.csv")
-CATEGORIES_OF_KEYWORDS = ["Mental Health", 'Smoking', 'Abc']  # define categories of interest for your scraping
+GENERATED_KEYWORDS_FILE = os.path.join(DATA_INPUT_DIR, "keywords_generated.csv")
+KEYWORDS_FILE = os.path.join(DATA_INPUT_DIR, "keywords_generated.csv")
+CATEGORIES_OF_KEYWORDS = ["Mental Health", "Diabetes", "Women's Health", "Alcohol Addiction", "Cancer", "Abc"]  # define categories of interest for your scraping
 
 # General patterns of co-occurrence:
 USERNAMES_BY_KEYWORD =  os.path.join(DATA_OUTPUT_DIR, "usernames_by_keyword.json")  # file with usernames by a keyword; cols "username", "keyword", "post_count"

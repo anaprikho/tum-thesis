@@ -2,8 +2,9 @@ import pandas as pd
 
 from config import GENERATED_KEYWORDS_FILE
 
+# total number of categories: 26
 categories = [
-    # Mental Health
+    # Mental Health - 6
     "Mental Health",
     "Depression",
     "Anxiety",
@@ -11,7 +12,7 @@ categories = [
     "Bipolar Disorder",
     "Eating Disorder",
 
-    # Physical Health
+    # Physical Health - 8
     "Diabetes",
     "Arthritis",
     "Hypertension",
@@ -21,19 +22,19 @@ categories = [
     "Sleep Disorder",
     "Neurological Disorder",
 
-    # Women's Health
+    # Women's Health - 4
     "Women's Health",
     "Menopause",
     "PCOS",
     "Ovarian Health",
 
-    # Substance Abuse
+    # Substance Abuse - 4
     "Alcohol Addiction",
     "Opioid Addiction",
     "Cocaine Dependency",
     "Nicotine Addiction",
 
-    # Terminal Conditions
+    # Terminal Conditions - 4
     "Cancer",
     "ALS",
     "Dementia",
