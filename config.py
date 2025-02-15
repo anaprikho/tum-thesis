@@ -11,7 +11,7 @@ os.makedirs(DATA_OUTPUT_DIR, exist_ok=True)  # ensure output directory exists
 # ==========================
 # Limits for scraping
 # ==========================
-USERNAMES_BY_KEYWORD_LIMIT = 7  # (set to -> 100) number of unqiue usernames when collecting usernames by a keyword
+USERNAMES_BY_KEYWORD_LIMIT = 100  # (set to -> 100) number of unqiue usernames when collecting usernames by a keyword
 # Delete
 USER_PROFILE_LIMIT = 6  # Optinal: limit number of user's profile to collect info from (now: hard coded)
 #
@@ -24,7 +24,7 @@ PAGINATION_LIMIT = 2  # (set to -> 10) number of pages to consider when collecti
 # Keywords for global search on HU to collect usernames
 GENERATED_KEYWORDS_FILE = os.path.join(DATA_INPUT_DIR, "keywords_generated.csv")
 KEYWORDS_FILE = os.path.join(DATA_INPUT_DIR, "keywords_generated.csv")
-CATEGORIES_OF_KEYWORDS = ["Mental Health", "Diabetes", "Women's Health", "Alcohol Addiction", "Cancer", "Abc"]  # define categories of interest for your scraping
+# CATEGORIES_OF_KEYWORDS = ["Mental Health", "Diabetes", "Women's Health", "Alcohol Addiction", "Cancer", "Abc"]  # define categories of interest for your scraping
 
 # General patterns of co-occurrence:
 USERNAMES_BY_KEYWORD =  os.path.join(DATA_OUTPUT_DIR, "usernames_by_keyword.json")  # file with usernames by a keyword; cols "username", "keyword", "post_count"
