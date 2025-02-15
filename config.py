@@ -5,6 +5,7 @@ import os
 # ==========================
 DATA_INPUT_DIR = "data_keywords"  # directory for the file with keywords
 DATA_OUTPUT_DIR = "data_output"  # directory for output data
+os.makedirs(DATA_INPUT_DIR, exist_ok=True)  # ensure input directory with keywords exists
 os.makedirs(DATA_OUTPUT_DIR, exist_ok=True)  # ensure output directory exists
 
 # ==========================
