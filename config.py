@@ -1,5 +1,5 @@
 import os
-
+from keywords_initializer import categories
 # ==========================
 # Directories
 # ==========================
@@ -22,9 +22,9 @@ PAGINATION_LIMIT = 2  # (set to -> 10) number of pages to consider when collecti
 # Paths and filenames
 # ==========================
 # Keywords for global search on HU to collect usernames
-GENERATED_KEYWORDS_FILE = os.path.join(DATA_INPUT_DIR, "keywords_generated.csv")
 KEYWORDS_FILE = os.path.join(DATA_INPUT_DIR, "keywords_generated.csv")
 # CATEGORIES_OF_KEYWORDS = ["Mental Health", "Diabetes", "Women's Health", "Alcohol Addiction", "Cancer", "Abc"]  # define categories of interest for your scraping
+CATEGORIES_OF_KEYWORDS = categories  # in case of scrapingkeywords from  ALL categories
 
 # General patterns of co-occurrence:
 USERNAMES_BY_KEYWORD =  os.path.join(DATA_OUTPUT_DIR, "usernames_by_keyword.json")  # file with usernames by a keyword; cols "username", "keyword", "post_count"

@@ -1,6 +1,6 @@
 import pandas as pd
 
-from config import GENERATED_KEYWORDS_FILE
+from config import KEYWORDS_FILE
 
 # total number of categories: 26
 categories = [
@@ -413,5 +413,5 @@ keywords_terminal_conditions = [
 keywords_data = keywords_mental_health + keywords_physical_health + keywords_women_health + keywords_substance_abuse + keywords_terminal_conditions
 df = pd.DataFrame(keywords_data, columns=["keyword", "category"])
 
-print(f"path to store csv with keywords: {GENERATED_KEYWORDS_FILE}")
-df.to_csv(GENERATED_KEYWORDS_FILE, index=False) 
+print(f"path to store csv with keywords: {KEYWORDS_FILE}")
+df.to_csv(KEYWORDS_FILE, index=False) 
