@@ -1,5 +1,5 @@
 import os
-from keywords_initializer import categories
+
 # ==========================
 # Directories
 # ==========================
@@ -24,6 +24,43 @@ PAGINATION_LIMIT = 2  # (set to -> 10) number of pages to consider when collecti
 # Keywords for global search on HU to collect usernames
 KEYWORDS_FILE = os.path.join(DATA_INPUT_DIR, "keywords_generated.csv")
 # CATEGORIES_OF_KEYWORDS = ["Mental Health", "Diabetes", "Women's Health", "Alcohol Addiction", "Cancer", "Abc"]  # define categories of interest for your scraping
+categories = [
+    # Mental Health - 6
+    "Mental Health",
+    "Depression",
+    "Anxiety",
+    "ADHD",
+    "Bipolar Disorder",
+    "Eating Disorder",
+
+    # Physical Health - 8
+    "Diabetes",
+    "Arthritis",
+    "Hypertension",
+    "Chronic Pain",
+    "Autoimmune Disorder",
+    "Nutrition and Wellness",
+    "Sleep Disorder",
+    "Neurological Disorder",
+
+    # Women's Health - 4
+    "Women's Health",
+    "Menopause",
+    "PCOS",
+    "Ovarian Health",
+
+    # Substance Abuse - 4
+    "Alcohol Addiction",
+    "Opioid Addiction",
+    "Cocaine Dependency",
+    "Nicotine Addiction",
+
+    # Terminal Conditions - 4
+    "Cancer",
+    "ALS",
+    "Dementia",
+    "HIV"
+]
 CATEGORIES_OF_KEYWORDS = categories  # in case of scrapingkeywords from  ALL categories
 
 # General patterns of co-occurrence:
