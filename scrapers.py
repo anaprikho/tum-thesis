@@ -2,7 +2,7 @@ from datetime import datetime
 import re
 
 from helpers import write_to_json, read_json, pagination
-from config import SELECTORS, MAX_RETRIES, ERROR_LOG_FILE
+from config import SELECTORS, MAX_RETRIES, ERROR_LOG_FILE, STATS_LOG_FILE
 from keywords_handler import load_and_process_keywords_from_csv
 
 # Perform global search by a keyword and gather usernames
@@ -12,6 +12,7 @@ def scrape_usernames_by_keyword(page, keywords_csv, categories, output_json, use
     Collect usernames from posts and save the results into a JSON file.
     Each keyword is assigned to a category for structed search i.e. { "Mental Health": ["depression", "anxiety"]}.
     Handle variations in keywords (e.g. "smoke" - "smoking") using NLTK.
+    Logs statistics on how many usernames were collected per category and in total.
     """
     # Load and extend the original list of keywords by their lemmas
     keywords = load_and_process_keywords_from_csv(keywords_csv)  # extended list of keywords by their lemmas (e.g. smoking -> smoke)
@@ -27,10 +28,13 @@ def scrape_usernames_by_keyword(page, keywords_csv, categories, output_json, use
     print(f"Perform search for validated categories: {valid_categories}")
 
     usernames_data = {}
+    category_stats = {}  # track usernames collected per category
 
     for category in valid_categories:  # iterate by (valid) categories in dict { "Mental Health": ["depression", "anxiety"]}
         keyword_list = keywords[category]
         print(f"Process category: {category} with keywords: {keyword_list}")
+
+        category_count = 0  # track number of usernames for the current category        
         for keyword in keyword_list:
             print(f"Searching for keyword: {keyword} (Category: {category})")            
 
@@ -80,6 +84,7 @@ def scrape_usernames_by_keyword(page, keywords_csv, categories, output_json, use
                         if username not in usernames_data:
                             usernames_data[username] = {}  # create a sub-dictionary for the username
                         usernames_data[username][keyword] = count  # update the counter
+                        category_count += 1
 
                     # Save progress after each keyword
                     write_to_json(output_json, usernames_data)
@@ -95,6 +100,18 @@ def scrape_usernames_by_keyword(page, keywords_csv, categories, output_json, use
                             log_file.write(f"{keyword} | Error: {str(e)}\n")
                         print(f"Logged failed keyword: {keyword}")
 
+        # stats for the current category
+        category_stats[category] = category_count
+    
+    # Log stats after scraping all categories
+    total_usernames = sum(category_stats.values())
+    with open(STATS_LOG_FILE, "a") as log_file:
+        log_file.write(f"\nUsernames scraped summary:\n")
+        for category, count in category_stats.items():
+            log_file.write(f"-{category}: {count} usernames\n")
+        log_file.write(f"Total usernames scraped: {total_usernames}\n")
+    print(f"Statistics logged in {STATS_LOG_FILE}")
+
 # Collect user's profile information
 def scrape_user_profiles(page, input_json, output_json, unique_communities_json, post_limit):
     """
@@ -102,6 +119,7 @@ def scrape_user_profiles(page, input_json, output_json, unique_communities_json,
     (tags, demographics, bio, communities). Implement retry mechanism for a username if scraping fails.
     Also maintain a global set of all communities ever discovered. 
     Create 2 JSON files containing user data and the set of communities. Save progress continuously.
+    Log statistics on how many profiles were scraped.
     """
     # Load communities' unqiue list (if already exist) - global set of unique communities across all users
     try:
@@ -114,6 +132,13 @@ def scrape_user_profiles(page, input_json, output_json, unique_communities_json,
     usernames = list(usernames_data.keys()) # if JSON structure is a dict { "key1": {}, "key2": {} }
 
     profiles_data = {}
+    total_profiles_scraped = 0  # track number of successfully scraped profiles
+
+    # Log input file and number of usernames
+    with open(STATS_LOG_FILE, "a") as log_file:
+        log_file.write(f"\nStarting Profile Scraping:\n")
+        log_file.write(f"Input file: {input_json}\n")
+        log_file.write(f"Total usernames to process: {len(usernames)}\n")
 
     # ------- DELETE LIMIT LATER: in config.py USER_PROFILE_LIMIT ------------
     for username in usernames[:6]:
@@ -141,6 +166,9 @@ def scrape_user_profiles(page, input_json, output_json, unique_communities_json,
 
                     # Store/update a list of unique community names and their urls
                     write_to_json(unique_communities_json, all_communities)
+
+                    total_profiles_scraped += 1 
+
                 break  # exit retry block if success
             except Exception as e:
                 retries+= 1
@@ -150,6 +178,12 @@ def scrape_user_profiles(page, input_json, output_json, unique_communities_json,
 
         if retries == MAX_RETRIES:
             print(f"Failed to process profile '{username}' after {MAX_RETRIES} retries.")
+    
+    # Log stats of profile scraping process
+    with open(STATS_LOG_FILE, "a") as log_file:
+        log_file.write(f"Total (general) profiles successfully scraped: {total_profiles_scraped}\n")
+
+    print(f"Statistics logged in {STATS_LOG_FILE}")
 
 # Collect profile information of community's members
 def scrape_member_profiles(page, members_by_comm_json, profiles_by_comm_json):

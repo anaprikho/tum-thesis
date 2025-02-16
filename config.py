@@ -22,8 +22,10 @@ MAX_RETRIES = 3  # number of attempts to load a page when a certain element (e.g
 # ==========================
 # Paths and filenames
 # ==========================
-# Log failed attempts to scrape
+# Log file for tracking failed attempts to scrape
 ERROR_LOG_FILE = "scrape_errors.txt"
+# Log file for tracking statistics
+STATS_LOG_FILE = "scraping_stats.txt"
 # Keywords for global search on HU to collect usernames
 KEYWORDS_FILE = os.path.join(DATA_INPUT_DIR, "keywords_generated.csv")
 # CATEGORIES_OF_KEYWORDS = ["Mental Health", "Diabetes", "Women's Health", "Alcohol Addiction", "Cancer", "Abc"]  # define categories of interest for your scraping
