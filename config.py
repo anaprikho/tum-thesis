@@ -17,7 +17,7 @@ USER_PROFILE_LIMIT = 6  # Optinal: limit number of user's profile to collect inf
 #
 POSTS_BY_USER_LIMIT = 50  # number of posts to go through to collect communities' names and links when on user profile
 PAGINATION_LIMIT = 2  # (set to -> 10) number of pages to consider when collecting the most active users of a community ('Members'->'Most contribution'). Decided to set at 10.
-MAX_RETRIES = 3  # number of attempts to load a page when a certain element (e.g. 'Next Page', 'Show more posts', search bar) is not found
+MAX_RETRIES = 2  # number of attempts to load a page when a certain element (e.g. 'Next Page', 'Show more posts', search bar) is not found
 
 # ==========================
 # Paths and filenames
@@ -26,6 +26,8 @@ MAX_RETRIES = 3  # number of attempts to load a page when a certain element (e.g
 ERROR_LOG_FILE = "scrape_errors.txt"
 # Log file for tracking statistics
 STATS_LOG_FILE = "scraping_stats.txt"
+# Log file for tracking failed communities
+FAILED_COMMUNITIES_LOG = "failed_communities.txt"
 # Keywords for global search on HU to collect usernames
 KEYWORDS_FILE = os.path.join(DATA_INPUT_DIR, "keywords_generated.csv")
 # CATEGORIES_OF_KEYWORDS = ["Mental Health", "Diabetes", "Women's Health", "Alcohol Addiction", "Cancer", "Abc"]  # define categories of interest for your scraping

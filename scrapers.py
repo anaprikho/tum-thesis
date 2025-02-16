@@ -2,7 +2,7 @@ from datetime import datetime
 import re
 
 from helpers import write_to_json, read_json, pagination
-from config import SELECTORS, MAX_RETRIES, ERROR_LOG_FILE, STATS_LOG_FILE
+from config import SELECTORS, MAX_RETRIES, ERROR_LOG_FILE, STATS_LOG_FILE, FAILED_COMMUNITIES_LOG
 from keywords_handler import load_and_process_keywords_from_csv
 
 # Perform global search by a keyword and gather usernames
@@ -219,6 +219,7 @@ def scrape_community_members(page, unqiue_communities_json, members_by_comm_json
     For each community in the unique community list, navigate to the respective community page, 
     go to 'Most Contributors' tab and collect the usernames. 
     Only scrape a community if its metadata (the number of members and posts) has not been collected yet.
+    Implements retry mechanism for each community if scraping fails.
     Update the unique community list with metadata.
     """
     # Read the unique community list (community_url as a key)
@@ -229,6 +230,13 @@ def scrape_community_members(page, unqiue_communities_json, members_by_comm_json
         members_by_comm = read_json(members_by_comm_json)
     except FileNotFoundError:
         members_by_comm = {}
+
+    failed_communities = []  # track communities that were not scraped
+
+    # Log stats of input file
+    with open(STATS_LOG_FILE, "a") as log_file:
+        log_file.write(f"\nStarting communities scraping - scrape_community_members() :\n")
+        log_file.write(f"Total communities to process: {len(unique_communities)}\n")
 
     # Iterate over each community
     for comm_url, comm_data in unique_communities.items():
@@ -241,38 +249,72 @@ def scrape_community_members(page, unqiue_communities_json, members_by_comm_json
 
         print(f"Collecting usernames from {comm_name} at {comm_url}...")  
 
-        # Collect metadata (number of posts and memebers)
-        metadata = extract_community_metadata(page, comm_name, comm_url)
-        if metadata:
-            unique_communities[comm_url].update(metadata)
+        retries = 0
+        while retries < MAX_RETRIES:
+            try:
+                # Reload before retrying
+                if retries > 0:
+                    print(f"Retrying {comm_name} ({comm_url})... Attempt {retries}/{MAX_RETRIES}")
+                    page.reload()
+                    page.wait_for_timeout(2000)
 
-        # Collect usernames of most active users
-        usernames = []
-        pages_scraped = 0  # counter of pages visited
-        while True:
-            # Locate username links on the current page
-            post_elements = page.locator(SELECTORS["community_card_username"]).all()
-            
-            for element in post_elements:
-                username = element.inner_text().strip().split()[0]  # extract username, ignore role/badge if there is
-                if username and username not in usernames:
-                    usernames.append(username)
+                        # Collect metadata (number of posts and memebers)
+                
+                metadata = extract_community_metadata(page, comm_name, comm_url)
+                if metadata:
+                    unique_communities[comm_url].update(metadata)
 
-            # Check if page limit is reached
-            pages_scraped += 1
-            if pagination_limit is not None and pages_scraped >= pagination_limit:
-                break # while-loop
+                # Collect usernames of most active users
+                usernames = []
+                pages_scraped = 0  # counter of pages visited
+                while True:
+                    # Locate username links on the current page
+                    post_elements = page.locator(SELECTORS["community_card_username"]).all()
+                    
+                    for element in post_elements:
+                        username = element.inner_text().strip().split()[0]  # extract username, ignore role/badge if there is
+                        if username and username not in usernames:
+                            usernames.append(username)
 
-            # Pagination: check if 'Next page' btn is available
-            if not pagination(page, SELECTORS["next_page_button"]): # as returns False, when no more pages exist
-                break
+                    # Check if page limit is reached
+                    pages_scraped += 1
+                    if pagination_limit is not None and pages_scraped >= pagination_limit:
+                        break # while-loop
 
-        # usernames_comm_data[comm_url] = {"active_members": usernames}
-        members_by_comm[comm_url] = usernames
+                    # Pagination: check if 'Next page' btn is available
+                    if not pagination(page, SELECTORS["next_page_button"]): # as returns False, when no more pages exist
+                        break
 
-    # Save to JSON
-    write_to_json(members_by_comm_json, members_by_comm)
-    write_to_json(unqiue_communities_json, unique_communities)
+                # usernames_comm_data[comm_url] = {"active_members": usernames}
+                members_by_comm[comm_url] = usernames
+
+                # Save to JSON continuously
+                write_to_json(members_by_comm_json, members_by_comm)
+                write_to_json(unqiue_communities_json, unique_communities)
+                
+                break  # exit retry block if success
+            except Exception as e:
+                retires += 1
+                print(f"Error scraping community '{comm_name}': {str(e)}. Retrying ({retries}/{MAX_RETRIES})...")
+                page.reload()
+                page.wait_for_timeout(2000)
+
+        if retries == MAX_RETRIES:
+            print(f"Failed to scrape {comm_name} after {MAX_RETRIES} retries. Logging failed community.")
+            failed_communities.append(comm_url)
+
+    # Log failed communities
+    if failed_communities:
+        with open(FAILED_COMMUNITIES_LOG, "a") as log_file:
+            for comm_url in failed_communities:
+                log_file.write(f"{comm_url}\n")
+        print(f"Failed communities logged in {FAILED_COMMUNITIES_LOG}")
+
+    # Log stats
+    with open(STATS_LOG_FILE, "a") as log_file:
+        log_file.write(f"Total successfully scraped communities: {len(unique_communities)-len(failed_communities)}\n")
+        log_file.write(f"Total failed communities: {len(failed_communities)}\n")
+    print(f"Statistics logged in {STATS_LOG_FILE}")
 
 # Helper: Collect metadata (number of posts and memebrs) of a community
 def extract_community_metadata(page, comm_name, comm_url):
