@@ -2,11 +2,8 @@ from datetime import datetime
 import re
 
 from helpers import write_to_json, read_json, pagination
-from config import SELECTORS
+from config import SELECTORS, MAX_RETRIES, ERROR_LOG_FILE
 from keywords_handler import load_and_process_keywords_from_csv
-
-MAX_RETRIES = 3  # constant for retrying
-ERROR_LOG_FILE = "scrape_errors.txt"  # Log failed keywords
 
 # Perform global search by a keyword and gather usernames
 def scrape_usernames_by_keyword(page, keywords_csv, categories, output_json, usernames_limit):
@@ -46,15 +43,15 @@ def scrape_usernames_by_keyword(page, keywords_csv, categories, output_json, use
             # print(f"-------- Keyword: {keyword} --------")
 
             user_post_count= {}  # track post count per user
-            retries = 0
+            retries = 0  # track number of retries to scrape
 
             while retries < MAX_RETRIES:
                 try:
-                    # Reload Page before retrying
+                    # Reload page before retrying
                     if retries > 0:
                         print(f"Retry {retries} for keyword: {keyword}")
                         page.reload()
-                        page.wait_for_timeout(2000)  # Give some time before retrying
+                        page.wait_for_timeout(2000)
 
                     # Global search on HU using a keyword
                     page.goto("https://healthunlocked.com/")
@@ -84,13 +81,6 @@ def scrape_usernames_by_keyword(page, keywords_csv, categories, output_json, use
                             usernames_data[username] = {}  # create a sub-dictionary for the username
                         usernames_data[username][keyword] = count  # update the counter
 
-                    # ----------- DELETE LATER: UPDATE FIRST 3 ENTRIES ONLY -----------
-                    for i, username in enumerate(usernames_data):
-                        if i == 3:  # stop after updating 3 entries
-                            break
-                        usernames_data[username]["test_keyword"] = (i + 1) * 10  # assign test values (10, 20, 30)
-                    # ---------------------------------
-
                     # Save progress after each keyword
                     write_to_json(output_json, usernames_data)
 
@@ -105,14 +95,13 @@ def scrape_usernames_by_keyword(page, keywords_csv, categories, output_json, use
                             log_file.write(f"{keyword} | Error: {str(e)}\n")
                         print(f"Logged failed keyword: {keyword}")
 
-            page.wait_for_timeout(2000)
-
 # Collect user's profile information
 def scrape_user_profiles(page, input_json, output_json, unique_communities_json, post_limit):
     """
     For each username in the input file, navigate to the user's profile and gather their personal data 
-    (tags, demographics, bio, communities). Also maintain a global set of all communities ever discovered. 
-    Create 2 JSON files containing user data and the set of communities.
+    (tags, demographics, bio, communities). Implement retry mechanism for a username if scraping fails.
+    Also maintain a global set of all communities ever discovered. 
+    Create 2 JSON files containing user data and the set of communities. Save progress continuously.
     """
     # Load communities' unqiue list (if already exist) - global set of unique communities across all users
     try:
@@ -126,28 +115,41 @@ def scrape_user_profiles(page, input_json, output_json, unique_communities_json,
 
     profiles_data = {}
 
-    # ------- DELETE LATER: in config.py USER_PROFILE_LIMIT ------------
+    # ------- DELETE LIMIT LATER: in config.py USER_PROFILE_LIMIT ------------
     for username in usernames[:6]:
         print(f"Processing profile for username: {username}")
-        # Collect user's profile info (tags, demographics, bio, communities)
-        profile_data = scrape_profile_data(page, username)
-        
-        if profile_data:
-            # Collect community names and href from tabs 'Posts'and 'Replies' (where a user has showed any activity)
-            communities = collect_communities_of_user(page, username, post_limit)
-            profile_data["communities"] = list(communities) 
-            profiles_data[username] = profile_data  # add profile info under username key
-            
-            # Update the global community set
-            for comm_url in communities:
-                if comm_url not in all_communities:  # new community is encountered
-                    all_communities[comm_url] = {}
 
-    # Store data from user's profiles
-    write_to_json(output_json, profiles_data)
+        retries = 0
+        while retries < MAX_RETRIES:
+            try:
+                # Collect user's profile info (tags, demographics, bio, communities)
+                profile_data = scrape_profile_data(page, username)
+                
+                if profile_data:
+                    # Collect community names and href from tabs 'Posts'and 'Replies' (where a user has showed any activity)
+                    communities = collect_communities_of_user(page, username, post_limit)
+                    profile_data["communities"] = list(communities) 
+                    profiles_data[username] = profile_data  # add profile info under username key
+                    
+                    # Update the global community set
+                    for comm_url in communities:
+                        if comm_url not in all_communities:  # new community is encountered
+                            all_communities[comm_url] = {}
 
-    # Store/update a list of unique community names and their urls
-    write_to_json(unique_communities_json, all_communities)
+                    # Store data from user's profiles (after each username)
+                    write_to_json(output_json, profiles_data)
+
+                    # Store/update a list of unique community names and their urls
+                    write_to_json(unique_communities_json, all_communities)
+                break  # exit retry block if success
+            except Exception as e:
+                retries+= 1
+                print(f"Error processing profile '{username}': {str(e)}. Retrying ({retries}/{MAX_RETRIES})...")
+                page.reload()
+                page.wait_for_timeout(2000)
+
+        if retries == MAX_RETRIES:
+            print(f"Failed to process profile '{username}' after {MAX_RETRIES} retries.")
 
 # Collect profile information of community's members
 def scrape_member_profiles(page, members_by_comm_json, profiles_by_comm_json):
@@ -351,12 +353,14 @@ def collect_communities_of_user(page, username, post_limit):
         f"https://healthunlocked.com/user/{username}/replies"
     ]
     
-    all_communities = set()    
+    all_communities = set()
+
     for tab_url in tabs_urls:
         print(f"Navigating to: {tab_url}")
 
         communities = process_tab(page, tab_url, post_limit)
         all_communities.update(communities)
+        
     return all_communities
 
 # Helper: Process a single tab ('Posts' / 'Replies) individualy.
