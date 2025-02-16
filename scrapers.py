@@ -91,7 +91,7 @@ def scrape_usernames_by_keyword(page, keywords_csv, categories, output_json, use
 
                     break  # exit retry block if success
 
-                except Exception as e:
+                except Exception as e:  # unexpected error occurs
                     retries += 1
                     print(f"Error on keyword '{keyword}': {str(e)}. Retrying ({retries}/{MAX_RETRIES})...")
 
@@ -106,10 +106,10 @@ def scrape_usernames_by_keyword(page, keywords_csv, categories, output_json, use
     # Log stats after scraping all categories
     total_usernames = sum(category_stats.values())
     with open(STATS_LOG_FILE, "a") as log_file:
-        log_file.write(f"\nUsernames scraped summary:\n")
+        log_file.write(f"\nUsernames scraped - scrape_usernames_by_keyword() :\n")
         for category, count in category_stats.items():
             log_file.write(f"-{category}: {count} usernames\n")
-        log_file.write(f"Total usernames scraped: {total_usernames}\n")
+        log_file.write(f"Total usernames by keywords scraped: {total_usernames}\n")
     print(f"Statistics logged in {STATS_LOG_FILE}")
 
 # Collect user's profile information
@@ -136,7 +136,7 @@ def scrape_user_profiles(page, input_json, output_json, unique_communities_json,
 
     # Log input file and number of usernames
     with open(STATS_LOG_FILE, "a") as log_file:
-        log_file.write(f"\nStarting Profile Scraping:\n")
+        log_file.write(f"\nStarting (general) profile scraping - scrape_user_profiles() :\n")
         log_file.write(f"Input file: {input_json}\n")
         log_file.write(f"Total usernames to process: {len(usernames)}\n")
 
@@ -170,7 +170,7 @@ def scrape_user_profiles(page, input_json, output_json, unique_communities_json,
                     total_profiles_scraped += 1 
 
                 break  # exit retry block if success
-            except Exception as e:
+            except Exception as e:  # unexpected error occurs
                 retries+= 1
                 print(f"Error processing profile '{username}': {str(e)}. Retrying ({retries}/{MAX_RETRIES})...")
                 page.reload()
