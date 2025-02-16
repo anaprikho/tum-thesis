@@ -141,8 +141,8 @@ def scrape_user_profiles(page, input_json, output_json, unique_communities_json,
         log_file.write(f"Total usernames to process: {len(usernames)}\n")
 
     # ------- DELETE LIMIT LATER: in config.py USER_PROFILE_LIMIT ------------
-    for username in usernames:  # [:6]
-        print(f"Processing profile for username: {username}")
+    for i, username in enumerate(usernames, start=1):  # [:6]
+        print(f"\nProcessing profile {i}/{len(usernames)} for username: {username}")
 
         retries = 0
         while retries < MAX_RETRIES:
