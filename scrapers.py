@@ -141,7 +141,7 @@ def scrape_user_profiles(page, input_json, output_json, unique_communities_json,
         log_file.write(f"Total usernames to process: {len(usernames)}\n")
 
     # ------- DELETE LIMIT LATER: in config.py USER_PROFILE_LIMIT ------------
-    for username in usernames[:6]:
+    for username in usernames:  # [:6]
         print(f"Processing profile for username: {username}")
 
         retries = 0
@@ -258,8 +258,7 @@ def scrape_community_members(page, unqiue_communities_json, members_by_comm_json
                     page.reload()
                     page.wait_for_timeout(2000)
 
-                        # Collect metadata (number of posts and memebers)
-                
+                # Collect metadata (number of posts and memebers)                
                 metadata = extract_community_metadata(page, comm_name, comm_url)
                 if metadata:
                     unique_communities[comm_url].update(metadata)

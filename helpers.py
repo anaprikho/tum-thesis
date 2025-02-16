@@ -43,7 +43,7 @@ def pagination(page, next_button_selector):
     Return True if pagination occurred, False otherwise.
     """
     next_button = page.locator(next_button_selector)
-    is_show_more_btn = "show_more" in next_button_selector  #SELECTORS["show_more_posts_button"]
+    is_show_more_btn = next_button_selector == SELECTORS["show_more_posts_button"]
     retries = 0  # track number of attempts
 
     while retries < MAX_RETRIES:
@@ -66,11 +66,16 @@ def pagination(page, next_button_selector):
                 next_button.click()  # load new content
                 page.wait_for_timeout(2000)
 
+                # Detect and stop if by clicking on 'Show more posts' nothing happens
                 if is_show_more_btn:
                     post_items_after = page.locator(SELECTORS["post_items"]).count()
                     if post_items_before == post_items_after:  # problem with HU
                         print(f"No new posts loaded after clicking 'Show more posts'. Stopping pagination.")
+                        retries += 1
                         return False
+                        # if retries > MAX_RETRIES:
+                        #     return False
+                        # continue
             
                 return True
             else:  # btn is missing
