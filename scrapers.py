@@ -5,6 +5,9 @@ from helpers import write_to_json, read_json, pagination
 from config import SELECTORS
 from keywords_handler import load_and_process_keywords_from_csv
 
+MAX_RETRIES = 3  # constant for retrying
+ERROR_LOG_FILE = "scrape_errors.txt"  # Log failed keywords
+
 # Perform global search by a keyword and gather usernames
 def scrape_usernames_by_keyword(page, keywords_csv, categories, output_json, usernames_limit):
     """
@@ -34,45 +37,75 @@ def scrape_usernames_by_keyword(page, keywords_csv, categories, output_json, use
         for keyword in keyword_list:
             print(f"Searching for keyword: {keyword} (Category: {category})")            
 
-            # Global search on HU using a keyword
-            page.goto("https://healthunlocked.com/")
-            page.fill(SELECTORS["search_input"], keyword)
-            page.keyboard.press("Enter")
-            page.wait_for_timeout(2000)
-            # time.sleep(2)
-            print(f"-------- Keyword: {keyword} --------")
+            # # Global search on HU using a keyword
+            # page.goto("https://healthunlocked.com/")
+            # page.fill(SELECTORS["search_input"], keyword)
+            # page.keyboard.press("Enter")
+            # page.wait_for_timeout(2000)
+            # # time.sleep(2)
+            # print(f"-------- Keyword: {keyword} --------")
 
             user_post_count= {}  # track post count per user
+            retries = 0
 
-            while True:
-                # Find all post elements which are the serach results
-                post_elements = page.locator(SELECTORS["post_items_search_results"]).all()
+            while retries < MAX_RETRIES:
+                try:
+                    # Reload Page before retrying
+                    if retries > 0:
+                        print(f"Retry {retries} for keyword: {keyword}")
+                        page.reload()
+                        page.wait_for_timeout(2000)  # Give some time before retrying
 
-                for post in post_elements:
-                    username = post.text_content().strip()
-                    if username:
-                        user_post_count[username] = user_post_count.get(username, 0) + 1
-                    
-                # Stop collection if the limit is reached (entire page processing) OR no 'Next Page'
-                if len(user_post_count) >= usernames_limit or not pagination(page, "text=Next page"):
-                    print(f"Reached limit of {usernames_limit} distinct usernames OR no more pages -> stop pagination.")
-                    break
+                    # Global search on HU using a keyword
+                    page.goto("https://healthunlocked.com/")
+                    page.fill(SELECTORS["search_input"], keyword)
+                    page.keyboard.press("Enter")
+                    page.wait_for_timeout(2000)
+                    # time.sleep(2)
+                    print(f"-------- Keyword: {keyword} --------")
+
+                    while True:
+                        # Find all post elements which are the serach results
+                        post_elements = page.locator(SELECTORS["post_items_search_results"]).all()
+
+                        for post in post_elements:
+                            username = post.text_content().strip()
+                            if username:
+                                user_post_count[username] = user_post_count.get(username, 0) + 1
+                            
+                        # Stop collection if the limit is reached (entire page processing) OR no 'Next Page'
+                        if len(user_post_count) >= usernames_limit or not pagination(page, "text=Next page"):
+                            print(f"Reached limit of {usernames_limit} distinct usernames OR no more pages -> stop pagination.")
+                            break
             
-            # Append collected data for this keyword
-            for username, count in user_post_count.items():
-                if username not in usernames_data:
-                    usernames_data[username] = {}  # create a sub-dictionary for the username
-                usernames_data[username][keyword] = count  # update the counter
+                    # Append collected data for this keyword
+                    for username, count in user_post_count.items():
+                        if username not in usernames_data:
+                            usernames_data[username] = {}  # create a sub-dictionary for the username
+                        usernames_data[username][keyword] = count  # update the counter
 
-            # ----------- DELETE LATER: UPDATE FIRST 3 ENTRIES ONLY -----------
-            for i, username in enumerate(usernames_data):
-                if i == 3:  # stop after updating 3 entries
-                    break
-                usernames_data[username]["test_keyword"] = (i + 1) * 10  # assign test values (10, 20, 30)
-            # ---------------------------------
-    
-    # Save all collected usernames to a JSON file
-    write_to_json(output_json, usernames_data)
+                    # ----------- DELETE LATER: UPDATE FIRST 3 ENTRIES ONLY -----------
+                    for i, username in enumerate(usernames_data):
+                        if i == 3:  # stop after updating 3 entries
+                            break
+                        usernames_data[username]["test_keyword"] = (i + 1) * 10  # assign test values (10, 20, 30)
+                    # ---------------------------------
+
+                    # Save progress after each keyword
+                    write_to_json(output_json, usernames_data)
+
+                    break  # exit retry block if success
+
+                except Exception as e:
+                    retries += 1
+                    print(f"Error on keyword '{keyword}': {str(e)}. Retrying ({retries}/{MAX_RETRIES})...")
+
+                    if retries == MAX_RETRIES:
+                        with open(ERROR_LOG_FILE, "a") as log_file:
+                            log_file.write(f"{keyword} | Error: {str(e)}\n")
+                        print(f"Logged failed keyword: {keyword}")
+
+            page.wait_for_timeout(2000)
 
 # Collect user's profile information
 def scrape_user_profiles(page, input_json, output_json, unique_communities_json, post_limit):
