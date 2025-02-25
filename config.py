@@ -26,6 +26,8 @@ MAX_RETRIES = 2  # number of attempts to load a page when a certain element (e.g
 ERROR_LOG_FILE = "scrape_errors.txt"
 # Log file for tracking statistics
 STATS_LOG_FILE = "scraping_stats.txt"
+# Log file for tracking failed general usernames
+FAILED_USERNAMES = "failed_general_usernames.txt"
 # Log file for tracking failed communities
 FAILED_COMMUNITIES_LOG = "failed_communities.txt"
 # Keywords for global search on HU to collect usernames

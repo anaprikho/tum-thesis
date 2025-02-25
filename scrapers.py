@@ -2,7 +2,7 @@ from datetime import datetime
 import re
 
 from helpers import write_to_json, read_json, pagination
-from config import SELECTORS, MAX_RETRIES, ERROR_LOG_FILE, STATS_LOG_FILE, FAILED_COMMUNITIES_LOG
+from config import SELECTORS, MAX_RETRIES, ERROR_LOG_FILE, STATS_LOG_FILE, FAILED_USERNAMES, FAILED_COMMUNITIES_LOG
 from keywords_handler import load_and_process_keywords_from_csv
 
 # Perform global search by a keyword and gather usernames
@@ -133,6 +133,7 @@ def scrape_user_profiles(page, input_json, output_json, unique_communities_json,
 
     profiles_data = {}
     total_profiles_scraped = 0  # track number of successfully scraped profiles
+    success = False  # track whether scraping was successful
 
     # Log input file and number of usernames
     with open(STATS_LOG_FILE, "a") as log_file:
@@ -167,17 +168,30 @@ def scrape_user_profiles(page, input_json, output_json, unique_communities_json,
                     # Store/update a list of unique community names and their urls
                     write_to_json(unique_communities_json, all_communities)
 
-                    total_profiles_scraped += 1 
+                    total_profiles_scraped += 1
+                    success = True
 
                 break  # exit retry block if success
             except Exception as e:  # unexpected error occurs
                 retries+= 1
                 print(f"Error processing profile '{username}': {str(e)}. Retrying ({retries}/{MAX_RETRIES})...")
+
+                # Handle network error
+                if "NS_ERROR_UNKNOWN_HOST" in str(e):
+                    print(f"Network issue (NS_ERROR_UNKNOWN_HOST) for {username}. Skipping user.")
+                    break  # skip username
+
                 page.reload()
                 page.wait_for_timeout(2000)
 
         if retries == MAX_RETRIES:
             print(f"Failed to process profile '{username}' after {MAX_RETRIES} retries.")
+
+        # Log failes username after each iteration
+        if not success:
+            print(f"Skipping user '{username}' after {MAX_RETRIES} retries.")
+            with open(FAILED_USERNAMES, "a") as log_file:
+                log_file.write(f"{username}\n")
     
     # Log stats of profile scraping process
     with open(STATS_LOG_FILE, "a") as log_file:
