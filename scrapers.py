@@ -227,7 +227,6 @@ def scrape_member_profiles(page, members_by_comm_json, profiles_by_comm_json):
         profiles_by_community = read_json(profiles_by_comm_json)
     except FileNotFoundError:
         profiles_by_community = {}
-    # profiles_by_community = {}
     
     # Read usernames and community details from JSON
     communities = read_json(members_by_comm_json)
