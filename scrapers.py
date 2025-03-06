@@ -221,15 +221,24 @@ def scrape_member_profiles(page, members_by_comm_json, profiles_by_comm_json):
     Process usernames from a JSON file with the most active community's members
     and collect their profile information. Save into a JSON file.
     
-    """
-    profiles_by_community = {}
+    """    
+    # Read existing members' prfile data (if available) or create an empty dictionary
+    try:
+        profiles_by_community = read_json(profiles_by_comm_json)
+    except FileNotFoundError:
+        profiles_by_community = {}
+    # profiles_by_community = {}
     
     # Read usernames and community details from JSON
     communities = read_json(members_by_comm_json)
 
     # Iterate through communities and their members
-    for comm_url, members in communities.items():  # iterate over key-value pairs of a dict
-        print(f"Processing community: {comm_url}")
+    # for comm_url, members in communities.items():  # iterate over key-value pairs of a dict
+    for i, (comm_url, members) in enumerate(communities.items(), start=1):  # iterate over key-value pairs of a dict
+    # for i, (comm_url, members) in enumerate(communities[start_index:].items(), start=start_index +1):
+    # for i, username in enumerate(usernames[start_index:], start=start_index + 1):  # [:6]
+
+        print(f"\nProcessing community {i}/{len(communities)}: {comm_url}")
 
         profiles_by_community[comm_url] = {}
         
@@ -245,6 +254,11 @@ def scrape_member_profiles(page, members_by_comm_json, profiles_by_comm_json):
 
                     if profile_data:
                         profiles_by_community[comm_url][member] = profile_data
+
+                        write_to_json(profiles_by_comm_json, profiles_by_community)
+
+                    break  # exit retry block if success
+
                 except Exception as e:  # unexpected error occurs
                     error_message = str(e).lower()
 
@@ -266,7 +280,7 @@ def scrape_member_profiles(page, members_by_comm_json, profiles_by_comm_json):
                 with open(FAILED_MEMBERS_LOG, "a") as log_file:
                     log_file.write(f"{member}\n")
         
-    write_to_json(profiles_by_comm_json, profiles_by_community)
+    # write_to_json(profiles_by_comm_json, profiles_by_community)
 
 # Collect usernames and metadata from a community page
 def scrape_community_members(page, unqiue_communities_json, members_by_comm_json, pagination_limit=None):
