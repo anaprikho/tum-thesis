@@ -16,7 +16,7 @@ USERNAMES_BY_KEYWORD_LIMIT = 100  # (set to -> 100) number of unqiue usernames w
 USER_PROFILE_LIMIT = 6  # Optinal: limit number of user's profile to collect info from (now: hard coded)
 #
 POSTS_BY_USER_LIMIT = 50  # number of posts to go through to collect communities' names and links when on user profile
-PAGINATION_LIMIT = 2  # (set to -> 10) number of pages to consider when collecting the most active users of a community ('Members'->'Most contribution'). Decided to set at 10.
+PAGINATION_LIMIT = 10  # (set to -> 10) number of pages to consider when collecting the most active users of a community ('Members'->'Most contribution'). Decided to set at 10.
 MAX_RETRIES = 2  # number of attempts to load a page when a certain element (e.g. 'Next Page', 'Show more posts', search bar) is not found
 
 # ==========================
