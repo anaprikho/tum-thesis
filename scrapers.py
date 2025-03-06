@@ -186,7 +186,6 @@ def scrape_user_profiles(page, input_json, output_json, unique_communities_json,
                     write_to_json(unique_communities_json, all_communities)
 
                     total_profiles_scraped += 1
-                    # success = True
 
                 break  # exit retry block if success
             except Exception as e:  # unexpected error occurs
@@ -205,11 +204,6 @@ def scrape_user_profiles(page, input_json, output_json, unique_communities_json,
                 page.reload()
                 page.wait_for_timeout(2000)
 
-        # if retries == MAX_RETRIES:
-        #     print(f"Failed to process profile '{username}' after {MAX_RETRIES} retries.")
-
-        # Log failes username after each iteration
-        # if not success:
         if retries == MAX_RETRIES:
             print(f"Skipping user '{username}' after {MAX_RETRIES} retries.")
             with open(FAILED_USERNAMES_LOG, "a") as log_file:
@@ -299,15 +293,14 @@ def scrape_community_members(page, unqiue_communities_json, members_by_comm_json
         log_file.write(f"\nStarting communities scraping - scrape_community_members() :\n")
         log_file.write(f"Total communities to process: {len(unique_communities)}\n")
 
-    # Iterate over each community
-    for comm_url, comm_data in unique_communities.items():
+    for i, (comm_url, comm_data) in enumerate(unique_communities.items(), start=1):
 
         # Skip communities that already have metadata (i.e. has been scraped already)
         if "posts_count" in comm_data and "members_count" in comm_data:
             print(f"Skipping {comm_url}, already scraped.")
             continue
 
-        print(f"Collecting usernames from {comm_url}...")  
+        print(f"\nProcessing community {i}/{len(unique_communities)}: {comm_url}")
 
         retries = 0
         while retries < MAX_RETRIES:
@@ -344,10 +337,9 @@ def scrape_community_members(page, unqiue_communities_json, members_by_comm_json
                     if not pagination(page, SELECTORS["next_page_button"]): # as returns False, when no more pages exist
                         break
 
-                # usernames_comm_data[comm_url] = {"active_members": usernames}
                 members_by_comm[comm_url] = usernames
 
-                # Save to JSON continuously
+                # Save to / update JSON continuously
                 write_to_json(members_by_comm_json, members_by_comm)
                 write_to_json(unqiue_communities_json, unique_communities)
                 
