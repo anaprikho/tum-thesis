@@ -93,7 +93,7 @@ def scrape_usernames_by_keyword(page, keywords_csv, categories, output_json, use
                     network_errors = ["ns_error", "timeout", "connection", "network", "reset", "refused", "aborted", "failed"]
 
                     if any(err in error_message for err in network_errors):
-                        print(f"Network issue (NS_ERROR_UNKNOWN_HOST) for {keyword}. Reconnecting...")
+                        print(f"Network issue {error_message} for {keyword}. Reconnecting...")
                         page.wait_for_timeout(15000)
                     
                     page.reload()
@@ -131,13 +131,18 @@ def scrape_user_profiles(page, input_json, output_json, unique_communities_json,
     except FileNotFoundError:
         all_communities = {}
 
+    # Load existing scraped profiles (to prevent overwriting old data)
+    try:
+        profiles_data = read_json(output_json)  # Load previous data
+    except FileNotFoundError:
+        profiles_data = {}
+
+
     # Read usernames from input file
     usernames_data = read_json(input_json)  # if JSON structure is a list of dict [ {}, {} ]
     usernames = list(usernames_data.keys()) # if JSON structure is a dict { "key1": {}, "key2": {} }
 
-    profiles_data = {}
     total_profiles_scraped = 0  # track number of successfully scraped profiles
-    success = False  # track whether scraping was successful
 
     # Log input file and number of usernames
     with open(STATS_LOG_FILE, "a") as log_file:
@@ -145,8 +150,16 @@ def scrape_user_profiles(page, input_json, output_json, unique_communities_json,
         log_file.write(f"Input file: {input_json}\n")
         log_file.write(f"Total usernames to process: {len(usernames)}\n")
 
+    # Identify last scraped username
+    scraped_usernames = set(profiles_data.keys())  # Get usernames already scraped
+    last_scraped_username = max(scraped_usernames, key=lambda x: list(profiles_data.keys()).index(x)) if scraped_usernames else None
+
+    # If scraping was interrupted, find the index of the last scraped username and start from the next one
+    # Start from the beginning if no previous data
+    start_index = usernames.index(last_scraped_username) + 1 if last_scraped_username in usernames else 0
+
     # ------- DELETE LIMIT LATER: in config.py USER_PROFILE_LIMIT ------------
-    for i, username in enumerate(usernames, start=1):  # [:6]
+    for i, username in enumerate(usernames[start_index:], start=start_index + 1):  # [:6]
         print(f"\nProcessing profile {i}/{len(usernames)} for username: {username}")
 
         retries = 0
@@ -166,14 +179,14 @@ def scrape_user_profiles(page, input_json, output_json, unique_communities_json,
                         if comm_url not in all_communities:  # new community is encountered
                             all_communities[comm_url] = {}
 
-                    # Store data from user's profiles (after each username)
+                    # Store/update data from user's profiles (after each username)
                     write_to_json(output_json, profiles_data)
 
                     # Store/update a list of unique community names and their urls
                     write_to_json(unique_communities_json, all_communities)
 
                     total_profiles_scraped += 1
-                    success = True
+                    # success = True
 
                 break  # exit retry block if success
             except Exception as e:  # unexpected error occurs
@@ -186,17 +199,18 @@ def scrape_user_profiles(page, input_json, output_json, unique_communities_json,
                 network_errors = ["ns_error", "timeout", "connection", "network", "reset", "refused", "aborted", "failed"]
 
                 if any(err in error_message for err in network_errors):
-                    print(f"Network issue (NS_ERROR_UNKNOWN_HOST) for {comm_url}. Reconnecting...")
+                    print(f"Network issue {error_message} for {username}. Reconnecting...")
                     page.wait_for_timeout(15000)
 
                 page.reload()
                 page.wait_for_timeout(2000)
 
-        if retries == MAX_RETRIES:
-            print(f"Failed to process profile '{username}' after {MAX_RETRIES} retries.")
+        # if retries == MAX_RETRIES:
+        #     print(f"Failed to process profile '{username}' after {MAX_RETRIES} retries.")
 
         # Log failes username after each iteration
-        if not success:
+        # if not success:
+        if retries == MAX_RETRIES:
             print(f"Skipping user '{username}' after {MAX_RETRIES} retries.")
             with open(FAILED_USERNAMES_LOG, "a") as log_file:
                 log_file.write(f"{username}\n")
@@ -247,7 +261,7 @@ def scrape_member_profiles(page, members_by_comm_json, profiles_by_comm_json):
                     network_errors = ["ns_error", "timeout", "connection", "network", "reset", "refused", "aborted", "failed"]
 
                     if any(err in error_message for err in network_errors):
-                        print(f"Network issue (NS_ERROR_UNKNOWN_HOST) for {comm_url}. Reconnecting...")
+                        print(f"Network issue {error_message} for {member}. Reconnecting...")
                         page.wait_for_timeout(15000)
 
                     page.reload()
@@ -348,7 +362,7 @@ def scrape_community_members(page, unqiue_communities_json, members_by_comm_json
                 network_errors = ["ns_error", "timeout", "connection", "network", "reset", "refused", "aborted", "failed"]
 
                 if any(err in error_message for err in network_errors):
-                    print(f"Network issue (NS_ERROR_UNKNOWN_HOST) for {comm_url}. Reconnecting...")
+                    print(f"Network issue {error_message} for {comm_url}. Reconnecting...")
                     page.wait_for_timeout(15000)
                 
                 page.reload()
