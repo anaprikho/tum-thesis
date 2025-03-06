@@ -22,14 +22,14 @@ MAX_RETRIES = 2  # number of attempts to load a page when a certain element (e.g
 # ==========================
 # Paths and filenames
 # ==========================
-# Log file for tracking failed attempts to scrape
+
+# Log files for tracking failed attempts to scrape
 ERROR_LOG_FILE = "scrape_errors.txt"
-# Log file for tracking statistics
-STATS_LOG_FILE = "scraping_stats.txt"
-# Log file for tracking failed general usernames
-FAILED_USERNAMES = "failed_general_usernames.txt"
-# Log file for tracking failed communities
-FAILED_COMMUNITIES_LOG = "failed_communities.txt"
+STATS_LOG_FILE = "scraping_stats.txt"  # statistics
+FAILED_USERNAMES_LOG = "failed_general_usernames.txt"  # failed general usernames
+FAILED_COMMUNITIES_LOG = "failed_communities.txt"  #  failed communities
+FAILED_MEMBERS_LOG = "failed_members.txt"  #  failed members
+
 # Keywords for global search on HU to collect usernames
 KEYWORDS_FILE = os.path.join(DATA_INPUT_DIR, "keywords_generated.csv")
 # CATEGORIES_OF_KEYWORDS = ["Mental Health", "Diabetes", "Women's Health", "Alcohol Addiction", "Cancer", "Abc"]  # define categories of interest for your scraping
@@ -103,6 +103,7 @@ SELECTORS = {
     "meta_text_wrapper": "div[data-sentry-element='MetaTextWrapper']",  # community's name and link
     "replies_tab": "a[data-testid='profile-reply']",  # 'Replies' tab on a user's profile
     "community_metadata": "div[data-sentry-component='Details']",  # number of 'members' and 'posts'
+    "about_comm": "div[data-sentry-component='Description']",  # community's 'About' text field
 
     # user's profile
     "profile_tags": "ul[data-sentry-component='HealthTags'] li a",

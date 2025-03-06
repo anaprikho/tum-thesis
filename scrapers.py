@@ -2,7 +2,7 @@ from datetime import datetime
 import re
 
 from helpers import write_to_json, read_json, pagination
-from config import SELECTORS, MAX_RETRIES, ERROR_LOG_FILE, STATS_LOG_FILE, FAILED_USERNAMES, FAILED_COMMUNITIES_LOG
+from config import SELECTORS, MAX_RETRIES, ERROR_LOG_FILE, STATS_LOG_FILE, FAILED_USERNAMES_LOG, FAILED_COMMUNITIES_LOG, FAILED_MEMBERS_LOG
 from keywords_handler import load_and_process_keywords_from_csv
 
 # Perform global search by a keyword and gather usernames
@@ -36,15 +36,7 @@ def scrape_usernames_by_keyword(page, keywords_csv, categories, output_json, use
 
         category_count = 0  # track number of usernames for the current category        
         for keyword in keyword_list:
-            print(f"Searching for keyword: {keyword} (Category: {category})")            
-
-            # # Global search on HU using a keyword
-            # page.goto("https://healthunlocked.com/")
-            # page.fill(SELECTORS["search_input"], keyword)
-            # page.keyboard.press("Enter")
-            # page.wait_for_timeout(2000)
-            # # time.sleep(2)
-            # print(f"-------- Keyword: {keyword} --------")
+            print(f"Searching for keyword: {keyword} (Category: {category})")
 
             user_post_count= {}  # track post count per user
             retries = 0  # track number of retries to scrape
@@ -62,7 +54,7 @@ def scrape_usernames_by_keyword(page, keywords_csv, categories, output_json, use
                     page.fill(SELECTORS["search_input"], keyword)
                     page.keyboard.press("Enter")
                     page.wait_for_timeout(2000)
-                    # time.sleep(2)
+
                     print(f"-------- Keyword: {keyword} --------")
 
                     while True:
@@ -92,13 +84,25 @@ def scrape_usernames_by_keyword(page, keywords_csv, categories, output_json, use
                     break  # exit retry block if success
 
                 except Exception as e:  # unexpected error occurs
-                    retries += 1
-                    print(f"Error on keyword '{keyword}': {str(e)}. Retrying ({retries}/{MAX_RETRIES})...")
+                    error_message = str(e).lower()
 
-                    if retries == MAX_RETRIES:
-                        with open(ERROR_LOG_FILE, "a") as log_file:
-                            log_file.write(f"{keyword} | Error: {str(e)}\n")
-                        print(f"Logged failed keyword: {keyword}")
+                    retries += 1
+                    print(f"Error on keyword '{keyword}': {error_message}. Retrying ({retries}/{MAX_RETRIES})...")
+
+                    # Handle network error
+                    network_errors = ["ns_error", "timeout", "connection", "network", "reset", "refused", "aborted", "failed"]
+
+                    if any(err in error_message for err in network_errors):
+                        print(f"Network issue (NS_ERROR_UNKNOWN_HOST) for {keyword}. Reconnecting...")
+                        page.wait_for_timeout(15000)
+                    
+                    page.reload()
+                    page.wait_for_timeout(2000)
+
+            if retries == MAX_RETRIES:
+                with open(ERROR_LOG_FILE, "a") as log_file:
+                    log_file.write(f"{keyword} | Error: {error_message}\n")
+                print(f"Logged failed keyword: {keyword}")
 
         # stats for the current category
         category_stats[category] = category_count
@@ -173,13 +177,17 @@ def scrape_user_profiles(page, input_json, output_json, unique_communities_json,
 
                 break  # exit retry block if success
             except Exception as e:  # unexpected error occurs
-                retries+= 1
-                print(f"Error processing profile '{username}': {str(e)}. Retrying ({retries}/{MAX_RETRIES})...")
+                error_message = str(e).lower()
+
+                retries += 1
+                print(f"Error processing profile '{username}': {error_message}. Retrying ({retries}/{MAX_RETRIES})...")
 
                 # Handle network error
-                if "NS_ERROR_UNKNOWN_HOST" in str(e):
-                    print(f"Network issue (NS_ERROR_UNKNOWN_HOST) for {username}. Skipping user.")
-                    break  # skip username
+                network_errors = ["ns_error", "timeout", "connection", "network", "reset", "refused", "aborted", "failed"]
+
+                if any(err in error_message for err in network_errors):
+                    print(f"Network issue (NS_ERROR_UNKNOWN_HOST) for {comm_url}. Reconnecting...")
+                    page.wait_for_timeout(15000)
 
                 page.reload()
                 page.wait_for_timeout(2000)
@@ -190,7 +198,7 @@ def scrape_user_profiles(page, input_json, output_json, unique_communities_json,
         # Log failes username after each iteration
         if not success:
             print(f"Skipping user '{username}' after {MAX_RETRIES} retries.")
-            with open(FAILED_USERNAMES, "a") as log_file:
+            with open(FAILED_USERNAMES_LOG, "a") as log_file:
                 log_file.write(f"{username}\n")
     
     # Log stats of profile scraping process
@@ -217,13 +225,38 @@ def scrape_member_profiles(page, members_by_comm_json, profiles_by_comm_json):
 
         profiles_by_community[comm_url] = {}
         
-        # --------- Delete the limit later!-------------
-        for member in members[:2]:
-            # Scrape member's profile information
-            profile_data = scrape_profile_data(page, member)
+        for member in members:  # [:2]
+            
+            retries = 0
 
-            if profile_data:
-                profiles_by_community[comm_url][member] = profile_data
+            while retries < MAX_RETRIES:
+                try:
+
+                    # Scrape member's profile information
+                    profile_data = scrape_profile_data(page, member)
+
+                    if profile_data:
+                        profiles_by_community[comm_url][member] = profile_data
+                except Exception as e:  # unexpected error occurs
+                    error_message = str(e).lower()
+
+                    retries += 1
+                    print(f"Error processing member profile '{member}': {error_message}. Retrying ({retries}/{MAX_RETRIES})...")
+
+                    # Handle network error
+                    network_errors = ["ns_error", "timeout", "connection", "network", "reset", "refused", "aborted", "failed"]
+
+                    if any(err in error_message for err in network_errors):
+                        print(f"Network issue (NS_ERROR_UNKNOWN_HOST) for {comm_url}. Reconnecting...")
+                        page.wait_for_timeout(15000)
+
+                    page.reload()
+                    page.wait_for_timeout(2000)
+
+            if retries == MAX_RETRIES:
+                print(f"Skipping member '{member}' after {MAX_RETRIES} retries.")
+                with open(FAILED_MEMBERS_LOG, "a") as log_file:
+                    log_file.write(f"{member}\n")
         
     write_to_json(profiles_by_comm_json, profiles_by_community)
 
@@ -254,26 +287,25 @@ def scrape_community_members(page, unqiue_communities_json, members_by_comm_json
 
     # Iterate over each community
     for comm_url, comm_data in unique_communities.items():
-        comm_name = comm_data["comm_name"]
 
         # Skip communities that already have metadata (i.e. has been scraped already)
         if "posts_count" in comm_data and "members_count" in comm_data:
-            print(f"Skipping {comm_name} ({comm_url}), already scraped.")
+            print(f"Skipping {comm_url}, already scraped.")
             continue
 
-        print(f"Collecting usernames from {comm_name} at {comm_url}...")  
+        print(f"Collecting usernames from {comm_url}...")  
 
         retries = 0
         while retries < MAX_RETRIES:
             try:
                 # Reload before retrying
                 if retries > 0:
-                    print(f"Retrying {comm_name} ({comm_url})... Attempt {retries}/{MAX_RETRIES}")
+                    print(f"Retrying {comm_url}... Attempt {retries}/{MAX_RETRIES}")
                     page.reload()
                     page.wait_for_timeout(2000)
 
-                # Collect metadata (number of posts and memebers)                
-                metadata = extract_community_metadata(page, comm_name, comm_url)
+                # Collect metadata (number of posts and memebers), community's name and text field 'About'                
+                metadata = extract_community_metadata(page, comm_url)
                 if metadata:
                     unique_communities[comm_url].update(metadata)
 
@@ -307,13 +339,23 @@ def scrape_community_members(page, unqiue_communities_json, members_by_comm_json
                 
                 break  # exit retry block if success
             except Exception as e:
-                retires += 1
-                print(f"Error scraping community '{comm_name}': {str(e)}. Retrying ({retries}/{MAX_RETRIES})...")
+                error_message = str(e).lower()
+                
+                retries += 1
+                print(f"Error scraping community '{comm_url}': {error_message}. Retrying ({retries}/{MAX_RETRIES})...")
+
+                # Handle network error
+                network_errors = ["ns_error", "timeout", "connection", "network", "reset", "refused", "aborted", "failed"]
+
+                if any(err in error_message for err in network_errors):
+                    print(f"Network issue (NS_ERROR_UNKNOWN_HOST) for {comm_url}. Reconnecting...")
+                    page.wait_for_timeout(15000)
+                
                 page.reload()
                 page.wait_for_timeout(2000)
 
         if retries == MAX_RETRIES:
-            print(f"Failed to scrape {comm_name} after {MAX_RETRIES} retries. Logging failed community.")
+            print(f"Failed to scrape {comm_url} after {MAX_RETRIES} retries. Logging failed community.")
             failed_communities.append(comm_url)
 
     # Log failed communities
@@ -330,11 +372,22 @@ def scrape_community_members(page, unqiue_communities_json, members_by_comm_json
     print(f"Statistics logged in {STATS_LOG_FILE}")
 
 # Helper: Collect metadata (number of posts and memebrs) of a community
-def extract_community_metadata(page, comm_name, comm_url):
+def extract_community_metadata(page, comm_url):
     """
-    Extract metadata (number of members and posts) from a community's page.
+    Extract metadata (number of members and posts), name and text field 'About' 
+    (only first 100 characters) from a community's page.
     """
-    # Navigate to communitiy's most active users ('Most contribution' on 'Members' tab)
+
+    # Firstly, navigate to communitiy's 'About' tab
+    about_tab_url = f"https://healthunlocked.com{comm_url}/about"
+    print(f"Navigating to: {about_tab_url}")
+    page.goto(about_tab_url)
+    page.wait_for_timeout(2000)
+
+    # Extract first 100 characters from 'About' section
+    about_comm = page.locator(SELECTORS["about_comm"]).text_content().strip()[:150] if page.locator(SELECTORS["about_comm"]).count() > 0 else "N/A"
+
+    # Secondly, navigate to communitiy's most active users ('Most contribution' on 'Members' tab)
     active_members_url = f"https://healthunlocked.com{comm_url}/members?filter=active&page=1"
     print(f"Navigating to: {active_members_url}")
     page.goto(active_members_url)
@@ -343,22 +396,23 @@ def extract_community_metadata(page, comm_name, comm_url):
     # Get metadata details: "Anxiety and Depression Support94,251 members•88,014 posts"
     metadata = page.locator(SELECTORS["community_metadata"]).text_content().strip()
 
+    # Regex to extract community's name (right before the first digit)
+    match = re.search(r"^(.*?)(?=\d)", metadata)
+    community_name = match.group(1).strip() if match else "N/A"
+
     # Regex to extract the numbers of members and posts separately
     # \d{1,3}: matches 1–3 digits
     # (?:,\d{3})*: matches groups of ,### (e.g., ,251) for thousands separators
     match = re.search(r"(\d{1,3}(?:,\d{3})*) members•(\d{1,3}(?:,\d{3})*) posts", metadata)
+    members_count = int(match.group(1).replace(",", "")) if match else "N/A"
+    posts_count = int(match.group(2).replace(",", "")) if match else "N7A"
 
-    if match:
-        members_count = int(match.group(1).replace(",", ""))
-        posts_count = int(match.group(2).replace(",", "")) 
-        print(f"Members: {members_count}, Posts: {posts_count}")
-
-        return {
-            "members_count": members_count,
-            "posts_count": posts_count
-        }
-    else:
-        print(f"Metadata extraction failed for {comm_name}.")
+    return {
+        "comm_name": community_name,
+        "members_count": members_count,
+        "posts_count": posts_count,
+        "about_comm": about_comm
+    }
 
 # Helper: Scrape User Profile Data
 def scrape_profile_data(page, username):
