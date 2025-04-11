@@ -1,0 +1,97 @@
+==================================
+Data Scrapping
+==================================
+GENERAL PROFILES:
+Total keywords: 305
+Total users: 11518
+Users with tags: 8554 -> 74.27%
+Users without tags: 2964
+
+COMMUNITY PROFILES:
+Total communities: 326
+Total users: 37777
+Members with tags: 15757 -> 41.71%
+Members without tags: 22020
+
+==================================
+Demographics:
+==================================
+GENERAL PROFILES:
+
+---> COUNTRY
+          Country  Count  Percentage
+0  United Kingdom   4273   37.098455
+1             N/A   4050   35.162355
+2   United States   2203   19.126584
+
+---> AGE
+  Age Group  Count  Percentage
+0       nan   7477   64.915784
+1   Over 70    878    7.622851
+2     60-70    866    7.518666
+3     50-60    799    6.936968
+4     30-40    586    5.087689
+5     40-50    516    4.479944
+6     18-30    396    3.438097
+7  Under 18      0    0.000000
+
+---> GENDER
+   Gender  Count  Percentage
+0  Female   5144   44.660531
+1     N/A   4034   35.023442
+2    Male   2299   19.960063
+3  Others     41    0.355965
+
+---> ETHNICITY
+           Ethnicity  Count  Percentage
+0                N/A   6067   52.674075
+1              White   3894   33.807953
+2  White / Caucasian    899    7.805175
+3             Others    658    5.712797
+
+
+COMMUNITY-SPECIFIC PATTERNS:
+Total communities: 326
+Total users: 37777
+
+==================================
+Tag Clustering:
+==================================
+Total unique tags (excluding 'N/A'): 2965
+
+--- Rare Tags ---
+Tags with ≤ 1 occurrences: 579 (19.53%)
+Tags with ≤ 2 occurrences: 885 (29.85%)
+Tags with ≤ 3 occurrences: 1120 (37.77%)
+Tags with ≤ 4 occurrences: 1286 (43.37%)
+Tags with ≤ 5 occurrences: 1433 (48.33%)
+Tags with ≤ 6 occurrences: 1544 (52.07%)
+Tags with ≤ 7 occurrences: 1640 (55.31%)
+Tags with ≤ 10 occurrences: 1845 (62.23%)
+Tags with ≤ 20 occurrences: 2244 (75.68%)
+Tags with ≤ 30 occurrences: 2426 (81.82%)
+Tags with ≤ 40 occurrences: 2532 (85.40%)
+Tags with ≤ 50 occurrences: 2599 (87.66%)
+Tags with ≤ 60 occurrences: 2651 (89.41%)
+Tags with ≤ 70 occurrences: 2701 (91.10%)
+
+Total clusters: 23
+
+==================================
+Create Bipartite Network:
+==================================
+GENERAL PATTERNS:
+Total users in file: 11518
+Users with at least one cluster: 8554
+Total user-cluster edges: 22138
+Unique clusters: 23
+Edges in projected cluster-cluster graph: 253
+
+    ----------------
+    DEMOGRAPHICS:
+    ----------------
+
+COMMUNITY-SPECIFIC PATTERNS:
+Total communities: 326
+Communities with tags: 325
+Communities skipped (no tags): 1

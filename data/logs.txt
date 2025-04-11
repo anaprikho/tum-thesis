@@ -1,0 +1,93 @@
+==================================
+Data Scraping
+==================================
+GENERAL PROFILES:
+Total users: 11518
+Users with tags: 8554 -> 74.27%
+
+
+COMMUNITY PROFILES:
+Total users: 37777
+Members with tags: 15757 -> 41.71%
+
+
+==================================
+Demographics:
+==================================
+GENERAL PATTERNS: 
+Look at distribution of users regarding:
+    country,
+    age,
+    gender,
+    ethnicity
+
+COMMUNITY-SPECIFIC PATTERNS:
+We decided not to go into demographics here.
+
+==================================
+Tag Clustering:
+==================================
+Create a list of all tags by extractign them from general_prifiles_data and profiles_by_comm_data files and merging.
+Create a set of all tags {tag : frequency}
+Total unique tags (excluding 'N/A'): 2965 (saved to all_tags)
+Original plan was to look at the distribution of tags freuqencies and filter out rare ones.
+Problem - too many rare tags (see stats.txt file) -> skip filtering step and consider ALL tags.
+
+Clustering step:
+
+    ---> using word-embeddings:
+    1. word2vec (embeddings generation) + k-means (clustering) (num_clusters = 20-40)
+        Convert tags into Word2Vec-compatible format (list of lists) - Each tag as a single word sentence
+        Train Word2Vec model
+        Generate tag embeddings
+        Apply KMeans clustering
+
+    2. GloVe + k-means (num_clusters = 20-40)
+        Load pre-trained GloVe model
+        glove_model = load("glove-wiki-gigaword-100")  # 100-dimensional GloVe vectors
+        Generate GloVe embeddings
+        Apply KMeans clustering to GloVe embeddings
+
+    3. Sentence Transformer (BERT) + K-Means
+        Initialize transformer model: model = SentenceTransformer('all-MiniLM-L6-v2')
+        Convert tags to BERT embeddings   
+        Generate embeddings
+        Apply KMeans clustering
+
+    4. Sentence Transformer (BERT) + Aglomerative Clustering (n=40)
+
+    ---> using LLMs: ChatGPT (model 4o)
+    1. topic modelling
+    2. promt: see tag_clustering notebook -> 23 clusters for 2965 tags        
+
+
+==================================
+Create Bipartite Network:
+==================================
+Extend profile data by tag_to_cluster mapping.
+
+----------------
+GENERAL PATTERNS:
+----------------
+Load file with profiles & tag-to-cluster mapping
+1. Create an edge list (user, cluster, weight)
+    # user - source node
+    # cluster - target node
+    # weight - for frequency of co-occurrence
+2. Create a bipartite graph (2 types of nodes: Users & Clusters)
+    # Input: nodes (source & target) & edge list
+    # Add nodes (Users & Clusters)
+3. Project to cluster-cluster co-occurrence network
+4. Save the projected network edge list (cluster co-occurrence)
+
+    ----------------
+    DEMOGRAPHICS:
+    ----------------
+
+----------------
+COMMUNITY-SPECIFIC PATTERNS:
+----------------
+Load file with profiles by community & tag-to-cluster mapping
+Create for EACH community a SEPARATE network
+"user", "cluster", "weight", "comm_url"
+the same as above in GENERAL PATTERNS
