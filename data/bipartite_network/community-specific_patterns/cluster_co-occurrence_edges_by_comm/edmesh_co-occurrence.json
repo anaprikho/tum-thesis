@@ -1,0 +1,97 @@
+[
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 1
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 2
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Allergy & Immunology",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Cardiovascular Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Neurological Disorders",
+    "weight": 2
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Cardiovascular Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 3
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Respiratory Conditions & Treatments",
+    "weight": 1
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Neurological Disorders",
+    "weight": 3
+  },
+  {
+    "source": "Allergy & Immunology",
+    "target": "Neurological Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Cardiovascular Diseases",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 1
+  },
+  {
+    "source": "Cardiovascular Diseases",
+    "target": "Respiratory Conditions & Treatments",
+    "weight": 1
+  },
+  {
+    "source": "Cardiovascular Diseases",
+    "target": "Neurological Disorders",
+    "weight": 2
+  },
+  {
+    "source": "Pain & Musculoskeletal Conditions",
+    "target": "Respiratory Conditions & Treatments",
+    "weight": 1
+  },
+  {
+    "source": "Pain & Musculoskeletal Conditions",
+    "target": "Neurological Disorders",
+    "weight": 2
+  },
+  {
+    "source": "Respiratory Conditions & Treatments",
+    "target": "Neurological Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Patient Support & Education",
+    "weight": 1
+  }
+]

@@ -1,0 +1,167 @@
+[
+  {
+    "source": "Digestive Health (Gastrointestinal Conditions)",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 2
+  },
+  {
+    "source": "Digestive Health (Gastrointestinal Conditions)",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 1
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 3
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 2
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 3
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Neurological Disorders",
+    "weight": 4
+  },
+  {
+    "source": "Respiratory Conditions & Treatments",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 1
+  },
+  {
+    "source": "Respiratory Conditions & Treatments",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 1
+  },
+  {
+    "source": "Respiratory Conditions & Treatments",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 1
+  },
+  {
+    "source": "Respiratory Conditions & Treatments",
+    "target": "Neurological Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Substance Abuse & Addiction",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 1
+  },
+  {
+    "source": "Substance Abuse & Addiction",
+    "target": "Preventive Health & Screening",
+    "weight": 1
+  },
+  {
+    "source": "Substance Abuse & Addiction",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 1
+  },
+  {
+    "source": "Substance Abuse & Addiction",
+    "target": "Neurological Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Patient Support & Education",
+    "weight": 2
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 11
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 11
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Neurological Disorders",
+    "weight": 13
+  },
+  {
+    "source": "Pain & Musculoskeletal Conditions",
+    "target": "Preventive Health & Screening",
+    "weight": 1
+  },
+  {
+    "source": "Pain & Musculoskeletal Conditions",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 1
+  },
+  {
+    "source": "Pain & Musculoskeletal Conditions",
+    "target": "Neurological Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Preventive Health & Screening",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Patient Support & Education",
+    "weight": 2
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 11
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Neurological Disorders",
+    "weight": 17
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Dermatology & Skin-Related",
+    "weight": 1
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Preventive Health & Screening",
+    "weight": 1
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Neurological Disorders",
+    "weight": 32
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Patient Support & Education",
+    "weight": 2
+  },
+  {
+    "source": "Cardiovascular Diseases",
+    "target": "Neurological Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Dermatology & Skin-Related",
+    "target": "Neurological Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Preventive Health & Screening",
+    "target": "Neurological Disorders",
+    "weight": 2
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Patient Support & Education",
+    "weight": 2
+  }
+]

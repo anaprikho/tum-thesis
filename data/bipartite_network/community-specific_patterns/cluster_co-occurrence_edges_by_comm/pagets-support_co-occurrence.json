@@ -1,0 +1,117 @@
+[
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 2
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Metabolic & Endocrine Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Renal & Liver Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Cardiovascular Diseases",
+    "weight": 2
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 2
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 1
+  },
+  {
+    "source": "Cancer & Oncology",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 1
+  },
+  {
+    "source": "Eye & Vision Health",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 1
+  },
+  {
+    "source": "Eye & Vision Health",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 1
+  },
+  {
+    "source": "Eye & Vision Health",
+    "target": "Cardiovascular Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Eye & Vision Health",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 1
+  },
+  {
+    "source": "Eye & Vision Health",
+    "target": "Neurological Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Cardiovascular Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Neurological Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Cardiovascular Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 1
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Neurological Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Cardiovascular Diseases",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 2
+  },
+  {
+    "source": "Cardiovascular Diseases",
+    "target": "Respiratory Conditions & Treatments",
+    "weight": 1
+  },
+  {
+    "source": "Cardiovascular Diseases",
+    "target": "Neurological Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Pain & Musculoskeletal Conditions",
+    "target": "Neurological Disorders",
+    "weight": 1
+  }
+]

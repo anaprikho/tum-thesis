@@ -1,0 +1,22 @@
+[
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 2
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Patient Support & Education",
+    "weight": 1
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Patient Support & Education",
+    "weight": 2
+  }
+]

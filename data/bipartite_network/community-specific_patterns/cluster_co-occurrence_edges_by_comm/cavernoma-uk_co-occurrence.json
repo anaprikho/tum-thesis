@@ -1,0 +1,177 @@
+[
+  {
+    "source": "Infectious & Communicable Diseases",
+    "target": "Hematology & Blood Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Infectious & Communicable Diseases",
+    "target": "Procedures, Surgeries & Medical Devices",
+    "weight": 1
+  },
+  {
+    "source": "Infectious & Communicable Diseases",
+    "target": "Neurological Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Infectious & Communicable Diseases",
+    "target": "Cardiovascular Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Infectious & Communicable Diseases",
+    "target": "Cancer & Oncology",
+    "weight": 1
+  },
+  {
+    "source": "Hematology & Blood Disorders",
+    "target": "Procedures, Surgeries & Medical Devices",
+    "weight": 1
+  },
+  {
+    "source": "Hematology & Blood Disorders",
+    "target": "Neurological Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Hematology & Blood Disorders",
+    "target": "Cardiovascular Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Hematology & Blood Disorders",
+    "target": "Cancer & Oncology",
+    "weight": 1
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 1
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 1
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 1
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Cardiovascular Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 1
+  },
+  {
+    "source": "Cancer & Oncology",
+    "target": "Procedures, Surgeries & Medical Devices",
+    "weight": 1
+  },
+  {
+    "source": "Cancer & Oncology",
+    "target": "Cardiovascular Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Cancer & Oncology",
+    "target": "Neurological Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Procedures, Surgeries & Medical Devices",
+    "target": "Cardiovascular Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Procedures, Surgeries & Medical Devices",
+    "target": "Neurological Disorders",
+    "weight": 2
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 4
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 2
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Cardiovascular Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Neurological Disorders",
+    "weight": 2
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 2
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Cardiovascular Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Neurological Disorders",
+    "weight": 3
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 1
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Cardiovascular Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Neurological Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 1
+  },
+  {
+    "source": "Cardiovascular Diseases",
+    "target": "Neurological Disorders",
+    "weight": 2
+  },
+  {
+    "source": "Cardiovascular Diseases",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 1
+  },
+  {
+    "source": "Cardiovascular Diseases",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 1
+  },
+  {
+    "source": "Pain & Musculoskeletal Conditions",
+    "target": "Neurological Disorders",
+    "weight": 1
+  }
+]

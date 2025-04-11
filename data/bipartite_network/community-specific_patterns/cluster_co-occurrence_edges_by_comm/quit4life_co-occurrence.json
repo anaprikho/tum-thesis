@@ -1,0 +1,202 @@
+[
+  {
+    "source": "Infectious & Communicable Diseases",
+    "target": "Cancer & Oncology",
+    "weight": 1
+  },
+  {
+    "source": "Infectious & Communicable Diseases",
+    "target": "Renal & Liver Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Infectious & Communicable Diseases",
+    "target": "Cardiovascular Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Infectious & Communicable Diseases",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 1
+  },
+  {
+    "source": "Infectious & Communicable Diseases",
+    "target": "Respiratory Conditions & Treatments",
+    "weight": 1
+  },
+  {
+    "source": "Infectious & Communicable Diseases",
+    "target": "Neurological Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Infectious & Communicable Diseases",
+    "target": "Dermatology & Skin-Related",
+    "weight": 1
+  },
+  {
+    "source": "Dermatology & Skin-Related",
+    "target": "Cancer & Oncology",
+    "weight": 1
+  },
+  {
+    "source": "Dermatology & Skin-Related",
+    "target": "Renal & Liver Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Dermatology & Skin-Related",
+    "target": "Cardiovascular Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Dermatology & Skin-Related",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 1
+  },
+  {
+    "source": "Dermatology & Skin-Related",
+    "target": "Respiratory Conditions & Treatments",
+    "weight": 1
+  },
+  {
+    "source": "Dermatology & Skin-Related",
+    "target": "Neurological Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Respiratory Conditions & Treatments",
+    "target": "Cancer & Oncology",
+    "weight": 1
+  },
+  {
+    "source": "Respiratory Conditions & Treatments",
+    "target": "Renal & Liver Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Respiratory Conditions & Treatments",
+    "target": "Cardiovascular Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Respiratory Conditions & Treatments",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 1
+  },
+  {
+    "source": "Respiratory Conditions & Treatments",
+    "target": "Neurological Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Patient Support & Education",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 2
+  },
+  {
+    "source": "Patient Support & Education",
+    "target": "Substance Abuse & Addiction",
+    "weight": 1
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 2
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 4
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 2
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Substance Abuse & Addiction",
+    "weight": 4
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Cancer & Oncology",
+    "weight": 1
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Renal & Liver Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Cardiovascular Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 1
+  },
+  {
+    "source": "Renal & Liver Diseases",
+    "target": "Cancer & Oncology",
+    "weight": 1
+  },
+  {
+    "source": "Renal & Liver Diseases",
+    "target": "Cardiovascular Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Renal & Liver Diseases",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Substance Abuse & Addiction",
+    "weight": 14
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 4
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 2
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 1
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Substance Abuse & Addiction",
+    "weight": 4
+  },
+  {
+    "source": "Cardiovascular Diseases",
+    "target": "Cancer & Oncology",
+    "weight": 1
+  },
+  {
+    "source": "Cardiovascular Diseases",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 1
+  },
+  {
+    "source": "Pain & Musculoskeletal Conditions",
+    "target": "Cancer & Oncology",
+    "weight": 1
+  },
+  {
+    "source": "Pain & Musculoskeletal Conditions",
+    "target": "Substance Abuse & Addiction",
+    "weight": 2
+  }
+]

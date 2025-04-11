@@ -1,0 +1,122 @@
+[
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Neurological Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Cancer & Oncology",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 1
+  },
+  {
+    "source": "Cancer & Oncology",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 1
+  },
+  {
+    "source": "Cancer & Oncology",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 1
+  },
+  {
+    "source": "Cancer & Oncology",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 1
+  },
+  {
+    "source": "Cancer & Oncology",
+    "target": "Neurological Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Cancer & Oncology",
+    "target": "Patient Support & Education",
+    "weight": 1
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 5
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 5
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 3
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Neurological Disorders",
+    "weight": 4
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Patient Support & Education",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Neurological Disorders",
+    "weight": 5
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 7
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 3
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Patient Support & Education",
+    "weight": 1
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 3
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Preventive Health & Screening",
+    "weight": 1
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Neurological Disorders",
+    "weight": 8
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Patient Support & Education",
+    "weight": 1
+  },
+  {
+    "source": "Pain & Musculoskeletal Conditions",
+    "target": "Neurological Disorders",
+    "weight": 3
+  },
+  {
+    "source": "Pain & Musculoskeletal Conditions",
+    "target": "Patient Support & Education",
+    "weight": 1
+  },
+  {
+    "source": "Preventive Health & Screening",
+    "target": "Neurological Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Patient Support & Education",
+    "weight": 1
+  }
+]

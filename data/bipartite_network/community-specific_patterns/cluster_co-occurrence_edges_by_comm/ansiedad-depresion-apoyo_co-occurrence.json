@@ -1,0 +1,82 @@
+[
+  {
+    "source": "Patient Support & Education",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 3
+  },
+  {
+    "source": "Patient Support & Education",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 3
+  },
+  {
+    "source": "Patient Support & Education",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 3
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 17
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 16
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Neurological Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Substance Abuse & Addiction",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 23
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 3
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Preventive Health & Screening",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Neurological Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Substance Abuse & Addiction",
+    "weight": 3
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 3
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Preventive Health & Screening",
+    "weight": 1
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Neurological Disorders",
+    "weight": 2
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Substance Abuse & Addiction",
+    "weight": 2
+  }
+]

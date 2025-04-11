@@ -1,0 +1,227 @@
+[
+  {
+    "source": "Infectious & Communicable Diseases",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 1
+  },
+  {
+    "source": "Infectious & Communicable Diseases",
+    "target": "Neurological Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Autoimmune Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 1
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 3
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Cardiovascular Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 1
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Respiratory Conditions & Treatments",
+    "weight": 1
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Neurological Disorders",
+    "weight": 3
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 2
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 1
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 1
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 1
+  },
+  {
+    "source": "Respiratory Conditions & Treatments",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 1
+  },
+  {
+    "source": "Respiratory Conditions & Treatments",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 1
+  },
+  {
+    "source": "Respiratory Conditions & Treatments",
+    "target": "Cardiovascular Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Respiratory Conditions & Treatments",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 1
+  },
+  {
+    "source": "Cancer & Oncology",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 1
+  },
+  {
+    "source": "Cancer & Oncology",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 1
+  },
+  {
+    "source": "Autoimmune Diseases",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 1
+  },
+  {
+    "source": "Autoimmune Diseases",
+    "target": "Neurological Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Autoimmune Diseases",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 1
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Preventive Health & Screening",
+    "weight": 1
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Patient Support & Education",
+    "weight": 1
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 4
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 2
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Cardiovascular Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 1
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Neurological Disorders",
+    "weight": 4
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 3
+  },
+  {
+    "source": "Patient Support & Education",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 1
+  },
+  {
+    "source": "Patient Support & Education",
+    "target": "Preventive Health & Screening",
+    "weight": 1
+  },
+  {
+    "source": "Patient Support & Education",
+    "target": "Neurological Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Preventive Health & Screening",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Neurological Disorders",
+    "weight": 4
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Cardiovascular Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 1
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Neurological Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 1
+  },
+  {
+    "source": "Cardiovascular Diseases",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 1
+  },
+  {
+    "source": "Pain & Musculoskeletal Conditions",
+    "target": "Neurological Disorders",
+    "weight": 3
+  },
+  {
+    "source": "Pain & Musculoskeletal Conditions",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 2
+  },
+  {
+    "source": "Preventive Health & Screening",
+    "target": "Neurological Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 2
+  }
+]

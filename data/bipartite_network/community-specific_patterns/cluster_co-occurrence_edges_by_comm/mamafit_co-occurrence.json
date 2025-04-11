@@ -1,0 +1,117 @@
+[
+  {
+    "source": "Digestive Health (Gastrointestinal Conditions)",
+    "target": "Respiratory Conditions & Treatments",
+    "weight": 1
+  },
+  {
+    "source": "Digestive Health (Gastrointestinal Conditions)",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 1
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 1
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 1
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Cardiovascular Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Respiratory Conditions & Treatments",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 1
+  },
+  {
+    "source": "Substance Abuse & Addiction",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 2
+  },
+  {
+    "source": "Substance Abuse & Addiction",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 1
+  },
+  {
+    "source": "Substance Abuse & Addiction",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 1
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Patient Support & Education",
+    "weight": 13
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 27
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 8
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Cardiovascular Diseases",
+    "weight": 2
+  },
+  {
+    "source": "Renal & Liver Diseases",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 1
+  },
+  {
+    "source": "Renal & Liver Diseases",
+    "target": "Preventive Health & Screening",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 9
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Cardiovascular Diseases",
+    "weight": 2
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Preventive Health & Screening",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Patient Support & Education",
+    "weight": 13
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Preventive Health & Screening",
+    "weight": 1
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Patient Support & Education",
+    "weight": 3
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Cardiovascular Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Cardiovascular Diseases",
+    "target": "Patient Support & Education",
+    "weight": 1
+  }
+]

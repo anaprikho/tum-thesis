@@ -1,0 +1,242 @@
+[
+  {
+    "source": "Infectious & Communicable Diseases",
+    "target": "Medications & Treatment Monitoring",
+    "weight": 1
+  },
+  {
+    "source": "Infectious & Communicable Diseases",
+    "target": "Metabolic & Endocrine Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Infectious & Communicable Diseases",
+    "target": "Renal & Liver Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Infectious & Communicable Diseases",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 1
+  },
+  {
+    "source": "Infectious & Communicable Diseases",
+    "target": "Cardiovascular Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Infectious & Communicable Diseases",
+    "target": "Cancer & Oncology",
+    "weight": 1
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Metabolic & Endocrine Disorders",
+    "weight": 2
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Autoimmune Diseases",
+    "weight": 2
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Neurological Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Patient Support & Education",
+    "weight": 1
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Renal & Liver Diseases",
+    "weight": 5
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 3
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Cardiovascular Diseases",
+    "weight": 3
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Cancer & Oncology",
+    "weight": 2
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 1
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Autoimmune Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Neurological Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Renal & Liver Diseases",
+    "weight": 8
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 3
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Cardiovascular Diseases",
+    "weight": 4
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Cancer & Oncology",
+    "weight": 4
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 1
+  },
+  {
+    "source": "Autoimmune Diseases",
+    "target": "Procedures, Surgeries & Medical Devices",
+    "weight": 1
+  },
+  {
+    "source": "Autoimmune Diseases",
+    "target": "Renal & Liver Diseases",
+    "weight": 5
+  },
+  {
+    "source": "Autoimmune Diseases",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 1
+  },
+  {
+    "source": "Autoimmune Diseases",
+    "target": "Cardiovascular Diseases",
+    "weight": 2
+  },
+  {
+    "source": "Autoimmune Diseases",
+    "target": "Patient Support & Education",
+    "weight": 1
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Renal & Liver Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 1
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Cardiovascular Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Cancer & Oncology",
+    "weight": 1
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 1
+  },
+  {
+    "source": "Procedures, Surgeries & Medical Devices",
+    "target": "Renal & Liver Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Renal & Liver Diseases",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 1
+  },
+  {
+    "source": "Renal & Liver Diseases",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 5
+  },
+  {
+    "source": "Renal & Liver Diseases",
+    "target": "Patient Support & Education",
+    "weight": 1
+  },
+  {
+    "source": "Renal & Liver Diseases",
+    "target": "Cardiovascular Diseases",
+    "weight": 6
+  },
+  {
+    "source": "Renal & Liver Diseases",
+    "target": "Cancer & Oncology",
+    "weight": 5
+  },
+  {
+    "source": "Renal & Liver Diseases",
+    "target": "Substance Abuse & Addiction",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Substance Abuse & Addiction",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Patient Support & Education",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Cardiovascular Diseases",
+    "weight": 3
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Cancer & Oncology",
+    "weight": 3
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 1
+  },
+  {
+    "source": "Patient Support & Education",
+    "target": "Cardiovascular Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Cardiovascular Diseases",
+    "target": "Cancer & Oncology",
+    "weight": 2
+  },
+  {
+    "source": "Cardiovascular Diseases",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 1
+  },
+  {
+    "source": "Cancer & Oncology",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 1
+  }
+]

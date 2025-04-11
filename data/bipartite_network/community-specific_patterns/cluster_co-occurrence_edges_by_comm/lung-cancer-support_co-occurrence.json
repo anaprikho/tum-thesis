@@ -1,0 +1,217 @@
+[
+  {
+    "source": "Hematology & Blood Disorders",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 1
+  },
+  {
+    "source": "Hematology & Blood Disorders",
+    "target": "Medications & Treatment Monitoring",
+    "weight": 1
+  },
+  {
+    "source": "Hematology & Blood Disorders",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 1
+  },
+  {
+    "source": "Hematology & Blood Disorders",
+    "target": "Cancer & Oncology",
+    "weight": 1
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 1
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 1
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Cancer & Oncology",
+    "weight": 1
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 1
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 1
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 1
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Respiratory Conditions & Treatments",
+    "weight": 1
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Cancer & Oncology",
+    "weight": 1
+  },
+  {
+    "source": "Substance Abuse & Addiction",
+    "target": "Dermatology & Skin-Related",
+    "weight": 1
+  },
+  {
+    "source": "Substance Abuse & Addiction",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 1
+  },
+  {
+    "source": "Substance Abuse & Addiction",
+    "target": "Cancer & Oncology",
+    "weight": 1
+  },
+  {
+    "source": "Procedures, Surgeries & Medical Devices",
+    "target": "Cancer & Oncology",
+    "weight": 7
+  },
+  {
+    "source": "Procedures, Surgeries & Medical Devices",
+    "target": "Autoimmune Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Procedures, Surgeries & Medical Devices",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 1
+  },
+  {
+    "source": "Procedures, Surgeries & Medical Devices",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 3
+  },
+  {
+    "source": "Procedures, Surgeries & Medical Devices",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 3
+  },
+  {
+    "source": "Procedures, Surgeries & Medical Devices",
+    "target": "Respiratory Conditions & Treatments",
+    "weight": 1
+  },
+  {
+    "source": "Procedures, Surgeries & Medical Devices",
+    "target": "Neurological Disorders",
+    "weight": 2
+  },
+  {
+    "source": "Autoimmune Diseases",
+    "target": "Cancer & Oncology",
+    "weight": 1
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 1
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 1
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Cancer & Oncology",
+    "weight": 2
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 6
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 4
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 3
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Dermatology & Skin-Related",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Respiratory Conditions & Treatments",
+    "weight": 4
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Cancer & Oncology",
+    "weight": 14
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 1
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 1
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Respiratory Conditions & Treatments",
+    "weight": 1
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Cancer & Oncology",
+    "weight": 2
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 1
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Respiratory Conditions & Treatments",
+    "weight": 1
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Cancer & Oncology",
+    "weight": 4
+  },
+  {
+    "source": "Pain & Musculoskeletal Conditions",
+    "target": "Cancer & Oncology",
+    "weight": 7
+  },
+  {
+    "source": "Pain & Musculoskeletal Conditions",
+    "target": "Respiratory Conditions & Treatments",
+    "weight": 2
+  },
+  {
+    "source": "Respiratory Conditions & Treatments",
+    "target": "Cancer & Oncology",
+    "weight": 6
+  },
+  {
+    "source": "Cancer & Oncology",
+    "target": "Dermatology & Skin-Related",
+    "weight": 1
+  }
+]

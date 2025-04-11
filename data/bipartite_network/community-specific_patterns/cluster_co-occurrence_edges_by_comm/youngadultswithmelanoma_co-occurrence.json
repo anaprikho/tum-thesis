@@ -1,0 +1,17 @@
+[
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Cancer & Oncology",
+    "weight": 2
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Procedures, Surgeries & Medical Devices",
+    "weight": 1
+  },
+  {
+    "source": "Cancer & Oncology",
+    "target": "Procedures, Surgeries & Medical Devices",
+    "weight": 2
+  }
+]
