@@ -58,6 +58,8 @@ Total users: 37777
 Tag Clustering:
 ==================================
 Total unique tags (excluding 'N/A'): 2965
+  from general profiles : 2140
+  from members’ profiles: 2767
 
 --- Rare Tags ---
 Tags with ≤ 1 occurrences: 579 (19.53%)

@@ -1,7 +1,6 @@
 {
     "Gimme": {
         "mental resilience": 2,
-        "test_keyword": 10,
         "mental disorder": 1,
         "mental health awareness": 1,
         "mental illness": 1,
@@ -19,7 +18,6 @@
     },
     "Flyerswife": {
         "mental resilience": 1,
-        "test_keyword": 20,
         "mental disorder": 1,
         "mental health awareness": 1,
         "mental illness": 1,
@@ -31,7 +29,6 @@
     },
     "Coachtrip": {
         "mental resilience": 1,
-        "test_keyword": 30,
         "mental disorder": 1,
         "mental health awareness": 1,
         "mental illness": 1,

@@ -1,12 +1,139 @@
 ==================================
 Data Scraping
 ==================================
+Browser automation: Playwright (Python)
+Target platform: HealthUnlocked.com
+Configuration file: config.py defines paths, scraping limits, selectors, and categories.#
+
+----------------
+1. Scraping General Patterns of Co-occurrence
+----------------
+    Step 1: scrape_usernames_by_keyword()
+        Keywords defined in keywords_initializer.py and grouped by category (e.g., Mental Health, Women's Health).
+        NLTK Lemmatizer applied to extend keyword variants.
+        Search performed on HealthUnlocked → extract usernames from posts.
+        Limit: USERNAMES_BY_KEYWORD_LIMIT = 100 per keyword
+        Stored in: usernames_by_keyword.json
+    Step 2: scrape_user_profiles()
+        Visit profile of each user extracted above.
+
+        Collect:
+        tags (health-related)
+            demographics (age, gender, country, etc.)
+            bio
+            communities user has participated in (from posts/replies)
+            Limit: POSTS_BY_USER_LIMIT = 50 → how many posts to check for communities
+
+    Stores:
+        user profiles: general_profiles_data.json
+        global community list: all_communities.json
+
+    Progress saved continuously, including retry logic.
+    Skips users after max MAX_RETRIES = 2.
+
+----------------
+2. Scraping Community-specific Patterns
+----------------
+    Step 3: scrape_community_members()
+        Uses the global community list.
+        For each community:
+            Navigate to "Most Contributors" tab.
+            Collect usernames.
+            Limit: PAGINATION_LIMIT = 10 pages per community
+
+        Saves results in: members_by_comm.json
+
+    Step 4: scrape_member_profiles()
+        Visits each member's profile (within each community).
+        Collects same information as general scraping.
+        Saves in: profiles_by_comm_data.json
+
+----------------
+Collected Data Formats:
+----------------
+
+--> general_profiles_data.json
+{
+  "username": {
+    "tags": [...],
+    "demographics": {...},
+    "bio": "...",
+    "communities": [...]
+  }
+}
+
+--> profiles_by_comm_data.json
+{
+  "/community-url": {
+    "username": {
+      "tags": [...],
+      "demographics": {...},
+      "bio": "...",
+      "tag_clusters": [...]
+    }
+  }
+}
+
+--> all_communities.json
+{
+  "/asthmalunguk-lung": {
+    "comm_name": "Asthma Lung UK",
+    "members_count": 95123,
+    "posts_count": 10023,
+    "about_comm": "The UK's leading asthma & lung community..."
+  },
+  ...
+}
+
+
+----------------
+Limits in config.py:
+----------------
+USERNAMES_BY_KEYWORD_LIMIT = 100
+USER_PROFILE_LIMIT = 6 (not used)
+POSTS_BY_USER_LIMIT = 50
+PAGINATION_LIMIT = 10
+MAX_RETRIES = 2
+
+----------------
+Logging and Error Handling:
+----------------
+All progress, retries, and failed usernames/communities are logged into:
+
+scraping_stats.txt
+failed_general_usernames.txt
+failed_communities.txt
+failed_members.txt
+scrape_errors.txt
+
+
+----------------
+Hierarchy:
+----------------
+1. General Patterns:
+scrape_usernames_by_keyword
+scrape_user_profiles
+        1.scrape_profile_data, 
+        2.collect_communities_of_user
+                process_tab
+                        extract_community_url
+
+                        
+2. Community-specific Patterns
+scrape_community_members
+        extract_community_metadata
+scrape_member_profiles
+        scrape_profile_data
+
+----------------
 GENERAL PROFILES:
+----------------
 Total users: 11518
 Users with tags: 8554 -> 74.27%
 
-
+----------------
 COMMUNITY PROFILES:
+----------------
 Total users: 37777
 Members with tags: 15757 -> 41.71%
 
@@ -14,14 +141,19 @@ Members with tags: 15757 -> 41.71%
 ==================================
 Demographics:
 ==================================
+
+----------------
 GENERAL PATTERNS: 
+----------------
 Look at distribution of users regarding:
     country,
     age,
     gender,
     ethnicity
 
+----------------
 COMMUNITY-SPECIFIC PATTERNS:
+----------------
 We decided not to go into demographics here.
 
 ==================================
@@ -31,11 +163,17 @@ Create a list of all tags by extractign them from general_prifiles_data and prof
 Create a set of all tags {tag : frequency}
 Total unique tags (excluding 'N/A'): 2965 (saved to all_tags)
 Original plan was to look at the distribution of tags freuqencies and filter out rare ones.
+E.g.ignore tags with freuqncies < 10 (60th percentil of all tags). 60th percentile frequency threshold: 9.40. 
+Tags remaining after filtering: 1186 out of 2965.
 Problem - too many rare tags (see stats.txt file) -> skip filtering step and consider ALL tags.
 
+----------------
 Clustering step:
+----------------
 
-    ---> using word-embeddings:
+    ----------------
+    using word-embeddings:
+    ----------------
     1. word2vec (embeddings generation) + k-means (clustering) (num_clusters = 20-40)
         Convert tags into Word2Vec-compatible format (list of lists) - Each tag as a single word sentence
         Train Word2Vec model
@@ -56,15 +194,36 @@ Clustering step:
 
     4. Sentence Transformer (BERT) + Aglomerative Clustering (n=40)
 
-    ---> using LLMs: ChatGPT (model 4o)
-    1. topic modelling
-    2. promt: see tag_clustering notebook -> 23 clusters for 2965 tags        
+    ----------------
+    using LLMs: ChatGPT (model 4o)
+    ----------------
+    1. defince general topics of tags (not detailed) 
+        1. use ChatGPT (as part of Methodology) we dont have ground truth labels since we used general profiles & communities
+        2.  Topic Modelling” instead of doing it manually
+    2. clustering prompt (use part 1)
+        1. “classification taks”
+        2. try out: n=40, n=undefined
+        3. dont really know every tags to which category as dont have domain / field knowledge
+        4. include final promt in thesis! promt: see tag_clustering notebook -> 23 clusters for 2965 tags
+        5. problem w/ chatGPT clustering: assign only 500 (of 3000), rest → ‘Other’ cluster
+            iteratively try to recluster
 
 
 ==================================
-Create Bipartite Network:
+Create Bipartite Network: https://networkx.org/documentation/stable/reference/algorithms/bipartite.html
 ==================================
 Extend profile data by tag_to_cluster mapping.
+   "Coachtrip": {
+        "tags": [
+            "Lung disease",
+            "Oxygen Therapy",
+            "Respiratory failure"
+        ],
+        "tags_clusters" [
+		        "Respiratory desease", 
+		        "Respiratory desease", 
+		        "Respiratory desease"
+        ],
 
 ----------------
 GENERAL PATTERNS:
