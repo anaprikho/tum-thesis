@@ -151,6 +151,11 @@ Look at distribution of users regarding:
     gender,
     ethnicity
 
+Data pre-processing:
+    Prefer not to say’ → **N/A** (no separate category as only 23/11 000)
+    Non-binary': 7, 'My pronouns are she/her. Beyond that, I'm just me': 1, 
+        'She/They/He': 1, 'She/they': 1 → belong to ‘**Other**’ category
+
 ----------------
 COMMUNITY-SPECIFIC PATTERNS:
 ----------------
@@ -207,6 +212,50 @@ Clustering step:
         4. include final promt in thesis! promt: see tag_clustering notebook -> 23 clusters for 2965 tags
         5. problem w/ chatGPT clustering: assign only 500 (of 3000), rest → ‘Other’ cluster
             iteratively try to recluster
+
+
+==================================
+Data Preprocssing / Cleaning:
+==================================
+Filter out users with no tags: tags: ["N/A"]
+
+final_gender_mapping = {
+
+    "N/A": "N/A",
+    "Prefer not to say": "N/A",
+    "Female": "Female",
+    "Woman": "Female",
+    "Male": "Male",
+    "Man": "Male",
+    "Others" : "Others",
+    "Non-binary" : "Others",
+    "My pronouns are she/her.  Beyond that, I'm just me" : "Others", 
+    "She/They/He": "Others",
+    "She/they" : "Others",
+    
+}
+
+ethnicity_mapping = {
+
+    "N/A": "N/A",
+    "Prefer not to say": "N/A",
+    
+    "Latino": "Latino",
+    "Hispanic / Latino / Spanish": "Latino",
+    "Latino": "Latino / Hispanic",
+    
+    "Black": "Black",
+    "Black": "Black",
+    "Black": "Black",
+    "Black": "Black",
+    
+    
+    "White": "White",
+    
+    "Asian": "Asian",
+    
+    "Other ethnic group" : "Other ethnic group"
+}
 
 
 ==================================
