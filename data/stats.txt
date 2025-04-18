@@ -20,39 +20,53 @@ GENERAL PROFILES:
 
 ---> COUNTRY
           Country  Count  Percentage
-0  United Kingdom   4273   37.098455
-1             N/A   4050   35.162355
-2   United States   2203   19.126584
-3          Canada    207    1.797187
-4       Australia    145    1.258899 
-5           India    106    0.920299  
-6         Ireland     74    0.642473   
-
+                 Country  Count  Percentage
+0         United Kingdom   3584   41.898527
+1                    N/A   2273   26.572364
+2          United States   1886   22.048165
+3                 Canada    176    2.057517
+4              Australia    113    1.321019
+5                  India     73    0.853402
+6                Ireland     68    0.794950
+7            New Zealand     39    0.455927
+8                 France     31    0.362404
+9           South Africa     22    0.257190
+10                 Spain     20    0.233809
+11               Germany     19    0.222118
+12               Belgium     13    0.151976
+13                 Italy     12    0.140285
+14           Netherlands     11    0.128595
+15               Nigeria     10    0.116904   
 
 ---> AGE
   Age Group  Count  Percentage
-0       nan   7477   64.915784
-1   Over 70    878    7.622851
-2     60-70    866    7.518666
-3     50-60    799    6.936968
-4     30-40    586    5.087689
-5     40-50    516    4.479944
-6     18-30    396    3.438097
+0       nan   4805   56.172551
+1   Over 70    845    9.878419
+2     60-70    815    9.527706
+3     50-60    744    8.697685
+4     30-40    526    6.149170
+5     40-50    477    5.576339
+6     18-30    342    3.998130
 7  Under 18      0    0.000000
 
 ---> GENDER
    Gender  Count  Percentage
-0  Female   5144   44.660531
-1     N/A   4034   35.023442
-2    Male   2299   19.960063
-3  Others     41    0.355965
+0  Female   4440   51.905541
+1     N/A   2076   24.269348
+2    Male   2005   23.439327
+3  Others     33    0.385784
 
 ---> ETHNICITY
-           Ethnicity  Count  Percentage
-0                N/A   6067   52.674075
-1              White   3894   33.807953
-2  White / Caucasian    899    7.805175
-3             Others    658    5.712797
+                        Ethnicity  Count  Percentage
+0                           White   4453   52.057517
+1                             N/A   3524   41.197101
+2                           Asian    177    2.069207
+3                           Black    130    1.519757
+4  Mixed / Multiple ethnic groups    100    1.169044
+5                          Latino     93    1.087211
+6              Other ethnic group     43    0.502689
+7                  Middle Eastern     21    0.245499
+8           Asian / Asian British     13    0.151976
 
 
 COMMUNITY-SPECIFIC PATTERNS:
