@@ -1,68 +1,138 @@
 [
   {
-    "source": "Digestive Health (Gastrointestinal Conditions)",
-    "target": "Lifestyle, Diet & Supplements",
-    "weight": 1
-  },
-  {
-    "source": "Digestive Health (Gastrointestinal Conditions)",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 1
-  },
-  {
-    "source": "Digestive Health (Gastrointestinal Conditions)",
-    "target": "Cancer & Oncology",
-    "weight": 1
-  },
-  {
-    "source": "Digestive Health (Gastrointestinal Conditions)",
-    "target": "Substance Abuse & Addiction",
-    "weight": 1
-  },
-  {
-    "source": "Medications & Treatment Monitoring",
-    "target": "Metabolic & Endocrine Disorders",
-    "weight": 1
-  },
-  {
-    "source": "Medications & Treatment Monitoring",
-    "target": "Cancer & Oncology",
-    "weight": 1
-  },
-  {
-    "source": "Medications & Treatment Monitoring",
-    "target": "Cardiovascular Diseases",
-    "weight": 1
-  },
-  {
-    "source": "Metabolic & Endocrine Disorders",
-    "target": "Cancer & Oncology",
-    "weight": 1
-  },
-  {
-    "source": "Metabolic & Endocrine Disorders",
-    "target": "Cardiovascular Diseases",
-    "weight": 1
-  },
-  {
-    "source": "Procedures, Surgeries & Medical Devices",
-    "target": "Pain & Musculoskeletal Conditions",
-    "weight": 1
-  },
-  {
-    "source": "Procedures, Surgeries & Medical Devices",
+    "source": "Mental Health & Emotional Wellbeing",
     "target": "Lifestyle, Diet & Supplements",
     "weight": 2
   },
   {
-    "source": "Procedures, Surgeries & Medical Devices",
-    "target": "Mental Health & Emotional Wellbeing",
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Substance Abuse & Addiction",
     "weight": 1
   },
   {
-    "source": "Procedures, Surgeries & Medical Devices",
+    "source": "Mental Health & Emotional Wellbeing",
     "target": "Cancer & Oncology",
+    "weight": 2
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 1
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Procedures, Surgeries & Medical Devices",
+    "weight": 1
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Substance Abuse & Addiction",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Cancer & Oncology",
+    "weight": 16
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Neurological Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Procedures, Surgeries & Medical Devices",
+    "weight": 2
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 8
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Patient Support & Education",
+    "weight": 1
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Cardiovascular Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Cancer & Oncology",
+    "weight": 1
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Medications & Treatment Monitoring",
+    "weight": 1
+  },
+  {
+    "source": "Substance Abuse & Addiction",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 1
+  },
+  {
+    "source": "Substance Abuse & Addiction",
+    "target": "Cancer & Oncology",
+    "weight": 1
+  },
+  {
+    "source": "Cancer & Oncology",
+    "target": "Neurological Disorders",
+    "weight": 2
+  },
+  {
+    "source": "Cancer & Oncology",
+    "target": "Medications & Treatment Monitoring",
+    "weight": 1
+  },
+  {
+    "source": "Cancer & Oncology",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 1
+  },
+  {
+    "source": "Cancer & Oncology",
+    "target": "Procedures, Surgeries & Medical Devices",
     "weight": 3
+  },
+  {
+    "source": "Cancer & Oncology",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 9
+  },
+  {
+    "source": "Cancer & Oncology",
+    "target": "Cardiovascular Diseases",
+    "weight": 2
+  },
+  {
+    "source": "Cancer & Oncology",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 2
+  },
+  {
+    "source": "Cancer & Oncology",
+    "target": "Patient Support & Education",
+    "weight": 1
   },
   {
     "source": "Neurological Disorders",
@@ -75,93 +145,23 @@
     "weight": 1
   },
   {
-    "source": "Neurological Disorders",
-    "target": "Lifestyle, Diet & Supplements",
+    "source": "Medications & Treatment Monitoring",
+    "target": "Cardiovascular Diseases",
     "weight": 1
   },
   {
-    "source": "Neurological Disorders",
-    "target": "Cancer & Oncology",
-    "weight": 2
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Lifestyle, Diet & Supplements",
-    "weight": 8
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "source": "Procedures, Surgeries & Medical Devices",
     "target": "Pain & Musculoskeletal Conditions",
     "weight": 1
   },
   {
     "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Cancer & Oncology",
-    "weight": 9
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 1
   },
   {
     "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
     "target": "Patient Support & Education",
-    "weight": 1
-  },
-  {
-    "source": "Patient Support & Education",
-    "target": "Lifestyle, Diet & Supplements",
-    "weight": 1
-  },
-  {
-    "source": "Patient Support & Education",
-    "target": "Cancer & Oncology",
-    "weight": 1
-  },
-  {
-    "source": "Lifestyle, Diet & Supplements",
-    "target": "Substance Abuse & Addiction",
-    "weight": 1
-  },
-  {
-    "source": "Lifestyle, Diet & Supplements",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 2
-  },
-  {
-    "source": "Lifestyle, Diet & Supplements",
-    "target": "Pain & Musculoskeletal Conditions",
-    "weight": 1
-  },
-  {
-    "source": "Lifestyle, Diet & Supplements",
-    "target": "Cancer & Oncology",
-    "weight": 16
-  },
-  {
-    "source": "Mental Health & Emotional Wellbeing",
-    "target": "Pain & Musculoskeletal Conditions",
-    "weight": 1
-  },
-  {
-    "source": "Mental Health & Emotional Wellbeing",
-    "target": "Cancer & Oncology",
-    "weight": 2
-  },
-  {
-    "source": "Mental Health & Emotional Wellbeing",
-    "target": "Substance Abuse & Addiction",
-    "weight": 1
-  },
-  {
-    "source": "Cardiovascular Diseases",
-    "target": "Cancer & Oncology",
-    "weight": 2
-  },
-  {
-    "source": "Pain & Musculoskeletal Conditions",
-    "target": "Cancer & Oncology",
-    "weight": 2
-  },
-  {
-    "source": "Cancer & Oncology",
-    "target": "Substance Abuse & Addiction",
     "weight": 1
   }
 ]

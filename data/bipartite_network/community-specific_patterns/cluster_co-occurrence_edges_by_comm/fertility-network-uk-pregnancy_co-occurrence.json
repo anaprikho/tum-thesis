@@ -1,27 +1,37 @@
 [
   {
-    "source": "Rare Diseases & Genetic Disorders",
+    "source": "Mental Health & Emotional Wellbeing",
     "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
     "weight": 1
   },
   {
-    "source": "Rare Diseases & Genetic Disorders",
-    "target": "Metabolic & Endocrine Disorders",
-    "weight": 1
-  },
-  {
-    "source": "Digestive Health (Gastrointestinal Conditions)",
-    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "weight": 1
-  },
-  {
-    "source": "Digestive Health (Gastrointestinal Conditions)",
+    "source": "Mental Health & Emotional Wellbeing",
     "target": "Lifestyle, Diet & Supplements",
     "weight": 1
   },
   {
-    "source": "Medications & Treatment Monitoring",
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Neurological Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
     "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 13
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Patient Support & Education",
+    "weight": 9
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Rare Diseases & Genetic Disorders",
     "weight": 1
   },
   {
@@ -30,48 +40,38 @@
     "weight": 1
   },
   {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Lifestyle, Diet & Supplements",
-    "weight": 13
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 1
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Cardiovascular Diseases",
-    "weight": 1
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Neurological Disorders",
-    "weight": 1
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Patient Support & Education",
-    "weight": 15
-  },
-  {
-    "source": "Lifestyle, Diet & Supplements",
-    "target": "Patient Support & Education",
-    "weight": 9
-  },
-  {
-    "source": "Lifestyle, Diet & Supplements",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 1
-  },
-  {
-    "source": "Lifestyle, Diet & Supplements",
-    "target": "Neurological Disorders",
+    "source": "Neurological Disorders",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
     "weight": 1
   },
   {
     "source": "Neurological Disorders",
     "target": "Patient Support & Education",
     "weight": 1
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 1
+  },
+  {
+    "source": "Digestive Health (Gastrointestinal Conditions)",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 1
+  },
+  {
+    "source": "Cardiovascular Diseases",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 1
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Rare Diseases & Genetic Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Patient Support & Education",
+    "weight": 15
   }
 ]

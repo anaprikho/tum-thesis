@@ -1,12 +1,92 @@
 [
   {
-    "source": "Medications & Treatment Monitoring",
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 1
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Preventive Health & Screening",
+    "weight": 1
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 1
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
     "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
     "weight": 1
   },
   {
-    "source": "Medications & Treatment Monitoring",
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Hematology & Blood Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 1
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Autoimmune Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 5
+  },
+  {
+    "source": "Neurological Disorders",
     "target": "Preventive Health & Screening",
+    "weight": 2
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 3
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Renal & Liver Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Substance Abuse & Addiction",
+    "weight": 2
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Medications & Treatment Monitoring",
+    "weight": 1
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Dermatology & Skin-Related",
+    "weight": 1
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 3
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Cardiovascular Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 1
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Autoimmune Diseases",
     "weight": 1
   },
   {
@@ -16,63 +96,28 @@
   },
   {
     "source": "Medications & Treatment Monitoring",
-    "target": "Neurological Disorders",
-    "weight": 1
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Cancer & Oncology",
-    "weight": 3
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Renal & Liver Diseases",
-    "weight": 1
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Cardiovascular Diseases",
-    "weight": 1
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Pain & Musculoskeletal Conditions",
-    "weight": 3
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
     "target": "Preventive Health & Screening",
-    "weight": 3
+    "weight": 1
   },
   {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "source": "Medications & Treatment Monitoring",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 1
+  },
+  {
+    "source": "Dermatology & Skin-Related",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 1
+  },
+  {
+    "source": "Dermatology & Skin-Related",
     "target": "Substance Abuse & Addiction",
     "weight": 1
   },
   {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Patient Support & Education",
+    "source": "Dermatology & Skin-Related",
+    "target": "Lifestyle, Diet & Supplements",
     "weight": 1
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Infectious & Communicable Diseases",
-    "weight": 1
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Hematology & Blood Disorders",
-    "weight": 1
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Metabolic & Endocrine Disorders",
-    "weight": 1
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Autoimmune Diseases",
-    "weight": 2
   },
   {
     "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
@@ -81,47 +126,117 @@
   },
   {
     "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Renal & Liver Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Hematology & Blood Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 3
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
     "target": "Mental Health & Emotional Wellbeing",
     "weight": 5
   },
   {
     "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Neurological Disorders",
+    "target": "Preventive Health & Screening",
     "weight": 3
   },
   {
-    "source": "Cardiovascular Diseases",
-    "target": "Autoimmune Diseases",
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Infectious & Communicable Diseases",
     "weight": 1
   },
   {
-    "source": "Cardiovascular Diseases",
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Substance Abuse & Addiction",
+    "weight": 1
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Cancer & Oncology",
+    "weight": 3
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Cardiovascular Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Autoimmune Diseases",
+    "weight": 2
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Patient Support & Education",
+    "weight": 1
+  },
+  {
+    "source": "Pain & Musculoskeletal Conditions",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 3
+  },
+  {
+    "source": "Pain & Musculoskeletal Conditions",
+    "target": "Preventive Health & Screening",
+    "weight": 2
+  },
+  {
+    "source": "Pain & Musculoskeletal Conditions",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 3
+  },
+  {
+    "source": "Pain & Musculoskeletal Conditions",
+    "target": "Infectious & Communicable Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Pain & Musculoskeletal Conditions",
     "target": "Renal & Liver Diseases",
     "weight": 1
   },
   {
-    "source": "Cardiovascular Diseases",
-    "target": "Lifestyle, Diet & Supplements",
+    "source": "Pain & Musculoskeletal Conditions",
+    "target": "Cardiovascular Diseases",
     "weight": 1
   },
   {
-    "source": "Cardiovascular Diseases",
+    "source": "Pain & Musculoskeletal Conditions",
+    "target": "Hematology & Blood Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Pain & Musculoskeletal Conditions",
+    "target": "Autoimmune Diseases",
+    "weight": 2
+  },
+  {
+    "source": "Preventive Health & Screening",
     "target": "Mental Health & Emotional Wellbeing",
+    "weight": 3
+  },
+  {
+    "source": "Preventive Health & Screening",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 2
+  },
+  {
+    "source": "Preventive Health & Screening",
+    "target": "Renal & Liver Diseases",
     "weight": 1
   },
   {
-    "source": "Cardiovascular Diseases",
-    "target": "Pain & Musculoskeletal Conditions",
-    "weight": 1
-  },
-  {
-    "source": "Cardiovascular Diseases",
-    "target": "Preventive Health & Screening",
-    "weight": 1
-  },
-  {
-    "source": "Cardiovascular Diseases",
-    "target": "Neurological Disorders",
+    "source": "Preventive Health & Screening",
+    "target": "Cardiovascular Diseases",
     "weight": 1
   },
   {
@@ -131,208 +246,8 @@
   },
   {
     "source": "Preventive Health & Screening",
-    "target": "Metabolic & Endocrine Disorders",
-    "weight": 1
-  },
-  {
-    "source": "Preventive Health & Screening",
     "target": "Autoimmune Diseases",
     "weight": 2
-  },
-  {
-    "source": "Preventive Health & Screening",
-    "target": "Renal & Liver Diseases",
-    "weight": 1
-  },
-  {
-    "source": "Preventive Health & Screening",
-    "target": "Lifestyle, Diet & Supplements",
-    "weight": 2
-  },
-  {
-    "source": "Preventive Health & Screening",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 3
-  },
-  {
-    "source": "Preventive Health & Screening",
-    "target": "Pain & Musculoskeletal Conditions",
-    "weight": 2
-  },
-  {
-    "source": "Preventive Health & Screening",
-    "target": "Neurological Disorders",
-    "weight": 2
-  },
-  {
-    "source": "Substance Abuse & Addiction",
-    "target": "Lifestyle, Diet & Supplements",
-    "weight": 1
-  },
-  {
-    "source": "Substance Abuse & Addiction",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 2
-  },
-  {
-    "source": "Substance Abuse & Addiction",
-    "target": "Dermatology & Skin-Related",
-    "weight": 1
-  },
-  {
-    "source": "Substance Abuse & Addiction",
-    "target": "Neurological Disorders",
-    "weight": 2
-  },
-  {
-    "source": "Patient Support & Education",
-    "target": "Lifestyle, Diet & Supplements",
-    "weight": 1
-  },
-  {
-    "source": "Hematology & Blood Disorders",
-    "target": "Metabolic & Endocrine Disorders",
-    "weight": 1
-  },
-  {
-    "source": "Hematology & Blood Disorders",
-    "target": "Autoimmune Diseases",
-    "weight": 1
-  },
-  {
-    "source": "Hematology & Blood Disorders",
-    "target": "Lifestyle, Diet & Supplements",
-    "weight": 1
-  },
-  {
-    "source": "Hematology & Blood Disorders",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 1
-  },
-  {
-    "source": "Hematology & Blood Disorders",
-    "target": "Pain & Musculoskeletal Conditions",
-    "weight": 1
-  },
-  {
-    "source": "Metabolic & Endocrine Disorders",
-    "target": "Autoimmune Diseases",
-    "weight": 1
-  },
-  {
-    "source": "Metabolic & Endocrine Disorders",
-    "target": "Lifestyle, Diet & Supplements",
-    "weight": 1
-  },
-  {
-    "source": "Metabolic & Endocrine Disorders",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 1
-  },
-  {
-    "source": "Metabolic & Endocrine Disorders",
-    "target": "Pain & Musculoskeletal Conditions",
-    "weight": 1
-  },
-  {
-    "source": "Procedures, Surgeries & Medical Devices",
-    "target": "Lifestyle, Diet & Supplements",
-    "weight": 2
-  },
-  {
-    "source": "Procedures, Surgeries & Medical Devices",
-    "target": "Respiratory Conditions & Treatments",
-    "weight": 1
-  },
-  {
-    "source": "Procedures, Surgeries & Medical Devices",
-    "target": "Cancer & Oncology",
-    "weight": 2
-  },
-  {
-    "source": "Lifestyle, Diet & Supplements",
-    "target": "Cancer & Oncology",
-    "weight": 5
-  },
-  {
-    "source": "Lifestyle, Diet & Supplements",
-    "target": "Renal & Liver Diseases",
-    "weight": 1
-  },
-  {
-    "source": "Lifestyle, Diet & Supplements",
-    "target": "Pain & Musculoskeletal Conditions",
-    "weight": 3
-  },
-  {
-    "source": "Lifestyle, Diet & Supplements",
-    "target": "Infectious & Communicable Diseases",
-    "weight": 1
-  },
-  {
-    "source": "Lifestyle, Diet & Supplements",
-    "target": "Autoimmune Diseases",
-    "weight": 2
-  },
-  {
-    "source": "Lifestyle, Diet & Supplements",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 5
-  },
-  {
-    "source": "Lifestyle, Diet & Supplements",
-    "target": "Dermatology & Skin-Related",
-    "weight": 1
-  },
-  {
-    "source": "Lifestyle, Diet & Supplements",
-    "target": "Neurological Disorders",
-    "weight": 3
-  },
-  {
-    "source": "Cancer & Oncology",
-    "target": "Renal & Liver Diseases",
-    "weight": 1
-  },
-  {
-    "source": "Renal & Liver Diseases",
-    "target": "Autoimmune Diseases",
-    "weight": 1
-  },
-  {
-    "source": "Renal & Liver Diseases",
-    "target": "Neurological Disorders",
-    "weight": 1
-  },
-  {
-    "source": "Renal & Liver Diseases",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 1
-  },
-  {
-    "source": "Renal & Liver Diseases",
-    "target": "Pain & Musculoskeletal Conditions",
-    "weight": 1
-  },
-  {
-    "source": "Pain & Musculoskeletal Conditions",
-    "target": "Infectious & Communicable Diseases",
-    "weight": 1
-  },
-  {
-    "source": "Pain & Musculoskeletal Conditions",
-    "target": "Autoimmune Diseases",
-    "weight": 2
-  },
-  {
-    "source": "Pain & Musculoskeletal Conditions",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 3
-  },
-  {
-    "source": "Pain & Musculoskeletal Conditions",
-    "target": "Neurological Disorders",
-    "weight": 1
   },
   {
     "source": "Infectious & Communicable Diseases",
@@ -340,28 +255,113 @@
     "weight": 1
   },
   {
+    "source": "Infectious & Communicable Diseases",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 1
+  },
+  {
+    "source": "Substance Abuse & Addiction",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 2
+  },
+  {
+    "source": "Substance Abuse & Addiction",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 1
+  },
+  {
     "source": "Autoimmune Diseases",
     "target": "Mental Health & Emotional Wellbeing",
     "weight": 2
   },
   {
     "source": "Autoimmune Diseases",
-    "target": "Neurological Disorders",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 2
+  },
+  {
+    "source": "Autoimmune Diseases",
+    "target": "Renal & Liver Diseases",
     "weight": 1
   },
   {
-    "source": "Mental Health & Emotional Wellbeing",
-    "target": "Dermatology & Skin-Related",
+    "source": "Autoimmune Diseases",
+    "target": "Cardiovascular Diseases",
     "weight": 1
   },
   {
-    "source": "Mental Health & Emotional Wellbeing",
-    "target": "Neurological Disorders",
+    "source": "Autoimmune Diseases",
+    "target": "Hematology & Blood Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Renal & Liver Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Procedures, Surgeries & Medical Devices",
+    "weight": 2
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Hematology & Blood Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Mental Health & Emotional Wellbeing",
     "weight": 5
   },
   {
-    "source": "Dermatology & Skin-Related",
-    "target": "Neurological Disorders",
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Cancer & Oncology",
+    "weight": 5
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Cardiovascular Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Patient Support & Education",
+    "weight": 1
+  },
+  {
+    "source": "Renal & Liver Diseases",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 1
+  },
+  {
+    "source": "Renal & Liver Diseases",
+    "target": "Cancer & Oncology",
+    "weight": 1
+  },
+  {
+    "source": "Renal & Liver Diseases",
+    "target": "Cardiovascular Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Respiratory Conditions & Treatments",
+    "target": "Procedures, Surgeries & Medical Devices",
+    "weight": 1
+  },
+  {
+    "source": "Procedures, Surgeries & Medical Devices",
+    "target": "Cancer & Oncology",
+    "weight": 2
+  },
+  {
+    "source": "Hematology & Blood Disorders",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 1
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Cardiovascular Diseases",
     "weight": 1
   }
 ]

@@ -1,146 +1,136 @@
 [
   {
-    "source": "Medications & Treatment Monitoring",
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 9
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
     "target": "Metabolic & Endocrine Disorders",
     "weight": 1
   },
   {
-    "source": "Medications & Treatment Monitoring",
-    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "weight": 1
-  },
-  {
-    "source": "Medications & Treatment Monitoring",
+    "source": "Mental Health & Emotional Wellbeing",
     "target": "Renal & Liver Diseases",
-    "weight": 2
-  },
-  {
-    "source": "Medications & Treatment Monitoring",
-    "target": "Lifestyle, Diet & Supplements",
-    "weight": 2
-  },
-  {
-    "source": "Medications & Treatment Monitoring",
-    "target": "Cancer & Oncology",
     "weight": 3
   },
   {
-    "source": "Metabolic & Endocrine Disorders",
-    "target": "Autoimmune Diseases",
-    "weight": 1
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Cancer & Oncology",
+    "weight": 9
   },
   {
-    "source": "Metabolic & Endocrine Disorders",
-    "target": "Renal & Liver Diseases",
-    "weight": 2
-  },
-  {
-    "source": "Metabolic & Endocrine Disorders",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 1
-  },
-  {
-    "source": "Metabolic & Endocrine Disorders",
+    "source": "Mental Health & Emotional Wellbeing",
     "target": "Respiratory Conditions & Treatments",
     "weight": 1
   },
   {
-    "source": "Metabolic & Endocrine Disorders",
-    "target": "Cancer & Oncology",
-    "weight": 3
-  },
-  {
-    "source": "Metabolic & Endocrine Disorders",
-    "target": "Digestive Health (Gastrointestinal Conditions)",
-    "weight": 1
-  },
-  {
-    "source": "Procedures, Surgeries & Medical Devices",
-    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "weight": 1
-  },
-  {
-    "source": "Procedures, Surgeries & Medical Devices",
-    "target": "Renal & Liver Diseases",
-    "weight": 2
-  },
-  {
-    "source": "Procedures, Surgeries & Medical Devices",
-    "target": "Lifestyle, Diet & Supplements",
-    "weight": 3
-  },
-  {
-    "source": "Procedures, Surgeries & Medical Devices",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 1
-  },
-  {
-    "source": "Procedures, Surgeries & Medical Devices",
-    "target": "Cancer & Oncology",
-    "weight": 3
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Digestive Health (Gastrointestinal Conditions)",
-    "weight": 1
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "source": "Mental Health & Emotional Wellbeing",
     "target": "Neurological Disorders",
     "weight": 1
   },
   {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Renal & Liver Diseases",
-    "weight": 4
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 1
   },
   {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Lifestyle, Diet & Supplements",
-    "weight": 16
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Procedures, Surgeries & Medical Devices",
+    "weight": 1
   },
   {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Mental Health & Emotional Wellbeing",
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
     "weight": 7
   },
   {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Cardiovascular Diseases",
-    "weight": 2
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Autoimmune Diseases",
+    "weight": 1
   },
   {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Patient Support & Education",
+    "weight": 3
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Renal & Liver Diseases",
+    "weight": 8
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Cancer & Oncology",
+    "weight": 29
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
     "target": "Respiratory Conditions & Treatments",
     "weight": 1
   },
   {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Cancer & Oncology",
-    "weight": 15
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Medications & Treatment Monitoring",
+    "weight": 2
   },
   {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Neurological Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Procedures, Surgeries & Medical Devices",
+    "weight": 3
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 16
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Cardiovascular Diseases",
+    "weight": 3
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
     "target": "Patient Support & Education",
     "weight": 2
   },
   {
-    "source": "Neurological Disorders",
-    "target": "Lifestyle, Diet & Supplements",
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Renal & Liver Diseases",
+    "weight": 2
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Respiratory Conditions & Treatments",
     "weight": 1
   },
   {
-    "source": "Neurological Disorders",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 1
-  },
-  {
-    "source": "Neurological Disorders",
+    "source": "Metabolic & Endocrine Disorders",
     "target": "Cancer & Oncology",
+    "weight": 3
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Medications & Treatment Monitoring",
     "weight": 1
   },
   {
-    "source": "Renal & Liver Diseases",
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 1
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
     "target": "Autoimmune Diseases",
     "weight": 1
   },
@@ -151,122 +141,42 @@
   },
   {
     "source": "Renal & Liver Diseases",
-    "target": "Lifestyle, Diet & Supplements",
-    "weight": 8
-  },
-  {
-    "source": "Renal & Liver Diseases",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 3
-  },
-  {
-    "source": "Renal & Liver Diseases",
-    "target": "Cardiovascular Diseases",
-    "weight": 1
-  },
-  {
-    "source": "Renal & Liver Diseases",
-    "target": "Respiratory Conditions & Treatments",
-    "weight": 2
-  },
-  {
-    "source": "Renal & Liver Diseases",
     "target": "Cancer & Oncology",
     "weight": 18
   },
   {
     "source": "Renal & Liver Diseases",
-    "target": "Digestive Health (Gastrointestinal Conditions)",
-    "weight": 3
-  },
-  {
-    "source": "Lifestyle, Diet & Supplements",
-    "target": "Digestive Health (Gastrointestinal Conditions)",
-    "weight": 1
-  },
-  {
-    "source": "Lifestyle, Diet & Supplements",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 9
-  },
-  {
-    "source": "Lifestyle, Diet & Supplements",
-    "target": "Cardiovascular Diseases",
-    "weight": 3
-  },
-  {
-    "source": "Lifestyle, Diet & Supplements",
     "target": "Respiratory Conditions & Treatments",
-    "weight": 1
-  },
-  {
-    "source": "Lifestyle, Diet & Supplements",
-    "target": "Cancer & Oncology",
-    "weight": 29
-  },
-  {
-    "source": "Lifestyle, Diet & Supplements",
-    "target": "Patient Support & Education",
     "weight": 2
   },
   {
-    "source": "Mental Health & Emotional Wellbeing",
-    "target": "Autoimmune Diseases",
-    "weight": 1
+    "source": "Renal & Liver Diseases",
+    "target": "Medications & Treatment Monitoring",
+    "weight": 2
   },
   {
-    "source": "Mental Health & Emotional Wellbeing",
-    "target": "Patient Support & Education",
+    "source": "Renal & Liver Diseases",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
     "weight": 3
   },
   {
-    "source": "Mental Health & Emotional Wellbeing",
-    "target": "Respiratory Conditions & Treatments",
-    "weight": 1
+    "source": "Renal & Liver Diseases",
+    "target": "Procedures, Surgeries & Medical Devices",
+    "weight": 2
   },
   {
-    "source": "Mental Health & Emotional Wellbeing",
-    "target": "Cancer & Oncology",
-    "weight": 9
-  },
-  {
-    "source": "Mental Health & Emotional Wellbeing",
-    "target": "Digestive Health (Gastrointestinal Conditions)",
-    "weight": 1
-  },
-  {
-    "source": "Autoimmune Diseases",
-    "target": "Respiratory Conditions & Treatments",
-    "weight": 1
-  },
-  {
-    "source": "Autoimmune Diseases",
-    "target": "Cancer & Oncology",
-    "weight": 1
-  },
-  {
-    "source": "Autoimmune Diseases",
-    "target": "Digestive Health (Gastrointestinal Conditions)",
-    "weight": 1
-  },
-  {
-    "source": "Patient Support & Education",
-    "target": "Cancer & Oncology",
-    "weight": 1
-  },
-  {
-    "source": "Cardiovascular Diseases",
-    "target": "Respiratory Conditions & Treatments",
-    "weight": 1
-  },
-  {
-    "source": "Cardiovascular Diseases",
-    "target": "Cancer & Oncology",
+    "source": "Renal & Liver Diseases",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
     "weight": 4
   },
   {
-    "source": "Cardiovascular Diseases",
-    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "source": "Renal & Liver Diseases",
+    "target": "Cardiovascular Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Renal & Liver Diseases",
+    "target": "Autoimmune Diseases",
     "weight": 1
   },
   {
@@ -275,18 +185,108 @@
     "weight": 1
   },
   {
-    "source": "Respiratory Conditions & Treatments",
-    "target": "Cancer & Oncology",
+    "source": "Cancer & Oncology",
+    "target": "Respiratory Conditions & Treatments",
     "weight": 2
   },
   {
-    "source": "Respiratory Conditions & Treatments",
-    "target": "Digestive Health (Gastrointestinal Conditions)",
-    "weight": 2
+    "source": "Cancer & Oncology",
+    "target": "Medications & Treatment Monitoring",
+    "weight": 3
+  },
+  {
+    "source": "Cancer & Oncology",
+    "target": "Neurological Disorders",
+    "weight": 1
   },
   {
     "source": "Cancer & Oncology",
     "target": "Digestive Health (Gastrointestinal Conditions)",
     "weight": 3
+  },
+  {
+    "source": "Cancer & Oncology",
+    "target": "Procedures, Surgeries & Medical Devices",
+    "weight": 3
+  },
+  {
+    "source": "Cancer & Oncology",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 15
+  },
+  {
+    "source": "Cancer & Oncology",
+    "target": "Cardiovascular Diseases",
+    "weight": 4
+  },
+  {
+    "source": "Cancer & Oncology",
+    "target": "Autoimmune Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Cancer & Oncology",
+    "target": "Patient Support & Education",
+    "weight": 1
+  },
+  {
+    "source": "Respiratory Conditions & Treatments",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 2
+  },
+  {
+    "source": "Respiratory Conditions & Treatments",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 1
+  },
+  {
+    "source": "Respiratory Conditions & Treatments",
+    "target": "Cardiovascular Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Respiratory Conditions & Treatments",
+    "target": "Autoimmune Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 1
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 1
+  },
+  {
+    "source": "Digestive Health (Gastrointestinal Conditions)",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 1
+  },
+  {
+    "source": "Digestive Health (Gastrointestinal Conditions)",
+    "target": "Cardiovascular Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Digestive Health (Gastrointestinal Conditions)",
+    "target": "Autoimmune Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Procedures, Surgeries & Medical Devices",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 1
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Cardiovascular Diseases",
+    "weight": 2
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Patient Support & Education",
+    "weight": 2
   }
 ]

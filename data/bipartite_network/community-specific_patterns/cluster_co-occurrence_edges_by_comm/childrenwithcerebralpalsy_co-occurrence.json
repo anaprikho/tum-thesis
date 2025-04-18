@@ -1,68 +1,23 @@
 [
   {
-    "source": "Medications & Treatment Monitoring",
-    "target": "Neurological Disorders",
-    "weight": 1
-  },
-  {
-    "source": "Autoimmune Diseases",
-    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "weight": 1
-  },
-  {
-    "source": "Autoimmune Diseases",
-    "target": "Pain & Musculoskeletal Conditions",
-    "weight": 1
-  },
-  {
-    "source": "Autoimmune Diseases",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 1
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Pain & Musculoskeletal Conditions",
-    "weight": 1
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "source": "Mental Health & Emotional Wellbeing",
     "target": "Lifestyle, Diet & Supplements",
     "weight": 2
   },
   {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 2
-  },
-  {
-    "source": "Substance Abuse & Addiction",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 1
-  },
-  {
-    "source": "Substance Abuse & Addiction",
-    "target": "Patient Support & Education",
-    "weight": 1
-  },
-  {
-    "source": "Substance Abuse & Addiction",
-    "target": "Cardiovascular Diseases",
-    "weight": 1
-  },
-  {
-    "source": "Lifestyle, Diet & Supplements",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 2
-  },
-  {
-    "source": "Lifestyle, Diet & Supplements",
-    "target": "Patient Support & Education",
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Substance Abuse & Addiction",
     "weight": 1
   },
   {
     "source": "Mental Health & Emotional Wellbeing",
     "target": "Cardiovascular Diseases",
     "weight": 1
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 2
   },
   {
     "source": "Mental Health & Emotional Wellbeing",
@@ -71,8 +26,53 @@
   },
   {
     "source": "Mental Health & Emotional Wellbeing",
+    "target": "Autoimmune Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
     "target": "Patient Support & Education",
     "weight": 2
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 2
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Patient Support & Education",
+    "weight": 1
+  },
+  {
+    "source": "Substance Abuse & Addiction",
+    "target": "Cardiovascular Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Substance Abuse & Addiction",
+    "target": "Patient Support & Education",
+    "weight": 1
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 1
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Medications & Treatment Monitoring",
+    "weight": 1
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 1
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Autoimmune Diseases",
+    "weight": 1
   },
   {
     "source": "Cardiovascular Diseases",
@@ -81,7 +81,7 @@
   },
   {
     "source": "Pain & Musculoskeletal Conditions",
-    "target": "Neurological Disorders",
+    "target": "Autoimmune Diseases",
     "weight": 1
   }
 ]

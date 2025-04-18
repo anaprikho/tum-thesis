@@ -1,53 +1,113 @@
 [
   {
-    "source": "Preventive Health & Screening",
-    "target": "Renal & Liver Diseases",
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Preventive Health & Screening",
     "weight": 1
   },
   {
-    "source": "Preventive Health & Screening",
+    "source": "Mental Health & Emotional Wellbeing",
     "target": "Lifestyle, Diet & Supplements",
-    "weight": 1
+    "weight": 5
   },
   {
-    "source": "Preventive Health & Screening",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 1
-  },
-  {
-    "source": "Medications & Treatment Monitoring",
+    "source": "Mental Health & Emotional Wellbeing",
     "target": "Metabolic & Endocrine Disorders",
     "weight": 1
   },
   {
-    "source": "Medications & Treatment Monitoring",
-    "target": "Autoimmune Diseases",
-    "weight": 1
-  },
-  {
-    "source": "Medications & Treatment Monitoring",
-    "target": "Procedures, Surgeries & Medical Devices",
-    "weight": 1
-  },
-  {
-    "source": "Medications & Treatment Monitoring",
+    "source": "Mental Health & Emotional Wellbeing",
     "target": "Renal & Liver Diseases",
-    "weight": 1
+    "weight": 4
   },
   {
-    "source": "Medications & Treatment Monitoring",
-    "target": "Lifestyle, Diet & Supplements",
-    "weight": 1
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 4
   },
   {
-    "source": "Medications & Treatment Monitoring",
+    "source": "Mental Health & Emotional Wellbeing",
     "target": "Cardiovascular Diseases",
     "weight": 1
   },
   {
-    "source": "Metabolic & Endocrine Disorders",
+    "source": "Preventive Health & Screening",
+    "target": "Renal & Liver Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Preventive Health & Screening",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Metabolic & Endocrine Disorders",
+    "weight": 5
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Renal & Liver Diseases",
+    "weight": 13
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Medications & Treatment Monitoring",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Neurological Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Procedures, Surgeries & Medical Devices",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Cardiovascular Diseases",
+    "weight": 3
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 7
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
     "target": "Autoimmune Diseases",
     "weight": 2
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Renal & Liver Diseases",
+    "weight": 5
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Medications & Treatment Monitoring",
+    "weight": 1
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Neurological Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Procedures, Surgeries & Medical Devices",
+    "weight": 1
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Cardiovascular Diseases",
+    "weight": 1
   },
   {
     "source": "Metabolic & Endocrine Disorders",
@@ -56,103 +116,13 @@
   },
   {
     "source": "Metabolic & Endocrine Disorders",
-    "target": "Procedures, Surgeries & Medical Devices",
-    "weight": 1
-  },
-  {
-    "source": "Metabolic & Endocrine Disorders",
-    "target": "Renal & Liver Diseases",
-    "weight": 5
-  },
-  {
-    "source": "Metabolic & Endocrine Disorders",
-    "target": "Lifestyle, Diet & Supplements",
-    "weight": 5
-  },
-  {
-    "source": "Metabolic & Endocrine Disorders",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 1
-  },
-  {
-    "source": "Metabolic & Endocrine Disorders",
-    "target": "Cardiovascular Diseases",
-    "weight": 1
-  },
-  {
-    "source": "Metabolic & Endocrine Disorders",
     "target": "Pain & Musculoskeletal Conditions",
     "weight": 1
   },
   {
     "source": "Metabolic & Endocrine Disorders",
-    "target": "Neurological Disorders",
-    "weight": 1
-  },
-  {
-    "source": "Cancer & Oncology",
-    "target": "Renal & Liver Diseases",
-    "weight": 1
-  },
-  {
-    "source": "Cancer & Oncology",
     "target": "Autoimmune Diseases",
-    "weight": 1
-  },
-  {
-    "source": "Autoimmune Diseases",
-    "target": "Procedures, Surgeries & Medical Devices",
-    "weight": 1
-  },
-  {
-    "source": "Autoimmune Diseases",
-    "target": "Renal & Liver Diseases",
-    "weight": 3
-  },
-  {
-    "source": "Autoimmune Diseases",
-    "target": "Lifestyle, Diet & Supplements",
     "weight": 2
-  },
-  {
-    "source": "Autoimmune Diseases",
-    "target": "Cardiovascular Diseases",
-    "weight": 2
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Renal & Liver Diseases",
-    "weight": 6
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Lifestyle, Diet & Supplements",
-    "weight": 7
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 4
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Cardiovascular Diseases",
-    "weight": 1
-  },
-  {
-    "source": "Procedures, Surgeries & Medical Devices",
-    "target": "Renal & Liver Diseases",
-    "weight": 1
-  },
-  {
-    "source": "Procedures, Surgeries & Medical Devices",
-    "target": "Lifestyle, Diet & Supplements",
-    "weight": 1
-  },
-  {
-    "source": "Procedures, Surgeries & Medical Devices",
-    "target": "Cardiovascular Diseases",
-    "weight": 1
   },
   {
     "source": "Renal & Liver Diseases",
@@ -161,17 +131,22 @@
   },
   {
     "source": "Renal & Liver Diseases",
-    "target": "Lifestyle, Diet & Supplements",
-    "weight": 13
+    "target": "Cancer & Oncology",
+    "weight": 1
   },
   {
     "source": "Renal & Liver Diseases",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 4
+    "target": "Medications & Treatment Monitoring",
+    "weight": 1
   },
   {
     "source": "Renal & Liver Diseases",
     "target": "Neurological Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Renal & Liver Diseases",
+    "target": "Procedures, Surgeries & Medical Devices",
     "weight": 1
   },
   {
@@ -181,37 +156,62 @@
   },
   {
     "source": "Renal & Liver Diseases",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 6
+  },
+  {
+    "source": "Renal & Liver Diseases",
     "target": "Pain & Musculoskeletal Conditions",
     "weight": 1
   },
   {
-    "source": "Lifestyle, Diet & Supplements",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 5
-  },
-  {
-    "source": "Lifestyle, Diet & Supplements",
-    "target": "Cardiovascular Diseases",
+    "source": "Renal & Liver Diseases",
+    "target": "Autoimmune Diseases",
     "weight": 3
   },
   {
-    "source": "Lifestyle, Diet & Supplements",
+    "source": "Cancer & Oncology",
+    "target": "Autoimmune Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Neurological Disorders",
     "target": "Pain & Musculoskeletal Conditions",
     "weight": 1
   },
   {
-    "source": "Lifestyle, Diet & Supplements",
-    "target": "Neurological Disorders",
+    "source": "Medications & Treatment Monitoring",
+    "target": "Procedures, Surgeries & Medical Devices",
     "weight": 1
   },
   {
-    "source": "Mental Health & Emotional Wellbeing",
+    "source": "Medications & Treatment Monitoring",
     "target": "Cardiovascular Diseases",
     "weight": 1
   },
   {
-    "source": "Pain & Musculoskeletal Conditions",
-    "target": "Neurological Disorders",
+    "source": "Medications & Treatment Monitoring",
+    "target": "Autoimmune Diseases",
     "weight": 1
+  },
+  {
+    "source": "Procedures, Surgeries & Medical Devices",
+    "target": "Cardiovascular Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Procedures, Surgeries & Medical Devices",
+    "target": "Autoimmune Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Cardiovascular Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Cardiovascular Diseases",
+    "target": "Autoimmune Diseases",
+    "weight": 2
   }
 ]

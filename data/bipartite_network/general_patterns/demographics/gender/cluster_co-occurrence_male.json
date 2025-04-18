@@ -1,1122 +1,1162 @@
 [
   {
-    "source": "Dermatology & Skin-Related",
+    "source": "Eye & Vision Health",
     "target": "Lifestyle, Diet & Supplements",
-    "weight": 7
-  },
-  {
-    "source": "Dermatology & Skin-Related",
-    "target": "Cardiovascular Diseases",
-    "weight": 4
-  },
-  {
-    "source": "Dermatology & Skin-Related",
-    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "weight": 5
-  },
-  {
-    "source": "Dermatology & Skin-Related",
-    "target": "Allergy & Immunology",
-    "weight": 1
-  },
-  {
-    "source": "Dermatology & Skin-Related",
-    "target": "Medications & Treatment Monitoring",
-    "weight": 4
-  },
-  {
-    "source": "Dermatology & Skin-Related",
-    "target": "Renal & Liver Diseases",
-    "weight": 2
-  },
-  {
-    "source": "Dermatology & Skin-Related",
-    "target": "Pain & Musculoskeletal Conditions",
-    "weight": 4
-  },
-  {
-    "source": "Dermatology & Skin-Related",
-    "target": "Metabolic & Endocrine Disorders",
-    "weight": 4
-  },
-  {
-    "source": "Dermatology & Skin-Related",
-    "target": "Neurological Disorders",
-    "weight": 4
-  },
-  {
-    "source": "Dermatology & Skin-Related",
-    "target": "Autoimmune Diseases",
-    "weight": 4
-  },
-  {
-    "source": "Dermatology & Skin-Related",
-    "target": "Hematology & Blood Disorders",
-    "weight": 1
-  },
-  {
-    "source": "Dermatology & Skin-Related",
-    "target": "Respiratory Conditions & Treatments",
-    "weight": 5
-  },
-  {
-    "source": "Dermatology & Skin-Related",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 4
-  },
-  {
-    "source": "Dermatology & Skin-Related",
-    "target": "Digestive Health (Gastrointestinal Conditions)",
-    "weight": 4
-  },
-  {
-    "source": "Dermatology & Skin-Related",
-    "target": "Cancer & Oncology",
-    "weight": 9
-  },
-  {
-    "source": "Dermatology & Skin-Related",
-    "target": "Substance Abuse & Addiction",
-    "weight": 1
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Lifestyle, Diet & Supplements",
-    "weight": 405
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Cardiovascular Diseases",
-    "weight": 92
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Rare Diseases & Genetic Disorders",
-    "weight": 3
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Allergy & Immunology",
-    "weight": 2
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Patient Support & Education",
-    "weight": 40
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Procedures, Surgeries & Medical Devices",
-    "weight": 14
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Medications & Treatment Monitoring",
-    "weight": 27
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Renal & Liver Diseases",
-    "weight": 35
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Preventive Health & Screening",
-    "weight": 23
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Pain & Musculoskeletal Conditions",
-    "weight": 53
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Eye & Vision Health",
-    "weight": 6
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Infectious & Communicable Diseases",
-    "weight": 7
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Metabolic & Endocrine Disorders",
-    "weight": 57
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Neurological Disorders",
-    "weight": 84
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Autoimmune Diseases",
-    "weight": 16
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Hematology & Blood Disorders",
-    "weight": 15
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Respiratory Conditions & Treatments",
-    "weight": 12
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 219
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Digestive Health (Gastrointestinal Conditions)",
-    "weight": 32
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Cancer & Oncology",
-    "weight": 154
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Substance Abuse & Addiction",
-    "weight": 39
-  },
-  {
-    "source": "Allergy & Immunology",
-    "target": "Lifestyle, Diet & Supplements",
-    "weight": 4
-  },
-  {
-    "source": "Allergy & Immunology",
-    "target": "Cardiovascular Diseases",
-    "weight": 3
-  },
-  {
-    "source": "Allergy & Immunology",
-    "target": "Procedures, Surgeries & Medical Devices",
-    "weight": 1
-  },
-  {
-    "source": "Allergy & Immunology",
-    "target": "Medications & Treatment Monitoring",
-    "weight": 3
-  },
-  {
-    "source": "Allergy & Immunology",
-    "target": "Pain & Musculoskeletal Conditions",
-    "weight": 1
-  },
-  {
-    "source": "Allergy & Immunology",
-    "target": "Infectious & Communicable Diseases",
-    "weight": 1
-  },
-  {
-    "source": "Allergy & Immunology",
-    "target": "Metabolic & Endocrine Disorders",
-    "weight": 3
-  },
-  {
-    "source": "Allergy & Immunology",
-    "target": "Neurological Disorders",
-    "weight": 3
-  },
-  {
-    "source": "Allergy & Immunology",
-    "target": "Autoimmune Diseases",
-    "weight": 2
-  },
-  {
-    "source": "Allergy & Immunology",
-    "target": "Respiratory Conditions & Treatments",
-    "weight": 3
-  },
-  {
-    "source": "Allergy & Immunology",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 4
-  },
-  {
-    "source": "Allergy & Immunology",
-    "target": "Digestive Health (Gastrointestinal Conditions)",
-    "weight": 3
-  },
-  {
-    "source": "Allergy & Immunology",
-    "target": "Cancer & Oncology",
-    "weight": 2
-  },
-  {
-    "source": "Preventive Health & Screening",
-    "target": "Lifestyle, Diet & Supplements",
-    "weight": 38
-  },
-  {
-    "source": "Preventive Health & Screening",
-    "target": "Cardiovascular Diseases",
-    "weight": 19
-  },
-  {
-    "source": "Preventive Health & Screening",
-    "target": "Patient Support & Education",
-    "weight": 3
-  },
-  {
-    "source": "Preventive Health & Screening",
-    "target": "Procedures, Surgeries & Medical Devices",
-    "weight": 2
-  },
-  {
-    "source": "Preventive Health & Screening",
-    "target": "Medications & Treatment Monitoring",
-    "weight": 2
-  },
-  {
-    "source": "Preventive Health & Screening",
-    "target": "Renal & Liver Diseases",
-    "weight": 8
-  },
-  {
-    "source": "Preventive Health & Screening",
-    "target": "Pain & Musculoskeletal Conditions",
-    "weight": 14
-  },
-  {
-    "source": "Preventive Health & Screening",
-    "target": "Eye & Vision Health",
-    "weight": 1
-  },
-  {
-    "source": "Preventive Health & Screening",
-    "target": "Infectious & Communicable Diseases",
-    "weight": 1
-  },
-  {
-    "source": "Preventive Health & Screening",
-    "target": "Metabolic & Endocrine Disorders",
-    "weight": 7
-  },
-  {
-    "source": "Preventive Health & Screening",
-    "target": "Neurological Disorders",
-    "weight": 18
-  },
-  {
-    "source": "Preventive Health & Screening",
-    "target": "Autoimmune Diseases",
-    "weight": 5
-  },
-  {
-    "source": "Preventive Health & Screening",
-    "target": "Hematology & Blood Disorders",
-    "weight": 5
-  },
-  {
-    "source": "Preventive Health & Screening",
-    "target": "Respiratory Conditions & Treatments",
-    "weight": 3
-  },
-  {
-    "source": "Preventive Health & Screening",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 40
-  },
-  {
-    "source": "Preventive Health & Screening",
-    "target": "Digestive Health (Gastrointestinal Conditions)",
-    "weight": 7
-  },
-  {
-    "source": "Preventive Health & Screening",
-    "target": "Cancer & Oncology",
-    "weight": 8
-  },
-  {
-    "source": "Preventive Health & Screening",
-    "target": "Substance Abuse & Addiction",
-    "weight": 3
-  },
-  {
-    "source": "Metabolic & Endocrine Disorders",
-    "target": "Lifestyle, Diet & Supplements",
-    "weight": 92
-  },
-  {
-    "source": "Metabolic & Endocrine Disorders",
-    "target": "Cardiovascular Diseases",
-    "weight": 37
-  },
-  {
-    "source": "Metabolic & Endocrine Disorders",
-    "target": "Rare Diseases & Genetic Disorders",
-    "weight": 2
-  },
-  {
-    "source": "Metabolic & Endocrine Disorders",
-    "target": "Patient Support & Education",
-    "weight": 3
-  },
-  {
-    "source": "Metabolic & Endocrine Disorders",
-    "target": "Procedures, Surgeries & Medical Devices",
-    "weight": 5
-  },
-  {
-    "source": "Metabolic & Endocrine Disorders",
-    "target": "Medications & Treatment Monitoring",
-    "weight": 21
-  },
-  {
-    "source": "Metabolic & Endocrine Disorders",
-    "target": "Renal & Liver Diseases",
-    "weight": 11
-  },
-  {
-    "source": "Metabolic & Endocrine Disorders",
-    "target": "Pain & Musculoskeletal Conditions",
-    "weight": 29
-  },
-  {
-    "source": "Metabolic & Endocrine Disorders",
-    "target": "Eye & Vision Health",
-    "weight": 1
-  },
-  {
-    "source": "Metabolic & Endocrine Disorders",
-    "target": "Infectious & Communicable Diseases",
-    "weight": 1
-  },
-  {
-    "source": "Metabolic & Endocrine Disorders",
-    "target": "Neurological Disorders",
-    "weight": 18
-  },
-  {
-    "source": "Metabolic & Endocrine Disorders",
-    "target": "Autoimmune Diseases",
-    "weight": 53
-  },
-  {
-    "source": "Metabolic & Endocrine Disorders",
-    "target": "Hematology & Blood Disorders",
-    "weight": 11
-  },
-  {
-    "source": "Metabolic & Endocrine Disorders",
-    "target": "Respiratory Conditions & Treatments",
-    "weight": 15
-  },
-  {
-    "source": "Metabolic & Endocrine Disorders",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 39
-  },
-  {
-    "source": "Metabolic & Endocrine Disorders",
-    "target": "Digestive Health (Gastrointestinal Conditions)",
-    "weight": 24
-  },
-  {
-    "source": "Metabolic & Endocrine Disorders",
-    "target": "Cancer & Oncology",
-    "weight": 37
-  },
-  {
-    "source": "Metabolic & Endocrine Disorders",
-    "target": "Substance Abuse & Addiction",
-    "weight": 4
-  },
-  {
-    "source": "Neurological Disorders",
-    "target": "Lifestyle, Diet & Supplements",
-    "weight": 154
-  },
-  {
-    "source": "Neurological Disorders",
-    "target": "Cardiovascular Diseases",
-    "weight": 30
-  },
-  {
-    "source": "Neurological Disorders",
-    "target": "Rare Diseases & Genetic Disorders",
-    "weight": 2
-  },
-  {
-    "source": "Neurological Disorders",
-    "target": "Patient Support & Education",
-    "weight": 9
-  },
-  {
-    "source": "Neurological Disorders",
-    "target": "Procedures, Surgeries & Medical Devices",
     "weight": 10
   },
   {
+    "source": "Eye & Vision Health",
+    "target": "Metabolic & Endocrine Disorders",
+    "weight": 4
+  },
+  {
+    "source": "Eye & Vision Health",
+    "target": "Renal & Liver Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Eye & Vision Health",
+    "target": "Respiratory Conditions & Treatments",
+    "weight": 4
+  },
+  {
+    "source": "Eye & Vision Health",
+    "target": "Medications & Treatment Monitoring",
+    "weight": 3
+  },
+  {
+    "source": "Eye & Vision Health",
+    "target": "Neurological Disorders",
+    "weight": 3
+  },
+  {
+    "source": "Eye & Vision Health",
+    "target": "Dermatology & Skin-Related",
+    "weight": 1
+  },
+  {
+    "source": "Eye & Vision Health",
+    "target": "Procedures, Surgeries & Medical Devices",
+    "weight": 4
+  },
+  {
+    "source": "Eye & Vision Health",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 10
+  },
+  {
+    "source": "Eye & Vision Health",
+    "target": "Hematology & Blood Disorders",
+    "weight": 3
+  },
+  {
+    "source": "Eye & Vision Health",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 4
+  },
+  {
+    "source": "Eye & Vision Health",
+    "target": "Preventive Health & Screening",
+    "weight": 1
+  },
+  {
+    "source": "Eye & Vision Health",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 6
+  },
+  {
+    "source": "Eye & Vision Health",
+    "target": "Infectious & Communicable Diseases",
+    "weight": 2
+  },
+  {
+    "source": "Eye & Vision Health",
+    "target": "Cancer & Oncology",
+    "weight": 4
+  },
+  {
+    "source": "Eye & Vision Health",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 3
+  },
+  {
+    "source": "Eye & Vision Health",
+    "target": "Cardiovascular Diseases",
+    "weight": 7
+  },
+  {
+    "source": "Eye & Vision Health",
+    "target": "Autoimmune Diseases",
+    "weight": 6
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Rare Diseases & Genetic Disorders",
+    "weight": 3
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 133
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Renal & Liver Diseases",
+    "weight": 17
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Respiratory Conditions & Treatments",
+    "weight": 22
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Medications & Treatment Monitoring",
+    "weight": 33
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Neurological Disorders",
+    "weight": 26
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Dermatology & Skin-Related",
+    "weight": 6
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Procedures, Surgeries & Medical Devices",
+    "weight": 6
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 83
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Hematology & Blood Disorders",
+    "weight": 15
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 47
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Allergy & Immunology",
+    "weight": 3
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Preventive Health & Screening",
+    "weight": 11
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 54
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Infectious & Communicable Diseases",
+    "weight": 4
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Substance Abuse & Addiction",
+    "weight": 8
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Cancer & Oncology",
+    "weight": 54
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 31
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Cardiovascular Diseases",
+    "weight": 61
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Autoimmune Diseases",
+    "weight": 78
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Patient Support & Education",
+    "weight": 4
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Rare Diseases & Genetic Disorders",
+    "weight": 3
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 199
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Renal & Liver Diseases",
+    "weight": 11
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Respiratory Conditions & Treatments",
+    "weight": 16
+  },
+  {
     "source": "Neurological Disorders",
     "target": "Medications & Treatment Monitoring",
+    "weight": 29
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Dermatology & Skin-Related",
+    "weight": 7
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Procedures, Surgeries & Medical Devices",
+    "weight": 14
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 113
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Hematology & Blood Disorders",
+    "weight": 8
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 70
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Allergy & Immunology",
+    "weight": 3
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Preventive Health & Screening",
+    "weight": 24
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 165
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Infectious & Communicable Diseases",
+    "weight": 6
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Substance Abuse & Addiction",
     "weight": 20
   },
   {
     "source": "Neurological Disorders",
-    "target": "Renal & Liver Diseases",
-    "weight": 7
-  },
-  {
-    "source": "Neurological Disorders",
-    "target": "Pain & Musculoskeletal Conditions",
-    "weight": 52
-  },
-  {
-    "source": "Neurological Disorders",
-    "target": "Infectious & Communicable Diseases",
-    "weight": 4
-  },
-  {
-    "source": "Neurological Disorders",
-    "target": "Autoimmune Diseases",
-    "weight": 8
-  },
-  {
-    "source": "Neurological Disorders",
-    "target": "Hematology & Blood Disorders",
-    "weight": 4
-  },
-  {
-    "source": "Neurological Disorders",
-    "target": "Respiratory Conditions & Treatments",
-    "weight": 12
-  },
-  {
-    "source": "Neurological Disorders",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 127
+    "target": "Cancer & Oncology",
+    "weight": 30
   },
   {
     "source": "Neurological Disorders",
     "target": "Digestive Health (Gastrointestinal Conditions)",
-    "weight": 15
+    "weight": 24
   },
   {
     "source": "Neurological Disorders",
-    "target": "Cancer & Oncology",
-    "weight": 21
+    "target": "Cardiovascular Diseases",
+    "weight": 43
   },
   {
     "source": "Neurological Disorders",
-    "target": "Substance Abuse & Addiction",
-    "weight": 14
-  },
-  {
-    "source": "Respiratory Conditions & Treatments",
-    "target": "Lifestyle, Diet & Supplements",
-    "weight": 34
-  },
-  {
-    "source": "Respiratory Conditions & Treatments",
-    "target": "Cardiovascular Diseases",
-    "weight": 23
-  },
-  {
-    "source": "Respiratory Conditions & Treatments",
-    "target": "Rare Diseases & Genetic Disorders",
-    "weight": 1
-  },
-  {
-    "source": "Respiratory Conditions & Treatments",
-    "target": "Patient Support & Education",
-    "weight": 1
-  },
-  {
-    "source": "Respiratory Conditions & Treatments",
-    "target": "Procedures, Surgeries & Medical Devices",
-    "weight": 4
-  },
-  {
-    "source": "Respiratory Conditions & Treatments",
-    "target": "Medications & Treatment Monitoring",
+    "target": "Autoimmune Diseases",
     "weight": 12
   },
   {
-    "source": "Respiratory Conditions & Treatments",
-    "target": "Renal & Liver Diseases",
-    "weight": 2
-  },
-  {
-    "source": "Respiratory Conditions & Treatments",
-    "target": "Pain & Musculoskeletal Conditions",
-    "weight": 16
-  },
-  {
-    "source": "Respiratory Conditions & Treatments",
-    "target": "Eye & Vision Health",
-    "weight": 2
-  },
-  {
-    "source": "Respiratory Conditions & Treatments",
-    "target": "Infectious & Communicable Diseases",
-    "weight": 4
-  },
-  {
-    "source": "Respiratory Conditions & Treatments",
-    "target": "Autoimmune Diseases",
-    "weight": 9
-  },
-  {
-    "source": "Respiratory Conditions & Treatments",
-    "target": "Hematology & Blood Disorders",
-    "weight": 5
-  },
-  {
-    "source": "Respiratory Conditions & Treatments",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 21
-  },
-  {
-    "source": "Respiratory Conditions & Treatments",
-    "target": "Digestive Health (Gastrointestinal Conditions)",
-    "weight": 7
-  },
-  {
-    "source": "Respiratory Conditions & Treatments",
-    "target": "Cancer & Oncology",
-    "weight": 13
-  },
-  {
-    "source": "Respiratory Conditions & Treatments",
-    "target": "Substance Abuse & Addiction",
-    "weight": 6
-  },
-  {
-    "source": "Digestive Health (Gastrointestinal Conditions)",
-    "target": "Lifestyle, Diet & Supplements",
-    "weight": 54
-  },
-  {
-    "source": "Digestive Health (Gastrointestinal Conditions)",
-    "target": "Cardiovascular Diseases",
-    "weight": 28
-  },
-  {
-    "source": "Digestive Health (Gastrointestinal Conditions)",
+    "source": "Neurological Disorders",
     "target": "Patient Support & Education",
-    "weight": 3
-  },
-  {
-    "source": "Digestive Health (Gastrointestinal Conditions)",
-    "target": "Procedures, Surgeries & Medical Devices",
-    "weight": 9
-  },
-  {
-    "source": "Digestive Health (Gastrointestinal Conditions)",
-    "target": "Medications & Treatment Monitoring",
-    "weight": 11
-  },
-  {
-    "source": "Digestive Health (Gastrointestinal Conditions)",
-    "target": "Renal & Liver Diseases",
-    "weight": 16
-  },
-  {
-    "source": "Digestive Health (Gastrointestinal Conditions)",
-    "target": "Pain & Musculoskeletal Conditions",
-    "weight": 29
-  },
-  {
-    "source": "Digestive Health (Gastrointestinal Conditions)",
-    "target": "Eye & Vision Health",
-    "weight": 1
-  },
-  {
-    "source": "Digestive Health (Gastrointestinal Conditions)",
-    "target": "Infectious & Communicable Diseases",
-    "weight": 5
-  },
-  {
-    "source": "Digestive Health (Gastrointestinal Conditions)",
-    "target": "Autoimmune Diseases",
-    "weight": 22
-  },
-  {
-    "source": "Digestive Health (Gastrointestinal Conditions)",
-    "target": "Hematology & Blood Disorders",
-    "weight": 7
-  },
-  {
-    "source": "Digestive Health (Gastrointestinal Conditions)",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 36
-  },
-  {
-    "source": "Digestive Health (Gastrointestinal Conditions)",
-    "target": "Cancer & Oncology",
-    "weight": 19
-  },
-  {
-    "source": "Digestive Health (Gastrointestinal Conditions)",
-    "target": "Substance Abuse & Addiction",
-    "weight": 4
-  },
-  {
-    "source": "Substance Abuse & Addiction",
-    "target": "Lifestyle, Diet & Supplements",
-    "weight": 54
-  },
-  {
-    "source": "Substance Abuse & Addiction",
-    "target": "Cardiovascular Diseases",
-    "weight": 12
-  },
-  {
-    "source": "Substance Abuse & Addiction",
-    "target": "Patient Support & Education",
-    "weight": 8
-  },
-  {
-    "source": "Substance Abuse & Addiction",
-    "target": "Procedures, Surgeries & Medical Devices",
-    "weight": 2
-  },
-  {
-    "source": "Substance Abuse & Addiction",
-    "target": "Medications & Treatment Monitoring",
-    "weight": 4
-  },
-  {
-    "source": "Substance Abuse & Addiction",
-    "target": "Renal & Liver Diseases",
     "weight": 10
   },
   {
-    "source": "Substance Abuse & Addiction",
-    "target": "Pain & Musculoskeletal Conditions",
+    "source": "Medications & Treatment Monitoring",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 75
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Renal & Liver Diseases",
     "weight": 8
   },
   {
-    "source": "Substance Abuse & Addiction",
-    "target": "Infectious & Communicable Diseases",
-    "weight": 2
+    "source": "Medications & Treatment Monitoring",
+    "target": "Respiratory Conditions & Treatments",
+    "weight": 16
   },
   {
-    "source": "Substance Abuse & Addiction",
-    "target": "Autoimmune Diseases",
+    "source": "Medications & Treatment Monitoring",
+    "target": "Dermatology & Skin-Related",
+    "weight": 8
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Procedures, Surgeries & Medical Devices",
+    "weight": 7
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 47
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Hematology & Blood Disorders",
+    "weight": 10
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 27
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Allergy & Immunology",
     "weight": 3
   },
   {
-    "source": "Substance Abuse & Addiction",
-    "target": "Hematology & Blood Disorders",
-    "weight": 2
+    "source": "Medications & Treatment Monitoring",
+    "target": "Preventive Health & Screening",
+    "weight": 5
   },
   {
-    "source": "Substance Abuse & Addiction",
+    "source": "Medications & Treatment Monitoring",
     "target": "Mental Health & Emotional Wellbeing",
-    "weight": 41
+    "weight": 33
   },
   {
-    "source": "Substance Abuse & Addiction",
+    "source": "Medications & Treatment Monitoring",
+    "target": "Infectious & Communicable Diseases",
+    "weight": 6
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Substance Abuse & Addiction",
+    "weight": 7
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
     "target": "Cancer & Oncology",
-    "weight": 8
+    "weight": 37
   },
   {
-    "source": "Lifestyle, Diet & Supplements",
+    "source": "Medications & Treatment Monitoring",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 18
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
     "target": "Cardiovascular Diseases",
-    "weight": 149
+    "weight": 48
   },
   {
-    "source": "Lifestyle, Diet & Supplements",
-    "target": "Rare Diseases & Genetic Disorders",
+    "source": "Medications & Treatment Monitoring",
+    "target": "Autoimmune Diseases",
+    "weight": 29
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Patient Support & Education",
     "weight": 2
   },
   {
-    "source": "Lifestyle, Diet & Supplements",
-    "target": "Patient Support & Education",
-    "weight": 45
+    "source": "Dermatology & Skin-Related",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 15
   },
   {
-    "source": "Lifestyle, Diet & Supplements",
-    "target": "Procedures, Surgeries & Medical Devices",
-    "weight": 19
-  },
-  {
-    "source": "Lifestyle, Diet & Supplements",
-    "target": "Medications & Treatment Monitoring",
-    "weight": 50
-  },
-  {
-    "source": "Lifestyle, Diet & Supplements",
+    "source": "Dermatology & Skin-Related",
     "target": "Renal & Liver Diseases",
-    "weight": 54
+    "weight": 4
   },
   {
-    "source": "Lifestyle, Diet & Supplements",
+    "source": "Dermatology & Skin-Related",
+    "target": "Respiratory Conditions & Treatments",
+    "weight": 6
+  },
+  {
+    "source": "Dermatology & Skin-Related",
+    "target": "Procedures, Surgeries & Medical Devices",
+    "weight": 2
+  },
+  {
+    "source": "Dermatology & Skin-Related",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 11
+  },
+  {
+    "source": "Dermatology & Skin-Related",
+    "target": "Hematology & Blood Disorders",
+    "weight": 5
+  },
+  {
+    "source": "Dermatology & Skin-Related",
     "target": "Pain & Musculoskeletal Conditions",
-    "weight": 74
+    "weight": 10
   },
   {
-    "source": "Lifestyle, Diet & Supplements",
-    "target": "Eye & Vision Health",
-    "weight": 8
+    "source": "Dermatology & Skin-Related",
+    "target": "Allergy & Immunology",
+    "weight": 1
   },
   {
-    "source": "Lifestyle, Diet & Supplements",
+    "source": "Dermatology & Skin-Related",
+    "target": "Preventive Health & Screening",
+    "weight": 1
+  },
+  {
+    "source": "Dermatology & Skin-Related",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 7
+  },
+  {
+    "source": "Dermatology & Skin-Related",
     "target": "Infectious & Communicable Diseases",
+    "weight": 2
+  },
+  {
+    "source": "Dermatology & Skin-Related",
+    "target": "Substance Abuse & Addiction",
+    "weight": 2
+  },
+  {
+    "source": "Dermatology & Skin-Related",
+    "target": "Cancer & Oncology",
     "weight": 14
   },
   {
-    "source": "Lifestyle, Diet & Supplements",
+    "source": "Dermatology & Skin-Related",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 7
+  },
+  {
+    "source": "Dermatology & Skin-Related",
+    "target": "Cardiovascular Diseases",
+    "weight": 9
+  },
+  {
+    "source": "Dermatology & Skin-Related",
     "target": "Autoimmune Diseases",
-    "weight": 50
+    "weight": 7
   },
   {
-    "source": "Lifestyle, Diet & Supplements",
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Rare Diseases & Genetic Disorders",
+    "weight": 3
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 579
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Renal & Liver Diseases",
+    "weight": 48
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Respiratory Conditions & Treatments",
+    "weight": 19
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Procedures, Surgeries & Medical Devices",
+    "weight": 24
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
     "target": "Hematology & Blood Disorders",
-    "weight": 22
+    "weight": 21
   },
   {
-    "source": "Lifestyle, Diet & Supplements",
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 81
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Allergy & Immunology",
+    "weight": 3
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Preventive Health & Screening",
+    "weight": 37
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
     "target": "Mental Health & Emotional Wellbeing",
     "weight": 301
   },
   {
-    "source": "Lifestyle, Diet & Supplements",
-    "target": "Cancer & Oncology",
-    "weight": 179
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Infectious & Communicable Diseases",
+    "weight": 13
   },
   {
-    "source": "Cardiovascular Diseases",
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Substance Abuse & Addiction",
+    "weight": 49
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Cancer & Oncology",
+    "weight": 243
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 48
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Cardiovascular Diseases",
+    "weight": 131
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Autoimmune Diseases",
+    "weight": 36
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Patient Support & Education",
+    "weight": 47
+  },
+  {
+    "source": "Pain & Musculoskeletal Conditions",
+    "target": "Rare Diseases & Genetic Disorders",
+    "weight": 2
+  },
+  {
+    "source": "Pain & Musculoskeletal Conditions",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 111
+  },
+  {
+    "source": "Pain & Musculoskeletal Conditions",
+    "target": "Renal & Liver Diseases",
+    "weight": 14
+  },
+  {
+    "source": "Pain & Musculoskeletal Conditions",
+    "target": "Respiratory Conditions & Treatments",
+    "weight": 22
+  },
+  {
+    "source": "Pain & Musculoskeletal Conditions",
+    "target": "Procedures, Surgeries & Medical Devices",
+    "weight": 15
+  },
+  {
+    "source": "Pain & Musculoskeletal Conditions",
+    "target": "Hematology & Blood Disorders",
+    "weight": 9
+  },
+  {
+    "source": "Pain & Musculoskeletal Conditions",
+    "target": "Allergy & Immunology",
+    "weight": 1
+  },
+  {
+    "source": "Pain & Musculoskeletal Conditions",
+    "target": "Preventive Health & Screening",
+    "weight": 19
+  },
+  {
+    "source": "Pain & Musculoskeletal Conditions",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 78
+  },
+  {
+    "source": "Pain & Musculoskeletal Conditions",
+    "target": "Infectious & Communicable Diseases",
+    "weight": 9
+  },
+  {
+    "source": "Pain & Musculoskeletal Conditions",
+    "target": "Substance Abuse & Addiction",
+    "weight": 12
+  },
+  {
+    "source": "Pain & Musculoskeletal Conditions",
+    "target": "Cancer & Oncology",
+    "weight": 40
+  },
+  {
+    "source": "Pain & Musculoskeletal Conditions",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 37
+  },
+  {
+    "source": "Pain & Musculoskeletal Conditions",
+    "target": "Cardiovascular Diseases",
+    "weight": 51
+  },
+  {
+    "source": "Pain & Musculoskeletal Conditions",
+    "target": "Autoimmune Diseases",
+    "weight": 32
+  },
+  {
+    "source": "Pain & Musculoskeletal Conditions",
+    "target": "Patient Support & Education",
+    "weight": 8
+  },
+  {
+    "source": "Allergy & Immunology",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 4
+  },
+  {
+    "source": "Allergy & Immunology",
+    "target": "Respiratory Conditions & Treatments",
+    "weight": 3
+  },
+  {
+    "source": "Allergy & Immunology",
+    "target": "Procedures, Surgeries & Medical Devices",
+    "weight": 2
+  },
+  {
+    "source": "Allergy & Immunology",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 4
+  },
+  {
+    "source": "Allergy & Immunology",
+    "target": "Infectious & Communicable Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Allergy & Immunology",
+    "target": "Cancer & Oncology",
+    "weight": 3
+  },
+  {
+    "source": "Allergy & Immunology",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 3
+  },
+  {
+    "source": "Allergy & Immunology",
+    "target": "Cardiovascular Diseases",
+    "weight": 3
+  },
+  {
+    "source": "Allergy & Immunology",
+    "target": "Autoimmune Diseases",
+    "weight": 2
+  },
+  {
+    "source": "Preventive Health & Screening",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 56
+  },
+  {
+    "source": "Preventive Health & Screening",
+    "target": "Renal & Liver Diseases",
+    "weight": 9
+  },
+  {
+    "source": "Preventive Health & Screening",
+    "target": "Respiratory Conditions & Treatments",
+    "weight": 3
+  },
+  {
+    "source": "Preventive Health & Screening",
+    "target": "Procedures, Surgeries & Medical Devices",
+    "weight": 4
+  },
+  {
+    "source": "Preventive Health & Screening",
+    "target": "Hematology & Blood Disorders",
+    "weight": 6
+  },
+  {
+    "source": "Preventive Health & Screening",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 55
+  },
+  {
+    "source": "Preventive Health & Screening",
+    "target": "Infectious & Communicable Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Preventive Health & Screening",
+    "target": "Substance Abuse & Addiction",
+    "weight": 4
+  },
+  {
+    "source": "Preventive Health & Screening",
+    "target": "Cancer & Oncology",
+    "weight": 12
+  },
+  {
+    "source": "Preventive Health & Screening",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 9
+  },
+  {
+    "source": "Preventive Health & Screening",
+    "target": "Cardiovascular Diseases",
+    "weight": 28
+  },
+  {
+    "source": "Preventive Health & Screening",
+    "target": "Autoimmune Diseases",
+    "weight": 6
+  },
+  {
+    "source": "Preventive Health & Screening",
+    "target": "Patient Support & Education",
+    "weight": 3
+  },
+  {
+    "source": "Infectious & Communicable Diseases",
     "target": "Rare Diseases & Genetic Disorders",
     "weight": 1
   },
   {
-    "source": "Cardiovascular Diseases",
-    "target": "Patient Support & Education",
-    "weight": 5
+    "source": "Infectious & Communicable Diseases",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 21
   },
   {
-    "source": "Cardiovascular Diseases",
-    "target": "Procedures, Surgeries & Medical Devices",
-    "weight": 10
-  },
-  {
-    "source": "Cardiovascular Diseases",
-    "target": "Medications & Treatment Monitoring",
-    "weight": 32
-  },
-  {
-    "source": "Cardiovascular Diseases",
+    "source": "Infectious & Communicable Diseases",
     "target": "Renal & Liver Diseases",
-    "weight": 15
+    "weight": 7
   },
   {
-    "source": "Cardiovascular Diseases",
-    "target": "Pain & Musculoskeletal Conditions",
-    "weight": 28
+    "source": "Infectious & Communicable Diseases",
+    "target": "Respiratory Conditions & Treatments",
+    "weight": 8
   },
   {
-    "source": "Cardiovascular Diseases",
-    "target": "Eye & Vision Health",
-    "weight": 5
-  },
-  {
-    "source": "Cardiovascular Diseases",
-    "target": "Infectious & Communicable Diseases",
-    "weight": 5
-  },
-  {
-    "source": "Cardiovascular Diseases",
-    "target": "Autoimmune Diseases",
-    "weight": 19
-  },
-  {
-    "source": "Cardiovascular Diseases",
-    "target": "Hematology & Blood Disorders",
-    "weight": 9
-  },
-  {
-    "source": "Cardiovascular Diseases",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 61
-  },
-  {
-    "source": "Cardiovascular Diseases",
-    "target": "Cancer & Oncology",
-    "weight": 44
-  },
-  {
-    "source": "Rare Diseases & Genetic Disorders",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 3
-  },
-  {
-    "source": "Rare Diseases & Genetic Disorders",
+    "source": "Infectious & Communicable Diseases",
     "target": "Procedures, Surgeries & Medical Devices",
-    "weight": 1
-  },
-  {
-    "source": "Rare Diseases & Genetic Disorders",
-    "target": "Pain & Musculoskeletal Conditions",
     "weight": 2
   },
   {
-    "source": "Patient Support & Education",
-    "target": "Medications & Treatment Monitoring",
-    "weight": 1
-  },
-  {
-    "source": "Patient Support & Education",
-    "target": "Renal & Liver Diseases",
-    "weight": 4
-  },
-  {
-    "source": "Patient Support & Education",
-    "target": "Pain & Musculoskeletal Conditions",
-    "weight": 7
-  },
-  {
-    "source": "Patient Support & Education",
-    "target": "Autoimmune Diseases",
-    "weight": 1
-  },
-  {
-    "source": "Patient Support & Education",
+    "source": "Infectious & Communicable Diseases",
     "target": "Hematology & Blood Disorders",
-    "weight": 1
-  },
-  {
-    "source": "Patient Support & Education",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 37
-  },
-  {
-    "source": "Patient Support & Education",
-    "target": "Cancer & Oncology",
-    "weight": 7
-  },
-  {
-    "source": "Procedures, Surgeries & Medical Devices",
-    "target": "Medications & Treatment Monitoring",
     "weight": 5
   },
   {
-    "source": "Procedures, Surgeries & Medical Devices",
-    "target": "Renal & Liver Diseases",
-    "weight": 3
-  },
-  {
-    "source": "Procedures, Surgeries & Medical Devices",
-    "target": "Pain & Musculoskeletal Conditions",
-    "weight": 12
-  },
-  {
-    "source": "Procedures, Surgeries & Medical Devices",
-    "target": "Eye & Vision Health",
-    "weight": 2
-  },
-  {
-    "source": "Procedures, Surgeries & Medical Devices",
-    "target": "Infectious & Communicable Diseases",
-    "weight": 1
-  },
-  {
-    "source": "Procedures, Surgeries & Medical Devices",
-    "target": "Autoimmune Diseases",
-    "weight": 6
-  },
-  {
-    "source": "Procedures, Surgeries & Medical Devices",
-    "target": "Hematology & Blood Disorders",
-    "weight": 3
-  },
-  {
-    "source": "Procedures, Surgeries & Medical Devices",
+    "source": "Infectious & Communicable Diseases",
     "target": "Mental Health & Emotional Wellbeing",
-    "weight": 12
-  },
-  {
-    "source": "Procedures, Surgeries & Medical Devices",
-    "target": "Cancer & Oncology",
-    "weight": 16
-  },
-  {
-    "source": "Medications & Treatment Monitoring",
-    "target": "Renal & Liver Diseases",
-    "weight": 7
-  },
-  {
-    "source": "Medications & Treatment Monitoring",
-    "target": "Pain & Musculoskeletal Conditions",
     "weight": 14
   },
   {
-    "source": "Medications & Treatment Monitoring",
-    "target": "Eye & Vision Health",
+    "source": "Infectious & Communicable Diseases",
+    "target": "Substance Abuse & Addiction",
     "weight": 2
   },
   {
-    "source": "Medications & Treatment Monitoring",
-    "target": "Infectious & Communicable Diseases",
+    "source": "Infectious & Communicable Diseases",
+    "target": "Cancer & Oncology",
+    "weight": 8
+  },
+  {
+    "source": "Infectious & Communicable Diseases",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 8
+  },
+  {
+    "source": "Infectious & Communicable Diseases",
+    "target": "Cardiovascular Diseases",
+    "weight": 9
+  },
+  {
+    "source": "Infectious & Communicable Diseases",
+    "target": "Autoimmune Diseases",
+    "weight": 2
+  },
+  {
+    "source": "Substance Abuse & Addiction",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 73
+  },
+  {
+    "source": "Substance Abuse & Addiction",
+    "target": "Renal & Liver Diseases",
+    "weight": 11
+  },
+  {
+    "source": "Substance Abuse & Addiction",
+    "target": "Respiratory Conditions & Treatments",
+    "weight": 8
+  },
+  {
+    "source": "Substance Abuse & Addiction",
+    "target": "Procedures, Surgeries & Medical Devices",
     "weight": 3
   },
   {
-    "source": "Medications & Treatment Monitoring",
-    "target": "Autoimmune Diseases",
-    "weight": 16
+    "source": "Substance Abuse & Addiction",
+    "target": "Hematology & Blood Disorders",
+    "weight": 2
   },
   {
-    "source": "Medications & Treatment Monitoring",
-    "target": "Hematology & Blood Disorders",
+    "source": "Substance Abuse & Addiction",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 52
+  },
+  {
+    "source": "Substance Abuse & Addiction",
+    "target": "Cancer & Oncology",
+    "weight": 12
+  },
+  {
+    "source": "Substance Abuse & Addiction",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
     "weight": 6
   },
   {
-    "source": "Medications & Treatment Monitoring",
+    "source": "Substance Abuse & Addiction",
+    "target": "Cardiovascular Diseases",
+    "weight": 17
+  },
+  {
+    "source": "Substance Abuse & Addiction",
+    "target": "Autoimmune Diseases",
+    "weight": 6
+  },
+  {
+    "source": "Substance Abuse & Addiction",
+    "target": "Patient Support & Education",
+    "weight": 12
+  },
+  {
+    "source": "Autoimmune Diseases",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 78
+  },
+  {
+    "source": "Autoimmune Diseases",
+    "target": "Renal & Liver Diseases",
+    "weight": 10
+  },
+  {
+    "source": "Autoimmune Diseases",
+    "target": "Respiratory Conditions & Treatments",
+    "weight": 11
+  },
+  {
+    "source": "Autoimmune Diseases",
+    "target": "Procedures, Surgeries & Medical Devices",
+    "weight": 6
+  },
+  {
+    "source": "Autoimmune Diseases",
+    "target": "Hematology & Blood Disorders",
+    "weight": 7
+  },
+  {
+    "source": "Autoimmune Diseases",
     "target": "Mental Health & Emotional Wellbeing",
-    "weight": 24
+    "weight": 28
   },
   {
-    "source": "Medications & Treatment Monitoring",
+    "source": "Autoimmune Diseases",
     "target": "Cancer & Oncology",
-    "weight": 24
+    "weight": 53
   },
   {
-    "source": "Renal & Liver Diseases",
-    "target": "Pain & Musculoskeletal Conditions",
-    "weight": 9
+    "source": "Autoimmune Diseases",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 30
   },
   {
-    "source": "Renal & Liver Diseases",
-    "target": "Eye & Vision Health",
+    "source": "Autoimmune Diseases",
+    "target": "Cardiovascular Diseases",
+    "weight": 36
+  },
+  {
+    "source": "Autoimmune Diseases",
+    "target": "Patient Support & Education",
     "weight": 1
   },
   {
-    "source": "Renal & Liver Diseases",
-    "target": "Infectious & Communicable Diseases",
-    "weight": 6
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Rare Diseases & Genetic Disorders",
+    "weight": 4
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Renal & Liver Diseases",
+    "weight": 69
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Respiratory Conditions & Treatments",
+    "weight": 41
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Procedures, Surgeries & Medical Devices",
+    "weight": 27
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Hematology & Blood Disorders",
+    "weight": 33
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 412
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Cancer & Oncology",
+    "weight": 277
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 77
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Cardiovascular Diseases",
+    "weight": 207
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Patient Support & Education",
+    "weight": 56
   },
   {
     "source": "Renal & Liver Diseases",
-    "target": "Autoimmune Diseases",
-    "weight": 6
+    "target": "Respiratory Conditions & Treatments",
+    "weight": 5
+  },
+  {
+    "source": "Renal & Liver Diseases",
+    "target": "Procedures, Surgeries & Medical Devices",
+    "weight": 3
   },
   {
     "source": "Renal & Liver Diseases",
     "target": "Hematology & Blood Disorders",
-    "weight": 9
+    "weight": 12
   },
   {
     "source": "Renal & Liver Diseases",
     "target": "Mental Health & Emotional Wellbeing",
+    "weight": 35
+  },
+  {
+    "source": "Renal & Liver Diseases",
+    "target": "Cancer & Oncology",
     "weight": 27
   },
   {
     "source": "Renal & Liver Diseases",
-    "target": "Cancer & Oncology",
-    "weight": 19
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 18
   },
   {
-    "source": "Pain & Musculoskeletal Conditions",
-    "target": "Eye & Vision Health",
-    "weight": 2
+    "source": "Renal & Liver Diseases",
+    "target": "Cardiovascular Diseases",
+    "weight": 24
   },
   {
-    "source": "Pain & Musculoskeletal Conditions",
-    "target": "Infectious & Communicable Diseases",
-    "weight": 5
-  },
-  {
-    "source": "Pain & Musculoskeletal Conditions",
-    "target": "Autoimmune Diseases",
-    "weight": 21
-  },
-  {
-    "source": "Pain & Musculoskeletal Conditions",
-    "target": "Hematology & Blood Disorders",
-    "weight": 5
-  },
-  {
-    "source": "Pain & Musculoskeletal Conditions",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 60
-  },
-  {
-    "source": "Pain & Musculoskeletal Conditions",
-    "target": "Cancer & Oncology",
-    "weight": 23
-  },
-  {
-    "source": "Eye & Vision Health",
-    "target": "Infectious & Communicable Diseases",
-    "weight": 1
-  },
-  {
-    "source": "Eye & Vision Health",
-    "target": "Autoimmune Diseases",
+    "source": "Renal & Liver Diseases",
+    "target": "Patient Support & Education",
     "weight": 4
   },
   {
-    "source": "Eye & Vision Health",
-    "target": "Hematology & Blood Disorders",
+    "source": "Respiratory Conditions & Treatments",
+    "target": "Rare Diseases & Genetic Disorders",
     "weight": 1
   },
   {
-    "source": "Eye & Vision Health",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 2
+    "source": "Respiratory Conditions & Treatments",
+    "target": "Procedures, Surgeries & Medical Devices",
+    "weight": 5
   },
   {
-    "source": "Eye & Vision Health",
-    "target": "Cancer & Oncology",
-    "weight": 4
-  },
-  {
-    "source": "Infectious & Communicable Diseases",
-    "target": "Autoimmune Diseases",
-    "weight": 2
-  },
-  {
-    "source": "Infectious & Communicable Diseases",
+    "source": "Respiratory Conditions & Treatments",
     "target": "Hematology & Blood Disorders",
+    "weight": 7
+  },
+  {
+    "source": "Respiratory Conditions & Treatments",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 27
+  },
+  {
+    "source": "Respiratory Conditions & Treatments",
+    "target": "Cancer & Oncology",
+    "weight": 14
+  },
+  {
+    "source": "Respiratory Conditions & Treatments",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 9
+  },
+  {
+    "source": "Respiratory Conditions & Treatments",
+    "target": "Cardiovascular Diseases",
+    "weight": 29
+  },
+  {
+    "source": "Respiratory Conditions & Treatments",
+    "target": "Patient Support & Education",
     "weight": 2
   },
   {
-    "source": "Infectious & Communicable Diseases",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 10
+    "source": "Procedures, Surgeries & Medical Devices",
+    "target": "Rare Diseases & Genetic Disorders",
+    "weight": 1
   },
   {
-    "source": "Infectious & Communicable Diseases",
-    "target": "Cancer & Oncology",
-    "weight": 6
-  },
-  {
-    "source": "Autoimmune Diseases",
+    "source": "Procedures, Surgeries & Medical Devices",
     "target": "Hematology & Blood Disorders",
-    "weight": 6
+    "weight": 5
   },
   {
-    "source": "Autoimmune Diseases",
+    "source": "Procedures, Surgeries & Medical Devices",
     "target": "Mental Health & Emotional Wellbeing",
-    "weight": 19
+    "weight": 17
   },
   {
-    "source": "Autoimmune Diseases",
+    "source": "Procedures, Surgeries & Medical Devices",
     "target": "Cancer & Oncology",
-    "weight": 37
+    "weight": 26
   },
   {
-    "source": "Hematology & Blood Disorders",
-    "target": "Mental Health & Emotional Wellbeing",
+    "source": "Procedures, Surgeries & Medical Devices",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 11
+  },
+  {
+    "source": "Procedures, Surgeries & Medical Devices",
+    "target": "Cardiovascular Diseases",
     "weight": 14
   },
   {
     "source": "Hematology & Blood Disorders",
+    "target": "Rare Diseases & Genetic Disorders",
+    "weight": 2
+  },
+  {
+    "source": "Hematology & Blood Disorders",
+    "target": "Mental Health & Emotional Wellbeing",
+    "weight": 18
+  },
+  {
+    "source": "Hematology & Blood Disorders",
     "target": "Cancer & Oncology",
-    "weight": 10
+    "weight": 19
+  },
+  {
+    "source": "Hematology & Blood Disorders",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 12
+  },
+  {
+    "source": "Hematology & Blood Disorders",
+    "target": "Cardiovascular Diseases",
+    "weight": 12
+  },
+  {
+    "source": "Hematology & Blood Disorders",
+    "target": "Patient Support & Education",
+    "weight": 1
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Rare Diseases & Genetic Disorders",
+    "weight": 3
   },
   {
     "source": "Mental Health & Emotional Wellbeing",
     "target": "Cancer & Oncology",
-    "weight": 45
+    "weight": 67
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 44
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Cardiovascular Diseases",
+    "weight": 87
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Patient Support & Education",
+    "weight": 44
+  },
+  {
+    "source": "Cancer & Oncology",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 28
+  },
+  {
+    "source": "Cancer & Oncology",
+    "target": "Cardiovascular Diseases",
+    "weight": 65
+  },
+  {
+    "source": "Cancer & Oncology",
+    "target": "Patient Support & Education",
+    "weight": 9
+  },
+  {
+    "source": "Digestive Health (Gastrointestinal Conditions)",
+    "target": "Rare Diseases & Genetic Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Digestive Health (Gastrointestinal Conditions)",
+    "target": "Cardiovascular Diseases",
+    "weight": 37
+  },
+  {
+    "source": "Digestive Health (Gastrointestinal Conditions)",
+    "target": "Patient Support & Education",
+    "weight": 4
+  },
+  {
+    "source": "Cardiovascular Diseases",
+    "target": "Rare Diseases & Genetic Disorders",
+    "weight": 2
+  },
+  {
+    "source": "Cardiovascular Diseases",
+    "target": "Patient Support & Education",
+    "weight": 6
   }
 ]

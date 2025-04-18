@@ -1,33 +1,28 @@
 [
   {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "source": "Mental Health & Emotional Wellbeing",
     "target": "Pain & Musculoskeletal Conditions",
     "weight": 1
   },
   {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Substance Abuse & Addiction",
+    "weight": 2
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 1
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
     "target": "Lifestyle, Diet & Supplements",
     "weight": 2
   },
   {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 1
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Substance Abuse & Addiction",
-    "weight": 1
-  },
-  {
     "source": "Lifestyle, Diet & Supplements",
     "target": "Pain & Musculoskeletal Conditions",
     "weight": 1
-  },
-  {
-    "source": "Lifestyle, Diet & Supplements",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 2
   },
   {
     "source": "Lifestyle, Diet & Supplements",
@@ -35,14 +30,19 @@
     "weight": 6
   },
   {
-    "source": "Mental Health & Emotional Wellbeing",
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 2
+  },
+  {
+    "source": "Substance Abuse & Addiction",
     "target": "Pain & Musculoskeletal Conditions",
     "weight": 1
   },
   {
-    "source": "Mental Health & Emotional Wellbeing",
-    "target": "Substance Abuse & Addiction",
-    "weight": 2
+    "source": "Substance Abuse & Addiction",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 1
   },
   {
     "source": "Cardiovascular Diseases",
@@ -50,8 +50,8 @@
     "weight": 1
   },
   {
-    "source": "Pain & Musculoskeletal Conditions",
-    "target": "Substance Abuse & Addiction",
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Pain & Musculoskeletal Conditions",
     "weight": 1
   }
 ]

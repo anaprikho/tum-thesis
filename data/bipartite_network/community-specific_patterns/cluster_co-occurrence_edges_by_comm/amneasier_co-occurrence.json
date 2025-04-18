@@ -1,78 +1,88 @@
 [
   {
-    "source": "Preventive Health & Screening",
-    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "weight": 1
-  },
-  {
-    "source": "Preventive Health & Screening",
-    "target": "Lifestyle, Diet & Supplements",
-    "weight": 1
-  },
-  {
-    "source": "Preventive Health & Screening",
-    "target": "Neurological Disorders",
-    "weight": 1
-  },
-  {
-    "source": "Medications & Treatment Monitoring",
-    "target": "Metabolic & Endocrine Disorders",
-    "weight": 6
-  },
-  {
-    "source": "Medications & Treatment Monitoring",
-    "target": "Procedures, Surgeries & Medical Devices",
-    "weight": 1
-  },
-  {
-    "source": "Medications & Treatment Monitoring",
-    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "weight": 2
-  },
-  {
-    "source": "Medications & Treatment Monitoring",
-    "target": "Neurological Disorders",
-    "weight": 10
-  },
-  {
-    "source": "Medications & Treatment Monitoring",
-    "target": "Lifestyle, Diet & Supplements",
-    "weight": 2
-  },
-  {
-    "source": "Medications & Treatment Monitoring",
+    "source": "Mental Health & Emotional Wellbeing",
     "target": "Pain & Musculoskeletal Conditions",
     "weight": 3
   },
   {
-    "source": "Medications & Treatment Monitoring",
-    "target": "Respiratory Conditions & Treatments",
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 3
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 6
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Neurological Disorders",
+    "weight": 6
+  },
+  {
+    "source": "Preventive Health & Screening",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
     "weight": 1
   },
   {
-    "source": "Medications & Treatment Monitoring",
+    "source": "Preventive Health & Screening",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 1
+  },
+  {
+    "source": "Preventive Health & Screening",
+    "target": "Neurological Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Metabolic & Endocrine Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
     "target": "Cancer & Oncology",
     "weight": 1
   },
   {
-    "source": "Medications & Treatment Monitoring",
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Neurological Disorders",
+    "weight": 16
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Medications & Treatment Monitoring",
+    "weight": 2
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
     "target": "Dermatology & Skin-Related",
-    "weight": 3
-  },
-  {
-    "source": "Metabolic & Endocrine Disorders",
-    "target": "Lifestyle, Diet & Supplements",
     "weight": 1
   },
   {
-    "source": "Metabolic & Endocrine Disorders",
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Procedures, Surgeries & Medical Devices",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 9
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
     "target": "Pain & Musculoskeletal Conditions",
-    "weight": 1
+    "weight": 5
   },
   {
     "source": "Metabolic & Endocrine Disorders",
     "target": "Respiratory Conditions & Treatments",
     "weight": 1
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Medications & Treatment Monitoring",
+    "weight": 6
   },
   {
     "source": "Metabolic & Endocrine Disorders",
@@ -85,6 +95,31 @@
     "weight": 4
   },
   {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 1
+  },
+  {
+    "source": "Respiratory Conditions & Treatments",
+    "target": "Medications & Treatment Monitoring",
+    "weight": 1
+  },
+  {
+    "source": "Respiratory Conditions & Treatments",
+    "target": "Neurological Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Cancer & Oncology",
+    "target": "Medications & Treatment Monitoring",
+    "weight": 1
+  },
+  {
+    "source": "Cancer & Oncology",
+    "target": "Neurological Disorders",
+    "weight": 1
+  },
+  {
     "source": "Cancer & Oncology",
     "target": "Procedures, Surgeries & Medical Devices",
     "weight": 1
@@ -96,18 +131,63 @@
   },
   {
     "source": "Cancer & Oncology",
-    "target": "Lifestyle, Diet & Supplements",
-    "weight": 1
-  },
-  {
-    "source": "Cancer & Oncology",
     "target": "Pain & Musculoskeletal Conditions",
     "weight": 1
   },
   {
-    "source": "Cancer & Oncology",
-    "target": "Neurological Disorders",
+    "source": "Neurological Disorders",
+    "target": "Medications & Treatment Monitoring",
+    "weight": 10
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Dermatology & Skin-Related",
+    "weight": 5
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Procedures, Surgeries & Medical Devices",
     "weight": 1
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Cardiovascular Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 12
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 10
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Autoimmune Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Dermatology & Skin-Related",
+    "weight": 3
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Procedures, Surgeries & Medical Devices",
+    "weight": 1
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 2
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 3
   },
   {
     "source": "Procedures, Surgeries & Medical Devices",
@@ -116,33 +196,8 @@
   },
   {
     "source": "Procedures, Surgeries & Medical Devices",
-    "target": "Lifestyle, Diet & Supplements",
-    "weight": 1
-  },
-  {
-    "source": "Procedures, Surgeries & Medical Devices",
     "target": "Pain & Musculoskeletal Conditions",
     "weight": 1
-  },
-  {
-    "source": "Procedures, Surgeries & Medical Devices",
-    "target": "Neurological Disorders",
-    "weight": 1
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Neurological Disorders",
-    "weight": 12
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Lifestyle, Diet & Supplements",
-    "weight": 9
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 3
   },
   {
     "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
@@ -155,63 +210,8 @@
     "weight": 4
   },
   {
-    "source": "Autoimmune Diseases",
-    "target": "Neurological Disorders",
-    "weight": 1
-  },
-  {
-    "source": "Lifestyle, Diet & Supplements",
-    "target": "Neurological Disorders",
-    "weight": 16
-  },
-  {
-    "source": "Lifestyle, Diet & Supplements",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 6
-  },
-  {
-    "source": "Lifestyle, Diet & Supplements",
-    "target": "Pain & Musculoskeletal Conditions",
-    "weight": 5
-  },
-  {
-    "source": "Lifestyle, Diet & Supplements",
-    "target": "Dermatology & Skin-Related",
-    "weight": 1
-  },
-  {
-    "source": "Mental Health & Emotional Wellbeing",
-    "target": "Pain & Musculoskeletal Conditions",
-    "weight": 3
-  },
-  {
-    "source": "Mental Health & Emotional Wellbeing",
-    "target": "Neurological Disorders",
-    "weight": 6
-  },
-  {
     "source": "Cardiovascular Diseases",
     "target": "Pain & Musculoskeletal Conditions",
     "weight": 1
-  },
-  {
-    "source": "Cardiovascular Diseases",
-    "target": "Neurological Disorders",
-    "weight": 1
-  },
-  {
-    "source": "Pain & Musculoskeletal Conditions",
-    "target": "Neurological Disorders",
-    "weight": 10
-  },
-  {
-    "source": "Respiratory Conditions & Treatments",
-    "target": "Neurological Disorders",
-    "weight": 1
-  },
-  {
-    "source": "Neurological Disorders",
-    "target": "Dermatology & Skin-Related",
-    "weight": 5
   }
 ]

@@ -102,7 +102,7 @@ Number of UNQIUE users with tags (users may me members in multiple comm): 18612 
 Create Bipartite Network:
 ==================================
 GENERAL PATTERNS:
-Total users in file: 11518
+Total users in file: 8554
 Users with at least one cluster: 8554
 Total user-cluster edges: 22138
 Unique clusters: 23
@@ -113,32 +113,38 @@ Edges in projected cluster-cluster graph: 253
     ----------------
     GENDER:
       MALE users:
-        Users with at least one cluster: 1489
+        Users with at least one cluster: 2005
+        Total user-cluster edges: 5330
         Unique clusters: 23
-        Edges in projected cluster-cluster graph: 224
+        Edges in projected cluster-cluster graph: 232
       FEMALE users:
-        Users with at least one cluster: 3334
+        Users with at least one cluster: 4440
+        Total user-cluster edges: 12754
         Unique clusters: 23
         Edges in projected cluster-cluster graph: 252
     AGE:
       18-30 users:
-        Total users in file: 437
+        Total users in file: 380
         Users with at least one cluster: 380
+        Total user-cluster edges: 970
         Unique clusters: 22
         Edges in projected cluster-cluster graph: 156
       30-50 users:
-        Total users in file: 1122
+        Total users in file: 1023
         Users with at least one cluster: 1023
+        Total user-cluster edges: 2761
         Unique clusters: 23
         Edges in projected cluster-cluster graph: 242
       50-70 users:
-        Total users in file: 1693
+        Total users in file: 1587
         Users with at least one cluster: 1587
+        Total user-cluster edges: 4764
         Unique clusters: 23
         Edges in projected cluster-cluster graph: 243
       70+ users:
-        Total users in file: 789
+        Total users in file: 759
         Users with at least one cluster: 759
+        Total user-cluster edges: 2348
         Unique clusters: 23
         Edges in projected cluster-cluster graph: 234
 
@@ -165,6 +171,6 @@ Edges in projected cluster-cluster graph: 253
         
 
 COMMUNITY-SPECIFIC PATTERNS:
-Total communities: 326
+Total communities: 325
 Communities with tags: 325
-Communities skipped (no tags): 1
+Communities skipped (no tags): 0

@@ -1,17 +1,17 @@
 [
   {
     "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Lifestyle, Diet & Supplements",
+    "target": "Cancer & Oncology",
     "weight": 1
   },
   {
     "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Cancer & Oncology",
+    "target": "Lifestyle, Diet & Supplements",
     "weight": 1
   },
   {
-    "source": "Lifestyle, Diet & Supplements",
-    "target": "Cancer & Oncology",
+    "source": "Cancer & Oncology",
+    "target": "Lifestyle, Diet & Supplements",
     "weight": 1
   }
 ]

@@ -1,12 +1,47 @@
 [
   {
-    "source": "Rare Diseases & Genetic Disorders",
-    "target": "Infectious & Communicable Diseases",
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Lifestyle, Diet & Supplements",
     "weight": 1
   },
   {
-    "source": "Rare Diseases & Genetic Disorders",
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Renal & Liver Diseases",
+    "weight": 2
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Infectious & Communicable Diseases",
+    "weight": 2
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Substance Abuse & Addiction",
+    "weight": 1
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Cancer & Oncology",
+    "weight": 1
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Medications & Treatment Monitoring",
+    "weight": 1
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 2
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
     "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 1
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Autoimmune Diseases",
     "weight": 1
   },
   {
@@ -16,7 +51,7 @@
   },
   {
     "source": "Rare Diseases & Genetic Disorders",
-    "target": "Pain & Musculoskeletal Conditions",
+    "target": "Infectious & Communicable Diseases",
     "weight": 1
   },
   {
@@ -30,58 +65,13 @@
     "weight": 1
   },
   {
-    "source": "Infectious & Communicable Diseases",
-    "target": "Medications & Treatment Monitoring",
-    "weight": 2
-  },
-  {
-    "source": "Infectious & Communicable Diseases",
-    "target": "Autoimmune Diseases",
-    "weight": 2
-  },
-  {
-    "source": "Infectious & Communicable Diseases",
+    "source": "Rare Diseases & Genetic Disorders",
     "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "weight": 2
-  },
-  {
-    "source": "Infectious & Communicable Diseases",
-    "target": "Substance Abuse & Addiction",
     "weight": 1
   },
   {
-    "source": "Infectious & Communicable Diseases",
-    "target": "Renal & Liver Diseases",
-    "weight": 3
-  },
-  {
-    "source": "Infectious & Communicable Diseases",
-    "target": "Lifestyle, Diet & Supplements",
-    "weight": 1
-  },
-  {
-    "source": "Infectious & Communicable Diseases",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 2
-  },
-  {
-    "source": "Infectious & Communicable Diseases",
+    "source": "Rare Diseases & Genetic Disorders",
     "target": "Pain & Musculoskeletal Conditions",
-    "weight": 1
-  },
-  {
-    "source": "Infectious & Communicable Diseases",
-    "target": "Cancer & Oncology",
-    "weight": 2
-  },
-  {
-    "source": "Infectious & Communicable Diseases",
-    "target": "Digestive Health (Gastrointestinal Conditions)",
-    "weight": 2
-  },
-  {
-    "source": "Preventive Health & Screening",
-    "target": "Renal & Liver Diseases",
     "weight": 1
   },
   {
@@ -90,139 +80,99 @@
     "weight": 1
   },
   {
-    "source": "Medications & Treatment Monitoring",
-    "target": "Autoimmune Diseases",
-    "weight": 2
+    "source": "Preventive Health & Screening",
+    "target": "Renal & Liver Diseases",
+    "weight": 1
   },
   {
-    "source": "Medications & Treatment Monitoring",
+    "source": "Lifestyle, Diet & Supplements",
     "target": "Renal & Liver Diseases",
     "weight": 2
   },
   {
-    "source": "Medications & Treatment Monitoring",
-    "target": "Mental Health & Emotional Wellbeing",
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Infectious & Communicable Diseases",
     "weight": 1
   },
   {
-    "source": "Medications & Treatment Monitoring",
-    "target": "Respiratory Conditions & Treatments",
-    "weight": 1
-  },
-  {
-    "source": "Medications & Treatment Monitoring",
-    "target": "Cancer & Oncology",
-    "weight": 1
-  },
-  {
-    "source": "Medications & Treatment Monitoring",
-    "target": "Digestive Health (Gastrointestinal Conditions)",
-    "weight": 1
-  },
-  {
-    "source": "Metabolic & Endocrine Disorders",
-    "target": "Renal & Liver Diseases",
-    "weight": 1
-  },
-  {
-    "source": "Metabolic & Endocrine Disorders",
-    "target": "Respiratory Conditions & Treatments",
-    "weight": 1
-  },
-  {
-    "source": "Metabolic & Endocrine Disorders",
-    "target": "Autoimmune Diseases",
-    "weight": 1
-  },
-  {
-    "source": "Autoimmune Diseases",
-    "target": "Renal & Liver Diseases",
-    "weight": 1
-  },
-  {
-    "source": "Autoimmune Diseases",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 1
-  },
-  {
-    "source": "Autoimmune Diseases",
-    "target": "Respiratory Conditions & Treatments",
-    "weight": 1
-  },
-  {
-    "source": "Autoimmune Diseases",
-    "target": "Cancer & Oncology",
-    "weight": 1
-  },
-  {
-    "source": "Autoimmune Diseases",
-    "target": "Digestive Health (Gastrointestinal Conditions)",
-    "weight": 1
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "source": "Lifestyle, Diet & Supplements",
     "target": "Substance Abuse & Addiction",
+    "weight": 3
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Respiratory Conditions & Treatments",
     "weight": 1
   },
   {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Cancer & Oncology",
+    "weight": 2
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 2
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
     "target": "Renal & Liver Diseases",
-    "weight": 2
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Lifestyle, Diet & Supplements",
-    "weight": 2
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Mental Health & Emotional Wellbeing",
     "weight": 1
   },
   {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Autoimmune Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Metabolic & Endocrine Disorders",
+    "target": "Respiratory Conditions & Treatments",
+    "weight": 1
+  },
+  {
+    "source": "Renal & Liver Diseases",
+    "target": "Respiratory Conditions & Treatments",
+    "weight": 3
+  },
+  {
+    "source": "Renal & Liver Diseases",
+    "target": "Medications & Treatment Monitoring",
+    "weight": 2
+  },
+  {
+    "source": "Renal & Liver Diseases",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 2
+  },
+  {
+    "source": "Renal & Liver Diseases",
     "target": "Pain & Musculoskeletal Conditions",
     "weight": 1
   },
   {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Cancer & Oncology",
-    "weight": 2
-  },
-  {
-    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
-    "target": "Digestive Health (Gastrointestinal Conditions)",
-    "weight": 1
-  },
-  {
-    "source": "Substance Abuse & Addiction",
-    "target": "Renal & Liver Diseases",
-    "weight": 2
-  },
-  {
-    "source": "Substance Abuse & Addiction",
-    "target": "Lifestyle, Diet & Supplements",
+    "source": "Renal & Liver Diseases",
+    "target": "Infectious & Communicable Diseases",
     "weight": 3
   },
   {
-    "source": "Substance Abuse & Addiction",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 1
+    "source": "Renal & Liver Diseases",
+    "target": "Substance Abuse & Addiction",
+    "weight": 2
   },
   {
-    "source": "Substance Abuse & Addiction",
-    "target": "Respiratory Conditions & Treatments",
-    "weight": 1
-  },
-  {
-    "source": "Substance Abuse & Addiction",
+    "source": "Renal & Liver Diseases",
     "target": "Cancer & Oncology",
-    "weight": 1
+    "weight": 3
   },
   {
-    "source": "Substance Abuse & Addiction",
+    "source": "Renal & Liver Diseases",
     "target": "Digestive Health (Gastrointestinal Conditions)",
-    "weight": 1
+    "weight": 2
   },
   {
     "source": "Renal & Liver Diseases",
@@ -231,67 +181,62 @@
   },
   {
     "source": "Renal & Liver Diseases",
+    "target": "Autoimmune Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Infectious & Communicable Diseases",
+    "target": "Substance Abuse & Addiction",
+    "weight": 1
+  },
+  {
+    "source": "Infectious & Communicable Diseases",
+    "target": "Cancer & Oncology",
+    "weight": 2
+  },
+  {
+    "source": "Infectious & Communicable Diseases",
+    "target": "Medications & Treatment Monitoring",
+    "weight": 2
+  },
+  {
+    "source": "Infectious & Communicable Diseases",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 2
+  },
+  {
+    "source": "Infectious & Communicable Diseases",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 2
+  },
+  {
+    "source": "Infectious & Communicable Diseases",
     "target": "Pain & Musculoskeletal Conditions",
     "weight": 1
   },
   {
-    "source": "Renal & Liver Diseases",
-    "target": "Lifestyle, Diet & Supplements",
+    "source": "Infectious & Communicable Diseases",
+    "target": "Autoimmune Diseases",
     "weight": 2
   },
   {
-    "source": "Renal & Liver Diseases",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 2
-  },
-  {
-    "source": "Renal & Liver Diseases",
-    "target": "Respiratory Conditions & Treatments",
-    "weight": 3
-  },
-  {
-    "source": "Renal & Liver Diseases",
-    "target": "Cancer & Oncology",
-    "weight": 3
-  },
-  {
-    "source": "Renal & Liver Diseases",
-    "target": "Digestive Health (Gastrointestinal Conditions)",
-    "weight": 2
-  },
-  {
-    "source": "Lifestyle, Diet & Supplements",
-    "target": "Mental Health & Emotional Wellbeing",
-    "weight": 1
-  },
-  {
-    "source": "Lifestyle, Diet & Supplements",
+    "source": "Substance Abuse & Addiction",
     "target": "Respiratory Conditions & Treatments",
     "weight": 1
   },
   {
-    "source": "Lifestyle, Diet & Supplements",
-    "target": "Cancer & Oncology",
-    "weight": 2
-  },
-  {
-    "source": "Lifestyle, Diet & Supplements",
-    "target": "Digestive Health (Gastrointestinal Conditions)",
-    "weight": 1
-  },
-  {
-    "source": "Mental Health & Emotional Wellbeing",
+    "source": "Substance Abuse & Addiction",
     "target": "Cancer & Oncology",
     "weight": 1
   },
   {
-    "source": "Mental Health & Emotional Wellbeing",
+    "source": "Substance Abuse & Addiction",
     "target": "Digestive Health (Gastrointestinal Conditions)",
-    "weight": 2
+    "weight": 1
   },
   {
-    "source": "Pain & Musculoskeletal Conditions",
-    "target": "Cancer & Oncology",
+    "source": "Substance Abuse & Addiction",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
     "weight": 1
   },
   {
@@ -300,8 +245,63 @@
     "weight": 1
   },
   {
+    "source": "Respiratory Conditions & Treatments",
+    "target": "Medications & Treatment Monitoring",
+    "weight": 1
+  },
+  {
+    "source": "Respiratory Conditions & Treatments",
+    "target": "Autoimmune Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Cancer & Oncology",
+    "target": "Medications & Treatment Monitoring",
+    "weight": 1
+  },
+  {
     "source": "Cancer & Oncology",
     "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 1
+  },
+  {
+    "source": "Cancer & Oncology",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 2
+  },
+  {
+    "source": "Cancer & Oncology",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 1
+  },
+  {
+    "source": "Cancer & Oncology",
+    "target": "Autoimmune Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 1
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Autoimmune Diseases",
+    "weight": 2
+  },
+  {
+    "source": "Digestive Health (Gastrointestinal Conditions)",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 1
+  },
+  {
+    "source": "Digestive Health (Gastrointestinal Conditions)",
+    "target": "Autoimmune Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Pain & Musculoskeletal Conditions",
     "weight": 1
   }
 ]
