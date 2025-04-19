@@ -259,7 +259,8 @@ ethnicity_mapping = {
 
 
 ==================================
-Create Bipartite Network: https://networkx.org/documentation/stable/reference/algorithms/bipartite.html
+Create Bipartite Network:
+https://networkx.org/documentation/stable/reference/algorithms/bipartite.html
 ==================================
 Extend profile data by tag_to_cluster mapping.
    "Coachtrip": {
@@ -272,7 +273,7 @@ Extend profile data by tag_to_cluster mapping.
 		        "Respiratory desease", 
 		        "Respiratory desease", 
 		        "Respiratory desease"
-        ],
+        ],...}
 
 ----------------
 GENERAL PATTERNS:

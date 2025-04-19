@@ -18,8 +18,8 @@ Demographics:
 ==================================
 GENERAL PROFILES:
 
----> COUNTRY
-          Country  Count  Percentage
+---> COUNTRY (here is only countries with count > 9; see Stats notebook)
+If filter countries with percentage > 5%, Ireland is the last.
                  Country  Count  Percentage
 0         United Kingdom   3584   41.898527
 1                    N/A   2273   26.572364
@@ -166,22 +166,41 @@ Edges in projected cluster-cluster graph: 253
       subgroup 1: Australia | India | Canada (whole sample -> w/o matching)
         Australia - users:
           Users with at least one cluster: 113
+          Total user-cluster edges: 310
           Unique clusters: 20
           Edges in projected cluster-cluster graph: 122
         India - users:
           Users with at least one cluster: 73
+          Total user-cluster edges: 161
           Unique clusters: 19
           Edges in projected cluster-cluster graph: 70
         Canada - users:
           Users with at least one cluster: 176
+          Total user-cluster edges: 524
           Unique clusters: 22
           Edges in projected cluster-cluster graph: 148
-      subgroup 2: USA | UK (w/ matching)
-        USA
-        UK
+      subgroup 2: UK | USA (w/ matching)
+        Matched UK users: 1124
+          Users with at least one cluster: 1124
+          Total user-cluster edges: 3279
+          Unique clusters: 23
+          Edges in projected cluster-cluster graph: 235
+        Matched US users: 1125
+          Users with at least one cluster: 1125
+          Total user-cluster edges: 3195
+          Unique clusters: 23
+          Edges in projected cluster-cluster graph: 245
       subgroup 3: USA | Canada (w/ matching)
-        USA
-        Canada
+        US: 1125
+          Users with at least one cluster: 104
+          Total user-cluster edges: 286
+          Unique clusters: 21
+          Edges in projected cluster-cluster graph: 121
+        Canada: 104
+          Users with at least one cluster: 104
+          Total user-cluster edges: 315
+          Unique clusters: 21
+          Edges in projected cluster-cluster graph: 12
         
 
 COMMUNITY-SPECIFIC PATTERNS:
