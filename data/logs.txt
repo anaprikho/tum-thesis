@@ -292,6 +292,47 @@ Load file with profiles & tag-to-cluster mapping
     ----------------
     DEMOGRAPHICS:
     ----------------
+    GENDER (w/o matching): 2 networks:
+        male
+        female
+    COUNTRY:
+        subgroup 1: Australia | India | Canada | Ireland (w/o matching, on whole samples)
+        subgroup 2: UK | US (w/ Propensity Score Matching PSM) 
+        subgroup 3: US | Canada (w/ matching)
+        subgroup 4: UK | Ireland (w/o matching)
+    AGE (w/o matching, on whole sample for now):
+        18-30 (way less than in any group)
+        30-50
+        50-70
+        70+
+    ETHNICITY (w/o matching, on whole sample for now):
+        white
+        asian
+        black
+        latino
+    
+    Propensity Matching Score (PSM):
+        e.g. UK (4000 users) vs. US (2000 users)
+
+        Load file with profiles & tag-to-cluster mapping
+        Extract relevant user info (age, gender) into rows (one row for each user)
+        Filter based on countries (or ethnicity) of interest
+        Remove rows with no age and gender
+        Convert age to numeric type
+        Remove rows where age could not be converted
+
+        use from psmpy import PsmPy, from psmpy.functions import cohenD
+        
+        Encode gender
+        Create df for PSM df_filtered[["user", "country", "age", "gender_encoded"]]
+        Define treatment variable (USA = 1, UK = 0)
+        Initialize PSM model (with PsmPy)
+        Estimate propensity scores via logistic regression
+        Nearest neighbor matching 1:1
+        Get matched samples
+        Extract IDs of matches users (separately for UK and US)
+        Save to JSON file
+
 
 ----------------
 COMMUNITY-SPECIFIC PATTERNS:
