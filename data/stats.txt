@@ -49,24 +49,22 @@ If filter countries with percentage > 5%, Ireland is the last.
 6     18-30    342    3.998130
 7  Under 18      0    0.000000
 
----> GENDER
+---> GENDER (after mapping)
    Gender  Count  Percentage
 0  Female   4440   51.905541
 1     N/A   2076   24.269348
 2    Male   2005   23.439327
 3  Others     33    0.385784
 
----> ETHNICITY
+---> ETHNICITY (after mapping)
                         Ethnicity  Count  Percentage
 0                           White   4453   52.057517
 1                             N/A   3524   41.197101
-2                           Asian    177    2.069207
+2                           Asian    190    2.221183
 3                           Black    130    1.519757
-4  Mixed / Multiple ethnic groups    100    1.169044
+4              Other ethnic group    143    1.671733
 5                          Latino     93    1.087211
-6              Other ethnic group     43    0.502689
 7                  Middle Eastern     21    0.245499
-8           Asian / Asian British     13    0.151976
 
 
 COMMUNITY-SPECIFIC PATTERNS:
@@ -163,7 +161,7 @@ Edges in projected cluster-cluster graph: 253
         Edges in projected cluster-cluster graph: 234
 
     COUNTRY:
-      subgroup 1: Australia | India | Canada (whole sample -> w/o matching)
+      subgroup 1: Australia | India | Canada | Ireland (whole sample -> w/o matching)
         Australia - users:
           Users with at least one cluster: 113
           Total user-cluster edges: 310
@@ -179,8 +177,13 @@ Edges in projected cluster-cluster graph: 253
           Total user-cluster edges: 524
           Unique clusters: 22
           Edges in projected cluster-cluster graph: 148
-      subgroup 2: UK | USA (w/ matching)
-        Matched UK users: 1124
+        Ireland - users:
+          Users with at least one cluster: 68
+          Total user-cluster edges: 177
+          Unique clusters: 19
+          Edges in projected cluster-cluster graph: 76
+      subgroup 2: UK | US (w/ matching - Propensity Score Matching based on gender & age)
+        Matched UK users: 1821
           Users with at least one cluster: 1124
           Total user-cluster edges: 3279
           Unique clusters: 23
@@ -190,7 +193,7 @@ Edges in projected cluster-cluster graph: 253
           Total user-cluster edges: 3195
           Unique clusters: 23
           Edges in projected cluster-cluster graph: 245
-      subgroup 3: USA | Canada (w/ matching)
+      subgroup 3: US | Canada (w/ matching)
         US: 1125
           Users with at least one cluster: 104
           Total user-cluster edges: 286
@@ -200,7 +203,18 @@ Edges in projected cluster-cluster graph: 253
           Users with at least one cluster: 104
           Total user-cluster edges: 315
           Unique clusters: 21
-          Edges in projected cluster-cluster graph: 12
+          Edges in projected cluster-cluster graph: 125
+      subgroup 4: UK | Ireland (w/ matching)
+        UK: 1821
+          Users with at least one cluster: 33
+          Total user-cluster edges: 94
+          Unique clusters: 18
+          Edges in projected cluster-cluster graph: 61
+        Ireland: 33
+          Users with at least one cluster: 33
+          Total user-cluster edges: 95
+          Unique clusters: 17
+          Edges in projected cluster-cluster graph: 56
         
 
 COMMUNITY-SPECIFIC PATTERNS:

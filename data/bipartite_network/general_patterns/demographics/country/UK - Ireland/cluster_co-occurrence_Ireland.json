@@ -1,0 +1,282 @@
+[
+  {
+    "source": "Hematology & Blood Disorders",
+    "target": "Autoimmune Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Hematology & Blood Disorders",
+    "target": "Cancer & Oncology",
+    "weight": 1
+  },
+  {
+    "source": "Procedures, Surgeries & Medical Devices",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 1
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Autoimmune Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 5
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Medications & Treatment Monitoring",
+    "weight": 2
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 3
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Cardiovascular Diseases",
+    "weight": 2
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 7
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Cancer & Oncology",
+    "weight": 1
+  },
+  {
+    "source": "Mental Health & Emotional Wellbeing",
+    "target": "Metabolic & Endocrine Disorders",
+    "weight": 2
+  },
+  {
+    "source": "Autoimmune Diseases",
+    "target": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "weight": 2
+  },
+  {
+    "source": "Autoimmune Diseases",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 1
+  },
+  {
+    "source": "Autoimmune Diseases",
+    "target": "Medications & Treatment Monitoring",
+    "weight": 4
+  },
+  {
+    "source": "Autoimmune Diseases",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 1
+  },
+  {
+    "source": "Autoimmune Diseases",
+    "target": "Cardiovascular Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Autoimmune Diseases",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 6
+  },
+  {
+    "source": "Autoimmune Diseases",
+    "target": "Cancer & Oncology",
+    "weight": 4
+  },
+  {
+    "source": "Autoimmune Diseases",
+    "target": "Metabolic & Endocrine Disorders",
+    "weight": 2
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Digestive Health (Gastrointestinal Conditions)",
+    "weight": 1
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Medications & Treatment Monitoring",
+    "weight": 3
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Patient Support & Education",
+    "weight": 1
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 2
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Substance Abuse & Addiction",
+    "weight": 1
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Cardiovascular Diseases",
+    "weight": 2
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 11
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Cancer & Oncology",
+    "weight": 4
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Renal & Liver Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Reproductive & Sexual Health (Women's Health & Men's Health)",
+    "target": "Metabolic & Endocrine Disorders",
+    "weight": 3
+  },
+  {
+    "source": "Digestive Health (Gastrointestinal Conditions)",
+    "target": "Medications & Treatment Monitoring",
+    "weight": 1
+  },
+  {
+    "source": "Digestive Health (Gastrointestinal Conditions)",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 1
+  },
+  {
+    "source": "Digestive Health (Gastrointestinal Conditions)",
+    "target": "Cancer & Oncology",
+    "weight": 1
+  },
+  {
+    "source": "Respiratory Conditions & Treatments",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 1
+  },
+  {
+    "source": "Respiratory Conditions & Treatments",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 1
+  },
+  {
+    "source": "Respiratory Conditions & Treatments",
+    "target": "Neurological Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Respiratory Conditions & Treatments",
+    "target": "Medications & Treatment Monitoring",
+    "weight": 1
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 2
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Medications & Treatment Monitoring",
+    "weight": 2
+  },
+  {
+    "source": "Neurological Disorders",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 1
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 2
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Cardiovascular Diseases",
+    "weight": 2
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 5
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Cancer & Oncology",
+    "weight": 2
+  },
+  {
+    "source": "Medications & Treatment Monitoring",
+    "target": "Metabolic & Endocrine Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Patient Support & Education",
+    "target": "Pain & Musculoskeletal Conditions",
+    "weight": 1
+  },
+  {
+    "source": "Patient Support & Education",
+    "target": "Cardiovascular Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Pain & Musculoskeletal Conditions",
+    "target": "Cardiovascular Diseases",
+    "weight": 2
+  },
+  {
+    "source": "Pain & Musculoskeletal Conditions",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 4
+  },
+  {
+    "source": "Pain & Musculoskeletal Conditions",
+    "target": "Cancer & Oncology",
+    "weight": 1
+  },
+  {
+    "source": "Pain & Musculoskeletal Conditions",
+    "target": "Metabolic & Endocrine Disorders",
+    "weight": 1
+  },
+  {
+    "source": "Cardiovascular Diseases",
+    "target": "Lifestyle, Diet & Supplements",
+    "weight": 3
+  },
+  {
+    "source": "Cardiovascular Diseases",
+    "target": "Cancer & Oncology",
+    "weight": 2
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Cancer & Oncology",
+    "weight": 6
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Renal & Liver Diseases",
+    "weight": 1
+  },
+  {
+    "source": "Lifestyle, Diet & Supplements",
+    "target": "Metabolic & Endocrine Disorders",
+    "weight": 3
+  },
+  {
+    "source": "Renal & Liver Diseases",
+    "target": "Metabolic & Endocrine Disorders",
+    "weight": 1
+  }
+]
