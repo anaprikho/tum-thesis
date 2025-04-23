@@ -215,6 +215,29 @@ Edges in projected cluster-cluster graph: 253
           Total user-cluster edges: 95
           Unique clusters: 17
           Edges in projected cluster-cluster graph: 56
+
+
+    ETHNICITY (w/o matching, on whole sample):
+      white - users:
+        Users with at least one cluster: 4453
+        Total user-cluster edges: 12756
+        Unique clusters: 23
+        Edges in projected cluster-cluster graph: 252
+      asian - users:
+        Users with at least one cluster: 190
+        Total user-cluster edges: 471
+        Unique clusters: 22
+        Edges in projected cluster-cluster graph: 166
+      black - users:
+        Users with at least one cluster: 130
+        Total user-cluster edges: 386
+        Unique clusters: 20
+        Edges in projected cluster-cluster graph: 143
+      latino - users:
+        Users with at least one cluster: 93
+        Total user-cluster edges: 236
+        Unique clusters: 16
+        Edges in projected cluster-cluster graph: 72
         
 
 COMMUNITY-SPECIFIC PATTERNS:
