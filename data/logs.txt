@@ -341,3 +341,49 @@ Load file with profiles by community & tag-to-cluster mapping
 Create for EACH community a SEPARATE network
 "user", "cluster", "weight", "comm_url"
 the same as above in GENERAL PATTERNS
+
+==================================
+Network Analysis
+==================================
+
+----------------
+GENERAL PATTERNS:
+----------------
+for all general profiles:
+    "label": "cluster_co-occurrence_edges",
+        "nodes": 23,
+        "edges": 253,
+        "density": 1.0,
+        "average_degree": 22.0,
+        "average_weighted_degree": 2729.7391304347825,
+        "average_clustering": 0.041655589920637864,
+        "num_components": 1,
+        "largest_component_size": 23,
+        "diameter": 1,
+        "modularity": 0.04978913381305847,
+        "top5_degree_centrality",
+        "top5_betweenness_centrality",
+        "top5_cluster_pairs_by_weight"
+
+    ----------------
+    DEMOGRAPHICS:
+    ----------------
+    for each demographic subgroup, get values (nodes, edges, etc)
+
+
+----------------
+COMMUNITY-SPECIFIC PATTERNS:
+----------------
+1. helps not to look into EACH comm separately but top occurrences ACROSS comm
+    23 clusters → for each cluster we calculate % of its appearance in the top 1 pairs (bar plot) e.g. Reproductive Health
+        do this for each position from “top 5 heaviest” for each comm
+            1. is Reprod health is in top 1 of X comm?
+            2. is Reprod health is in top 2 of X comm?
+            3. is Reprod health is in top 3 of X comm?
+            4. etc. top 4 /5
+
+2. (do the opposite to 1.)
+- for each cluster find top N (N=5,10) communities they are coming (appearing) from
+- in how many (in which comm) comm the cluster “Mental” was part of top 5 clusters? dont care about rank here
+- cluster pairs are more important for generla profile, not comm
+    - in Discussion: if i see some intersting cluster pairs in comm
