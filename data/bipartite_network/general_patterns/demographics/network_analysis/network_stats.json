@@ -7,7 +7,7 @@
       "density": 0.4117647058823529,
       "average_degree": 6.588235294117647,
       "average_weighted_degree": 14.823529411764707,
-      "average_clustering": 0.13087066283794146,
+      "average_clustering": 0.13087066283794144,
       "num_components": 1,
       "largest_component_size": 17,
       "diameter": 3,
@@ -60,27 +60,27 @@
         [
           "Reproductive & Sexual Health (Women's Health & Men's Health)",
           "Lifestyle, Diet & Supplements",
-          11
+          8
         ],
         [
           "Mental Health & Emotional Wellbeing",
           "Lifestyle, Diet & Supplements",
-          7
+          5
         ],
         [
           "Autoimmune Diseases",
           "Lifestyle, Diet & Supplements",
-          6
+          4
         ],
         [
           "Cancer & Oncology",
           "Lifestyle, Diet & Supplements",
-          6
+          4
         ],
         [
           "Reproductive & Sexual Health (Women's Health & Men's Health)",
           "Mental Health & Emotional Wellbeing",
-          5
+          3
         ]
       ]
     },
@@ -95,7 +95,7 @@
       "num_components": 1,
       "largest_component_size": 17,
       "diameter": 2,
-      "modularity": 0.0980710293852533,
+      "modularity": 0.1000240370170062,
       "top5_degree_centrality": [
         [
           "Lifestyle, Diet & Supplements",
@@ -144,27 +144,27 @@
         [
           "Lifestyle, Diet & Supplements",
           "Reproductive & Sexual Health (Women's Health & Men's Health)",
-          13
+          10
         ],
         [
           "Lifestyle, Diet & Supplements",
-          "Mental Health & Emotional Wellbeing",
-          9
-        ],
-        [
-          "Reproductive & Sexual Health (Women's Health & Men's Health)",
           "Mental Health & Emotional Wellbeing",
           6
         ],
         [
+          "Reproductive & Sexual Health (Women's Health & Men's Health)",
+          "Mental Health & Emotional Wellbeing",
+          4
+        ],
+        [
           "Pain & Musculoskeletal Conditions",
           "Lifestyle, Diet & Supplements",
-          5
+          3
         ],
         [
           "Metabolic & Endocrine Disorders",
           "Lifestyle, Diet & Supplements",
-          5
+          3
         ]
       ]
     }
@@ -181,7 +181,7 @@
       "num_components": 1,
       "largest_component_size": 23,
       "diameter": 2,
-      "modularity": 0.0286543204376129,
+      "modularity": 0.029458260934135283,
       "top5_degree_centrality": [
         [
           "Mental Health & Emotional Wellbeing",
@@ -230,27 +230,27 @@
         [
           "Reproductive & Sexual Health (Women's Health & Men's Health)",
           "Lifestyle, Diet & Supplements",
-          359
+          7
         ],
         [
           "Mental Health & Emotional Wellbeing",
           "Lifestyle, Diet & Supplements",
-          219
+          4
         ],
         [
           "Mental Health & Emotional Wellbeing",
           "Reproductive & Sexual Health (Women's Health & Men's Health)",
-          177
+          3
         ],
         [
           "Metabolic & Endocrine Disorders",
           "Lifestyle, Diet & Supplements",
-          159
+          3
         ],
         [
           "Cardiovascular Diseases",
           "Lifestyle, Diet & Supplements",
-          146
+          2
         ]
       ]
     },
@@ -314,27 +314,27 @@
         [
           "Reproductive & Sexual Health (Women's Health & Men's Health)",
           "Lifestyle, Diet & Supplements",
-          394
+          8
         ],
         [
           "Mental Health & Emotional Wellbeing",
           "Lifestyle, Diet & Supplements",
-          322
+          6
         ],
         [
           "Mental Health & Emotional Wellbeing",
           "Reproductive & Sexual Health (Women's Health & Men's Health)",
-          261
+          5
         ],
         [
           "Cancer & Oncology",
           "Lifestyle, Diet & Supplements",
-          207
+          4
         ],
         [
           "Reproductive & Sexual Health (Women's Health & Men's Health)",
           "Cancer & Oncology",
-          165
+          3
         ]
       ]
     }
@@ -400,27 +400,27 @@
         [
           "Reproductive & Sexual Health (Women's Health & Men's Health)",
           "Lifestyle, Diet & Supplements",
-          40
+          8
         ],
         [
           "Mental Health & Emotional Wellbeing",
           "Lifestyle, Diet & Supplements",
-          29
+          5
         ],
         [
           "Lifestyle, Diet & Supplements",
           "Cancer & Oncology",
-          21
+          4
         ],
         [
           "Mental Health & Emotional Wellbeing",
           "Reproductive & Sexual Health (Women's Health & Men's Health)",
-          18
+          3
         ],
         [
           "Reproductive & Sexual Health (Women's Health & Men's Health)",
           "Cancer & Oncology",
-          16
+          3
         ]
       ]
     },
@@ -484,27 +484,27 @@
         [
           "Reproductive & Sexual Health (Women's Health & Men's Health)",
           "Lifestyle, Diet & Supplements",
-          38
+          10
         ],
         [
           "Mental Health & Emotional Wellbeing",
           "Lifestyle, Diet & Supplements",
-          34
+          9
         ],
         [
           "Mental Health & Emotional Wellbeing",
           "Reproductive & Sexual Health (Women's Health & Men's Health)",
-          25
+          6
         ],
         [
           "Lifestyle, Diet & Supplements",
           "Cancer & Oncology",
-          22
+          5
         ],
         [
           "Mental Health & Emotional Wellbeing",
           "Neurological Disorders",
-          12
+          3
         ]
       ]
     }
@@ -517,11 +517,11 @@
       "density": 0.6421052631578947,
       "average_degree": 12.2,
       "average_weighted_degree": 43.4,
-      "average_clustering": 0.09471445731792576,
+      "average_clustering": 0.09471445731792574,
       "num_components": 1,
       "largest_component_size": 20,
       "diameter": 2,
-      "modularity": 0.05007538915670327,
+      "modularity": 0.04318418314255976,
       "top5_degree_centrality": [
         [
           "Mental Health & Emotional Wellbeing",
@@ -570,27 +570,27 @@
         [
           "Reproductive & Sexual Health (Women's Health & Men's Health)",
           "Lifestyle, Diet & Supplements",
-          26
+          5
         ],
         [
           "Mental Health & Emotional Wellbeing",
           "Lifestyle, Diet & Supplements",
-          17
+          3
         ],
         [
           "Mental Health & Emotional Wellbeing",
           "Reproductive & Sexual Health (Women's Health & Men's Health)",
-          14
+          3
         ],
         [
           "Reproductive & Sexual Health (Women's Health & Men's Health)",
           "Cancer & Oncology",
-          14
+          3
         ],
         [
           "Lifestyle, Diet & Supplements",
           "Metabolic & Endocrine Disorders",
-          14
+          3
         ]
       ]
     },
@@ -601,7 +601,7 @@
       "density": 0.6406926406926406,
       "average_degree": 13.454545454545455,
       "average_weighted_degree": 76.18181818181819,
-      "average_clustering": 0.06884011789692449,
+      "average_clustering": 0.06884011789692447,
       "num_components": 1,
       "largest_component_size": 22,
       "diameter": 3,
@@ -654,27 +654,27 @@
         [
           "Reproductive & Sexual Health (Women's Health & Men's Health)",
           "Lifestyle, Diet & Supplements",
-          54
+          6
         ],
         [
           "Mental Health & Emotional Wellbeing",
           "Lifestyle, Diet & Supplements",
-          43
+          5
         ],
         [
           "Lifestyle, Diet & Supplements",
           "Cancer & Oncology",
-          32
+          3
         ],
         [
           "Mental Health & Emotional Wellbeing",
           "Reproductive & Sexual Health (Women's Health & Men's Health)",
-          27
+          3
         ],
         [
           "Autoimmune Diseases",
           "Lifestyle, Diet & Supplements",
-          24
+          2
         ]
       ]
     },
@@ -689,7 +689,7 @@
       "num_components": 1,
       "largest_component_size": 19,
       "diameter": 3,
-      "modularity": 0.12127463547508421,
+      "modularity": 0.12544063451369977,
       "top5_degree_centrality": [
         [
           "Lifestyle, Diet & Supplements",
@@ -738,27 +738,27 @@
         [
           "Mental Health & Emotional Wellbeing",
           "Lifestyle, Diet & Supplements",
-          18
+          11
         ],
         [
           "Lifestyle, Diet & Supplements",
           "Reproductive & Sexual Health (Women's Health & Men's Health)",
-          18
+          11
         ],
         [
           "Mental Health & Emotional Wellbeing",
           "Reproductive & Sexual Health (Women's Health & Men's Health)",
-          13
+          8
         ],
         [
           "Lifestyle, Diet & Supplements",
           "Cancer & Oncology",
-          6
+          3
         ],
         [
           "Lifestyle, Diet & Supplements",
           "Patient Support & Education",
-          6
+          3
         ]
       ]
     },
@@ -769,7 +769,7 @@
       "density": 0.4444444444444444,
       "average_degree": 8.0,
       "average_weighted_degree": 22.0,
-      "average_clustering": 0.11585146518625142,
+      "average_clustering": 0.1158514651862514,
       "num_components": 1,
       "largest_component_size": 19,
       "diameter": 3,
@@ -822,27 +822,27 @@
         [
           "Reproductive & Sexual Health (Women's Health & Men's Health)",
           "Lifestyle, Diet & Supplements",
-          16
+          7
         ],
         [
           "Mental Health & Emotional Wellbeing",
           "Lifestyle, Diet & Supplements",
-          13
+          6
         ],
         [
           "Pain & Musculoskeletal Conditions",
           "Lifestyle, Diet & Supplements",
-          8
+          3
         ],
         [
           "Reproductive & Sexual Health (Women's Health & Men's Health)",
           "Mental Health & Emotional Wellbeing",
-          8
+          3
         ],
         [
           "Autoimmune Diseases",
           "Lifestyle, Diet & Supplements",
-          7
+          3
         ]
       ]
     }
@@ -908,27 +908,27 @@
         [
           "Lifestyle, Diet & Supplements",
           "Reproductive & Sexual Health (Women's Health & Men's Health)",
-          62
+          9
         ],
         [
           "Mental Health & Emotional Wellbeing",
           "Lifestyle, Diet & Supplements",
-          48
+          7
         ],
         [
           "Mental Health & Emotional Wellbeing",
           "Reproductive & Sexual Health (Women's Health & Men's Health)",
-          36
+          5
         ],
         [
           "Lifestyle, Diet & Supplements",
           "Metabolic & Endocrine Disorders",
-          16
+          2
         ],
         [
           "Reproductive & Sexual Health (Women's Health & Men's Health)",
           "Metabolic & Endocrine Disorders",
-          15
+          2
         ]
       ]
     },
@@ -939,11 +939,11 @@
       "density": 0.7526315789473684,
       "average_degree": 14.3,
       "average_weighted_degree": 63.2,
-      "average_clustering": 0.04766566778873185,
+      "average_clustering": 0.047665667788731846,
       "num_components": 1,
       "largest_component_size": 20,
       "diameter": 3,
-      "modularity": 0.0661953212626182,
+      "modularity": 0.06553311768947293,
       "top5_degree_centrality": [
         [
           "Patient Support & Education",
@@ -992,27 +992,27 @@
         [
           "Lifestyle, Diet & Supplements",
           "Reproductive & Sexual Health (Women's Health & Men's Health)",
-          62
+          9
         ],
         [
           "Mental Health & Emotional Wellbeing",
           "Lifestyle, Diet & Supplements",
-          50
+          7
         ],
         [
           "Mental Health & Emotional Wellbeing",
           "Reproductive & Sexual Health (Women's Health & Men's Health)",
-          45
+          7
         ],
         [
           "Patient Support & Education",
           "Lifestyle, Diet & Supplements",
-          16
+          2
         ],
         [
           "Neurological Disorders",
           "Lifestyle, Diet & Supplements",
-          15
+          2
         ]
       ]
     },
@@ -1023,7 +1023,7 @@
       "density": 0.6,
       "average_degree": 9.0,
       "average_weighted_degree": 35.0,
-      "average_clustering": 0.059502954666969074,
+      "average_clustering": 0.05950295466696907,
       "num_components": 1,
       "largest_component_size": 16,
       "diameter": 3,
@@ -1076,27 +1076,27 @@
         [
           "Mental Health & Emotional Wellbeing",
           "Lifestyle, Diet & Supplements",
-          40
+          14
         ],
         [
           "Lifestyle, Diet & Supplements",
           "Reproductive & Sexual Health (Women's Health & Men's Health)",
-          40
+          14
         ],
         [
           "Mental Health & Emotional Wellbeing",
           "Reproductive & Sexual Health (Women's Health & Men's Health)",
-          33
+          11
         ],
         [
           "Neurological Disorders",
           "Mental Health & Emotional Wellbeing",
-          9
+          3
         ],
         [
           "Mental Health & Emotional Wellbeing",
           "Patient Support & Education",
-          9
+          3
         ]
       ]
     },
@@ -1111,7 +1111,7 @@
       "num_components": 1,
       "largest_component_size": 23,
       "diameter": 2,
-      "modularity": 0.0417178935049867,
+      "modularity": 0.04165008564346087,
       "top5_degree_centrality": [
         [
           "Mental Health & Emotional Wellbeing",
@@ -1160,27 +1160,27 @@
         [
           "Lifestyle, Diet & Supplements",
           "Reproductive & Sexual Health (Women's Health & Men's Health)",
-          1400
+          7
         ],
         [
           "Mental Health & Emotional Wellbeing",
           "Lifestyle, Diet & Supplements",
-          957
+          5
         ],
         [
           "Mental Health & Emotional Wellbeing",
           "Reproductive & Sexual Health (Women's Health & Men's Health)",
-          717
+          3
         ],
         [
           "Lifestyle, Diet & Supplements",
           "Metabolic & Endocrine Disorders",
-          552
+          2
         ],
         [
           "Lifestyle, Diet & Supplements",
           "Cancer & Oncology",
-          488
+          2
         ]
       ]
     }
@@ -1246,27 +1246,27 @@
         [
           "Reproductive & Sexual Health (Women's Health & Men's Health)",
           "Lifestyle, Diet & Supplements",
-          1352
+          6
         ],
         [
           "Mental Health & Emotional Wellbeing",
           "Lifestyle, Diet & Supplements",
-          942
+          4
         ],
         [
           "Mental Health & Emotional Wellbeing",
           "Reproductive & Sexual Health (Women's Health & Men's Health)",
-          747
+          3
         ],
         [
           "Metabolic & Endocrine Disorders",
           "Lifestyle, Diet & Supplements",
-          590
+          2
         ],
         [
           "Autoimmune Diseases",
           "Lifestyle, Diet & Supplements",
-          465
+          2
         ]
       ]
     },
@@ -1277,7 +1277,7 @@
       "density": 0.9169960474308301,
       "average_degree": 20.17391304347826,
       "average_weighted_degree": 603.8260869565217,
-      "average_clustering": 0.0332695124999999,
+      "average_clustering": 0.03326951249999989,
       "num_components": 1,
       "largest_component_size": 23,
       "diameter": 2,
@@ -1330,27 +1330,27 @@
         [
           "Reproductive & Sexual Health (Women's Health & Men's Health)",
           "Lifestyle, Diet & Supplements",
-          579
+          8
         ],
         [
           "Mental Health & Emotional Wellbeing",
           "Lifestyle, Diet & Supplements",
-          412
+          5
         ],
         [
           "Mental Health & Emotional Wellbeing",
           "Reproductive & Sexual Health (Women's Health & Men's Health)",
-          301
+          4
         ],
         [
           "Cancer & Oncology",
           "Lifestyle, Diet & Supplements",
-          277
+          3
         ],
         [
           "Reproductive & Sexual Health (Women's Health & Men's Health)",
           "Cancer & Oncology",
-          243
+          3
         ]
       ]
     }
@@ -1416,27 +1416,27 @@
         [
           "Lifestyle, Diet & Supplements",
           "Reproductive & Sexual Health (Women's Health & Men's Health)",
-          133
+          11
         ],
         [
           "Lifestyle, Diet & Supplements",
           "Mental Health & Emotional Wellbeing",
-          126
+          10
         ],
         [
           "Reproductive & Sexual Health (Women's Health & Men's Health)",
           "Mental Health & Emotional Wellbeing",
-          111
+          9
         ],
         [
           "Neurological Disorders",
           "Mental Health & Emotional Wellbeing",
-          65
+          5
         ],
         [
           "Lifestyle, Diet & Supplements",
           "Neurological Disorders",
-          42
+          3
         ]
       ]
     },
@@ -1500,27 +1500,27 @@
         [
           "Lifestyle, Diet & Supplements",
           "Reproductive & Sexual Health (Women's Health & Men's Health)",
-          349
+          8
         ],
         [
           "Lifestyle, Diet & Supplements",
           "Mental Health & Emotional Wellbeing",
-          270
+          6
         ],
         [
           "Reproductive & Sexual Health (Women's Health & Men's Health)",
           "Mental Health & Emotional Wellbeing",
-          224
+          5
         ],
         [
           "Neurological Disorders",
           "Mental Health & Emotional Wellbeing",
-          105
+          2
         ],
         [
           "Lifestyle, Diet & Supplements",
           "Neurological Disorders",
-          86
+          2
         ]
       ]
     },
@@ -1535,7 +1535,7 @@
       "num_components": 1,
       "largest_component_size": 23,
       "diameter": 2,
-      "modularity": 0.029925798093371855,
+      "modularity": 0.03031371798421814,
       "top5_degree_centrality": [
         [
           "Lifestyle, Diet & Supplements",
@@ -1584,27 +1584,27 @@
         [
           "Lifestyle, Diet & Supplements",
           "Reproductive & Sexual Health (Women's Health & Men's Health)",
-          546
+          7
         ],
         [
           "Lifestyle, Diet & Supplements",
           "Mental Health & Emotional Wellbeing",
-          354
+          4
         ],
         [
           "Reproductive & Sexual Health (Women's Health & Men's Health)",
           "Mental Health & Emotional Wellbeing",
-          264
+          3
         ],
         [
           "Lifestyle, Diet & Supplements",
           "Metabolic & Endocrine Disorders",
-          228
+          3
         ],
         [
           "Lifestyle, Diet & Supplements",
           "Cancer & Oncology",
-          225
+          3
         ]
       ]
     },
@@ -1619,7 +1619,7 @@
       "num_components": 1,
       "largest_component_size": 23,
       "diameter": 2,
-      "modularity": 0.0298511148939448,
+      "modularity": 0.03513125430481992,
       "top5_degree_centrality": [
         [
           "Lifestyle, Diet & Supplements",
@@ -1668,29 +1668,30 @@
         [
           "Lifestyle, Diet & Supplements",
           "Reproductive & Sexual Health (Women's Health & Men's Health)",
-          203
+          5
         ],
         [
           "Lifestyle, Diet & Supplements",
           "Cancer & Oncology",
-          147
+          3
         ],
         [
           "Lifestyle, Diet & Supplements",
           "Autoimmune Diseases",
-          139
+          3
         ],
         [
           "Metabolic & Endocrine Disorders",
           "Autoimmune Diseases",
-          138
+          3
         ],
         [
           "Lifestyle, Diet & Supplements",
           "Metabolic & Endocrine Disorders",
-          136
+          3
         ]
       ]
     }
-  ]
+  ],
+  "country": []
 }

@@ -7,7 +7,7 @@
       "density": 1.0,
       "average_degree": 22.0,
       "average_weighted_degree": 2729.7391304347825,
-      "average_clustering": 0.041655589920637864,
+      "average_clustering": 0.04165558992063786,
       "num_components": 1,
       "largest_component_size": 23,
       "diameter": 1,
@@ -60,27 +60,27 @@
         [
           "Reproductive & Sexual Health (Women's Health & Men's Health)",
           "Lifestyle, Diet & Supplements",
-          2130
+          6
         ],
         [
           "Mental Health & Emotional Wellbeing",
           "Lifestyle, Diet & Supplements",
-          1525
+          4
         ],
         [
           "Mental Health & Emotional Wellbeing",
           "Reproductive & Sexual Health (Women's Health & Men's Health)",
-          1164
+          3
         ],
         [
           "Metabolic & Endocrine Disorders",
           "Lifestyle, Diet & Supplements",
-          826
+          2
         ],
         [
           "Cancer & Oncology",
           "Lifestyle, Diet & Supplements",
-          680
+          2
         ]
       ]
     }
