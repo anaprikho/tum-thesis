@@ -1,0 +1,51 @@
+Source,Target,Weight
+Pain & Musculoskeletal Conditions,fibromyalgia-action-uk_co-occurrence,5
+Pain & Musculoskeletal Conditions,actiononpain_co-occurrence,4
+Pain & Musculoskeletal Conditions,arthritis-action_co-occurrence,4
+Pain & Musculoskeletal Conditions,bonehealth_co-occurrence,4
+Pain & Musculoskeletal Conditions,chronic-myofascial-pain_co-occurrence,4
+Pain & Musculoskeletal Conditions,edsuk_co-occurrence,4
+Pain & Musculoskeletal Conditions,lsn_co-occurrence,4
+Pain & Musculoskeletal Conditions,oa-action_co-occurrence,4
+Pain & Musculoskeletal Conditions,osteoporosis-support_co-occurrence,4
+Pain & Musculoskeletal Conditions,painconcern_co-occurrence,4
+Autoimmune Diseases,hughes-syndrome_co-occurrence,5
+Autoimmune Diseases,lupus-support_co-occurrence,5
+Autoimmune Diseases,lupusuk_co-occurrence,5
+Autoimmune Diseases,mga_co-occurrence,5
+Autoimmune Diseases,sjogrens-support_co-occurrence,5
+Autoimmune Diseases,behcetsuk_co-occurrence,4
+Autoimmune Diseases,fierybones-ra_co-occurrence,4
+Autoimmune Diseases,nras_co-occurrence,4
+Autoimmune Diseases,partnersforbehcets_co-occurrence,4
+Autoimmune Diseases,pbc-foundation_co-occurrence,4
+"Lifestyle, Diet & Supplements",my-skin_co-occurrence,5
+"Lifestyle, Diet & Supplements",myelomauk_co-occurrence,5
+"Lifestyle, Diet & Supplements",active10_co-occurrence,4
+"Lifestyle, Diet & Supplements",blog_co-occurrence,4
+"Lifestyle, Diet & Supplements",bridgeto10k_co-occurrence,4
+"Lifestyle, Diet & Supplements",care-community_co-occurrence,4
+"Lifestyle, Diet & Supplements",cookforyourlife_co-occurrence,4
+"Lifestyle, Diet & Supplements",couchto5k_co-occurrence,4
+"Lifestyle, Diet & Supplements",demo-community_co-occurrence,4
+"Lifestyle, Diet & Supplements",dialysis-support_co-occurrence,4
+Mental Health & Emotional Wellbeing,apma_co-occurrence,5
+Mental Health & Emotional Wellbeing,barretts-oesophagus_co-occurrence,5
+Mental Health & Emotional Wellbeing,healmyptsd_co-occurrence,5
+Mental Health & Emotional Wellbeing,livingwithanxiety_co-occurrence,5
+Mental Health & Emotional Wellbeing,above-beyond_co-occurrence,4
+Mental Health & Emotional Wellbeing,adhd-parents_co-occurrence,4
+Mental Health & Emotional Wellbeing,adult-adhd_co-occurrence,4
+Mental Health & Emotional Wellbeing,ansiedad-depresion-apoyo_co-occurrence,4
+Mental Health & Emotional Wellbeing,anxiety-depression-support_co-occurrence,4
+Mental Health & Emotional Wellbeing,anxietysupport_co-occurrence,4
+Neurological Disorders,cmtuk_co-occurrence,5
+Neurological Disorders,migraine-support_co-occurrence,5
+Neurological Disorders,migrainecentre_co-occurrence,5
+Neurological Disorders,acoustic-neuroma-support_co-occurrence,4
+Neurological Disorders,amneasier_co-occurrence,4
+Neurological Disorders,ataxia-uk_co-occurrence,4
+Neurological Disorders,brain-aneurysm-support_co-occurrence,4
+Neurological Disorders,dystoniasociety_co-occurrence,4
+Neurological Disorders,epilepsysociety_co-occurrence,4
+Neurological Disorders,meningioma-support_co-occurrence,4

@@ -1,0 +1,56 @@
+Id,Type,Size,longitude,latitude
+lupusuk_co-occurrence,community,100,-200,0
+demo-community_co-occurrence,community,100,-200,100
+cmtuk_co-occurrence,community,100,-200,200
+epilepsysociety_co-occurrence,community,100,-200,300
+bridgeto10k_co-occurrence,community,100,-200,400
+nras_co-occurrence,community,100,-200,500
+healmyptsd_co-occurrence,community,100,-200,600
+actiononpain_co-occurrence,community,100,-200,700
+edsuk_co-occurrence,community,100,-200,800
+pbc-foundation_co-occurrence,community,100,-200,900
+"Lifestyle, Diet & Supplements",cluster,100,0,0
+lsn_co-occurrence,community,100,-200,1000
+blog_co-occurrence,community,100,-200,1100
+sjogrens-support_co-occurrence,community,100,-200,1200
+cookforyourlife_co-occurrence,community,100,-200,1300
+barretts-oesophagus_co-occurrence,community,100,-200,1400
+lupus-support_co-occurrence,community,100,-200,1500
+osteoporosis-support_co-occurrence,community,100,-200,1600
+behcetsuk_co-occurrence,community,100,-200,1700
+fierybones-ra_co-occurrence,community,100,-200,1800
+migraine-support_co-occurrence,community,100,-200,1900
+myelomauk_co-occurrence,community,100,-200,2000
+apma_co-occurrence,community,100,-200,2100
+brain-aneurysm-support_co-occurrence,community,100,-200,2200
+above-beyond_co-occurrence,community,100,-200,2300
+oa-action_co-occurrence,community,100,-200,2400
+my-skin_co-occurrence,community,100,200,0
+dialysis-support_co-occurrence,community,100,200,100
+bonehealth_co-occurrence,community,100,200,200
+mga_co-occurrence,community,100,200,300
+Pain & Musculoskeletal Conditions,cluster,100,0,100
+dystoniasociety_co-occurrence,community,100,200,400
+couchto5k_co-occurrence,community,100,200,500
+hughes-syndrome_co-occurrence,community,100,200,600
+adhd-parents_co-occurrence,community,100,200,700
+chronic-myofascial-pain_co-occurrence,community,100,200,800
+partnersforbehcets_co-occurrence,community,100,200,900
+Mental Health & Emotional Wellbeing,cluster,100,0,200
+Neurological Disorders,cluster,100,0,300
+painconcern_co-occurrence,community,100,200,1000
+Autoimmune Diseases,cluster,100,0,400
+livingwithanxiety_co-occurrence,community,100,200,1100
+ataxia-uk_co-occurrence,community,100,200,1200
+active10_co-occurrence,community,100,200,1300
+care-community_co-occurrence,community,100,200,1400
+meningioma-support_co-occurrence,community,100,200,1500
+fibromyalgia-action-uk_co-occurrence,community,100,200,1600
+arthritis-action_co-occurrence,community,100,200,1700
+adult-adhd_co-occurrence,community,100,200,1800
+migrainecentre_co-occurrence,community,100,200,1900
+amneasier_co-occurrence,community,100,200,2000
+anxiety-depression-support_co-occurrence,community,100,200,2100
+acoustic-neuroma-support_co-occurrence,community,100,200,2200
+ansiedad-depresion-apoyo_co-occurrence,community,100,200,2300
+anxietysupport_co-occurrence,community,100,200,2400

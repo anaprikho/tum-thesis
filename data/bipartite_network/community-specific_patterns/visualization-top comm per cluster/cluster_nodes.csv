@@ -1,0 +1,24 @@
+Id,type,label,cluster_id,cluster_size
+Medications & Treatment Monitoring,cluster,Medications,Medications,338
+Cancer & Oncology,cluster,Cancer,Cancer,274
+Neurological Disorders,cluster,Neurological,Neurological,249
+Pain & Musculoskeletal Conditions,cluster,Pain,Pain,216
+Mental Health & Emotional Wellbeing,cluster,Mental,Mental,201
+Digestive Health (Gastrointestinal Conditions),cluster,Digestive,Digestive,196
+Cardiovascular Diseases,cluster,Cardiovascular,Cardiovascular,207
+Reproductive & Sexual Health (Women's Health & Men's Health),cluster,Reproductive,Reproductive,171
+"Lifestyle, Diet & Supplements",cluster,Lifestyle,Lifestyle,162
+Metabolic & Endocrine Disorders,cluster,Metabolic,Metabolic,152
+Respiratory Conditions & Treatments,cluster,Respiratory,Respiratory,125
+Dermatology & Skin-Related,cluster,Dermatology,Dermatology,113
+Autoimmune Diseases,cluster,Autoimmune,Autoimmune,112
+Eye & Vision Health,cluster,Vision,Vision,87
+Renal & Liver Diseases,cluster,Renal/Liver,Renal/Liver,76
+Infectious & Communicable Diseases,cluster,Infectious,Infectious,72
+Hematology & Blood Disorders,cluster,Hematology,Hematology,44
+Preventive Health & Screening,cluster,Preventive,Preventive,42
+Allergy & Immunology,cluster,Allergy,Allergy,37
+Substance Abuse & Addiction,cluster,Addiction,Addiction,31
+"Procedures, Surgeries & Medical Devices",cluster,Procedures,Procedures,29
+Rare Diseases & Genetic Disorders,cluster,Rare Diseases,Rare Diseases,17
+Patient Support & Education,cluster,Patient Support,Patient Support,14

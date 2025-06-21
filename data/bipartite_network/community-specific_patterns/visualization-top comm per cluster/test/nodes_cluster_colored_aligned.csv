@@ -1,0 +1,56 @@
+Id,Type,Size,cluster_id,longitude,latitude
+lupusuk_co-occurrence,community,100,,-2,0.0
+demo-community_co-occurrence,community,100,,-2,0.8
+cmtuk_co-occurrence,community,100,,-2,1.6
+epilepsysociety_co-occurrence,community,100,,-2,2.4000000000000004
+bridgeto10k_co-occurrence,community,100,,-2,3.2
+nras_co-occurrence,community,100,,-2,4.0
+healmyptsd_co-occurrence,community,100,,-2,4.800000000000001
+actiononpain_co-occurrence,community,100,,-2,5.6000000000000005
+edsuk_co-occurrence,community,100,,-2,6.4
+pbc-foundation_co-occurrence,community,100,,-2,7.2
+"Lifestyle, Diet & Supplements",cluster,100,"Lifestyle, Diet & Supplements",0,0.0
+lsn_co-occurrence,community,100,,-2,8.0
+blog_co-occurrence,community,100,,-2,8.8
+sjogrens-support_co-occurrence,community,100,,-2,9.600000000000001
+cookforyourlife_co-occurrence,community,100,,-2,10.4
+barretts-oesophagus_co-occurrence,community,100,,-2,11.200000000000001
+lupus-support_co-occurrence,community,100,,-2,12.0
+osteoporosis-support_co-occurrence,community,100,,-2,12.8
+behcetsuk_co-occurrence,community,100,,-2,13.600000000000001
+fierybones-ra_co-occurrence,community,100,,-2,14.4
+migraine-support_co-occurrence,community,100,,-2,15.200000000000001
+myelomauk_co-occurrence,community,100,,-2,16.0
+apma_co-occurrence,community,100,,-2,16.8
+brain-aneurysm-support_co-occurrence,community,100,,-2,17.6
+above-beyond_co-occurrence,community,100,,-2,18.400000000000002
+oa-action_co-occurrence,community,100,,-2,19.200000000000003
+my-skin_co-occurrence,community,100,,2,0.0
+dialysis-support_co-occurrence,community,100,,2,0.8
+bonehealth_co-occurrence,community,100,,2,1.6
+mga_co-occurrence,community,100,,2,2.4000000000000004
+Pain & Musculoskeletal Conditions,cluster,100,Pain & Musculoskeletal Conditions,0,1.2
+dystoniasociety_co-occurrence,community,100,,2,3.2
+couchto5k_co-occurrence,community,100,,2,4.0
+hughes-syndrome_co-occurrence,community,100,,2,4.800000000000001
+adhd-parents_co-occurrence,community,100,,2,5.6000000000000005
+chronic-myofascial-pain_co-occurrence,community,100,,2,6.4
+partnersforbehcets_co-occurrence,community,100,,2,7.2
+Mental Health & Emotional Wellbeing,cluster,100,Mental Health & Emotional Wellbeing,0,2.4
+Neurological Disorders,cluster,100,Neurological Disorders,0,3.5999999999999996
+painconcern_co-occurrence,community,100,,2,8.0
+Autoimmune Diseases,cluster,100,Autoimmune Diseases,0,4.8
+livingwithanxiety_co-occurrence,community,100,,2,8.8
+ataxia-uk_co-occurrence,community,100,,2,9.600000000000001
+active10_co-occurrence,community,100,,2,10.4
+care-community_co-occurrence,community,100,,2,11.200000000000001
+meningioma-support_co-occurrence,community,100,,2,12.0
+fibromyalgia-action-uk_co-occurrence,community,100,,2,12.8
+arthritis-action_co-occurrence,community,100,,2,13.600000000000001
+adult-adhd_co-occurrence,community,100,,2,14.4
+migrainecentre_co-occurrence,community,100,,2,15.200000000000001
+amneasier_co-occurrence,community,100,,2,16.0
+anxiety-depression-support_co-occurrence,community,100,,2,16.8
+acoustic-neuroma-support_co-occurrence,community,100,,2,17.6
+ansiedad-depresion-apoyo_co-occurrence,community,100,,2,18.400000000000002
+anxietysupport_co-occurrence,community,100,,2,19.200000000000003
