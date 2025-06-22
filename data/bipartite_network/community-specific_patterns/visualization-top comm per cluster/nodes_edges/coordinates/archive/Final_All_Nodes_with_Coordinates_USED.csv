@@ -1,0 +1,195 @@
+Id,type,label,cluster_id,cluster_size,label_2,longitude,latitude,community_url,member_count
+Medications & Treatment Monitoring,cluster,Medications,Medications,338.0,Medications (338),0,22,,
+Cancer & Oncology,cluster,Cancer,Cancer,274.0,Cancer (274),0,20,,
+Neurological Disorders,cluster,Neurological,Neurological,249.0,Neurological (249),0,18,,
+Pain & Musculoskeletal Conditions,cluster,Pain,Pain,216.0,Pain (216),0,16,,
+Mental Health & Emotional Wellbeing,cluster,Mental,Mental,201.0,Mental (201),0,14,,
+Digestive Health (Gastrointestinal Conditions),cluster,Digestive,Digestive,196.0,Digestive (196),0,12,,
+Cardiovascular Diseases,cluster,Cardiovascular,Cardiovascular,207.0,Cardiovascular (207),0,10,,
+Reproductive & Sexual Health (Women's Health & Men's Health),cluster,Reproductive,Reproductive,171.0,Reproductive (171),0,8,,
+"Lifestyle, Diet & Supplements",cluster,Lifestyle,Lifestyle,162.0,Lifestyle (162),0,6,,
+Metabolic & Endocrine Disorders,cluster,Metabolic,Metabolic,152.0,Metabolic (152),0,4,,
+Respiratory Conditions & Treatments,cluster,Respiratory,Respiratory,125.0,Respiratory (125),0,2,,
+Dermatology & Skin-Related,cluster,Dermatology,Dermatology,113.0,Dermatology (113),0,0,,
+Autoimmune Diseases,cluster,Autoimmune,Autoimmune,112.0,Autoimmune (112),0,-2,,
+Eye & Vision Health,cluster,Vision,Vision,87.0,Vision (87),0,-4,,
+Renal & Liver Diseases,cluster,Renal/Liver,Renal/Liver,76.0,Renal/Liver (76),0,-6,,
+Infectious & Communicable Diseases,cluster,Infectious,Infectious,72.0,Infectious (72),0,-8,,
+Hematology & Blood Disorders,cluster,Hematology,Hematology,44.0,Hematology (44),0,-10,,
+Preventive Health & Screening,cluster,Preventive,Preventive,42.0,Preventive (42),0,-12,,
+Allergy & Immunology,cluster,Allergy,Allergy,37.0,Allergy (37),0,-14,,
+Substance Abuse & Addiction,cluster,Addiction,Addiction,31.0,Addiction (31),0,-16,,
+"Procedures, Surgeries & Medical Devices",cluster,Procedures,Procedures,29.0,Procedures (29),0,-18,,
+Rare Diseases & Genetic Disorders,cluster,Rare Diseases,Rare Diseases,17.0,Rare Diseases (17),0,-20,,
+Patient Support & Education,cluster,Patient Support,Patient Support,14.0,Patient Support (14),0,-22,,
+thyroiduk_co-occurrence,community,Thyroid UK,,,Thyroid UK (168733),-30,42,thyroiduk,168733.0
+couchto5k_co-occurrence,community,Couch to,,,Couch to (159886),-30,41,couchto5k,159886.0
+anxiety-depression-support_co-occurrence,community,Anxiety and Depression Support,,,Anxiety and Depression Support (88818),-30,40,anxiety-depression-support,88818.0
+asthmalunguk-lung_co-occurrence,community,Lung Conditions Community Forum,,,Lung Conditions Community Forum (67506),-30,39,asthmalunguk-lung,67506.0
+fibromyalgia-action-uk_co-occurrence,community,Fibromyalgia Action UK,,,Fibromyalgia Action UK (67449),-30,38,fibromyalgia-action-uk,67449.0
+fertility-network-uk_co-occurrence,community,Fertility Network UK,,,Fertility Network UK (60497),-30,37,fertility-network-uk,60497.0
+endometriosis-uk_co-occurrence,community,Endometriosis UK,,,Endometriosis UK (53887),-30,36,endometriosis-uk,53887.0
+anxietysupport_co-occurrence,community,Anxiety Support,,,Anxiety Support (49558),-30,35,anxietysupport,49558.0
+nras_co-occurrence,community,NRAS,,,NRAS (46619),-30,34,nras,46619.0
+pmrgcauk_co-occurrence,community,PMRGCAuk,,,PMRGCAuk (41614),-30,33,pmrgcauk,41614.0
+cllsupport_co-occurrence,community,CLL Support,,,CLL Support (40649),-30,32,cllsupport,40649.0
+afassociation_co-occurrence,community,Atrial Fibrillation Support,,,Atrial Fibrillation Support (39650),-30,31,afassociation,39650.0
+bhf_co-occurrence,community,British Heart Foundation,,,British Heart Foundation (35558),-30,30,bhf,35558.0
+nosmokingday_co-occurrence,community,No Smoking Day,,,No Smoking Day (32495),-30,29,nosmokingday,32495.0
+quitsupport_co-occurrence,community,Quit Support,,,Quit Support (30561),-30,28,quitsupport,30561.0
+lupusuk_co-occurrence,community,LUPUS UK,,,LUPUS UK (28837),-30,27,lupusuk,28837.0
+advanced-prostate-cancer_co-occurrence,community,Advanced Prostate Cancer,,,Advanced Prostate Cancer (28798),-30,26,advanced-prostate-cancer,28798.0
+bridgeto10k_co-occurrence,community,Bridge to,,,Bridge to (26817),-30,25,bridgeto10k,26817.0
+asthmalunguk-asthma_co-occurrence,community,Asthma Community Forum,,,Asthma Community Forum (25092),-30,24,asthmalunguk-asthma,25092.0
+pasoc_co-occurrence,community,Pernicious Anaemia Society,,,Pernicious Anaemia Society (24457),-30,23,pasoc,24457.0
+britishlivertrust_co-occurrence,community,British Liver Trust,,,British Liver Trust (19073),-30,22,britishlivertrust,19073.0
+theibsnetwork_co-occurrence,community,IBS Network,,,IBS Network (16340),-30,21,theibsnetwork,16340.0
+healmyptsd_co-occurrence,community,Heal My PTSD,,,Heal My PTSD (12792),-30,20,healmyptsd,12792.0
+painconcern_co-occurrence,community,Pain Concern,,,Pain Concern (12190),-30,19,painconcern,12190.0
+diabetesindia_co-occurrence,community,Diabetes India,,,Diabetes India (12107),-30,18,diabetesindia,12107.0
+hughes-syndrome_co-occurrence,community,Hughes Syndrome APS Forum,,,Hughes Syndrome APS Forum (10649),-30,17,hughes-syndrome,10649.0
+menshealth-penishealth_co-occurrence,community,Men's Health Forum (Penis Health),,,Men's Health Forum (Penis Health) (9139),-30,16,menshealth-penishealth,9139.0
+pbc-foundation_co-occurrence,community,PBC Foundation,,,PBC Foundation (8523),-30,15,pbc-foundation,8523.0
+adhd-parents_co-occurrence,community,CHADD's ADHD Parents Together,,,CHADD's ADHD Parents Together (6541),-30,14,adhd-parents,6541.0
+adult-adhd_co-occurrence,community,CHADD's Adult ADHD Support,,,CHADD's Adult ADHD Support (6368),-30,13,adult-adhd,6368.0
+tinnitus-uk_co-occurrence,community,Tinnitus UK,,,Tinnitus UK (5616),-30,12,tinnitus-uk,5616.0
+nkf-ckd_co-occurrence,community,Kidney Disease,,,Kidney Disease (5304),-30,11,nkf-ckd,5304.0
+ataxia-uk_co-occurrence,community,Ataxia UK,,,Ataxia UK (4708),-30,10,ataxia-uk,4708.0
+menshealth_co-occurrence,community,Men's Health Forum,,,Men's Health Forum (4668),-30,9,menshealth,4668.0
+glutenfreeguerrillas_co-occurrence,community,Gluten Free Guerrillas,,,Gluten Free Guerrillas (4439),-30,8,glutenfreeguerrillas,4439.0
+behcetsuk_co-occurrence,community,Behçet's UK,,,Behçet's UK (4412),-30,7,behcetsuk,4412.0
+womenshealth_co-occurrence,community,Women's Health,,,Women's Health (4181),-30,6,womenshealth,4181.0
+lungcancer_co-occurrence,community,The Roy Castle Lung Cancer Foundation,,,The Roy Castle Lung Cancer Foundation (3592),-30,5,lungcancer,3592.0
+livingwithanxiety_co-occurrence,community,Living with Anxiety,,,Living with Anxiety (3328),-30,4,livingwithanxiety,3328.0
+bonehealth_co-occurrence,community,Bone Health and Osteoporosis UK,,,Bone Health and Osteoporosis UK (3034),-30,3,bonehealth,3034.0
+eric_co-occurrence,community,ERIC,,,ERIC (3021),-30,2,eric,3021.0
+early-ckd-support_co-occurrence,community,Early CKD Support,,,Early CKD Support (2783),-30,1,early-ckd-support,2783.0
+app-network_co-occurrence,community,Action on Postpartum Psychosis,,,Action on Postpartum Psychosis (2730),-30,0,app-network,2730.0
+migrainecentre_co-occurrence,community,National Migraine Centre,,,National Migraine Centre (2704),-30,-1,migrainecentre,2704.0
+lsn_co-occurrence,community,LSN,,,LSN (2679),-30,-2,lsn,2679.0
+cholesterol-support_co-occurrence,community,Cholesterol Support,,,Cholesterol Support (2651),-30,-3,cholesterol-support,2651.0
+macularsociety_co-occurrence,community,Macular Society,,,Macular Society (2646),-30,-4,macularsociety,2646.0
+icusteps_co-occurrence,community,ICUsteps,,,ICUsteps (2515),-30,-5,icusteps,2515.0
+active10_co-occurrence,community,Active,,,Active (2446),-30,-6,active10,2446.0
+care-community_co-occurrence,community,Care Community,,,Care Community (2372),-30,-7,care-community,2372.0
+lung-cancer-support_co-occurrence,community,Lung Cancer Support,,,Lung Cancer Support (2224),-30,-8,lung-cancer-support,2224.0
+arthritis-action_co-occurrence,community,Arthritis Action,,,Arthritis Action (2183),-30,-9,arthritis-action,2183.0
+glaucoma-uk_co-occurrence,community,Glaucoma UK,,,Glaucoma UK (2179),-30,-10,glaucoma-uk,2179.0
+meningitisnow_co-occurrence,community,Meningitis Now,,,Meningitis Now (2133),-30,-11,meningitisnow,2133.0
+itpsupport_co-occurrence,community,ITP Support Association,,,ITP Support Association (2123),-30,-12,itpsupport,2123.0
+my-skin_co-occurrence,community,MY SKIN,,,MY SKIN (1941),-30,-13,my-skin,1941.0
+crohns-colitis-support_co-occurrence,community,Crohn's and Colitis Support,,,Crohn's and Colitis Support (1771),-30,-14,crohns-colitis-support,1771.0
+drwfdiabetes_co-occurrence,community,Diabetes Research & Wellness Foundation,,,Diabetes Research & Wellness Foundation (1606),-30,-15,drwfdiabetes,1606.0
+above-beyond_co-occurrence,community,Above & Beyond - Mental Health,,,Above & Beyond - Mental Health (1540),-30,-16,above-beyond,1540.0
+blood-pressure-support_co-occurrence,community,High Blood Pressure Support,,,High Blood Pressure Support (1539),-30,-17,blood-pressure-support,1539.0
+copd-friends_co-occurrence,community,COPD Friends,,,COPD Friends (1473),-30,-18,copd-friends,1473.0
+fight-prostate-cancer_co-occurrence,community,Fight Prostate Cancer,,,Fight Prostate Cancer (1388),-30,-19,fight-prostate-cancer,1388.0
+fertility-ivf_co-occurrence,community,"Fertility, Miscarriage & IVF Support",,,"Fertility, Miscarriage & IVF Support (1381)",-30,-20,fertility-ivf,1381.0
+anticoagulation-support_co-occurrence,community,Anticoagulation Support,,,Anticoagulation Support (1377),-30,-21,anticoagulation-support,1377.0
+diabeteshelp_co-occurrence,community,Diabetes & Hypertension Help Society,,,Diabetes & Hypertension Help Society (1353),-30,-22,diabeteshelp,1353.0
+lupus-support_co-occurrence,community,LUpus Patients Understanding and Support,,,LUpus Patients Understanding and Support (1292),-30,-23,lupus-support,1292.0
+ansiedad-depresion-apoyo_co-occurrence,community,Apoyo para Ansiedad y Depresion,,,Apoyo para Ansiedad y Depresion (1286),-30,-24,ansiedad-depresion-apoyo,1286.0
+fertility-network-uk-pregnancy_co-occurrence,community,Fertility Network UK - Pregnancy Support,,,Fertility Network UK - Pregnancy Support (1234),-30,-25,fertility-network-uk-pregnancy,1234.0
+hepatitisfoundation_co-occurrence,community,HFI Connect - Hepatitis,,,HFI Connect - Hepatitis (1215),-30,-26,hepatitisfoundation,1215.0
+amneasier_co-occurrence,community,AMN EASIER,,,AMN EASIER (1185),-30,-27,amneasier,1185.0
+edsuk_co-occurrence,community,The Ehlers-Danlos Support UK,,,The Ehlers-Danlos Support UK (946),-30,-28,edsuk,946.0
+acoustic-neuroma-support_co-occurrence,community,Acoustic Neuroma Support,,,Acoustic Neuroma Support (940),-30,-29,acoustic-neuroma-support,940.0
+osteoporosis-support_co-occurrence,community,Osteoporosis Support,,,Osteoporosis Support (902),-30,-30,osteoporosis-support,902.0
+leukaemia-support_co-occurrence,community,Leukaemia Support,,,Leukaemia Support (808),-30,-31,leukaemia-support,808.0
+changingfaces_co-occurrence,community,Changing Faces,,,Changing Faces (760),-30,-32,changingfaces,760.0
+hivpartners_co-occurrence,community,HIV Partners,,,HIV Partners (759),-30,-33,hivpartners,759.0
+sca-heart-attack_co-occurrence,community,Sudden Cardiac Arrest & Heart Attack,,,Sudden Cardiac Arrest & Heart Attack (758),-30,-34,sca-heart-attack,758.0
+livingwithasthma_co-occurrence,community,Living with Asthma,,,Living with Asthma (751),-30,-35,livingwithasthma,751.0
+drink-free_co-occurrence,community,Drink Free,,,Drink Free (685),-30,-36,drink-free,685.0
+tourettes-action_co-occurrence,community,Tourettes Action,,,Tourettes Action (680),-30,-37,tourettes-action,680.0
+cmtuk_co-occurrence,community,Charcot-Marie-Tooth UK,,,Charcot-Marie-Tooth UK (667),-30,-38,cmtuk,667.0
+opa-gord_co-occurrence,community,Acid Reflux Support,,,Acid Reflux Support (659),-30,-39,opa-gord,659.0
+fasd-support_co-occurrence,community,FASD Support,,,FASD Support (636),-30,-40,fasd-support,636.0
+fungalinfectiontrust_co-occurrence,community,Aspergillosis and Rare Fungal Infection Support,,,Aspergillosis and Rare Fungal Infection Support (561),-30,-41,fungalinfectiontrust,561.0
+oa-action_co-occurrence,community,Osteoarthritis Action,,,Osteoarthritis Action (561),-30,-42,oa-action,561.0
+menopause-perimenopause-support_co-occurrence,community,Menopause and Perimenopause Support,,,Menopause and Perimenopause Support (554),-30,-43,menopause-perimenopause-support,554.0
+myositisuk_co-occurrence,community,Myositis UK,,,Myositis UK (543),30,42,myositisuk,543.0
+sicklecellsociety_co-occurrence,community,Sickle Cell Society,,,Sickle Cell Society (521),30,41,sicklecellsociety,521.0
+dialysis-support_co-occurrence,community,Dialysis Support,,,Dialysis Support (516),30,40,dialysis-support,516.0
+erectile-dysfunction-support_co-occurrence,community,Erectile Dysfunction Support,,,Erectile Dysfunction Support (508),30,39,erectile-dysfunction-support,508.0
+baby-and-us_co-occurrence,community,Baby and Us,,,Baby and Us (507),30,38,baby-and-us,507.0
+beyond-psoriasis_co-occurrence,community,Beyond Psoriasis,,,Beyond Psoriasis (507),30,37,beyond-psoriasis,507.0
+migraine-support_co-occurrence,community,Migraine Support,,,Migraine Support (503),30,36,migraine-support,503.0
+cll-america-support_co-occurrence,community,CLL America Support,,,CLL America Support (478),30,35,cll-america-support,478.0
+hep-c-trust_co-occurrence,community,Hepatitis C Trust,,,Hepatitis C Trust (468),30,34,hep-c-trust,468.0
+differentstrokes_co-occurrence,community,Different Strokes,,,Different Strokes (467),30,33,differentstrokes,467.0
+bronchiectasis-support_co-occurrence,community,Bronchiectasis Support,,,Bronchiectasis Support (452),30,32,bronchiectasis-support,452.0
+arrhythmia-alliance-heart-failure_co-occurrence,community,Heart Failure Support,,,Heart Failure Support (449),30,31,arrhythmia-alliance-heart-failure,449.0
+sensitiveissuesmen_co-occurrence,community,Sensitive Issues for Men,,,Sensitive Issues for Men (441),30,30,sensitiveissuesmen,441.0
+tb-alert_co-occurrence,community,TB Alert,,,TB Alert (419),30,29,tb-alert,419.0
+transplant-support_co-occurrence,community,Kidney Transplant Patient Support,,,Kidney Transplant Patient Support (395),30,28,transplant-support,395.0
+active-surveillance-prostate_co-occurrence,community,Active Surveillance - Prostate Cancer,,,Active Surveillance - Prostate Cancer (388),30,27,active-surveillance-prostate,388.0
+alzheimer-support_co-occurrence,community,Memory Health: Alzheimer's Support Group,,,Memory Health: Alzheimer's Support Group (385),30,26,alzheimer-support,385.0
+one-norfolk-parents_co-occurrence,community,Ask Norfolk Parents,,,Ask Norfolk Parents (384),30,25,one-norfolk-parents,384.0
+melanomacaregivers_co-occurrence,community,Melanoma Caregivers,,,Melanoma Caregivers (381),30,24,melanomacaregivers,381.0
+brain-aneurysm-support_co-occurrence,community,Brain Aneurysm Support,,,Brain Aneurysm Support (370),30,23,brain-aneurysm-support,370.0
+bowel-disease-support_co-occurrence,community,Bowel Disease Support,,,Bowel Disease Support (369),30,22,bowel-disease-support,369.0
+actiononpain_co-occurrence,community,Action on Pain,,,Action on Pain (366),30,21,actiononpain,366.0
+continencesupport_co-occurrence,community,Continence Support,,,Continence Support (365),30,20,continencesupport,365.0
+pancreatitis-support_co-occurrence,community,Chronic Pancreatitis Support,,,Chronic Pancreatitis Support (362),30,19,pancreatitis-support,362.0
+fightbladdercancer_co-occurrence,community,Fight Bladder Cancer,,,Fight Bladder Cancer (360),30,18,fightbladdercancer,360.0
+hep-c-support_co-occurrence,community,Hepatitis C Support,,,Hepatitis C Support (359),30,17,hep-c-support,359.0
+arrhythmia-alliance-svt_co-occurrence,community,Supraventricular Tachycardia Support,,,Supraventricular Tachycardia Support (329),30,16,arrhythmia-alliance-svt,329.0
+alopeciauk_co-occurrence,community,Alopecia UK,,,Alopecia UK (312),30,15,alopeciauk,312.0
+diabetes-support_co-occurrence,community,Diabetes Support,,,Diabetes Support (310),30,14,diabetes-support,310.0
+liver4life_co-occurrence,community,Liver,,,Liver (308),30,13,liver4life,308.0
+pcdsupport_co-occurrence,community,PCD Family Support Group (UK),,,PCD Family Support Group (UK) (302),30,12,pcdsupport,302.0
+graves-disease-support_co-occurrence,community,Graves Disease Support,,,Graves Disease Support (296),30,11,graves-disease-support,296.0
+pbcers_co-occurrence,community,PBCers Organization,,,PBCers Organization (294),30,10,pbcers,294.0
+dentistry-health-support_co-occurrence,community,Dentistry Health Support,,,Dentistry Health Support (279),30,9,dentistry-health-support,279.0
+fight-mpn_co-occurrence,community,Fight MPN,,,Fight MPN (269),30,8,fight-mpn,269.0
+colostomy-care_co-occurrence,community,Living with a Stoma,,,Living with a Stoma (266),30,7,colostomy-care,266.0
+efa_co-occurrence,community,EFA,,,EFA (264),30,6,efa,264.0
+pkdcharity-autosomaldominant_co-occurrence,community,PKD Charity for Autosomal Dominant PKD,,,PKD Charity for Autosomal Dominant PKD (263),30,5,pkdcharity-autosomaldominant,263.0
+ukmasto_co-occurrence,community,The UK Mastocytosis Support Group,,,The UK Mastocytosis Support Group (255),30,4,ukmasto,255.0
+meningioma-support_co-occurrence,community,Meningioma Support,,,Meningioma Support (236),30,3,meningioma-support,236.0
+nkf-parents_co-occurrence,community,Parents of Children with Kidney Disease,,,Parents of Children with Kidney Disease (233),30,2,nkf-parents,233.0
+livingwellwithhiv_co-occurrence,community,Living Well with HIV,,,Living Well with HIV (233),30,1,livingwellwithhiv,233.0
+glioblastoma-support_co-occurrence,community,Glioblastoma Support,,,Glioblastoma Support (216),30,0,glioblastoma-support,216.0
+blog_co-occurrence,community,HealthUnlocked Blog,,,HealthUnlocked Blog (205),30,-1,blog,205.0
+sjogrens-support_co-occurrence,community,Sjogren's Support,,,Sjogren's Support (200),30,-2,sjogrens-support,200.0
+bws-support_co-occurrence,community,BWS Support,,,BWS Support (198),30,-3,bws-support,198.0
+deafplus_co-occurrence,community,deafPLUS,,,deafPLUS (197),30,-4,deafplus,197.0
+dystoniasociety_co-occurrence,community,Dystonia Society,,,Dystonia Society (195),30,-5,dystoniasociety,195.0
+fertility-road_co-occurrence,community,"Fertility Road Mind, Body & Wellbeing",,,"Fertility Road Mind, Body & Wellbeing (191)",30,-6,fertility-road,191.0
+adenomyosisadviceassociation_co-occurrence,community,Adenomyosis Advice Association,,,Adenomyosis Advice Association (162),30,-7,adenomyosisadviceassociation,162.0
+epilepsysociety_co-occurrence,community,Epilepsy Society,,,Epilepsy Society (150),30,-8,epilepsysociety,150.0
+heart-valve-voice_co-occurrence,community,Heart Valve Voice,,,Heart Valve Voice (148),30,-9,heart-valve-voice,148.0
+haemochromatosis-uk_co-occurrence,community,Haemochromatosis Society UK,,,Haemochromatosis Society UK (140),30,-10,haemochromatosis-uk,140.0
+hearinglink_co-occurrence,community,Hearing Link,,,Hearing Link (137),30,-11,hearinglink,137.0
+quit4life_co-occurrence,community,Quit,,,Quit (133),30,-12,quit4life,133.0
+the-endometriosis-foundation_co-occurrence,community,The Endometriosis Foundation,,,The Endometriosis Foundation (131),30,-13,the-endometriosis-foundation,131.0
+youngadultswithmelanoma_co-occurrence,community,Young Adults with Melanoma,,,Young Adults with Melanoma (127),30,-14,youngadultswithmelanoma,127.0
+sclc-go2_co-occurrence,community,Small Cell Lung Cancer Support,,,Small Cell Lung Cancer Support (123),30,-15,sclc-go2,123.0
+cavernoma-uk_co-occurrence,community,Cavernoma Alliance UK,,,Cavernoma Alliance UK (119),30,-16,cavernoma-uk,119.0
+allergic-to-glycols_co-occurrence,community,Allergic to Glycols,,,Allergic to Glycols (117),30,-17,allergic-to-glycols,117.0
+adult-acne-support_co-occurrence,community,Adult Acne Support,,,Adult Acne Support (111),30,-18,adult-acne-support,111.0
+fpa-contraception_co-occurrence,community,FPA Contraception,,,FPA Contraception (111),30,-19,fpa-contraception,111.0
+sicklecelldisease_co-occurrence,community,Living with Sickle Cell Disease,,,Living with Sickle Cell Disease (108),30,-20,sicklecelldisease,108.0
+fierybones-ra_co-occurrence,community,FieryBones - RA Community,,,FieryBones - RA Community (106),30,-21,fierybones-ra,106.0
+mga_co-occurrence,community,Myasthenia Gravis Association,,,Myasthenia Gravis Association (95),30,-22,mga,95.0
+c3g_co-occurrence,community,C,,,C (95),30,-23,c3g,95.0
+pagets-support_co-occurrence,community,Paget’s Support,,,Paget’s Support (90),30,-24,pagets-support,90.0
+living-with-lyme-disease-uk_co-occurrence,community,Living with Lyme Disease UK,,,Living with Lyme Disease UK (73),30,-25,living-with-lyme-disease-uk,73.0
+endometriosis-nz_co-occurrence,community,Endometriosis New Zealand,,,Endometriosis New Zealand (69),30,-26,endometriosis-nz,69.0
+chronic-myofascial-pain_co-occurrence,community,Chronic Myofascial Pain,,,Chronic Myofascial Pain (53),30,-27,chronic-myofascial-pain,53.0
+living-with-ild_co-occurrence,community,Living with Interstitial Lung Disease (ILD),,,Living with Interstitial Lung Disease (ILD) (49),30,-28,living-with-ild,49.0
+myelomauk_co-occurrence,community,Myeloma UK,,,Myeloma UK (47),30,-29,myelomauk,47.0
+mamafit_co-occurrence,community,Mamafit,,,Mamafit (44),30,-30,mamafit,44.0
+partnersforbehcets_co-occurrence,community,Partners for Behcet's,,,Partners for Behcet's (43),30,-31,partnersforbehcets,43.0
+downs-support_co-occurrence,community,Down's Syndrome Support,,,Down's Syndrome Support (43),30,-32,downs-support,43.0
+cancer-journeys-foundation_co-occurrence,community,Cancer Journeys Foundation,,,Cancer Journeys Foundation (42),30,-33,cancer-journeys-foundation,42.0
+livernorth_co-occurrence,community,LIVErNORTH,,,LIVErNORTH (41),30,-34,livernorth,41.0
+mydirectives_co-occurrence,community,MyDirectives: Make your medical wishes known!,,,MyDirectives: Make your medical wishes known! (40),30,-35,mydirectives,40.0
+pseudomyxoma-survivor_co-occurrence,community,Pseudomyxoma Survivor,,,Pseudomyxoma Survivor (40),30,-36,pseudomyxoma-survivor,40.0
+cookforyourlife_co-occurrence,community,Cook For Your Life,,,Cook For Your Life (29),30,-37,cookforyourlife,29.0
+demo-community_co-occurrence,community,Demo Community,,,Demo Community (27),30,-38,demo-community,27.0
+dc-action_co-occurrence,community,DC Action,,,DC Action (21),30,-39,dc-action,21.0
+apma_co-occurrence,community,Australian Pain Management Association,,,Australian Pain Management Association (20),30,-40,apma,20.0
+crohnscolitis_co-occurrence,community,Crohn's & Colitis,,,Crohn's & Colitis (6),30,-41,crohnscolitis,6.0
+barretts-oesophagus_co-occurrence,community,Barrett's Oesophagus,,,Barrett's Oesophagus (5),30,-42,barretts-oesophagus,5.0
