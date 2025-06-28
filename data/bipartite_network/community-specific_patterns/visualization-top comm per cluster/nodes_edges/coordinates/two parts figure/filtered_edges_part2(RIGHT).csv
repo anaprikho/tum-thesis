@@ -1,0 +1,105 @@
+source,target
+Pain & Musculoskeletal Conditions,fibromyalgia-action-uk_co-occurrence
+Pain & Musculoskeletal Conditions,arthritis-action_co-occurrence
+Pain & Musculoskeletal Conditions,bonehealth_co-occurrence
+Pain & Musculoskeletal Conditions,edsuk_co-occurrence
+Pain & Musculoskeletal Conditions,lsn_co-occurrence
+Pain & Musculoskeletal Conditions,oa-action_co-occurrence
+Pain & Musculoskeletal Conditions,osteoporosis-support_co-occurrence
+Pain & Musculoskeletal Conditions,painconcern_co-occurrence
+Autoimmune Diseases,hughes-syndrome_co-occurrence
+Autoimmune Diseases,lupus-support_co-occurrence
+Autoimmune Diseases,lupusuk_co-occurrence
+Autoimmune Diseases,behcetsuk_co-occurrence
+Autoimmune Diseases,nras_co-occurrence
+Autoimmune Diseases,pbc-foundation_co-occurrence
+"Lifestyle, Diet & Supplements",my-skin_co-occurrence
+"Lifestyle, Diet & Supplements",active10_co-occurrence
+"Lifestyle, Diet & Supplements",bridgeto10k_co-occurrence
+"Lifestyle, Diet & Supplements",care-community_co-occurrence
+"Lifestyle, Diet & Supplements",couchto5k_co-occurrence
+Mental Health & Emotional Wellbeing,healmyptsd_co-occurrence
+Mental Health & Emotional Wellbeing,livingwithanxiety_co-occurrence
+Mental Health & Emotional Wellbeing,above-beyond_co-occurrence
+Mental Health & Emotional Wellbeing,adhd-parents_co-occurrence
+Mental Health & Emotional Wellbeing,adult-adhd_co-occurrence
+Mental Health & Emotional Wellbeing,ansiedad-depresion-apoyo_co-occurrence
+Mental Health & Emotional Wellbeing,anxiety-depression-support_co-occurrence
+Mental Health & Emotional Wellbeing,anxietysupport_co-occurrence
+Neurological Disorders,cmtuk_co-occurrence
+Neurological Disorders,migrainecentre_co-occurrence
+Neurological Disorders,acoustic-neuroma-support_co-occurrence
+Neurological Disorders,amneasier_co-occurrence
+Neurological Disorders,ataxia-uk_co-occurrence
+Reproductive & Sexual Health (Women's Health & Men's Health),endometriosis-uk_co-occurrence
+Reproductive & Sexual Health (Women's Health & Men's Health),menshealth-penishealth_co-occurrence
+Reproductive & Sexual Health (Women's Health & Men's Health),menshealth_co-occurrence
+Reproductive & Sexual Health (Women's Health & Men's Health),womenshealth_co-occurrence
+Reproductive & Sexual Health (Women's Health & Men's Health),app-network_co-occurrence
+"Procedures, Surgeries & Medical Devices",acoustic-neuroma-support_co-occurrence
+"Procedures, Surgeries & Medical Devices",glaucoma-uk_co-occurrence
+"Procedures, Surgeries & Medical Devices",lung-cancer-support_co-occurrence
+Cancer & Oncology,cllsupport_co-occurrence
+Cancer & Oncology,advanced-prostate-cancer_co-occurrence
+Cancer & Oncology,fight-prostate-cancer_co-occurrence
+Cancer & Oncology,lung-cancer-support_co-occurrence
+Cancer & Oncology,lungcancer_co-occurrence
+Cardiovascular Diseases,anticoagulation-support_co-occurrence
+Cardiovascular Diseases,afassociation_co-occurrence
+Cardiovascular Diseases,bhf_co-occurrence
+Cardiovascular Diseases,blood-pressure-support_co-occurrence
+Cardiovascular Diseases,cholesterol-support_co-occurrence
+Cardiovascular Diseases,sca-heart-attack_co-occurrence
+Renal & Liver Diseases,nkf-ckd_co-occurrence
+Renal & Liver Diseases,britishlivertrust_co-occurrence
+Renal & Liver Diseases,early-ckd-support_co-occurrence
+Metabolic & Endocrine Disorders,diabeteshelp_co-occurrence
+Metabolic & Endocrine Disorders,fasd-support_co-occurrence
+Metabolic & Endocrine Disorders,diabetesindia_co-occurrence
+Metabolic & Endocrine Disorders,thyroiduk_co-occurrence
+Metabolic & Endocrine Disorders,drwfdiabetes_co-occurrence
+Metabolic & Endocrine Disorders,pmrgcauk_co-occurrence
+Patient Support & Education,fertility-network-uk_co-occurrence
+Patient Support & Education,adhd-parents_co-occurrence
+Patient Support & Education,app-network_co-occurrence
+Patient Support & Education,fertility-ivf_co-occurrence
+Patient Support & Education,fertility-network-uk-pregnancy_co-occurrence
+Dermatology & Skin-Related,fungalinfectiontrust_co-occurrence
+Dermatology & Skin-Related,changingfaces_co-occurrence
+Dermatology & Skin-Related,lsn_co-occurrence
+Dermatology & Skin-Related,tourettes-action_co-occurrence
+Dermatology & Skin-Related,menshealth-penishealth_co-occurrence
+Dermatology & Skin-Related,my-skin_co-occurrence
+Medications & Treatment Monitoring,hepatitisfoundation_co-occurrence
+Medications & Treatment Monitoring,pbc-foundation_co-occurrence
+Medications & Treatment Monitoring,amneasier_co-occurrence
+Medications & Treatment Monitoring,asthmalunguk-asthma_co-occurrence
+Substance Abuse & Addiction,quitsupport_co-occurrence
+Substance Abuse & Addiction,drink-free_co-occurrence
+Substance Abuse & Addiction,nosmokingday_co-occurrence
+Substance Abuse & Addiction,adult-adhd_co-occurrence
+Digestive Health (Gastrointestinal Conditions),glutenfreeguerrillas_co-occurrence
+Digestive Health (Gastrointestinal Conditions),crohns-colitis-support_co-occurrence
+Digestive Health (Gastrointestinal Conditions),opa-gord_co-occurrence
+Digestive Health (Gastrointestinal Conditions),theibsnetwork_co-occurrence
+Digestive Health (Gastrointestinal Conditions),eric_co-occurrence
+Allergy & Immunology,asthmalunguk-asthma_co-occurrence
+Respiratory Conditions & Treatments,asthmalunguk-asthma_co-occurrence
+Respiratory Conditions & Treatments,livingwithasthma_co-occurrence
+Respiratory Conditions & Treatments,asthmalunguk-lung_co-occurrence
+Respiratory Conditions & Treatments,copd-friends_co-occurrence
+Respiratory Conditions & Treatments,fungalinfectiontrust_co-occurrence
+Respiratory Conditions & Treatments,lungcancer_co-occurrence
+Infectious & Communicable Diseases,hivpartners_co-occurrence
+Infectious & Communicable Diseases,meningitisnow_co-occurrence
+Infectious & Communicable Diseases,icusteps_co-occurrence
+Infectious & Communicable Diseases,eric_co-occurrence
+Rare Diseases & Genetic Disorders,edsuk_co-occurrence
+Hematology & Blood Disorders,itpsupport_co-occurrence
+Hematology & Blood Disorders,pasoc_co-occurrence
+Hematology & Blood Disorders,cllsupport_co-occurrence
+Hematology & Blood Disorders,leukaemia-support_co-occurrence
+Preventive Health & Screening,sca-heart-attack_co-occurrence
+Preventive Health & Screening,tinnitus-uk_co-occurrence
+Eye & Vision Health,glaucoma-uk_co-occurrence
+Eye & Vision Health,macularsociety_co-occurrence
