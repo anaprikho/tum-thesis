@@ -89,18 +89,6 @@ def pagination(page, next_button_selector):
     print("No more pages (or posts) to navigate.")
     return False  # if all retries failed
 
-
-    # if next_button.count() > 0 and next_button.is_visible():
-    #     print("Pagination: Clicking 'Next' or 'Show more posts' button...")
-    #     page.wait_for_selector(next_button_selector, timeout=3000)  # Wait for button to appear
-    #     next_button.wait_for(state="visible", timeout=3000)
-    #     next_button.click()
-    #     page.wait_for_timeout(2000) # Wait for the next page or more post items to load
-    #     return True
-    # else:
-    #     print("No more pages (or posts) to navigate.")
-    #     return False
-
 # Read from JSON
 def read_json(file_path):
     """

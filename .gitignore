@@ -1,10 +1,2 @@
 .env
 __pycache__
-data_output
-data_keywords
-
-data_output_csv
-
-todo.tex
-
-gensim_env

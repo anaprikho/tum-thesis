@@ -30,13 +30,10 @@ if __name__ == "__main__":
             login(page)
 
             #  1) General Patterns
-            scrape_usernames_by_keyword(page, KEYWORDS_FILE, CATEGORIES_OF_KEYWORDS, USERNAMES_BY_KEYWORD, USERNAMES_BY_KEYWORD_LIMIT)
-            # scrape_user_profiles(page, USERNAMES_BY_KEYWORD, GENERAL_PROFILES_DATA, UNIQUE_COMM_LIST, POSTS_BY_USER_LIMIT)
-            # scrape_general_patterns(page)
+            scrape_general_patterns(page)
 
             # 2) Community-specific Patterns
-            # scrape_community_members(page, UNIQUE_COMM_LIST, MEMBERS_BY_COMM, PAGINATION_LIMIT)
-            # scrape_member_profiles(page, MEMBERS_BY_COMM, PROFILES_BY_COMM_DATA)
-            # scrape_community_patterns(page)
+            scrape_community_patterns(page)
+            
         finally:
             browser.close()

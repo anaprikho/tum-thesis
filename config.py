@@ -32,7 +32,7 @@ FAILED_MEMBERS_LOG = "failed_members.txt"  #  failed members
 
 # Keywords for global search on HU to collect usernames
 KEYWORDS_FILE = os.path.join(DATA_INPUT_DIR, "keywords_generated.csv")
-# CATEGORIES_OF_KEYWORDS = ["Mental Health", "Diabetes", "Women's Health", "Alcohol Addiction", "Cancer", "Abc"]  # define categories of interest for your scraping
+
 categories = [
     # Mental Health - 6
     "Mental Health",
@@ -70,6 +70,7 @@ categories = [
     "Dementia",
     "HIV"
 ]
+
 CATEGORIES_OF_KEYWORDS = categories  # in case of scrapingkeywords from  ALL categories
 
 # General patterns of co-occurrence:
