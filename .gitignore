@@ -5,6 +5,7 @@ data/stats.txt
 data/scraped_data_sensetive
 data/data_cleaned_sensetive
 data/bipartite_network/general_patterns/demographics/country/psm
+data/data_anonymized
 
 jupyter notebooks/.ipynb_checkpoints
 jupyter notebooks/data_anonymization.ipynb
