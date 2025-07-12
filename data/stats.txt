@@ -68,7 +68,7 @@ If filter countries with percentage > 5%, Ireland is the last.
 
 
 COMMUNITY-SPECIFIC PATTERNS:
-Total communities: 326
+Total communities: 324
 Total users: 37777
 
 ==================================
@@ -106,7 +106,7 @@ Number of users after filtering (with tags): 8554 -> 74.27%
 
 COMMUNITY-SPECIFIC PATTERNS:
 Original number of users (mentions): 37777
-Number of users with no tags ('N/A') (unique): 19165
+Number of users with no tags ('N/A') (unique): 19165 (20020)
 Number of UNQIUE users with tags (users may me members in multiple comm): 18612 -> 49.27%
 *Number of users with tags (mentions): 15757 -> 41.71%
 
@@ -241,6 +241,6 @@ Edges in projected cluster-cluster graph: 253
         
 
 COMMUNITY-SPECIFIC PATTERNS:
-Total communities: 325
-Communities with tags: 325
+Total communities: 324
+Communities with tags: 324
 Communities skipped (no tags): 0

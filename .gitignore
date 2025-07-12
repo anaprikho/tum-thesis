@@ -1,5 +1,6 @@
 .env
 __pycache__
+data/stats.txt
 
 data/scraped_data_sensetive
 data/data_cleaned_sensetive
