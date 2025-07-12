@@ -1,3 +1,4 @@
 .env
 __pycache__
 data/scraped_data_sensetive
+data/bipartite_network/general_patterns/demographics/country/psm
