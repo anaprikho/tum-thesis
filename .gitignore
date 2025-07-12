@@ -1,4 +1,9 @@
 .env
 __pycache__
+
 data/scraped_data_sensetive
+data/data_cleaned_sensetive
 data/bipartite_network/general_patterns/demographics/country/psm
+
+jupyter notebooks/.ipynb_checkpoints
+jupyter notebooks/data_anonymization.ipynb
