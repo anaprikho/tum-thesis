@@ -9,3 +9,4 @@ data/data_anonymized
 
 jupyter notebooks/.ipynb_checkpoints
 jupyter notebooks/data_anonymization.ipynb
+jupyter notebooks/bipartite_network.ipynb

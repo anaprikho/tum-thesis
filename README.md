@@ -1,4 +1,4 @@
-# Master's Thesis TUM
+# Master's Thesis at Technical University of Munich (TUM)
 
 ## Networks and Co-Occurrences of Health Interests in Online Health Platforms
 
@@ -28,12 +28,12 @@ tum-thesis/
 │   │       ├── network_analysis/         # Global network metrics
 │   │       └── cluster_co-occurrence_edges.json  # Edges of unipartite cluster-cluster (global) network
 │   │
-│   ├── data_cleaned/                     # Preprocessed data (e.g. standardized "gender" and "ethnicity" entries)
+│   ├── data_cleaned/                     # Pre-processed data (e.g. standardized "gender" and "ethnicity" entries)
 │   ├── scraped_data/                     # Raw scraped data from HealthUnlocked
 │   ├── tag_clustering/                   # Clustering experiments and results
 │   └── keywords_generated.csv            # Final tag list with assigned clusters
 │
-├── jupyter notebooks/                    # Notebooks for data preprocessing, clustering, network construction, and analysis
+├── jupyter notebooks/                    # Notebooks for data pre-processing, clustering, network construction, and analysis
 │
 ├── config.py                             # Centralized configuration (e.g., paths, constants, CSS selectors)
 ├── helpers.py                            # Utility functions (e.g., login, scraping pagination, loading JSON)
